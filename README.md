@@ -2,7 +2,7 @@
 
 > **Domain**: Information Systems / Applied Machine Learning  
 > **Data Scope**: Jambi Province, Indonesia — Village Fund Expenditure Absorption 2023–2025  
-> **Last Updated**: April 2026
+> **Last Updated**: April 2026 — Phase 3 (Model Development) complete; results available in `src/output_v1/`
 
 ---
 
@@ -51,35 +51,114 @@ This research develops an unsupervised machine learning pipeline to detect expen
 
 ---
 
-### Phase 2 — Data Acquisition & Preprocessing ⏳ IN PROGRESS
+### Phase 2 — Data Acquisition & Preprocessing ✅ COMPLETED
 
 - [x] Raw data sourced: 6 Excel files (Pagu + Penyerapan, Jambi Province, 2023–2025)
 - [x] CSV conversion completed for all 6 files → `data_ref/csv/`
 - [x] Schema validated: Penyerapan columns confirmed (19 fields including Real_T1–T3, Pct_T1–T3, Cara_Pengadaan)
-- [x] Dataset scale confirmed: ~33,405 activity records across Penyerapan 2023–2025
-- [ ] Data merge: Penyerapan joined with Pagu by `Kode_Desa` + `Tahun`
-- [ ] Data cleaning: handle nulls, remove header/footer rows, validate numeric ranges
-- [ ] Feature engineering: compute all 10 features from engineering plan
+- [x] Data merge: Penyerapan (all years) joined with Pagu by `Kode_Desa` + `Tahun`
+- [x] Data cleaning: nulls imputed, header rows removed, numeric ranges validated
+- [x] Feature engineering complete → `features_engineered.csv` (99,692 records × 27 columns)
+- [x] Final merged scale: **99,692 activity records** (2023=33,140 | 2024=36,151 | 2025=30,401)
 
-**Data files**:
+> **Implementation note**: `stage_variance` and `completion_vs_realization` from the original plan were superseded by `n_stages_active` (count of active disbursement stages per record) in the final implementation. The RDA sub-model uses 5 core features: `cost_per_unit`, `avg_completion`, `swakelola_high_value`, `activity_category`, `cost_deviation_by_category`.
 
-| File | Status | Location |
-|---|---|---|
-| `Pagu_Jambi_2023.csv` | ✅ Ready | `data_ref/csv/` |
-| `Pagu_Jambi_2024.csv` | ✅ Ready | `data_ref/csv/` |
-| `Pagu_Jambi_2025.csv` | ✅ Ready | `data_ref/csv/` |
-| `Penyerapan_Jambi_2023.csv` | ✅ Ready | `data_ref/csv/` |
-| `Penyerapan_Jambi_2024.csv` | ✅ Ready | `data_ref/csv/` |
-| `Penyerapan_Jambi_2025.csv` | ✅ Ready | `data_ref/csv/` |
+**Output**: [src/output_v1/features_engineered.csv](src/output_v1/features_engineered.csv)
 
 ---
 
-### Phase 3 — Model Development ❌ NOT STARTED
+### Phase 3 — Model Development ✅ COMPLETED
 
-- [ ] Notebook `01_data_preprocessing.ipynb`: merge, clean, engineer features, export `features_engineered.csv`
-- [ ] Notebook `02_unsupervised_comparison.ipynb`: train/apply Isolation Forest, LOF, Dense Autoencoder
-- [ ] Compute evaluation metrics: anomaly rate consistency, inter-method agreement (Cohen's κ), PCA/t-SNE visualisation
-- [ ] Notebook `03_corruption_typology_analysis.ipynb`: map anomaly flags to 7 modus operandi
+- [x] Notebook `01_data_preprocessing.ipynb` — merge, clean, engineer features → `features_engineered.csv`
+- [x] Notebook `02_unsupervised_comparison.ipynb` — Isolation Forest, LOF, RDA (Dense Autoencoder) trained and applied
+- [x] Anomaly rate consistency computed across 2023/2024/2025
+- [x] Score distribution bimodality assessed (Bimodality Coefficient per method)
+- [x] Inter-method consensus flags produced (≥2 of 3 methods)
+- [x] PCA and t-SNE visualisation generated
+- [x] Notebook `03_corruption_typology_analysis.ipynb` — consensus flags mapped to 7 typologies
+- [x] Tier-1 village summary produced (642 high-priority villages)
+- [x] Expert validation sheets prepared (top-50 per method, awaiting domain review)
+
+**Outputs**: [src/output_v1/](src/output_v1/)
+
+---
+
+---
+
+## Key Results — Version 1 (April 2026)
+
+### Dataset Scale
+
+| Year | Records | Consensus Anomalies |
+|---|---|---|
+| 2023 | 33,140 | 1,364 |
+| 2024 | 36,151 | 728 |
+| 2025 | 30,401 | 1,015 |
+| **Total** | **99,692** | **3,107 (3.1%)** |
+
+### Anomaly Rate per Method
+
+| Method | Flagged (Total) | Overall Rate | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|
+| IQR Baseline | 18,478 | 18.5% | 21.1% | 17.6% | 17.1% |
+| Isolation Forest | 7,974 | 8.0% | 10.5% | 6.5% | 7.1% |
+| LOF | 4,985 | 5.0% | 4.7% | 4.6% | 5.8% |
+| RDA (Dense AE) | 4,985 | 5.0% | 5.5% | 3.8% | 5.9% |
+| **Consensus (≥2)** | **3,107** | **3.1%** | 4.1% | 2.0% | 3.3% |
+
+### Score Distribution Bimodality (Bimodality Coefficient)
+
+| Method | BC Score | Interpretation |
+|---|---|---|
+| Isolation Forest | 0.335 | Weak separation — broad, overlapping score range |
+| RDA (Dense AE) | 0.703 | Moderate-strong bimodal — clear anomaly tail |
+| **LOF** | **0.957** | **Strong bimodal — sharpest normal/anomaly discrimination** |
+
+> LOF achieves the highest BC score, confirming its superiority in separating densely-packed normal patterns from locally-deviant anomalies across heterogeneous activity categories.
+
+### Top RDA Error Features (Consensus-Flagged Records)
+
+Among consensus-flagged records, the mean per-feature reconstruction error (MSE) ranks:
+
+1. `avg_completion` — highest mean error (manipulated completion reports)
+2. `cost_per_unit` — second-highest (price inflation)
+3. `activity_category` — cross-category activity code mismatch
+4. `cost_deviation_by_category` — within-category cost outlier
+5. `swakelola_high_value` — uncompetitive high-value procurement
+
+### Corruption Typology Distribution (Consensus-Flagged, Multi-label)
+
+| Typology | Count | % of Flagged |
+|---|---|---|
+| T1: Mark-up / Price Inflation | 1,571 | 50.6% |
+| T7: Cross-Category Dump | 1,568 | 50.5% |
+| T2: Ghost Activity | 774 | 24.9% |
+| Unclassified | 708 | 22.8% |
+| T3: Volume Padding | 38 | 1.2% |
+| T6: Budget Exhaustion | 32 | 1.0% |
+| T5: Procurement Irregularity | 26 | 0.8% |
+| T4: Stage Lock | 0 | 0.0% |
+
+> T1 Mark-up and T7 Cross-Category Dump co-dominate at ~50% each (multi-label), consistent with KPK audit findings that price manipulation and activity code misuse are the most prevalent village fund fraud mechanisms.
+
+### Village Priority Tiers (Unique Villages: 1,364)
+
+| Tier | Villages | Basis |
+|---|---|---|
+| Tier 1 – High Priority | **642** | Flagged in ≥2 years; persistence score ≥ 0.67 |
+| Tier 2 – Moderate | 459 | Flagged in 1 year |
+| Tier 3 – Not Flagged | 263 | No consensus anomaly across all years |
+
+> 642 Tier-1 villages represent the primary inspection recommendation list for Inspectorate/BPKP triage.
+
+### Expert Validation Status
+
+| Sheet | Records | Status |
+|---|---|---|
+| `expert_validation_top50_IF.csv` | 50 | ⏳ Awaiting domain expert review |
+| `expert_validation_top50_LOF.csv` | 50 | ⏳ Awaiting domain expert review |
+| `expert_validation_top50_RDA.csv` | 50 | ⏳ Awaiting domain expert review |
+| `expert_validation_top50_CONSENSUS.csv` | 50 | ⏳ Awaiting domain expert review |
 
 ---
 
@@ -110,20 +189,29 @@ is_dandes_anticorr/
 │       ├── download_papers.py         ← Script to fetch PDF literature
 │       └── papers-literatures/        ← Reference PDFs (5/29 downloaded)
 ├── data_ref/
-│   ├── csv/                           ← Converted CSV files (ready for analysis)
-│   │   ├── Pagu_Jambi_2023.csv
-│   │   ├── Pagu_Jambi_2024.csv
-│   │   ├── Pagu_Jambi_2025.csv
-│   │   ├── Penyerapan_Jambi_2023.csv
-│   │   ├── Penyerapan_Jambi_2024.csv
-│   │   └── Penyerapan_Jambi_2025.csv
+│   ├── csv/                           ← Converted CSV files (analysis inputs)
+│   │   ├── Pagu_Jambi_{2023-2025}.csv
+│   │   └── Penyerapan_Jambi_{2023-2025}.csv
 │   └── (source Excel files)
 ├── docs/
 │   ├── draft/                         ← Paper draft chapters (pending)
 │   ├── latex/                         ← LaTeX source (pending)
 │   └── references/                    ← Reference management files (pending)
 └── src/
-    └── convert_xlsx_to_csv.py         ← Data conversion utility
+    ├── convert_xlsx_to_csv.py         ← Data conversion utility
+    └── output_v1/                     ← Phase 3 results (v1)
+        ├── features_engineered.csv    ← 99,692 records × 27 columns
+        ├── anomaly_flags.csv          ← All scores + flags per record
+        ├── scores_all_methods.csv     ← Village-level score summary
+        ├── flagged_with_typology.csv  ← 3,265 flagged records + typology labels
+        ├── typology_frequency.csv     ← Typology distribution counts
+        ├── village_persistence.csv    ← Tier 1/2/3 per unique village (1,364)
+        ├── tier1_village_summary.csv  ← 642 Tier-1 villages + dominant typology
+        ├── expert_validation_top50_*.csv ← Top-50 per method (awaiting review)
+        └── notebook_run/
+            ├── 01_data_preprocessing.ipynb
+            ├── 02_unsupervised_comparison.ipynb
+            └── 03_corruption_typology_analysis.ipynb
 ```
 
 ---
@@ -187,7 +275,8 @@ Full reference list: [concept/conceptual/references.md](concept/conceptual/refer
 
 ## Next Actions
 
-1. **Build `01_data_preprocessing.ipynb`** — merge Pagu + Penyerapan, clean, engineer 10 features, export `features_engineered.csv`
-2. **Build `02_unsupervised_comparison.ipynb`** — train Isolation Forest, LOF, Dense Autoencoder; compute evaluation metrics
-3. **Build `03_corruption_typology_analysis.ipynb`** — map flags to modus operandi; generate summary tables and visualisations
-4. **Begin paper draft** — start with Abstract and Introduction using `docs/draft/`
+1. **Domain expert review** — complete `expert_validation_top50_CONSENSUS.csv` (fill `expert_verdict` + `modus_operandi_notes` columns) to establish Precision@50 ground truth
+2. **Compute Cohen's κ** — inter-method agreement between IF, LOF, and RDA flag vectors across full 99,692-record dataset
+3. **Begin paper draft** — write Abstract + Introduction using `docs/draft/`; ground findings in confirmed result numbers above
+4. **Investigate T4 Stage Lock = 0** — verify whether `stage_variance` / `n_stages_active` threshold is calibrated correctly; T4 should theoretically flag records with all disbursement concentrated in a single stage
+5. **Consider feature alignment review** — reconcile planned features (`stage_variance`, `completion_vs_realization`, `year`) vs. implemented features (`n_stages_active`) for methodology section accuracy
