@@ -1,0 +1,8 @@
+Typology,Count,Label,Pct_of_Flagged
+T1_Markup,1571,T1: Mark-up,50.6
+T7_CrossCatDump,1568,T7: Cross-Category Dump,50.5
+T2_Ghost,774,T2: Ghost Activity,24.9
+Unclassified,708,Unclassified,22.8
+T3_VolumePad,38,T3: Volume Padding,1.2
+T6_BudgetExhaust,32,T6: Budget Exhaustion,1.0
+T5_ProcureIrr,26,T5: Procurement Irr.,0.8

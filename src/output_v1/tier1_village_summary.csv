@@ -1,0 +1,643 @@
+Kode_Desa,n_flagged_records,dominant_typology,top_rda_feature,persistence_score,years_flagged,Nama_Desa
+1501012003,4,T1_Markup,cost_per_unit,1.0,3,Lempur Mudik
+1572082004,5,T7_CrossCatDump,avg_completion,1.0,3,Pelayang Raya
+1572052006,10,T1_Markup,activity_category,1.0,3,Pinggir Air
+1572062004,4,T7_CrossCatDump,activity_category,1.0,3,Permanti
+1572062005,9,T1_Markup,avg_completion,1.0,3,Lawang Agung
+1572072001,5,T1_Markup,avg_completion,1.0,3,Koto Baru
+1501072014,2,Unclassified,cost_per_unit,1.0,2,Muara Hemat
+1501092010,6,T1_Markup,cost_per_unit,1.0,3,Koto Tuo
+1572012004,9,T1_Markup,activity_category,1.0,3,Pasar Baru
+1572022001,4,T1_Markup,cost_per_unit,1.0,3,Koto Renah
+1572022004,9,T1_Markup,cost_per_unit,1.0,3,Koto Lolo
+1572022010,6,T1_Markup,cost_per_unit,1.0,3,Sungai Liuk
+1572032003,10,Unclassified,activity_category,1.0,3,Maliki Air
+1572032007,5,T7_CrossCatDump,avg_completion,1.0,3,Simpang Tiga Rawang
+1509092002,4,T1_Markup,activity_category,1.0,3,Penapalan
+1509102003,3,Unclassified,activity_category,1.0,3,Bukit Pamuatan
+1509102004,5,T7_CrossCatDump,avg_completion,1.0,3,Napal Putih
+1509112002,3,T1_Markup,activity_category,1.0,3,Balai Rajo
+1509122005,6,T7_CrossCatDump,avg_completion,1.0,3,Tambun Arang
+1501092045,3,T1_Markup,cost_per_unit,1.0,3,Mekar Jaya
+1501112021,3,T7_CrossCatDump,avg_completion,1.0,3,Simpang Empat Sungai Tutung
+1501112024,7,T7_CrossCatDump,avg_completion,1.0,3,Baru Sungaimedang
+1501152005,5,T1_Markup,avg_completion,1.0,3,Jernih Jaya
+1509052009,4,T2_Ghost,avg_completion,1.0,3,Suo-Suo
+1509052010,6,T1_Markup,activity_category,1.0,3,Muara Sekalo
+1509052011,5,T7_CrossCatDump,avg_completion,1.0,3,Semambu
+1509062001,4,T7_CrossCatDump,avg_completion,1.0,3,Tanjung Pucuk Jambi
+1509072002,6,T2_Ghost,avg_completion,1.0,3,Wanareja
+1509072006,5,Unclassified,avg_completion,1.0,3,Suka Maju
+1509032012,4,T7_CrossCatDump,activity_category,1.0,3,Malako Intan
+1509032016,6,T7_CrossCatDump,avg_completion,1.0,3,Pulau Jelmu
+1509042002,3,T1_Markup,activity_category,1.0,3,Perintis
+1509042006,3,T1_Markup,activity_category,1.0,3,Tirta Kencana
+1509042007,6,T7_CrossCatDump,avg_completion,1.0,3,Sapta Mulia
+1509012004,3,T1_Markup,activity_category,1.0,3,Mangun Jayo
+1509012005,3,T1_Markup,avg_completion,1.0,3,Teluk Pandak
+1509012007,4,T1_Markup,avg_completion,1.0,3,Semabu
+1509012012,5,T1_Markup,avg_completion,1.0,3,Sungai Alai
+1509022002,3,T1_Markup,avg_completion,1.0,3,Sungai Aro
+1509032002,3,T1_Markup,activity_category,1.0,3,Sungai Rambai
+1501172011,3,T1_Markup,avg_completion,1.0,3,Simpang Belui
+1501182003,3,T1_Markup,cost_per_unit,1.0,3,Mukai Mudik
+1508152004,5,Unclassified,activity_category,1.0,3,Pulau Kerakap
+1508172001,7,T7_CrossCatDump,avg_completion,1.0,3,Sungai Mancur
+1508172002,6,T1_Markup,activity_category,1.0,3,Tanah Periuk
+1508172004,8,T1_Markup,activity_category,1.0,3,Rantau Embacang
+1508172008,6,T7_CrossCatDump,cost_per_unit,1.0,3,Paku Aji
+1508172009,6,T2_Ghost,swakelola_high_value,1.0,3,Pematang Panjang
+1508112006,7,T2_Ghost,cost_deviation_by_category,1.0,3,Purwo Bakti
+1508122004,14,T2_Ghost,activity_category,1.0,3,Sungai Arang
+1508132003,4,T2_Ghost,avg_completion,1.0,3,Sungai Mengkuang
+1508142005,9,T7_CrossCatDump,cost_per_unit,1.0,3,Timbolasi
+1508152002,10,T7_CrossCatDump,avg_completion,1.0,3,Peninjau
+1501182004,5,T1_Markup,avg_completion,1.0,3,Senimpik
+1501182011,5,T7_CrossCatDump,avg_completion,1.0,3,Mukai Seberang
+1508092002,7,T7_CrossCatDump,avg_completion,1.0,3,Danau
+1508092006,9,Unclassified,activity_category,1.0,3,Lembah Kuamang
+1508092010,4,T1_Markup,cost_per_unit,1.0,3,Maju Jaya
+1508092016,14,T1_Markup,avg_completion,1.0,3,Karya Harapan Mukti
+1508102002,7,T1_Markup,cost_per_unit,1.0,3,Babeko
+1508102004,11,T7_CrossCatDump,avg_completion,1.0,3,Simpang Bebeko
+1508112002,5,T1_Markup,activity_category,1.0,3,Lubuk Benteng
+1508112005,5,T7_CrossCatDump,avg_completion,1.0,3,Air Gemuruh
+1508062015,4,T2_Ghost,avg_completion,1.0,3,Sekampil
+1508072002,9,T2_Ghost,avg_completion,1.0,3,Tuo Lbk. Mengkuang
+1508072006,3,T2_Ghost,activity_category,1.0,3,Muaro Tebo Pandak
+1508072007,4,T1_Markup,activity_category,1.0,3,Rantau Tipu
+1508082005,5,T2_Ghost,cost_deviation_by_category,1.0,3,Bedaro
+1508082007,10,T7_CrossCatDump,activity_category,1.0,3,Datar
+1508082009,5,T1_Markup,avg_completion,1.0,3,Pekan Jum'at
+1501212001,4,T1_Markup,swakelola_high_value,1.0,3,Koto Mebai
+1501212006,5,T7_CrossCatDump,avg_completion,1.0,3,Koto Mudik
+1502012010,4,Unclassified,avg_completion,1.0,3,Koto Renah
+1502022008,5,T7_CrossCatDump,avg_completion,1.0,3,Mudo
+1502032018,3,T2_Ghost,avg_completion,1.0,3,Rantau Panjang
+1508052017,11,T1_Markup,cost_per_unit,1.0,3,Pasar Rantau Embacang
+1508052019,5,T7_CrossCatDump,cost_deviation_by_category,1.0,3,Tenam
+1508062002,6,T1_Markup,activity_category,1.0,3,Dwi Karya Bakti
+1508062009,6,T2_Ghost,avg_completion,1.0,3,Batu Kerbau
+1508042003,7,T7_CrossCatDump,avg_completion,1.0,3,Pulau Jelmu
+1508042004,6,T2_Ghost,avg_completion,1.0,3,Sirih Sekapur
+1508052007,6,T7_CrossCatDump,avg_completion,1.0,3,Sungai Gambir
+1507092002,4,T1_Markup,activity_category,1.0,3,Pematang Rahim
+1507092006,4,T1_Markup,avg_completion,1.0,3,Sungai Beras
+1507112003,4,T1_Markup,avg_completion,1.0,3,Rantau Makmur
+1508012001,2,T7_CrossCatDump,avg_completion,1.0,2,Pedukun
+1508012002,8,T7_CrossCatDump,swakelola_high_value,1.0,3,Lubuk Niur
+1508012003,6,T7_CrossCatDump,avg_completion,1.0,3,Teluk Kecimbung
+1508012009,5,T1_Markup,avg_completion,1.0,3,Perenti Luweh
+1508012015,5,T1_Markup,avg_completion,1.0,3,Renah Jelmu
+1508012016,5,Unclassified,cost_deviation_by_category,1.0,3,Koto Jayo
+1502062007,6,T7_CrossCatDump,cost_deviation_by_category,1.0,3,Rejo Sari
+1502072014,4,T7_CrossCatDump,activity_category,1.0,3,Muaro Seketuk
+1502082003,5,T7_CrossCatDump,avg_completion,1.0,3,Muara Delang
+1506132005,4,T1_Markup,activity_category,1.0,3,Margo Rukun
+1507032015,4,T1_Markup,avg_completion,1.0,3,Sungai Tawar
+1506082002,4,T2_Ghost,avg_completion,1.0,3,Pulaupauh
+1506122002,5,T1_Markup,cost_per_unit,1.0,3,Sungaidualap
+1506042014,4,T2_Ghost,activity_category,1.0,3,Telukkulbi
+1506042016,3,Unclassified,avg_completion,1.0,3,Sungaiterap
+1506062008,4,T1_Markup,avg_completion,1.0,3,Sungaikeruh
+1502112004,4,T2_Ghost,cost_per_unit,1.0,3,Nalo Gedang
+1505102003,3,T1_Markup,avg_completion,1.0,3,Mekar Jaya
+1506012017,3,T1_Markup,activity_category,1.0,3,Brasau
+1505062017,3,T1_Markup,avg_completion,1.0,3,Sumber Jaya
+1505082007,6,T7_CrossCatDump,activity_category,1.0,3,Sungai Gelam
+1505082008,3,T1_Markup,avg_completion,1.0,3,Parit
+1505022006,4,T1_Markup,avg_completion,1.0,3,Kedotan
+1505022015,5,T7_CrossCatDump,avg_completion,1.0,3,Suko Awin Jaya
+1505022016,3,Unclassified,avg_completion,1.0,3,Tunas Mudo
+1505042020,5,T7_CrossCatDump,avg_completion,1.0,3,Lubuk Raman
+1505052015,5,T1_Markup,activity_category,1.0,3,Suka Damai
+1504072009,6,T7_CrossCatDump,avg_completion,1.0,3,Sungkai
+1504082001,8,T1_Markup,avg_completion,1.0,3,Bulian Jaya
+1504082002,3,T1_Markup,avg_completion,1.0,3,Tidar Kuranji
+1505012015,3,T2_Ghost,cost_deviation_by_category,1.0,3,Kedemangan
+1502172004,3,T1_Markup,activity_category,1.0,3,Tiga Alur
+1502172006,3,Unclassified,activity_category,1.0,3,Sungai Jering
+1504062006,3,Unclassified,activity_category,1.0,3,Kembang Seri
+1504062007,5,T1_Markup,avg_completion,1.0,3,Buluh Kasab
+1504062011,6,T1_Markup,swakelola_high_value,1.0,3,Sungai Lingkar
+1504062013,9,T1_Markup,cost_per_unit,1.0,3,Sungai Ruan Ilir
+1504062015,6,T7_CrossCatDump,activity_category,1.0,3,Rawa Mekar
+1504062017,4,Unclassified,cost_per_unit,1.0,3,Kembang Seri Baru
+1504072001,9,T1_Markup,cost_deviation_by_category,1.0,3,Bungku
+1504072002,6,T1_Markup,activity_category,1.0,3,Pompa Air
+1504072003,7,T1_Markup,activity_category,1.0,3,Ladang Peris
+1504072005,6,T1_Markup,activity_category,1.0,3,Penerokan
+1504072006,4,T1_Markup,activity_category,1.0,3,Petajen
+1504052004,4,T1_Markup,avg_completion,1.0,3,Lubuk Ruso
+1504052008,5,T1_Markup,avg_completion,1.0,3,Ture
+1504052009,4,Unclassified,activity_category,1.0,3,Pulau Betung
+1504052012,4,T1_Markup,avg_completion,1.0,3,Teluk
+1504052017,4,Unclassified,avg_completion,1.0,3,Olak Rambahan
+1504062001,8,Unclassified,activity_category,1.0,3,Batu Sawar
+1504062003,4,Unclassified,avg_completion,1.0,3,Teluk Leban
+1502192003,5,T7_CrossCatDump,activity_category,1.0,3,Rasau
+1502212001,7,T1_Markup,cost_per_unit,1.0,3,Tanjung Rejo
+1502212003,3,T2_Ghost,activity_category,1.0,3,Suko Rejo
+1504032017,5,T7_CrossCatDump,avg_completion,1.0,3,Singkawang
+1504032018,5,Unclassified,avg_completion,1.0,3,Tenam
+1504032020,4,T1_Markup,activity_category,1.0,3,Kilangan
+1504042001,5,Unclassified,cost_per_unit,1.0,3,Jelutih
+1504042005,5,T1_Markup,activity_category,1.0,3,Paku Aji
+1504042015,4,Unclassified,avg_completion,1.0,3,Bulian Baru
+1504042017,5,T1_Markup,cost_per_unit,1.0,3,Simpang Aur Gading
+1504052003,9,T7_CrossCatDump,activity_category,1.0,3,Serasah
+1503012016,3,T1_Markup,activity_category,1.0,3,Muara Cuban
+1503022007,3,T1_Markup,cost_deviation_by_category,1.0,3,Ranggo
+1504022007,4,T1_Markup,activity_category,1.0,3,Rantau Kapas Tuo
+1504022008,5,T7_CrossCatDump,activity_category,1.0,3,Sungai Pulai
+1504022013,6,T1_Markup,swakelola_high_value,1.0,3,Pelayangan
+1504022015,5,T1_Markup,activity_category,1.0,3,Pematang Lima Suku
+1504032006,6,T1_Markup,activity_category,1.0,3,Pasar Terusan
+1504032011,7,Unclassified,cost_deviation_by_category,1.0,3,Olak
+1504032012,5,T1_Markup,activity_category,1.0,3,Muaro Singoan
+1504032014,4,T1_Markup,avg_completion,1.0,3,Rantau Puri
+1504012005,5,T2_Ghost,avg_completion,1.0,3,Kembang Tanjung
+1504012007,3,Unclassified,activity_category,1.0,3,Benteng Rendah
+1504012009,7,Unclassified,activity_category,1.0,3,Rantau Gedang
+1504012010,7,T1_Markup,activity_category,1.0,3,Pematang Gadung
+1503072005,4,T2_Ghost,avg_completion,1.0,3,Lubuk Kepayang
+1503082007,3,T1_Markup,avg_completion,1.0,3,Pulaumelako
+1503082008,4,T7_CrossCatDump,activity_category,1.0,3,Batu Penyabung
+1503082010,3,T2_Ghost,activity_category,1.0,2,Pulaubuayo
+1503082015,3,T1_Markup,cost_deviation_by_category,1.0,3,Teluk Mancur
+1503092003,4,T2_Ghost,activity_category,1.0,3,Sungaigedang
+1503022022,3,T1_Markup,activity_category,1.0,3,Muara Limun
+1503042008,3,T7_CrossCatDump,activity_category,1.0,3,Pangkal Bulian
+1503052007,3,T1_Markup,avg_completion,1.0,3,Muara Danau
+1503062013,5,Unclassified,cost_per_unit,1.0,3,Bukitperanginan
+-1,80,T7_CrossCatDump,avg_completion,1.0,3,
+1501042029,3,Unclassified,avg_completion,1.0,3,Hiang Lestari
+1501042031,3,Unclassified,avg_completion,1.0,3,Hiang Sakti
+1501052036,6,T7_CrossCatDump,avg_completion,1.0,3,Sawahan Koto Majidin
+1572032010,9,T1_Markup,activity_category,1.0,3,Paling Serumpun
+1572042003,6,T1_Markup,cost_deviation_by_category,1.0,3,Koto Pudung
+1572052007,4,T1_Markup,cost_per_unit,0.6667,2,Renah Kayu Embun
+1501062019,2,Unclassified,avg_completion,0.6667,2,Siulak Tenang
+1501062039,3,Unclassified,activity_category,0.6667,2,Sungai Batu Gantih Hilir
+1501062040,2,T1_Markup,avg_completion,0.6667,2,Baru Sungai Betung Mudik
+1501062043,3,T7_CrossCatDump,cost_per_unit,0.6667,2,Ujung Ladang
+1501072006,2,Unclassified,activity_category,0.6667,2,Lubuk Paku
+1501072007,3,T7_CrossCatDump,cost_deviation_by_category,0.6667,2,Tamiai
+1501072008,2,Unclassified,cost_per_unit,0.6667,2,Pematang Lingkung
+1501072009,2,T1_Markup,activity_category,0.6667,2,Pasar Tamiai
+1501082003,4,T7_CrossCatDump,cost_per_unit,0.6667,2,Keluru
+1501082006,2,T1_Markup,activity_category,0.6667,2,Benik
+1509122008,2,T1_Markup,activity_category,0.6667,2,Olak Kemang
+1572012006,7,T2_Ghost,avg_completion,0.6667,2,Gedang
+1572012014,7,T1_Markup,avg_completion,0.6667,2,Amar Sakti
+1572022002,3,T1_Markup,cost_per_unit,0.6667,2,Koto Keras
+1572022005,4,T7_CrossCatDump,cost_per_unit,0.6667,2,Koto Tengah
+1572022008,5,T1_Markup,avg_completion,0.6667,2,Koto Duo
+1503062009,2,T1_Markup,avg_completion,0.6667,2,Kertopati
+1503062012,3,T1_Markup,avg_completion,0.6667,2,Simpang Kertopati
+1503062020,2,T1_Markup,avg_completion,0.6667,2,Gurun Baru
+1503062022,3,Unclassified,avg_completion,0.6667,2,Mandiangin Pasar
+1503072001,2,T2_Ghost,activity_category,0.6667,2,Lubuk Jering
+1503072002,2,T2_Ghost,avg_completion,0.6667,2,Jernih
+1503072003,4,T2_Ghost,avg_completion,0.6667,2,Desa Baru
+1501012013,3,T1_Markup,cost_per_unit,0.6667,2,Dusun Baru Lempur
+1501012018,2,Unclassified,activity_category,0.6667,2,Manjunto Lempur
+1501022002,3,T1_Markup,activity_category,0.6667,2,Kota Baru Sanggaran Agung
+1501022008,4,T7_CrossCatDump,avg_completion,0.6667,2,Koto Tengah
+1501042010,3,T1_Markup,swakelola_high_value,0.6667,2,Tanjungmudo
+1501042013,2,T1_Markup,avg_completion,0.6667,2,Koto Baru Hiang
+1501042014,2,Unclassified,cost_per_unit,0.6667,2,Betung Kuning
+1501042026,2,Unclassified,activity_category,0.6667,2,Ambai Bawah
+1501042030,2,T1_Markup,avg_completion,0.6667,2,Angkasa Pura
+1503032014,2,T2_Ghost,swakelola_high_value,0.6667,2,Ladang Panjang
+1503032024,2,T1_Markup,avg_completion,0.6667,2,Baru
+1503032027,4,T1_Markup,avg_completion,0.6667,2,Ujung Tanjung
+1503042001,2,T7_CrossCatDump,avg_completion,0.6667,2,Pangidaran
+1503042003,2,T1_Markup,activity_category,0.6667,2,Batu Ampar
+1503042007,2,T1_Markup,activity_category,0.6667,2,Kasang Melintang
+1503042009,3,T1_Markup,activity_category,0.6667,2,Lubuk Napal
+1503052002,3,T1_Markup,activity_category,0.6667,2,Pelawan
+1503052006,5,Unclassified,avg_completion,0.6667,2,Rantanu Tenang
+1503052016,3,T1_Markup,swakelola_high_value,0.6667,2,Pematang Kulim
+1503052017,3,T7_CrossCatDump,activity_category,0.6667,2,Batu Putih
+1503052019,3,T1_Markup,activity_category,0.6667,2,Mekarsari
+1503052021,2,T1_Markup,avg_completion,0.6667,2,Pasar Pelawan
+1503052022,3,T2_Ghost,activity_category,0.6667,2,Pelawan Jaya
+1503062001,3,T1_Markup,activity_category,0.6667,2,Mandiangin
+1503062003,2,T7_CrossCatDump,activity_category,0.6667,2,Pemusiran
+1504022003,3,T2_Ghost,avg_completion,0.6667,2,Jebak
+1503072006,2,Unclassified,cost_per_unit,0.6667,2,Pematang Kabau
+1503072007,2,T1_Markup,activity_category,0.6667,2,Bukit Suban
+1503072008,4,T2_Ghost,cost_per_unit,0.6667,2,Mentawak Baru
+1503072009,3,Unclassified,cost_per_unit,0.6667,2,Mentawak Ulu
+1503082003,3,T1_Markup,avg_completion,0.6667,2,Pulau Lintang
+1503082009,4,T7_CrossCatDump,swakelola_high_value,0.6667,2,Tanjunggagak
+1503082012,2,T2_Ghost,avg_completion,0.6667,2,Dusun Dalam
+1503082014,3,T1_Markup,avg_completion,0.6667,2,Suka Jadi
+1503092002,2,T1_Markup,activity_category,0.6667,2,Bukittigo
+1503092006,2,Unclassified,cost_deviation_by_category,0.6667,2,Perdamaian
+1503022018,2,T1_Markup,activity_category,0.6667,2,Demang
+1503022021,2,T1_Markup,avg_completion,0.6667,2,Temalang
+1503032003,3,T7_CrossCatDump,activity_category,0.6667,2,Sungai Baung
+1503032004,2,T1_Markup,activity_category,0.6667,2,Panti
+1503032013,3,T1_Markup,activity_category,0.6667,2,Lidung
+1504022010,3,T1_Markup,avg_completion,0.6667,2,Tanjung Marwo
+1504032008,4,Unclassified,avg_completion,0.6667,2,Malapari
+1504032009,3,T2_Ghost,cost_per_unit,0.6667,2,Napal Sisik
+1504032010,4,T1_Markup,activity_category,0.6667,2,Rambahan
+1504032015,2,T2_Ghost,activity_category,0.6667,2,Sungai Baung
+1503092007,3,T1_Markup,activity_category,0.6667,2,Pasar Singkut
+1503092012,4,T1_Markup,avg_completion,0.6667,2,Argo Sari
+1503102001,3,T1_Markup,avg_completion,0.6667,2,Kampung Tujuh
+1503102006,2,T1_Markup,activity_category,0.6667,2,Pemuncak
+1503102009,2,T7_CrossCatDump,avg_completion,0.6667,2,Sungaikeramat
+1504012002,3,T2_Ghost,avg_completion,0.6667,2,Sengkati Kecil
+1504012003,4,T1_Markup,cost_per_unit,0.6667,2,Sengkati Gedang
+1504012008,2,Unclassified,avg_completion,0.6667,2,Sungai Puar
+1504012011,5,Unclassified,swakelola_high_value,0.6667,2,Teluk Melintang
+1504012012,3,T1_Markup,avg_completion,0.6667,2,Bukit Harapan
+1504012017,3,Unclassified,cost_deviation_by_category,0.6667,2,Tanjung Putra
+1502232012,2,T1_Markup,cost_deviation_by_category,0.6667,2,Baru Kibul
+1502232014,2,T2_Ghost,avg_completion,0.6667,2,Air Liki Baru
+1502242001,2,Unclassified,cost_deviation_by_category,0.6667,2,Sekancing
+1502242003,3,T1_Markup,activity_category,0.6667,2,Beringin Sanggul
+1502242004,4,T1_Markup,activity_category,0.6667,2,Baru Bukit Punjung
+1502242005,2,Unclassified,avg_completion,0.6667,2,Rantau Limau Kapas
+1502242006,2,Unclassified,avg_completion,0.6667,2,Baru Sungai Sakai
+1503012002,3,T1_Markup,avg_completion,0.6667,2,Sungai Keradak
+1503012003,2,Unclassified,avg_completion,0.6667,2,Muaro Air Dua
+1503012017,2,T1_Markup,avg_completion,0.6667,2,Sungai Baung
+1503012020,3,T1_Markup,activity_category,0.6667,2,Kasiro Hilir
+1503022008,2,T1_Markup,activity_category,0.6667,2,Panca Karya
+1503022016,3,Unclassified,cost_per_unit,0.6667,2,Moenti
+1504022004,5,T1_Markup,activity_category,0.6667,2,Ampelu
+1504022005,4,T1_Markup,cost_per_unit,0.6667,2,Rambutan Masam
+1504022006,3,T7_CrossCatDump,activity_category,0.6667,2,Rantau Kapas Mudo
+1502202001,3,T2_Ghost,avg_completion,0.6667,2,Tambang Emas
+1502212004,4,T7_CrossCatDump,activity_category,0.6667,2,Sido Rukun
+1502222001,3,Unclassified,swakelola_high_value,0.6667,2,Tambang Baru
+1502222003,3,Unclassified,activity_category,0.6667,2,Mensango
+1502222004,4,T7_CrossCatDump,avg_completion,0.6667,2,Koto Baru
+1502222005,3,T2_Ghost,cost_per_unit,0.6667,2,Sido Harjo
+1502232002,2,Unclassified,avg_completion,0.6667,2,Tanjung Putus
+1504032016,5,T1_Markup,cost_deviation_by_category,0.6667,2,Bajubang Laut
+1504042004,3,Unclassified,avg_completion,0.6667,2,Aur Gading
+1504042006,3,Unclassified,cost_deviation_by_category,0.6667,2,Hajran
+1504042008,2,Unclassified,cost_per_unit,0.6667,2,Jangga
+1504042009,5,Unclassified,cost_deviation_by_category,0.6667,2,Koto Boyo
+1504042010,3,T1_Markup,cost_per_unit,0.6667,2,Simpang Karmeo
+1504042016,2,T1_Markup,avg_completion,0.6667,2,Simpang Jelutih
+1504052001,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Tebing Tinggi
+1502232005,2,T1_Markup,activity_category,0.6667,2,Sungai Tabir
+1504062016,2,T1_Markup,activity_category,0.6667,2,Mekar Sari
+1504052005,3,Unclassified,activity_category,0.6667,2,Kuap
+1504052007,5,T1_Markup,cost_per_unit,0.6667,2,Kubu Kandang
+1504052010,2,Unclassified,activity_category,0.6667,2,Lopak Aur
+1504052013,2,T1_Markup,activity_category,0.6667,2,Pulau Raman
+1504052019,5,Unclassified,activity_category,0.6667,2,Teluk Ketapang
+1504052020,2,Unclassified,avg_completion,0.6667,2,Kampung Pulau
+1504062002,5,T1_Markup,avg_completion,0.6667,2,Peninjauan
+1504062004,6,T1_Markup,cost_deviation_by_category,0.6667,2,Kampung Baru
+1504062005,2,T1_Markup,cost_deviation_by_category,0.6667,2,Rengas IX
+1502172008,2,T2_Ghost,avg_completion,0.6667,2,Tanjung Mudo
+1502182004,2,T7_CrossCatDump,avg_completion,0.6667,2,Talang Tembago
+1502182005,2,T1_Markup,avg_completion,0.6667,2,Beringin Tinggi
+1502182007,3,T7_CrossCatDump,cost_per_unit,0.6667,2,Rantau Suli
+1502192002,3,T1_Markup,activity_category,0.6667,2,Bukit Bungkul
+1502192004,2,T2_Ghost,avg_completion,0.6667,2,Lantak Seribu
+1502132002,2,T1_Markup,avg_completion,0.6667,2,Limbur Merangin
+1502132003,3,Unclassified,activity_category,0.6667,2,Karang Anyar
+1502132004,2,T7_CrossCatDump,avg_completion,0.6667,2,Pinang Merah
+1502132008,2,T2_Ghost,avg_completion,0.6667,2,PulauTujuh
+1502152003,4,T7_CrossCatDump,avg_completion,0.6667,2,Sri Sembilan
+1502162003,2,T1_Markup,activity_category,0.6667,2,Durian Batakuk
+1502162004,2,Unclassified,avg_completion,0.6667,2,Muara Bantan
+1502162010,3,Unclassified,activity_category,0.6667,2,Renah Medan
+1502162012,3,Unclassified,avg_completion,0.6667,2,Muaro Panco Timur
+1502172001,2,T1_Markup,activity_category,0.6667,2,Baru Pangkalan Jambu
+1502172002,2,T1_Markup,cost_deviation_by_category,0.6667,2,Bukit Perentak
+1502172005,2,T1_Markup,activity_category,0.6667,2,Bungo Tanjung
+1504062008,2,T1_Markup,avg_completion,0.6667,2,Tebing Tinggi
+1504062009,4,T1_Markup,swakelola_high_value,0.6667,2,Olak Kemang
+1504062010,4,T1_Markup,avg_completion,0.6667,2,Padang Kelapo
+1504062012,2,T2_Ghost,activity_category,0.6667,2,Sungai Ruan Ulu
+1505062005,3,Unclassified,avg_completion,0.6667,2,Kasang Pudak
+1505062010,2,Unclassified,avg_completion,0.6667,2,Lopak Alai
+1504072007,5,Unclassified,cost_per_unit,0.6667,2,Batin
+1504072008,3,T1_Markup,avg_completion,0.6667,2,Mekar Jaya
+1504072010,2,T7_CrossCatDump,avg_completion,0.6667,2,Mekar Sari Nes
+1504082003,3,T1_Markup,activity_category,0.6667,2,Kehidupan Baru
+1504082004,4,T1_Markup,avg_completion,0.6667,2,Bukit Sari
+1504082006,6,T1_Markup,avg_completion,0.6667,2,Terusan
+1504082007,3,T2_Ghost,activity_category,0.6667,2,Danau Embat
+1505012007,2,T1_Markup,activity_category,0.6667,2,Mendalo Darat
+1505012008,2,Unclassified,avg_completion,0.6667,2,Rengas Bandung
+1505012021,2,T1_Markup,activity_category,0.6667,2,Mendalo Indah
+1505022003,6,T1_Markup,avg_completion,0.6667,2,Pulau Kayu Aro
+1505022005,5,T2_Ghost,avg_completion,0.6667,2,Tan Tan
+1502122009,2,T1_Markup,activity_category,0.6667,2,Pelangki
+1502132001,2,T1_Markup,cost_per_unit,0.6667,2,Tanjung Lamin
+1505072025,3,T1_Markup,activity_category,0.6667,2,Mekar Sari Makmur
+1505072034,2,Unclassified,activity_category,0.6667,2,Panca Bakti
+1505082003,3,T7_CrossCatDump,cost_per_unit,0.6667,2,Talang Kerinci
+1505082005,2,T1_Markup,activity_category,0.6667,2,Tangkit
+1505082009,4,T1_Markup,activity_category,0.6667,2,Petaling Jaya
+1505082010,2,T7_CrossCatDump,cost_per_unit,0.6667,2,Sumber Agung
+1505082013,5,T2_Ghost,avg_completion,0.6667,2,Mekar Jaya
+1505022007,3,Unclassified,activity_category,0.6667,2,Keranggan
+1505022009,3,T1_Markup,cost_per_unit,0.6667,2,Sekernan
+1505032001,2,Unclassified,activity_category,0.6667,2,Puding
+1505032017,3,T1_Markup,activity_category,0.6667,2,Mekar Sari
+1505042004,2,T1_Markup,cost_deviation_by_category,0.6667,2,Jambi Tulo
+1505042006,2,T1_Markup,cost_deviation_by_category,0.6667,2,Danau Lamo
+1505042017,2,T1_Markup,activity_category,0.6667,2,Bakung
+1505042018,3,T1_Markup,avg_completion,0.6667,2,Danau Kedap
+1505052011,2,T1_Markup,avg_completion,0.6667,2,Tanjung Pauh Km. 39
+1505102004,3,T7_CrossCatDump,activity_category,0.6667,2,Ujung Tanjung
+1505102006,5,T7_CrossCatDump,avg_completion,0.6667,2,Tanjung Mulia
+1505102008,2,T1_Markup,cost_deviation_by_category,0.6667,2,Bukit Jaya
+1505102010,3,T1_Markup,activity_category,0.6667,2,Tanjung Lebar
+1505112002,2,T1_Markup,avg_completion,0.6667,2,Talang Duku
+1505112007,4,T1_Markup,cost_per_unit,0.6667,2,Sekumbung
+1506012004,2,Unclassified,avg_completion,0.6667,2,Pematang Pauh
+1506012019,2,Unclassified,avg_completion,0.6667,2,Gemuruh
+1506032018,2,Unclassified,avg_completion,0.6667,2,Karya Maju
+1506042008,2,Unclassified,avg_completion,0.6667,2,Makmur Jaya
+1505062013,3,T1_Markup,cost_per_unit,0.6667,2,Teluk Raya
+1505062024,2,Unclassified,avg_completion,0.6667,2,Kasang Kota Karang
+1505072007,2,T7_CrossCatDump,cost_per_unit,0.6667,2,Marga Manunggal Jaya
+1505072012,2,T1_Markup,avg_completion,0.6667,2,Tanjung Harapan
+1505072013,2,Unclassified,activity_category,0.6667,2,Berkah
+1505072021,3,T7_CrossCatDump,avg_completion,0.6667,2,Bukit Mas
+1502092008,2,T2_Ghost,activity_category,0.6667,2,Tanjung Dalam
+1502102001,4,T7_CrossCatDump,avg_completion,0.6667,2,Pulau Rengas
+1502102002,2,Unclassified,avg_completion,0.6667,2,Biuku Tanjung
+1502102004,2,T1_Markup,avg_completion,0.6667,2,Sungai Putih
+1502102005,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Bukit Beringin
+1502102006,3,T1_Markup,swakelola_high_value,0.6667,2,Pulau Rengas Ulu
+1502112003,3,T2_Ghost,avg_completion,0.6667,2,Telun
+1502112007,3,Unclassified,avg_completion,0.6667,2,Danau
+1502122003,3,T2_Ghost,avg_completion,0.6667,2,Pulau Baru
+1502122004,2,T2_Ghost,avg_completion,0.6667,2,Nibung
+1502122005,3,Unclassified,avg_completion,0.6667,2,Titian Teras
+1502122007,2,T7_CrossCatDump,avg_completion,0.6667,2,Rantau Alai
+1505092002,6,T1_Markup,avg_completion,0.6667,2,Talang Datar
+1505092006,2,T1_Markup,cost_deviation_by_category,0.6667,2,Bukit Mulya
+1505092008,2,T7_CrossCatDump,avg_completion,0.6667,2,Pinang Tinggi
+1505102002,2,Unclassified,activity_category,0.6667,2,Tri Jaya
+1506042009,2,Unclassified,avg_completion,0.6667,2,Serdang Jaya
+1506042010,4,Unclassified,cost_per_unit,0.6667,2,Terjun Gajah
+1506042015,3,T1_Markup,activity_category,0.6667,2,Bunga Tanjung
+1506042017,2,T1_Markup,avg_completion,0.6667,2,Mandala Jaya
+1506052006,3,T1_Markup,avg_completion,0.6667,2,Lubuk Terap
+1506052012,2,Unclassified,avg_completion,0.6667,2,Tanjungbenanak
+1506052013,3,T1_Markup,avg_completion,0.6667,2,Bukitharapan
+1506052014,3,T2_Ghost,avg_completion,0.6667,2,Adi Purwa
+1506052018,2,T7_CrossCatDump,avg_completion,0.6667,2,Pinang Gading
+1506052020,2,T1_Markup,activity_category,0.6667,2,Merlung
+1506062003,5,T1_Markup,activity_category,0.6667,2,Suka Damai
+1506062005,3,T1_Markup,avg_completion,0.6667,2,Kelagian
+1506062007,4,T1_Markup,avg_completion,0.6667,2,Talang Makmur
+1502082007,3,Unclassified,avg_completion,0.6667,2,Gading Jaya
+1502092005,3,T1_Markup,avg_completion,0.6667,2,Rancan
+1502092007,2,T1_Markup,activity_category,0.6667,2,Rantau Jering
+1507052009,2,T1_Markup,cost_deviation_by_category,0.6667,2,Labuhan Pering
+1507062004,3,T7_CrossCatDump,activity_category,0.6667,2,Kota Kandis Dendang
+1506072002,3,T1_Markup,avg_completion,0.6667,2,Sri Agung
+1506072003,4,T1_Markup,cost_per_unit,0.6667,2,Suban
+1506072004,2,T1_Markup,cost_per_unit,0.6667,2,Tanjungbojo
+1506072005,3,T7_CrossCatDump,activity_category,0.6667,2,Kampung Baru
+1506072008,3,Unclassified,cost_per_unit,0.6667,2,Sungaipenoban
+1506072009,3,T7_CrossCatDump,avg_completion,0.6667,2,Rawangkempas
+1506082010,2,T1_Markup,avg_completion,0.6667,2,Bukitbakar
+1506092002,4,T7_CrossCatDump,avg_completion,0.6667,2,Dusun Mudo
+1506092004,3,T1_Markup,activity_category,0.6667,2,Bukit Indah
+1506092005,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Kemang Manis
+1506112004,2,T2_Ghost,avg_completion,0.6667,2,Pembengis
+1506112005,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Bram Itam Raya
+1506112007,3,T7_CrossCatDump,avg_completion,0.6667,2,Jati Emas
+1506122007,2,T1_Markup,avg_completion,0.6667,2,Sungaigebar Barat
+1502062027,5,Unclassified,cost_per_unit,0.6667,2,Pelakar Jaya
+1502072009,6,T7_CrossCatDump,cost_per_unit,0.6667,2,Muara Jernih
+1502082001,2,T2_Ghost,activity_category,0.6667,2,Sungai Sahut
+1502082004,2,T1_Markup,cost_deviation_by_category,0.6667,2,Sinar Gading
+1506122010,3,T1_Markup,activity_category,0.6667,2,Suak Labu
+1506132006,2,T2_Ghost,avg_completion,0.6667,2,Kempas Jaya
+1506132009,2,T2_Ghost,activity_category,0.6667,2,Sungsang
+1507012002,2,Unclassified,avg_completion,0.6667,2,Lambur
+1507012004,3,Unclassified,avg_completion,0.6667,2,Simbur Naik
+1507012011,3,Unclassified,avg_completion,0.6667,2,Lambur I
+1507032016,2,T1_Markup,avg_completion,0.6667,2,Bakti Idaman
+1507042008,3,T2_Ghost,activity_category,0.6667,2,Bangun Karya
+1507042009,2,Unclassified,avg_completion,0.6667,2,Rantau Jaya
+1507052001,2,T2_Ghost,avg_completion,0.6667,2,Sungai Sayang
+1507052003,2,T1_Markup,avg_completion,0.6667,2,Sungai Jambat
+1507052008,2,T1_Markup,activity_category,0.6667,2,Remau Baku Tuo
+1507062005,3,T1_Markup,activity_category,0.6667,2,Koto Kandis
+1507062007,3,T1_Markup,activity_category,0.6667,2,Sido Mukti
+1507082003,4,Unclassified,swakelola_high_value,0.6667,2,Teluk Majelis
+1507092003,3,T2_Ghost,activity_category,0.6667,2,Sungai Toman
+1507102006,2,T1_Markup,avg_completion,0.6667,2,Suka Maju
+1507112004,4,T1_Markup,activity_category,0.6667,2,Sungai Rambut
+1508012004,5,T1_Markup,avg_completion,0.6667,2,Tanah Tumbuh
+1502052015,3,T1_Markup,avg_completion,0.6667,2,Seling
+1502062005,3,T7_CrossCatDump,cost_per_unit,0.6667,2,Tanjung Gedang
+1502062006,5,Unclassified,avg_completion,0.6667,2,Empang Benao
+1502062009,3,Unclassified,avg_completion,0.6667,2,Keroya
+1502062011,3,T1_Markup,cost_per_unit,0.6667,2,Karang Berahi
+1502062013,3,T2_Ghost,avg_completion,0.6667,2,Pematang Kancil
+1502062014,3,Unclassified,activity_category,0.6667,2,Tanah Abang
+1502062015,3,Unclassified,swakelola_high_value,0.6667,2,Sialang
+1502062026,4,T7_CrossCatDump,cost_per_unit,0.6667,2,Sungai Udang
+1508062010,3,T1_Markup,avg_completion,0.6667,2,Gapura Suci
+1508062011,2,T1_Markup,activity_category,0.6667,2,Mulya Bakti
+1508062012,3,T1_Markup,activity_category,0.6667,2,Mulya Jaya
+1508022001,8,T1_Markup,swakelola_high_value,0.6667,2,Rantau Duku
+1508022002,2,T1_Markup,avg_completion,0.6667,2,Talang Sungai Bungo
+1508022003,3,T2_Ghost,cost_per_unit,0.6667,2,Rantau Pandan
+1508022005,4,Unclassified,swakelola_high_value,0.6667,2,Lubuk Kayu Aro
+1508022015,4,T7_CrossCatDump,avg_completion,0.6667,2,Lubuk Mayan
+1508042001,2,Unclassified,avg_completion,0.6667,2,Tanjung Belit
+1508042002,2,Unclassified,avg_completion,0.6667,2,Rantau Ikil
+1508042005,5,T1_Markup,avg_completion,0.6667,2,Ujung Tanjung
+1508042009,3,T1_Markup,avg_completion,0.6667,2,Rantau Panjang
+1508042013,3,Unclassified,avg_completion,0.6667,2,Talang Pamesun
+1508042014,4,T1_Markup,avg_completion,0.6667,2,Baru Balai Panjang
+1508052009,9,T1_Markup,avg_completion,0.6667,2,Candi
+1508052010,4,T2_Ghost,cost_per_unit,0.6667,2,Tanjung
+1502022004,4,T2_Ghost,avg_completion,0.6667,2,Kungkai
+1502022012,2,T1_Markup,activity_category,0.6667,2,Langling
+1502032009,2,Unclassified,avg_completion,0.6667,2,Rantau Macang
+1502032017,3,T1_Markup,cost_per_unit,0.6667,2,Rantau Bidaro
+1502032024,2,Unclassified,cost_deviation_by_category,0.6667,2,Pasar Muara Siau
+1502042015,2,T2_Ghost,activity_category,0.6667,2,Bukit Batu
+1502042026,3,T7_CrossCatDump,activity_category,0.6667,2,Gelanggang
+1508052012,2,T1_Markup,cost_per_unit,0.6667,2,Tanah Bekali
+1508052015,3,T7_CrossCatDump,activity_category,0.6667,2,Telentam
+1508062001,3,T1_Markup,avg_completion,0.6667,2,Baru Pelepat
+1508062003,2,T2_Ghost,avg_completion,0.6667,2,Rantau Keloyang
+1508062004,2,T5_ProcureIrr,avg_completion,0.6667,2,Balai Jaya
+1508062005,4,Unclassified,cost_per_unit,0.6667,2,Rantel
+1508062006,2,Unclassified,avg_completion,0.6667,2,Senamat
+1508062007,4,Unclassified,activity_category,0.6667,2,Sungai Beringin
+1508062008,5,T7_CrossCatDump,avg_completion,0.6667,2,Sungai Gurun
+1508092014,3,Unclassified,cost_per_unit,0.6667,2,Kuning gading
+1508092015,2,T1_Markup,cost_per_unit,0.6667,2,Kuamang Jaya
+1508102001,4,T1_Markup,avg_completion,0.6667,2,Tanjung Menanti
+1508072001,4,T2_Ghost,activity_category,0.6667,2,Tanjung Bungo
+1508072003,2,T5_ProcureIrr,cost_per_unit,0.6667,2,Pauh Agung
+1508072004,7,T7_CrossCatDump,activity_category,0.6667,2,Tuo Limbur
+1508072005,2,T2_Ghost,activity_category,0.6667,2,Renah Sungai Besar
+1508072009,2,T7_CrossCatDump,activity_category,0.6667,2,Lbk. Tanah Terban
+1508072010,3,T1_Markup,avg_completion,0.6667,2,Pemunyian
+1508072013,2,T1_Markup,avg_completion,0.6667,2,Sekar Mengkuang
+1508082004,5,T1_Markup,avg_completion,0.6667,2,Baru Pusat Jalo
+1508082006,4,Unclassified,avg_completion,0.6667,2,Tebing Tinggi
+1501212010,2,T1_Markup,activity_category,0.6667,2,Koto Cayo
+1501212012,5,T1_Markup,activity_category,0.6667,2,Air Bersih
+1502012011,3,T2_Ghost,activity_category,0.6667,2,Muara Madras
+1502012024,3,Unclassified,activity_category,0.6667,2,Koto Rawang
+1501182014,3,T7_CrossCatDump,activity_category,0.6667,2,Koto Lua
+1501192003,2,T2_Ghost,cost_per_unit,0.6667,2,Bedeng Delapan
+1501192012,2,T7_CrossCatDump,cost_per_unit,0.6667,2,Gununglabu
+1501192013,2,T1_Markup,activity_category,0.6667,2,Bento
+1501202002,3,T7_CrossCatDump,avg_completion,0.6667,2,Lolo Gedang
+1501202003,6,T7_CrossCatDump,cost_per_unit,0.6667,2,Lolo Kecil
+1501202005,2,T2_Ghost,avg_completion,0.6667,2,Tanjung Syam
+1501202008,2,T1_Markup,avg_completion,0.6667,2,Muak
+1501202009,2,T1_Markup,activity_category,0.6667,2,Pengasi Lama
+1501202010,2,T2_Ghost,avg_completion,0.6667,2,Pulaupandan
+1501202011,2,T2_Ghost,cost_per_unit,0.6667,2,Pulausangkar
+1508092001,3,T2_Ghost,avg_completion,0.6667,2,Koto Jayo
+1508092008,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Daya Murni
+1508092009,4,T2_Ghost,activity_category,0.6667,2,Sumber Mulya
+1508092012,5,Unclassified,activity_category,0.6667,2,Lingga Kuamang
+1508092013,7,T2_Ghost,avg_completion,0.6667,2,Bangun Harjo
+1508172010,6,T7_CrossCatDump,cost_per_unit,0.6667,2,Sungai Lilin
+1508172012,3,Unclassified,swakelola_high_value,0.6667,2,Rantau Makmur
+1508112007,4,Unclassified,activity_category,0.6667,2,Sarana Jaya
+1508112008,3,T1_Markup,avg_completion,0.6667,2,Teluk Panjang
+1508122003,5,T2_Ghost,avg_completion,0.6667,2,Talang Pantai
+1508122005,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Pulau Pekan
+1508132004,9,T2_Ghost,avg_completion,0.6667,2,Sungai Buluh
+1508142002,2,T1_Markup,activity_category,0.6667,2,Buat
+1508142004,7,T7_CrossCatDump,cost_per_unit,0.6667,2,Karak Apung
+1508142007,8,T1_Markup,activity_category,0.6667,2,Aur Cino
+1508142008,4,T7_CrossCatDump,avg_completion,0.6667,2,Lubuk Beringin
+1508142009,3,T1_Markup,cost_per_unit,0.6667,2,Sungai Telang
+1508152003,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Talang Selungko
+1501182007,2,T2_Ghost,avg_completion,0.6667,2,Mukai Pintu
+1501182009,2,T1_Markup,avg_completion,0.6667,2,Pasir Jaya
+1501182012,3,T2_Ghost,avg_completion,0.6667,2,Talang Tinggi
+1501162009,2,T1_Markup,activity_category,0.6667,2,Lubuk Nagodang
+1501162011,2,T1_Markup,cost_per_unit,0.6667,2,Sungailebuh
+1501162025,2,T1_Markup,cost_deviation_by_category,0.6667,2,Koto Tengah
+1501162033,2,T2_Ghost,avg_completion,0.6667,2,Baru Sungaipegeh
+1501162035,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Plak Naneh
+1501162036,2,T7_CrossCatDump,activity_category,0.6667,2,Padang Jantung
+1501172017,3,Unclassified,avg_completion,0.6667,2,Kubang Agung
+1501172019,2,T1_Markup,activity_category,0.6667,2,Koto Simpai Kubang
+1508152005,5,T2_Ghost,swakelola_high_value,0.6667,2,Seberang Jaya
+1508162001,3,T1_Markup,activity_category,0.6667,2,Tepian Danto
+1508162003,3,T1_Markup,cost_per_unit,0.6667,2,Pulau Batu
+1508162004,4,T2_Ghost,activity_category,0.6667,2,Sari Mulya
+1508162006,3,T1_Markup,swakelola_high_value,0.6667,2,Lubuk Tenam
+1508172005,3,T1_Markup,avg_completion,0.6667,2,Tebing Tinggi
+1508172006,3,T7_CrossCatDump,activity_category,0.6667,2,Embacang Gedang
+1508172007,8,T1_Markup,cost_per_unit,0.6667,2,Sungai Puri
+1509012003,4,T7_CrossCatDump,activity_category,0.6667,2,Bedaro Rampak
+1509012010,3,T1_Markup,cost_per_unit,0.6667,2,Sungai Keruh
+1509012011,2,Unclassified,activity_category,0.6667,2,Aburan Batang Tebo
+1509022003,2,T1_Markup,activity_category,0.6667,2,Teluk Rendah Pasar
+1509022005,2,T1_Markup,activity_category,0.6667,2,Teluk Rendah Ilir
+1509022008,4,T1_Markup,avg_completion,0.6667,2,Tuo Ilir
+1509032004,4,T1_Markup,avg_completion,0.6667,2,Teluk Kembang Jambu
+1509032005,5,T1_Markup,avg_completion,0.6667,2,Teluk Kasai Rambahan
+1509032007,5,T1_Markup,activity_category,0.6667,2,Tanjung Aur
+1509032008,2,T1_Markup,activity_category,0.6667,2,Bungo Tanjung
+1501152006,4,T7_CrossCatDump,activity_category,0.6667,2,Bengkolan Duo
+1501152007,4,T7_CrossCatDump,cost_per_unit,0.6667,2,Lubuk Pauh
+1501152010,4,T1_Markup,avg_completion,0.6667,2,Pesisir Bukit
+1501152012,2,T7_CrossCatDump,avg_completion,0.6667,2,Sungaijernih
+1501152013,4,Unclassified,avg_completion,0.6667,2,Pelompek Pasar Baru
+1501162006,3,T7_CrossCatDump,cost_per_unit,0.6667,2,Siulak Kecil Mudik
+1509062013,4,T2_Ghost,avg_completion,0.6667,2,Teluk Lancang
+1509062015,2,T1_Markup,activity_category,0.6667,2,Tabun
+1509072001,2,T2_Ghost,cost_per_unit,0.6667,2,Suka Damai
+1509072004,4,T7_CrossCatDump,cost_per_unit,0.6667,2,Sido Rukun
+1509082003,2,T1_Markup,avg_completion,0.6667,2,Pulung Rejo
+1509032010,2,T2_Ghost,avg_completion,0.6667,2,Lubuk Benteng
+1509032011,3,T2_Ghost,avg_completion,0.6667,2,Teluk Kuali
+1509032017,3,T1_Markup,avg_completion,0.6667,2,Medan Seri Rambahan
+1509032018,2,T1_Markup,avg_completion,0.6667,2,Ulak Banjir Rambahan
+1509032019,3,Unclassified,activity_category,0.6667,2,Teluk Pandan Rambahan
+1509042003,4,Unclassified,activity_category,0.6667,2,Rimbo Mulyo
+1509042005,4,T2_Ghost,activity_category,0.6667,2,Tegal Arum
+1509042008,2,Unclassified,activity_category,0.6667,2,Pematang Sapat
+1509052001,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Teluk Singkawang
+1509052003,3,T1_Markup,activity_category,0.6667,2,Teluk Langkap
+1509052005,2,T2_Ghost,cost_per_unit,0.6667,2,Punti Kalo
+1501092012,2,Unclassified,avg_completion,0.6667,2,Kersik Tuo
+1501092016,3,T7_CrossCatDump,activity_category,0.6667,2,Koto Tengah
+1501092017,2,T1_Markup,cost_per_unit,0.6667,2,Sungaibendung Air
+1501092039,2,T1_Markup,cost_per_unit,0.6667,2,Lindung Jaya
+1501112004,3,T2_Ghost,cost_per_unit,0.6667,2,Sungaiabu
+1501112007,2,Unclassified,activity_category,0.6667,2,Sungaimedang
+1501112014,2,T1_Markup,cost_per_unit,0.6667,2,Kemantan Hilir
+1501112018,2,T1_Markup,cost_deviation_by_category,0.6667,2,Kemantan Agung
+1501112022,2,T2_Ghost,cost_per_unit,0.6667,2,Baru Sungaideras
+1501112025,2,T1_Markup,swakelola_high_value,0.6667,2,Kemantan Raya
+1501152003,3,T7_CrossCatDump,activity_category,0.6667,2,Tangkil
+1509052012,3,T1_Markup,avg_completion,0.6667,2,Pemayungan
+1509062002,3,T1_Markup,avg_completion,0.6667,2,Kuamang
+1509062003,2,T1_Markup,avg_completion,0.6667,2,Teluk Kayu Putih
+1509062004,3,Unclassified,activity_category,0.6667,2,Sungai Abang
+1509062007,2,T1_Markup,avg_completion,0.6667,2,Muara Niro
+1572022015,3,T1_Markup,avg_completion,0.6667,2,Sumur Gedang
+1572032001,9,T1_Markup,activity_category,0.6667,2,Kampung Diilir
+1572032002,2,T1_Markup,cost_per_unit,0.6667,2,Koto Beringin
+1572032005,3,T1_Markup,avg_completion,0.6667,2,Koto Teluk
+1509082004,2,Unclassified,cost_deviation_by_category,0.6667,2,Karang Dadi
+1509082006,2,T1_Markup,avg_completion,0.6667,2,Sumber Agung
+1509082007,3,T2_Ghost,activity_category,0.6667,2,Sarimulya
+1509092003,6,T1_Markup,cost_per_unit,0.6667,2,Mengupeh
+1509092004,2,T7_CrossCatDump,avg_completion,0.6667,2,Rantau Api
+1509102002,3,T1_Markup,activity_category,0.6667,2,Sekutur Jaya
+1509102006,4,T1_Markup,avg_completion,0.6667,2,Pagar Puding Lamo
+1509112003,4,T1_Markup,activity_category,0.6667,2,Cermin Alam
+1509112004,2,T2_Ghost,activity_category,0.6667,2,Sungai Karang
+1509112005,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Paseban
+1509112006,4,T1_Markup,avg_completion,0.6667,2,Pasir Mayang
+1501092011,2,T1_Markup,avg_completion,0.6667,2,Sungaitanduk
+1572052005,3,T1_Markup,cost_per_unit,0.6667,2,Debai
+1572062001,3,T1_Markup,avg_completion,0.6667,2,Sungai Jernih
+1572062002,8,T1_Markup,avg_completion,0.6667,2,Aur Duri
+1572062006,3,T1_Markup,avg_completion,0.6667,2,Karya Bakti
+1572062007,2,T1_Markup,avg_completion,0.6667,2,Koto Lebu
+1572072002,3,T1_Markup,avg_completion,0.6667,2,Koto Limau Manis
+1572072003,4,T1_Markup,cost_per_unit,0.6667,2,Kampung Tengah
+1572072004,4,T1_Markup,cost_per_unit,0.6667,2,Dujung Sakti
+1572072005,3,T1_Markup,activity_category,0.6667,2,Permai Indah
+1572082001,5,T7_CrossCatDump,avg_completion,0.6667,2,Sumur Anyir
+1572082003,3,T2_Ghost,avg_completion,0.6667,2,Talang Lindung
+1501012001,2,T1_Markup,avg_completion,0.6667,2,Selam Paung
+1501052039,2,T1_Markup,activity_category,0.6667,2,Pendung Tengah
+1501062012,2,T1_Markup,cost_deviation_by_category,0.6667,2,Tanjunggenting
+1501062013,3,T1_Markup,activity_category,0.6667,2,Simpang Tutup
+1501062017,2,T1_Markup,cost_deviation_by_category,0.6667,2,Sungaigelampeh
+1501052012,2,Unclassified,avg_completion,0.6667,2,Koto Di  Air
+1501052029,2,T2_Ghost,avg_completion,0.6667,2,Koto Majidin Mudik
+1501052038,2,T2_Ghost,cost_per_unit,0.6667,2,Koto Majidin Di Air
+1572032009,12,T1_Markup,avg_completion,0.6667,2,Dusun Diilir
+1572032012,6,T2_Ghost,activity_category,0.6667,2,Tanjung Muda
+1572032013,8,T2_Ghost,swakelola_high_value,0.6667,2,Cempaka
+1572042001,2,T1_Markup,avg_completion,0.6667,2,Baru Debai
+1572042002,6,T1_Markup,cost_per_unit,0.6667,2,Pendung Hiang
+1572042004,5,T7_CrossCatDump,cost_per_unit,0.6667,2,Koto Dumo
+1572042006,5,T7_CrossCatDump,avg_completion,0.6667,2,Koto Tuo
+1572042008,11,T1_Markup,activity_category,0.6667,2,Koto Tengah
+1572042009,11,T2_Ghost,cost_deviation_by_category,0.6667,2,Tanjung Bunga
+1572042010,2,T1_Markup,cost_per_unit,0.6667,2,Koto Padang
+1572042011,6,Unclassified,avg_completion,0.6667,2,Tanjung Karang
+1572052001,2,T1_Markup,avg_completion,0.6667,2,Kumun Hilir
+1572052004,2,T1_Markup,avg_completion,0.6667,2,Sandaran Galeh
