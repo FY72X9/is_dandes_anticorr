@@ -12,7 +12,7 @@
 
 Indonesia channels approximately Rp 71 trillion annually through its Dana Desa (Village Fund) programme to 75,259 villages across the archipelago [1]. Since the programme's inception under Law No. 6 of 2014, the scale of documented corruption has grown at an alarming rate. By 2024, Indonesian Corruption Watch (ICW) catalogued 591 court verdicts involving village fund misappropriation, implicating 640 defendants and inflicting Rp 598.13 billion in documented state losses [2]. The Komisi Pemberantasan Korupsi (KPK) further identified 851 village fund corruption cases from 2015 onward, in which village heads accounted for over 60% of perpetrators [3].
 
-Despite the volume and scale of this fraud, the dominant response has remained reactive — legal prosecution after the act — rather than proactive detection grounded in data. The government's financial reporting infrastructure, particularly the Sistem Keuangan Desa (Siskeudes/SIMDA Desa) maintained by BPKP, generates granular expenditure absorption records at the activity level: what type of activity, how much was budgeted, how much was realised per disbursement stage, and how procurement was conducted. This data constitutes an underexploited asset for anomaly detection.
+Despite the volume and scale of this fraud, the dominant response has remained reactive — legal prosecution after the act — rather than proactive detection grounded in data. The government's financial reporting infrastructure, particularly the Sistem Keuangan Desa (Siskeudes/SIMDA Desa) maintained by BPKP, generates granular expenditure absorption records at the activity level: what type of activity, how much was budgeted, how much was realised per disbursement stage, and how procurement was conducted. Machine learning studies on Indonesian public financial data have yet to apply this granular, activity-level structure to anomaly detection [13, 14] — existing work either addresses aggregate national procurement indicators [14] or supervises classification on categorical village fund outputs [13], leaving systematic screening of Siskeudes activity records unaddressed in the fraud detection literature [12, 16].
 
 Existing research on village fund corruption concentrates on legal-forensic analysis [4], governance accountability frameworks [5], or fraud triangle diagnostics [6]. Where machine learning enters the picture, it predominantly applies supervised classification — an approach that presupposes labelled ground truth, a luxury unavailable in real-time monitoring contexts. The present research addresses this gap directly: it proposes an unsupervised learning pipeline to detect expenditure anomalies from Jambi provincial data, interpretable through established corruption modus operandi derived from judicial and institutional records [7, 8].
 
@@ -67,7 +67,7 @@ Isolation Forest (Liu et al., 2008) constructs an ensemble of random trees that 
 
 1. **No distributional assumption**: Village fund expenditure data violates normality — `cost_per_unit` distributions are right-skewed, `stage_variance` is zero-inflated, and `Cara_Pengadaan` is categorical. Isolation Forest makes no distributional assumptions, circumventing these challenges that invalidate parametric distance methods.
 
-2. **Confirmed for government spending**: Li et al. [18] deploy Isolation Forest as the primary baseline in their 2025 audit analytics study of USA federal spending irregularities — the most structurally comparable domain to the present research. No study published between 2023 and 2026 has displaced it from the top performance tier for non-sequential tabular fraud detection.
+2. **Confirmed for government spending**: Li et al. [18] deploy Isolation Forest as the primary baseline in their 2025 audit analytics study of USA federal spending irregularities — the most structurally comparable domain to the present research. Alam et al.'s [24] systematic review of unsupervised anomaly detection benchmarks and Li et al.'s [18] direct government audit application both retain Isolation Forest as a primary benchmark in 2025 — a status reflecting its consistently competitive performance on tabular government financial data across the reviewed literature.
 
 3. **Computational scalability**: Kumar et al. [19] confirm that with `n_estimators ≥ 100`, Isolation Forest maintains stable anomaly scores on datasets exceeding 30,000 records — matching the scale of the Jambi province Penyerapan data (33,405 activity records).
 
@@ -109,13 +109,13 @@ A Dense Autoencoder trains on the unlabelled dataset, learning to reconstruct no
 
 ## 5. Research Gap
 
-| Dimension | Existing State | Gap Addressed |
+| Dimension | Existing State | This Study's Contribution |
 |---|---|---|
-| **Domain** | Village fund research is predominantly legal/governance [4, 5, 6] | No IS/ML anomaly detection study on village fund expenditure data |
-| **Method** | The only ML study on village funds (Harriz et al. [13]) uses supervised classification | No unsupervised approach exists for unlabelled village fund data |
-| **Geography** | Ambarsari & Desyanti [14] apply Isolation Forest to Indonesian public procurement broadly | No province-specific, village-level analysis linking ML outputs to corruption typologies |
-| **Data Type** | Prior studies use aggregate/survey data | Activity-level absorption data (Uraian Output, Cara Pengadaan, stage realisations) remains unexploited |
-| **Comparison** | Single-method studies dominate | No comparative benchmark of ≥3 unsupervised methods on this data type in Indonesia |
+| **Domain** | Village fund research concentrates on legal-forensic analysis [4], governance accountability [5], and fraud triangle diagnostics [6]; reviewed IS/ML studies on Indonesian public finance address procurement patterns [14] but not village fund expenditure records | Applies unsupervised anomaly detection to village fund absorption data — a domain addressed through legal and governance lenses in the reviewed literature [12, 16] rather than computational screening |
+| **Method** | Harriz et al. [13], the only ML study specific to village funds, applies supervised CatBoost classification requiring labelled training data; Husnaningtyas and Dewayanto [16] observe unsupervised approaches remain rare in Indonesian financial fraud detection | Employs three unsupervised methods operating on unlabelled absorption records, aligned with real-time monitoring constraints where verified corruption labels are unavailable [16] |
+| **Geography** | Ambarsari and Desyanti [14] apply Isolation Forest to national-level Indonesian procurement data without connecting algorithmic outputs to specific corruption typologies | Conducts province-level, village-activity analysis and maps anomaly flags to modus operandi documented in judicial verdicts [7] and institutional audit reports [8] |
+| **Data Type** | Reviewed studies use aggregate budget statistics or governance survey instruments [12, 16]; Siskeudes activity-level variables — procurement method codes, multi-stage realization amounts, activity identifiers — have not been modelled as anomaly detection features | Constructs a ten-variable feature matrix directly from Siskeudes activity records, operationalising each feature as a computational proxy for a documented corruption modus operandi [7, 8, 15] |
+| **Comparison** | Indonesian public finance anomaly detection studies apply single algorithms [14]; Alam et al. [24] identify multi-paradigm benchmarking as best practice but find it scarcely implemented in domain-specific applications | Benchmarks three algorithmically distinct paradigms — ensemble partitioning (IF), local density estimation (LOF), and neural reconstruction (AE) — providing the comparative evaluation recommended by Alam et al. [24] for rigorous unsupervised detection |
 
 ---
 
@@ -303,54 +303,89 @@ Three `.ipynb` notebooks, executable in Google Colab:
 ## 11. Expected Contributions
 
 ### Theoretical Contributions
-1. Establishes an IS-grounded anomaly detection framework for village fund corruption indication — the first of its kind in Indonesian public finance literature.
+1. Extends IS-grounded anomaly detection frameworks — demonstrated in health insurance data [20] and US federal spending contexts [18] — to Indonesian village fund expenditure, a domain previously approached through legal-forensic and governance lenses [4, 5, 6] rather than computational anomaly screening.
 2. Advances the operationalisation of the Fraud Triangle through computational features derived from expenditure absorption records.
 
 ### Practical Contributions
 1. Produces a replicable, open-source screening tool (Colab notebooks) applicable to any province with equivalent Siskeudes-format data.
 2. Generates a rank-ordered list of suspicious village activities for Inspectorate/BPKP follow-up, reducing audit triage effort.
-3. Demonstrates how three years of longitudinal data (2023–2025) enable inter-year deviation analysis unavailable in single-period studies.
+3. Demonstrates how three years of longitudinal data (2023–2025) enable inter-year cost deviation analysis beyond the single-period scope characteristic of reviewed Indonesian public finance anomaly studies [14, 17].
 
 ---
 
 ## 12. Conceptual Framework Diagram
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                      THEORETICAL UNDERPINNING                       │
-│   Fraud Triangle [Cressey]  ←→  Principal-Agent Theory [Jensen]    │
-│            ↕                           ↕                            │
-│      DeLone & McLean IS Success Model (System → Impact)             │
-└─────────────────────────────┬───────────────────────────────────────┘
-                              │
-               ┌──────────────▼──────────────┐
-               │  VILLAGE FUND ACTIVITY DATA  │
-               │ Penyerapan + Pagu, Jambi     │
-               │ 2023 / 2024 / 2025           │
-               └──────────────┬──────────────┘
-                              │ Feature Engineering
-               ┌──────────────▼──────────────┐
-               │  ENGINEERED FEATURE MATRIX   │
-               │ (cost/unit, absorption ratio,│
-               │  stage variance, procurement │
-               │  type, completion deviation) │
-               └──┬───────────┬──────────────┘
-                  │           │              │
-          ┌───────▼──┐  ┌─────▼───┐  ┌──────▼──────────────┐
-          │Isolation │  │  LOF    │  │  Dense Autoencoder  │
-          │ Forest   │  │         │  │       (AE)           │
-          └───────┬──┘  └─────┬───┘  └──────┬──────────────┘
-                  └─────────┬─┘             │
-                            ▼               │
-                     ┌──────┴──────┐        │
-                     │  ANOMALY    │◄───────┘
-                     │  FLAGS      │
-                     └──────┬──────┘
-                            │ Mapping
-                     ┌──────▼──────────────────────┐
-                     │  CORRUPTION TYPOLOGY LABELS  │
-                     │  (Mark-up / Fiktif / etc.)   │
-                     └─────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────┐
+│                         THEORETICAL UNDERPINNING                         │
+│                                                                          │
+│  Fraud Triangle [Cressey, 1953]  ←──►  Principal-Agent Theory           │
+│  Pressure · Opportunity ·               [Sutarna & Subandi, 2023;       │
+│  Rationalisation                         Groenendijk, 1997]             │
+│  → Frames anomaly interpretation        → Information asymmetry maps    │
+│    via pressure-opportunity lens          to unexplained spending dev.   │
+│              ↕                                         ↕                │
+│         DeLone & McLean IS Success Model [D&M, 2003]                    │
+│         Information quality → Individual impact → Organisational impact  │
+│         → System contribution measured by corruption deterrence at scale │
+└───────────────────────────────────────────┬─────────────────────────────┘
+                                            │  operationalisation
+              ┌─────────────────────────────▼─────────────────────────────┐
+              │              DATA INPUT — Jambi Province                  │
+              │           Siskeudes / SIMDA Desa, 2023–2025               │
+              │   ┌──────────────────────┐   ┌──────────────────────┐    │
+              │   │      Penyerapan      │   │        Pagu          │    │
+              │   │  Activity-level      │   │  Budget ceiling per  │    │
+              │   │  realisation per     │   │  village, per year   │    │
+              │   │  disbursement stage  │   │                      │    │
+              │   └──────────────────────┘   └──────────────────────┘    │
+              └─────────────────────────────┬─────────────────────────────┘
+                                            │  merge on Kode_Desa + Tahun
+              ┌─────────────────────────────▼─────────────────────────────┐
+              │          PREPROCESSING & FEATURE ENGINEERING              │
+              │       Clean · Impute · Join · Engineer · Normalise        │
+              │  ┌──────────────────────────────────────────────────────┐ │
+              │  │                10-variable feature matrix            │ │
+              │  │  cost_per_unit           · absorption_ratio          │ │
+              │  │  avg_completion          · stage_variance            │ │
+              │  │  completion_vs_realization                           │ │
+              │  │  swakelola_high_value    · activity_category         │ │
+              │  │  year                   · cost_deviation_by_category │ │
+              │  └──────────────────────────────────────────────────────┘ │
+              └────────────┬──────────────────────┬──────────┬────────────┘
+                           │                      │          │
+       ┌───────────────────▼─┐  ┌─────────────────▼─┐  ┌────▼──────────────────┐
+       │  Isolation Forest   │  │  Local Outlier     │  │   Dense Autoencoder  │
+       │       (IF)          │  │  Factor (LOF)      │  │         (AE)         │
+       │                     │  │                    │  │                      │
+       │  Path-partitioning  │  │  Local density     │  │  Encoder →           │
+       │  ensemble           │  │  estimation        │  │   Bottleneck (dim. ↓)│
+       │  No distr. assump.  │  │  (k-NN based)      │  │    → Decoder (recon.)│
+       └──────────┬──────────┘  └─────────┬──────────┘  └──────────┬───────────┘
+        Anomaly   │ score         LOF      │ score        MSE per   │ feature
+                  └─────────────────────────┴────────────────────────┘
+                                            │
+              ┌─────────────────────────────▼─────────────────────────────┐
+              │                  COMPARATIVE EVALUATION                   │
+              │   Anomaly Rate Consistency   (3-year cross-year analysis) │
+              │   Score Distribution Shape   (bimodal separation test)    │
+              │   Inter-Method Agreement     (Cohen's κ)                  │
+              │   Precision @ K              (expert audit validation)    │
+              │   PCA / t-SNE                (2D cluster projection)      │
+              └─────────────────────────────┬─────────────────────────────┘
+                                            │  consensus flags (≥ 2 of 3 methods)
+              ┌─────────────────────────────▼─────────────────────────────┐
+              │              CORRUPTION TYPOLOGY MAPPING                  │
+              │   Mark-up · Proyek Fiktif · Anggaran Ganda                │
+              │   Pemotongan Honor · Laporan Pertanggungjawaban Palsu     │
+              │   Pengadaan tanpa Tender · Penyertaan Modal Irregular     │
+              └─────────────────────────────┬─────────────────────────────┘
+                                            │
+              ┌─────────────────────────────▼─────────────────────────────┐
+              │                       AUDIT OUTPUT                        │
+              │   Rank-ordered suspicious activity list                   │
+              │   → Inspectorate / BPKP inspection triage                 │
+              └────────────────────────────────────────────────────────────┘
 ```
 
 ---
