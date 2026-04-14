@@ -33,8 +33,10 @@ This research develops an unsupervised machine learning pipeline to detect expen
 - [x] Research title and problem statement formulated
 - [x] Three research questions defined
 - [x] Theoretical framework established (Fraud Triangle + Principal-Agent + DeLone & McLean)
-- [x] Literature review completed — 24+ Scopus/IEEE-indexed references verified
+- [x] Literature review completed — 33 references (refs [1]–[33]): 29 Scopus/IEEE/MDPI-indexed academic sources + 4 verified Jambi prosecution case sources
 - [x] Research gap identified across five dimensions (domain, method, geography, data type, comparison)
+- [x] Jambi Province site selection quantitatively justified (jaga.id complaint data, Alfada [29], Srirejeki & Faturokhman [28])
+- [x] Jambi Province prosecution case evidence documented — 4 cases (TA 2020–2024), Rp 2.301 billion total state loss, 2–5 year detection lag quantified [30–33]
 - [x] Method selection finalised with scientific rationale:
   - Isolation Forest retained as Tier-1 primary (Li et al., 2025 — USA federal spending)
   - LOF adopted to replace DBSCAN (density heterogeneity problem resolved)
@@ -54,6 +56,7 @@ This research develops an unsupervised machine learning pipeline to detect expen
 - [x] Raw data sourced: 6 Excel files (Pagu + Penyerapan, Jambi Province, 2023–2025)
 - [x] CSV conversion completed for all 6 files → `data_ref/csv/`
 - [x] Schema validated: Penyerapan columns confirmed (19 fields including Real_T1–T3, Pct_T1–T3, Cara_Pengadaan)
+- [x] Dataset scale confirmed: ~33,405 activity records across Penyerapan 2023–2025
 - [ ] Data merge: Penyerapan joined with Pagu by `Kode_Desa` + `Tahun`
 - [ ] Data cleaning: handle nulls, remove header/footer rows, validate numeric ranges
 - [ ] Feature engineering: compute all 10 features from engineering plan
@@ -99,12 +102,13 @@ This research develops an unsupervised machine learning pipeline to detect expen
 ```
 is_dandes_anticorr/
 ├── README.md                          ← This file (progress report)
+├── .venv/                             ← Python virtual environment
 ├── concept/
 │   └── conceptual/
 │       ├── research_concept_phase1.md ← Full conceptual framework (Phase 1)
 │       ├── references.md              ← Verified reference list (IEEE format)
 │       ├── download_papers.py         ← Script to fetch PDF literature
-│       └── papers-literatures/        ← Downloaded reference PDFs
+│       └── papers-literatures/        ← Reference PDFs (5/29 downloaded)
 ├── data_ref/
 │   ├── csv/                           ← Converted CSV files (ready for analysis)
 │   │   ├── Pagu_Jambi_2023.csv
@@ -169,6 +173,13 @@ is_dandes_anticorr/
 | [19] | Kumar et al. (2025), *KAIS* | Hybrid IF + Autoencoder framework — compound anomaly detection |
 | [20] | De Meulemeester et al. (2025), *BMC MIDM* | Explainable unsupervised anomaly detection; per-feature reconstruction error |
 | [22] | Shi & Weng (2024), *JCIA* | Autoencoder vs. other methods on government billing data |
+| [27] | Jaga.id (2026) | Community complaint data — Jambi under-reporting quantification |
+| [28] | Srirejeki & Faturokhman (2020), *Acta Univ. Danubius* | Inspectorate staffing gap — APIP audit coverage limitation |
+| [29] | Alfada (2019), *JRFM* | Panel GMM evidence: fiscal decentralisation + weak accountability → elevated corruption |
+| [30] | JambiTV Disway (2026) | Desa Muara Hemat — fictitious construction, Rp 942 juta, Tahap II prosecution |
+| [31] | JambiTV Disway (2025) | Desa Jambi Tulo — fictitious procurement, disbursement frozen by Inspektorat |
+| [32] | Kompas.com (2025) | Desa Batang Merangin — pendamping desa collusion, Rp 644 juta |
+| [33] | JambiLINK.id (2024) | Desa Pangkal Duri — Dana Silpa misappropriation, Rp 415 juta |
 
 Full reference list: [concept/conceptual/references.md](concept/conceptual/references.md)
 

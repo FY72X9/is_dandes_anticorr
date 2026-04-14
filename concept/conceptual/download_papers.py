@@ -309,14 +309,23 @@ def attempt_paper(paper: dict):
 
     dest = OUTPUT_DIR / "[{:02d}] {}.pdf".format(paper["id"], paper["slug"])
 
-    # Check for existing valid file
-    if dest.exists():
-        if is_valid_pdf(dest) and file_size_ok(dest):
-            size_kb = dest.stat().st_size / 1024
-            print("   [EXISTS] Already downloaded and valid ({:.1f} KB)".format(size_kb))
+    # Check for any existing file with the same paper ID (any slug variant)
+    id_prefix = "[{:02d}]".format(paper["id"])
+    existing_matches = [
+        f for f in OUTPUT_DIR.glob("*.pdf")
+        if f.name.startswith(id_prefix)
+    ]
+    for existing in existing_matches:
+        if is_valid_pdf(existing) and file_size_ok(existing):
+            size_kb = existing.stat().st_size / 1024
+            print("   [EXISTS] Already downloaded and valid: {} ({:.1f} KB)".format(
+                existing.name, size_kb
+            ))
             return "skipped_exists", None
-        print("   [STALE]  Existing file is invalid/corrupt — deleting and re-downloading")
-        dest.unlink(missing_ok=True)
+        print("   [STALE]  Existing file is invalid/corrupt — deleting and re-downloading: {}".format(
+            existing.name
+        ))
+        existing.unlink(missing_ok=True)
 
     last_reason = "no attempts made"
     for url, label in urls_to_try:

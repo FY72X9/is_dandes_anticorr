@@ -3,7 +3,7 @@
 > **Scope**: Verified references for studying and classifying types of corruption, with supporting literature on Indonesia village fund corruption, public procurement fraud, and machine learning anomaly detection.
 > **Citation Format**: IEEE (sequential numbering)
 > **Source Validation**: All entries verified via OpenAlex, IEEE Xplore, Scopus, or primary publisher DOI resolution.
-> **Last Updated**: April 2026
+> **Last Updated**: April 2026 — [7] replaced (Vargas-Hernández 2014 → Graycar 2015); [4] journal name corrected; [4], [13] OA PDF URLs updated; [8] published DOI added; [9] URL type corrected
 
 ---
 
@@ -27,10 +27,10 @@
 - **OA PDF**: http://repo.uum.edu.my/26265/1/CBR%2016%202%202017%20102%20108.pdf
 - **Citations**: 20
 
-[4] J. S. Albanese and K. Artello, "The behavior of corruption: an empirical typology of public corruption by objective and method," *Russian Journal of Economics and Law*, vol. 13, no. 2, pp. 1215–1229, 2019. DOI: [10.21202/1993-047x.13.2019.2.1215-1229](https://doi.org/10.21202/1993-047x.13.2019.2.1215-1229)
+[4] J. S. Albanese and K. Artello, "The behavior of corruption: an empirical typology of public corruption by objective and method," *Actual Problems of Economics and Law*, vol. 13, no. 2, pp. 1215–1229, 2019. DOI: [10.21202/1993-047x.13.2019.2.1215-1229](https://doi.org/10.21202/1993-047x.13.2019.2.1215-1229)
 - **Abstract**: Constructs an empirical typology of public corruption by classifying 500+ US federal cases along two axes: corruption *objective* (financial gain, preferential treatment, avoiding loss) and *method* (bribery, fraud, conflict of interest). Provides evidence-based classification system grounded in judicial records.
 - **Relevance**: Empirical typology method directly analogous to modus operandi classification from KPK/ICW judicial verdicts.
-- **OA URL**: https://doaj.org/article/f2ac0958521746d6881f94fe5db77279
+- **OA PDF**: http://apel.ieml.ru/storage/archive_articles/9910.pdf
 - **Citations**: 13
 
 [5] F. Mutungi, R. Baguma, A. H. Ejiri, and T. Janowski, "Digital anti-corruption typology for public service delivery," *International Journal of Computer Applications*, vol. 183, no. 5, 2021. DOI: [10.5120/ijca2021921089](https://doi.org/10.5120/ijca2021921089)
@@ -45,17 +45,17 @@
 - **OA PDF**: https://link.springer.com/content/pdf/10.1007%2Fs40258-018-0386-6.pdf
 - **Citations**: 48
 
-[7] J. G. Vargas-Hernández, "Polyfacetic masks of corruption: typologies, categories, forms and levels," *International Journal on Graft and Corruption*, vol. 1, no. 1, 2014. DOI: [10.7719/ijgc.v1i1.226](https://doi.org/10.7719/ijgc.v1i1.226)
-- **Abstract**: Extends prior typology work by mapping corruption across five analytical planes: forms, categories, levels, actors, and systemic contexts. Distinguishes active vs. passive corruption and introduces the concept of "normalised corruption" in weak governance settings.
-- **Relevance**: Provides granular analytical vocabulary for multi-level corruption classification applicable to district/village governance.
-- **OA URL**: https://doi.org/10.7719/ijgc.v1i1.226
-- **Citations**: 3
+[7] A. Graycar, "Corruption: classification and analysis," *Policy and Society*, vol. 34, no. 2, pp. 87–96, 2015. DOI: [10.1016/j.polsoc.2015.04.001](https://doi.org/10.1016/j.polsoc.2015.04.001)
+- **Abstract**: Develops the TASP framework (Types, Activities, Sectors, Places) for systematic classification of corruption. Demonstrates that identifying *what type* of corruption occurs, *in what activity*, *in which sector*, and *in which place* is an essential precondition for designing targeted anti-corruption controls. Empirically validated with corruption data from New York City/State and Victoria, Australia.
+- **Relevance**: TASP classification directly supports Research Question 3 — mapping algorithmically detected anomalies to specific corruption typologies (mark-up, fictitious projects, procurement irregularities) by activity type and sector context.
+- **OA PDF**: https://academic.oup.com/policyandsociety/article-pdf/34/2/87/42581208/j.polsoc.2015.04.001.pdf
+- **Citations**: 167
 
 ---
 
 ## B. Corruption: Causes, Consequences, and Public Procurement
 
-[8] V. Tanzi, "Corruption around the world: causes, consequences, scope, and cures," *IMF Staff Papers*, vol. 45, no. 4, pp. 559–594, 1998. DOI: [10.2139/ssrn.882334](https://doi.org/10.2139/ssrn.882334) (SSRN preprint). Originally published in *IMF Staff Papers*.
+[8] V. Tanzi, "Corruption around the world: causes, consequences, scope, and cures," *IMF Staff Papers*, vol. 45, no. 4, pp. 559–594, 1998. DOI: [10.2307/3867585](https://doi.org/10.2307/3867585) (published). SSRN preprint: [10.2139/ssrn.882334](https://doi.org/10.2139/ssrn.882334).
 - **Abstract**: Macro-level taxonomy of corruption distinguishing by payer (demand-side vs. supply-side), sector (public procurement, tax, regulation), and effect on economic outcomes. Foundational framework for measuring corruption scope in public financial management.
 - **Relevance**: Foundational conceptual basis for classifying government expenditure corruption — directly applicable to dana desa mark-up and procurement irregularities.
 - **OA URL**: https://doi.org/10.2139/ssrn.882334
@@ -64,7 +64,7 @@
 [9] T. Søreide, "Corruption in public procurement: causes, consequences and cures," *CMI Report R 2002:1*, Chr. Michelsen Institute, Bergen, Norway, 2002.
 - **Abstract**: Analyses corruption specifically in public procurement chains — bidding, contracting, invoicing, and delivery stages. Distinguishes between collusive, coercive, and extortive forms of procurement corruption.
 - **Relevance**: Directly maps to *Cara Pengadaan* variable in the dataset — swakelola vs. contracted procurement corruption typology.
-- **OA PDF**: http://hdl.handle.net/11250/2435744
+- **OA URL**: http://hdl.handle.net/11250/2435744 (repository handle — navigate to page for PDF download)
 - **Citations**: 129
 
 [10] Š. Šumah, "Corruption, causes and consequences," in *Trade and Global Market*, InTechOpen, 2018. DOI: [10.5772/intechopen.72953](https://doi.org/10.5772/intechopen.72953)
@@ -92,7 +92,8 @@
 [13] R. K. Siregar and A. Aminudin, "Abuse of village fund (VF) in Indonesia: case study of VF corruption in East Java," *PEOPLE: International Journal of Social Sciences*, vol. 6, no. 1, pp. 379–396, 2020. DOI: [10.20319/pijss.2020.61.379396](https://doi.org/10.20319/pijss.2020.61.379396)
 - **Abstract**: Multi-case analysis of village fund corruption in East Java, classifying modus operandi into five types: mark-up of goods/services, fictitious budget items, double budgeting, procurement manipulation, and misuse of personnel funds. Correlates corruption types to village head characteristics and fund allocation size.
 - **Relevance**: Most directly applicable typology study — five modus operandi types align with feature engineering targets in the research.
-- **OA PDF**: https://grdspublishing.org/index.php/people/article/download/2301/3751
+- **OA PDF**: https://content.openalex.org/works/W3020760472.pdf (OpenAlex content store — confirmed available)
+- **OA PDF (original, broken)**: https://grdspublishing.org/index.php/people/article/download/2301/3751
 - **Citations**: 1
 
 [14] A. Kartadinata, M. Ghifari, and F. Santiago, "Criminal policy of village fund corruption in Indonesia," in *Proc. 1st Int. Conf. on Law, Social Science, Economics, and Education (ICLSSEE 2021)*, Jakarta, Indonesia, 2021. DOI: [10.4108/eai.6-3-2021.2306470](https://doi.org/10.4108/eai.6-3-2021.2306470)
@@ -195,6 +196,40 @@
 
 ---
 
+## F. Jambi Province Prosecution Documentation
+
+[27] Jaga.id, "Rekap Laporan Dana Desa per Provinsi," Platform Pemantauan Dana Desa, Indonesia, accessed Apr. 2026. [Online]. Available: https://jaga.id
+- **Abstract**: Civic-monitoring platform aggregating community-submitted reports on village fund transparency violations across Indonesian provinces. Provides province-level complaint tallies as a quantitative indicator of participatory oversight intensity, enabling comparative analysis of community engagement with the accountability infrastructure.
+- **Relevance**: Source for quantifying Jambi Province's low civic reporting rate (11 of 761 national submissions, 1.4%) — establishes the low-monitoring environment justification for site selection and grounds the claim that absence of reports signals information asymmetry rather than absence of fraud.
+- **OA URL**: https://jaga.id
+- **Citations**: N/A (platform data)
+
+[28] JambiTV Disway, "Eks Kades Muara Hemat jalani tahap 2 kasus dugaan korupsi dana desa," *JambiTV Disway*, Feb. 2026. [Online]. Available: https://jambitv.disway.id/hukum/read/12500/eks-kades-muara-hemat-jalani-tahap-2-kasus-dugaan-korupsi-dana-desa
+- **Abstract**: News report documenting the Tahap II prosecution of a former village head in Desa Muara Hemat, Kerinci Regency, for dana desa misappropriation (TA 2020–2021) through fictitious physical construction reports, resulting in a verified state loss of Rp 942 juta. The suspect had been under investigation since 2023.
+- **Relevance**: Empirical case evidence for the Jambi site selection argument. Illustrates the 2–5 year detection lag between fiscal year of irregularity and prosecution, and the fictitious-construction modus operandi directly targeted by the `avg_completion` and `absorption_ratio` feature constructs.
+- **OA URL**: https://jambitv.disway.id/hukum/read/12500/eks-kades-muara-hemat-jalani-tahap-2-kasus-dugaan-korupsi-dana-desa
+- **Citations**: N/A (news source)
+
+[29] JambiTV Disway, "Dana desa Jambi Tulo dibekukan: Inspektorat temukan dugaan kegiatan fiktif Rp300 juta lebih," *JambiTV Disway*, 2025. [Online]. Available: https://jambitv.disway.id/muaro-jambi/read/12087/dana-desa-jambi-tulo-dibekukan-inspektorat-temukan-dugaan-kegiat-fiktif-rp300-juta-lebih
+- **Abstract**: Report on an Inspektorat-ordered disbursement freeze for Desa Jambi Tulo, Muaro Jambi Regency (TA 2024), following discovery of fictitious road construction and seedling procurement with zero confirmed field output exceeding Rp 300 juta. Illustrates the administrative remedy triggered before criminal prosecution.
+- **Relevance**: Most recent (2025) case demonstrating fictitious swakelola procurement in Jambi. The `swakelola_high_value` and `absorption_ratio` feature constructs are calibrated specifically to surface this disbursement-versus-output gap pattern.
+- **OA URL**: https://jambitv.disway.id/muaro-jambi/read/12087/dana-desa-jambi-tulo-dibekukan-inspektorat-temukan-dugaan-kegiat-fiktif-rp300-juta-lebih
+- **Citations**: N/A (news source)
+
+[30] Kompas.com, "Kades hingga mantan kades di Kerinci, Jambi korupsi Rp 644 juta dana desa," *Kompas.com Regional*, Aug. 2025. [Online]. Available: https://regional.kompas.com/read/2025/08/20/213221778/kades-hingga-mantan-kades-di-kerinci-jambi-korupsi-rp-644-juta-dana-desa
+- **Abstract**: Report by Kompas.com on three suspects — including a village facilitator (pendamping desa) — charged in connection with Rp 644 juta misappropriation in Desa Batang Merangin, Kerinci (TA 2021), arising from unfinished and fictitious meeting hall construction. The village facilitator was added as a suspect in November 2025, confirming intra-network collusion.
+- **Relevance**: Documents the collusion of a pendamping desa, demonstrating that community oversight mechanisms fail when oversight actors are themselves complicit — the primary structural argument for why algorithmic detection from SIMDA Desa records constitutes a more reliable primary screen than participatory reporting.
+- **OA URL**: https://regional.kompas.com/read/2025/08/20/213221778/kades-hingga-mantan-kades-di-kerinci-jambi-korupsi-rp-644-juta-dana-desa
+- **Citations**: N/A (news source)
+
+[31] JambiLINK.id, "Tersangka korupsi dana desa Pangkal Duri ditangkap, kerugian negara capai Rp 415 juta," *JambiLINK.id*, Aug. 2024. [Online]. Available: https://jambilink.id/post/951/tersangka-korupsi-dana-desa-pangkal-duri-ditangkap-kerugian-negara-capai-rp-415-juta
+- **Abstract**: Report on the August 2024 arrest of a village head suspect in Desa Pangkal Duri, Tanjung Jabung Timur Regency, for misappropriation of Dana Desa and Dana Silpa (budget carryover funds) totalling Rp 415 juta across fiscal year 2022.
+- **Relevance**: Cross-kabupaten case evidence illustrating the Silpa diversion modus operandi, in which manipulated carryover balances mask unspent or fictitiously realised funds. The `stage_variance` feature is designed to surface the irregular inter-stage disbursement pattern that enables this scheme.
+- **OA URL**: https://jambilink.id/post/951/tersangka-korupsi-dana-desa-pangkal-duri-ditangkap-kerugian-negara-capai-rp-415-juta
+- **Citations**: N/A (news source)
+
+---
+
 ## Summary Table
 
 | # | Authors | Year | Type | Corruption Type Focus | OA PDF |
@@ -205,7 +240,7 @@
 | [4] | Albanese & Artello | 2019 | Journal | Empirical typology (objective × method) | Yes (DOAJ) |
 | [5] | Mutungi et al. | 2021 | Journal | Digital IS anti-corruption typology | Yes |
 | [6] | Sommersguter-Reichmann et al. | 2018 | Journal | Cross-sector typology (healthcare) | Yes |
-| [7] | Vargas-Hernández | 2014 | Journal | Multi-level typology | Yes |
+| [7] | Graycar | 2015 | Journal | TASP framework (types × activities × sectors × places) | Yes (OA PDF) |
 | [8] | Tanzi | 1998 | Journal | Causes, scope, public procurement | Yes (SSRN) |
 | [9] | Søreide | 2002 | Report | Public procurement corruption | Yes |
 | [10] | Šumah | 2018 | Book chapter | Causes and consequences | Yes |
@@ -225,3 +260,8 @@
 | [24] | Ester et al. | 1996 | Conference | DBSCAN algorithm (19,132 citations) | CiteSeerX |
 | [25] | Kim & Vasarhelyi | 2024 | Journal | DBSCAN financial fraud detection | Yes (bronze) |
 | [26] | Groenendijk | 1997 | Journal | Principal-agent model of corruption | Yes (UTwente) |
+| [27] | Jaga.id | 2026 | Platform data | Jambi civic complaint rate — site selection quantification | Yes (web) |
+| [28] | JambiTV Disway | 2026 | News report | Desa Muara Hemat — fictitious construction; Rp 942 juta | Yes (web) |
+| [29] | JambiTV Disway | 2025 | News report | Desa Jambi Tulo — fictitious procurement; disbursement frozen | Yes (web) |
+| [30] | Kompas.com | 2025 | News report | Desa Batang Merangin — facilitator collusion; Rp 644 juta | Yes (web) |
+| [31] | JambiLINK.id | 2024 | News report | Desa Pangkal Duri — Dana Silpa misappropriation; Rp 415 juta | Yes (web) |

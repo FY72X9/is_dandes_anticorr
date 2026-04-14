@@ -1,7 +1,7 @@
 # Research Concept — Phase 1
 ## Corruption Indication Detection in Village Fund Activities Using Comparative Unsupervised Learning Methods
 
-> **Status**: Draft Phase 1 — Conceptual Framework  
+> **Status**: Phase 1 COMPLETE — Conceptual Framework · Methods Finalised · Awaiting Data Processing  
 > **Domain**: Information Systems / Applied Machine Learning  
 > **Data Scope**: Jambi Province, Indonesia — Village Fund Expenditure Absorption 2023–2025  
 > **Last Updated**: April 2026
@@ -15,6 +15,19 @@ Indonesia channels approximately Rp 71 trillion annually through its Dana Desa (
 Despite the volume and scale of this fraud, the dominant response has remained reactive — legal prosecution after the act — rather than proactive detection grounded in data. The government's financial reporting infrastructure, particularly the Sistem Keuangan Desa (Siskeudes/SIMDA Desa) maintained by BPKP, generates granular expenditure absorption records at the activity level: what type of activity, how much was budgeted, how much was realised per disbursement stage, and how procurement was conducted. Machine learning studies on Indonesian public financial data have yet to apply this granular, activity-level structure to anomaly detection [13, 14] — existing work either addresses aggregate national procurement indicators [14] or supervises classification on categorical village fund outputs [13], leaving systematic screening of Siskeudes activity records unaddressed in the fraud detection literature [12, 16].
 
 Existing research on village fund corruption concentrates on legal-forensic analysis [4], governance accountability frameworks [5], or fraud triangle diagnostics [6]. Where machine learning enters the picture, it predominantly applies supervised classification — an approach that presupposes labelled ground truth, a luxury unavailable in real-time monitoring contexts. The present research addresses this gap directly: it proposes an unsupervised learning pipeline to detect expenditure anomalies from Jambi provincial data, interpretable through established corruption modus operandi derived from judicial and institutional records [7, 8].
+
+**The selection of Jambi Province as the research site reflects a structural accountability condition that participatory oversight data renders quantifiable.** The jaga.id platform — Indonesia's civil-society monitoring portal for village fund transparency — recorded only 11 complaint submissions attributed to Jambi Province, constituting 1.4% of the 761 national reports logged on the platform (jaga.id, accessed April 2026 [27]), while provinces of comparable size such as Sumatera Utara (81) and Sumatera Selatan (48) registered substantially higher reporting volumes. Low voluntary reporting, however, does not signal low fraud exposure; it signals a low-monitoring environment. Hidajat [6] demonstrates that structural features endemic to village-level governance — geographic remoteness, single-authoriser financial control, and constrained sub-district auditor capacity — simultaneously amplify the Opportunity dimension of the Fraud Triangle, making detection contingent on proactive institutional mechanisms rather than reactive community reporting. When bottom-up transparency channels remain inactive, the information asymmetry at the core of the principal-agent relationship [9] operates unchecked: village heads face no accountability pressure between formal audit cycles. Alfada [29], through panel GMM estimation across 19 Indonesian provinces, confirms empirically that regions combining high intergovernmental transfer dependence with weak accountability structures exhibit systematically elevated corruption incidence — the structural profile directly applicable to Jambi's decentralised village fund governance. Srirejeki and Faturokhman [28] further document that kabupaten-level inspectorates lack the operational staffing to screen thousands of individual village activity records across each disbursement cycle, producing a measurable gap between the APIP mandate under Government Regulation No. 60/2008 and actual inspection coverage. An automated anomaly detection system processing SIMDA Desa absorption records closes this coverage gap by converting an existing government data infrastructure into a ranked inspection input for Aparat Pengawas Internal Pemerintah (APIP) — operationalising the information-quality-to-organisational-impact pathway that DeLone and McLean [10] identify as the criterion for IS system success in institutional contexts.
+
+Contemporaneous prosecution records from Jambi Province furnish direct empirical grounding for this analytical framing. Four cases adjudicated or actively prosecuted between 2024 and 2026 collectively document Rp 2.301 billion in verified state losses attributable to village fund misappropriation across multiple kabupaten [30, 31, 32, 33]:
+
+| Village (Kabupaten) | TA of Irregularity | Modus Operandi | State Loss | Status (2025–2026) |
+|---|---|---|---|---|
+| Desa Muara Hemat (Kerinci) | 2020–2021 | Fictitious physical construction reports | Rp 942 juta | Tahap II prosecution (Feb 2026) [30] |
+| Desa Jambi Tulo (Muaro Jambi) | 2024 | Fictitious road and seedling procurement — zero field output | > Rp 300 juta | Village fund disbursement frozen by Inspektorat [31] |
+| Desa Batang Merangin (Kerinci) | 2021 | Unfinished and fictitious meeting hall construction; collusion includes a village facilitator | Rp 644 juta | Three suspects named; village facilitator added Nov 2025 [32] |
+| Desa Pangkal Duri (Tanjung Jabung Timur) | 2022 | Misappropriation of Dana Desa and Dana Silpa | Rp 415 juta | Suspect arrested Aug 2024 [33] |
+
+Three analytical observations emerge from this case profile. First, the fiscal years under investigation span TA 2020 through TA 2024, yet prosecution or administrative suspension occurred no earlier than mid-2024 — establishing a detection lag ranging from approximately two to five years. This interval represents precisely the period during which contemporaneous anomaly detection, applied to Siskeudes activity records, could have surfaced irregularities for APIP review before state losses compounded across subsequent disbursement stages. Second, the modus operandi documented across these four cases — fictitious physical outputs (Muara Hemat, Batang Merangin), zero-output procurement (Jambi Tulo), and illicit carryover diversion (Pangkal Duri) — correspond directly to the engineered features in this study: `avg_completion` and `absorption_ratio` are designed to detect the completion-reporting gaps that enable fictitious project claims, while `stage_variance` surfaces the irregular multi-stage disbursement patterns characteristic of misappropriated fund flows, and `swakelola_high_value` flags the high-value self-managed procurement used in the Jambi Tulo case. Third, involvement of a village facilitator (pendamping desa) in the Batang Merangin case signals intra-network collusion, reducing the likelihood that purely community-based reporting channels would surface the irregularity — precisely the condition under which algorithmic detection from financial records serves as the more reliable primary screen. That all four cases reached prosecution through Inspektorat field verification or Kejaksaan investigation — case-level mechanisms — rather than through any systematic population-level screening of Siskeudes records underscores the monitoring gap that the present research directly addresses.
 
 ---
 
@@ -445,6 +458,20 @@ Three `.ipynb` notebooks, executable in Google Colab:
 [25] M. M. Breunig, H.-P. Kriegel, R. T. Ng, and J. Sander, "LOF: Identifying density-based local outliers," in *Proc. ACM SIGMOD International Conference on Management of Data*, Dallas, TX, 2000, pp. 93–104, doi: 10.1145/342009.335388.
 
 [26] R. Chalapathy and S. Chawla, "Deep learning for anomaly detection: a survey," arXiv preprint arXiv:1901.03407, 2019. [Online]. Available: https://arxiv.org/abs/1901.03407
+
+[27] Jaga.id, "Rekap Laporan Dana Desa per Provinsi," Platform Pemantauan Dana Desa, Indonesia, accessed Apr. 2026. [Online]. Available: https://jaga.id
+
+[28] K. Srirejeki and A. Faturokhman, "In search of corruption prevention model: case study from Indonesia village fund," *Acta Universitatis Danubius. Oeconomica*, vol. 16, no. 3, pp. 214–229, 2020. [Online]. Available: https://doaj.org/article/01b1588b59f149ba82d6ef47dddaca0a
+
+[29] A. Alfada, "Does fiscal decentralization encourage corruption in local governments? Evidence from Indonesia," *Journal of Risk and Financial Management*, vol. 12, no. 3, article 118, 2019, doi: 10.3390/jrfm12030118.
+
+[30] JambiTV Disway, "Eks Kades Muara Hemat jalani tahap 2 kasus dugaan korupsi dana desa," Feb. 2026. [Online]. Available: https://jambitv.disway.id/hukum/read/12500/eks-kades-muara-hemat-jalani-tahap-2-kasus-dugaan-korupsi-dana-desa
+
+[31] JambiTV Disway, "Dana desa Jambi Tulo dibekukan: Inspektorat temukan dugaan kegiatan fiktif Rp300 juta lebih," 2025. [Online]. Available: https://jambitv.disway.id/muaro-jambi/read/12087/dana-desa-jambi-tulo-dibekukan-inspektorat-temukan-dugaan-kegiat-fiktif-rp300-juta-lebih
+
+[32] Kompas.com, "Kades hingga mantan kades di Kerinci, Jambi korupsi Rp 644 juta dana desa," Aug. 2025. [Online]. Available: https://regional.kompas.com/read/2025/08/20/213221778/kades-hingga-mantan-kades-di-kerinci-jambi-korupsi-rp-644-juta-dana-desa
+
+[33] JambiLINK.id, "Tersangka korupsi dana desa Pangkal Duri ditangkap, kerugian negara capai Rp 415 juta," Aug. 2024. [Online]. Available: https://jambilink.id/post/951/tersangka-korupsi-dana-desa-pangkal-duri-ditangkap-kerugian-negara-capai-rp-415-juta
 
 ---
 
