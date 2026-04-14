@@ -1,7 +1,7 @@
 # Research Concept — Phase 1
 ## Corruption Indication Detection in Village Fund Activities Using Comparative Unsupervised Learning Methods
 
-> **Status**: Phase 1 COMPLETE — Conceptual Framework · Methods Finalised · Awaiting Data Processing  
+> **Status**: Phase 1 COMPLETE · Phase 2 REVISED — Scientific Gaps Resolved · Methodology Strengthened  
 > **Domain**: Information Systems / Applied Machine Learning  
 > **Data Scope**: Jambi Province, Indonesia — Village Fund Expenditure Absorption 2023–2025  
 > **Last Updated**: April 2026
@@ -35,14 +35,14 @@ Three analytical observations emerge from this case profile. First, the fiscal y
 
 Village fund expenditure absorption data contains latent signals of financial irregularities. Activities with inflated unit costs, inconsistent multi-stage realisations, or procurement method mismatches relative to their scale and category constitute detectable deviations from normal spending behaviour. However, no systematic, data-driven screening mechanism currently operates at the district or provincial level to surface these anomalies in near-real-time.
 
-The core problem is thus: **given unlabelled activity-level expenditure data reported by villages, can unsupervised learning methods reliably surface expenditure patterns that correspond to known corruption modus operandi?** And if so, which algorithmic approach — Isolation Forest, Local Outlier Factor (LOF), or Dense Autoencoder — provides the sharpest discrimination between suspicious and baseline activity profiles?
+The core problem is thus: **given unlabelled activity-level expenditure data reported by villages, can unsupervised learning methods reliably surface expenditure patterns that correspond to known corruption modus operandi?** And if so, which algorithmic approach — Isolation Forest, Local Outlier Factor (LOF), or Robust Deep Autoencoder (RDA) — provides the sharpest discrimination between suspicious and baseline activity profiles?
 
 ---
 
 ## 3. Research Questions
 
 1. What feature constructs derived from village fund absorption data serve as the most discriminating signals of expenditure anomaly, based on documented corruption modus operandi in Indonesia?
-2. Which among Isolation Forest, Local Outlier Factor (LOF), and Dense Autoencoder demonstrates superior anomaly identification performance — measured by anomaly score distribution, inter-method agreement, reconstruction error analysis, and domain-expert precision — on Jambi province village fund data across 2023–2025?
+2. Which among Isolation Forest, Local Outlier Factor (LOF), and Robust Deep Autoencoder (RDA) demonstrates superior anomaly identification performance — measured by anomaly score distribution, inter-method agreement, reconstruction error analysis, IQR-baseline comparison, and domain-expert precision — on Jambi province village fund data across 2023–2025?
 3. How do the algorithmically identified anomalous activities map to established corruption typologies (mark-up, fictitious projects, double budgeting, procurement irregularities) documented in judicial verdicts and institutional audit reports?
 
 ---
@@ -66,9 +66,9 @@ Based on a systematic assessment of the anomaly detection literature published b
 |---|---|---|
 | **Isolation Forest (IF)** | Ensemble / Path-length partitioning | Confirmed Tier-1 standard for government expenditure anomaly detection [18]; computationally efficient on 33K+ records; no distributional assumptions |
 | **Local Outlier Factor (LOF)** | Local density estimation | Adapts to heterogeneous activity-category densities without a global parameter; directly validated on government spending audit data [18, 20, 25] |
-| **Dense Autoencoder (AE)** | Neural network reconstruction | Detects non-linear compound anomaly patterns invisible to distance-based methods [19, 22]; reconstruction error per feature provides auditor-interpretable variable-level diagnosis [20] |
+| **Robust Deep Autoencoder (RDA)** | Neural network reconstruction + sparse noise decomposition | Detects non-linear compound anomaly patterns while its joint sparse-noise training objective prevents contamination by anomalous training records [34, 19]; per-feature reconstruction error provides auditor-interpretable variable-level diagnosis [20] |
 
-This triad spans three distinct algorithmic paradigms — ensemble tree partitioning, local density deviation, and deep generative reconstruction — providing the multi-paradigm comparison that Alam et al. [24] identify as methodological best practice for unsupervised anomaly detection benchmarking at scale.
+This triad spans three distinct algorithmic paradigms — ensemble tree partitioning, local density deviation, and deep sparse reconstruction — providing the multi-paradigm comparison that Alam et al. [24] identify as methodological best practice for unsupervised anomaly detection benchmarking at scale.
 
 ### 4.5 Scientific Rationale for the Adopted Method Selection
 
@@ -96,27 +96,34 @@ LOF (Breunig et al., 2000 [25]) eliminates this problem by computing *local* rea
 
 3. **Continuous scoring enables audit prioritisation**: LOF produces a continuous score (values near 1.0 indicate normality; values significantly above 1.5 indicate anomaly), enabling a rank-ordered anomaly list directly actionable for inspection triage — more operationally useful than DBSCAN's binary noise label, which provides no severity gradient.
 
-#### 4.5.3 Dense Autoencoder — Adopted to Replace K-Means + Mahalanobis Distance
+#### 4.5.3 Robust Deep Autoencoder — Adopted to Replace K-Means + Mahalanobis Distance
 
 K-Means + Mahalanobis Distance was the preliminary cluster-based candidate, valued for its interpretability. However, the Mahalanobis distance is a fundamentally linear measure: it captures deviation from a cluster centroid within the space described by the feature covariance matrix. It cannot detect anomalies that emerge from non-linear interactions across features — precisely the compound patterns that characterise village fund corruption, where simultaneous irregularity across `cost_per_unit`, `avg_completion`, `stage_variance`, and `swakelola_high_value` constitutes stronger evidence of manipulation than any single variable extreme.
 
-A Dense Autoencoder trains on the unlabelled dataset, learning to reconstruct normal expenditure patterns through a compressed bottleneck. Records whose feature combinations deviate from learned normal patterns produce high reconstruction error (MSE), which serves as both the anomaly score and the explanation vector. Three properties justify this substitution:
+A Robust Deep Autoencoder (RDA) [34] extends the standard autoencoder by jointly decomposing the input matrix **X** into two components during training: a low-rank normal component reconstructed by the neural network, and a sparse noise matrix **S** that absorbs anomalous feature combinations. The joint optimisation objective is:
 
-1. **Non-linear compound anomaly detection**: The autoencoder's multi-layer encoder learns non-linear combinations of input features through activation functions — a capability absent from linear Mahalanobis distance. Kumar et al. [19] demonstrate this property produces higher detection precision on financial transaction data where corruption manifests through compound feature irregularities rather than single-variable extremes.
+`Loss = MSE(AE(X − S), (X − S)) + λ‖S‖₁`
 
-2. **AUC-ROC superiority on government financial data**: Shi and Weng [22] demonstrate in a 2024 study of government billing anomaly detection that autoencoders achieve higher AUC-ROC than centroid-distance methods. The performance advantage increases as the number of engineered features exceeds five — the condition present in this study's ten-feature input matrix.
+The L1 penalty forces anomalous records — which the network cannot reconstruct faithfully — into the sparse matrix S rather than distorting the learned latent representation. This property makes RDA architecturally resistant to training set contamination: even with ~10% anomalous records present in the unlabelled training set, the sparse decomposition isolates them from the network's encoding of normal behaviour. Reconstruction error on **(X − S)** at inference serves as both the anomaly score and the variable-level explanation vector. Four properties justify this substitution over both K-Means + Mahalanobis Distance and a standard Dense Autoencoder:
 
-3. **Per-feature reconstruction error as interpretable explanation**: De Meulemeester et al. [20] demonstrate that decomposing reconstruction error per input feature equips domain experts with actionable diagnostic information: the specific financial variable responsible for the anomaly flag is directly observable from the per-feature MSE vector. This retains and substantially enhances the interpretability advantage originally attributed to K-Means cluster profiles — auditors see not only *that* an activity is flagged, but *which spending variable* drives the suspicion.
+1. **Training contamination resistance**: Standard autoencoders trained on contaminated datasets learn to partially reconstruct anomaly patterns, suppressing their reconstruction error and reducing detection recall for those anomaly types. RDA's sparse noise matrix S absorbs contaminating records during training, isolating normal behaviour in the learned latent space [34]. This property is critical given the estimated ~10% anomaly prevalence in the Jambi dataset — a contamination rate that would meaningfully bias a standard autoencoder's learned representation.
+
+2. **Non-linear compound anomaly detection**: The Mahalanobis distance captures linear covariance deviations only. Village fund corruption anomalies manifest as compound non-linear interactions — e.g., simultaneously high `cost_per_unit`, inflated `avg_completion`, near-zero `Real_T3`, and `swakelola_high_value` = 1. RDA's encoder layers learn these compound patterns through non-linear activations, producing detection capabilities that linear distance metrics structurally cannot replicate [19].
+
+3. **AUC-ROC superiority on government financial data**: Shi and Weng [22] demonstrate in a 2024 study of government billing anomaly detection that autoencoders achieve higher AUC-ROC than centroid-distance methods. The performance advantage increases as the number of engineered features exceeds five — the condition present in this study's input matrix. RDA's contamination-resistant training objective is expected to sustain or exceed this advantage on the Jambi dataset.
+
+4. **Per-feature reconstruction error as interpretable explanation**: De Meulemeester et al. [20] demonstrate that decomposing reconstruction error per input feature equips domain experts with actionable diagnostic information: the specific financial variable responsible for the anomaly flag is directly observable from the per-feature MSE vector computed on **(X − S)**. Auditors see not only *that* an activity is flagged, but *which spending variable* drives the suspicion — preserving and substantially enhancing the interpretability purpose originally attributed to K-Means cluster profiles.
 
 #### 4.5.4 Summary Comparison: Replaced vs. Adopted Methods
 
-| Dimension | DBSCAN (Replaced) | LOF (Adopted) | K-Means + Mahalanobis (Replaced) | Dense Autoencoder (Adopted) |
+| Dimension | DBSCAN (Replaced) | LOF (Adopted) | K-Means + Mahalanobis (Replaced) | Robust Deep Autoencoder (Adopted) |
 |---|---|---|---|---|
-| **Parameter sensitivity** | High — global ε fails on mixed-density data | Low — k stable across densities | Medium — k must be pre-specified | Low — architecture fixed; early stopping handles overfitting |
-| **Government data validation** | Limited: primarily applied to homogeneous datasets | Direct: Li et al. [18] on USA federal spending 2025 | Partial: analogous to Wu [21] on Chinese budget audit | Direct: Shi & Weng [22] on government billing anomaly 2024 |
-| **Anomaly signal type** | Binary noise label only | Continuous score — enables triage ranking | Linear distance from centroid | Non-linear reconstruction error per feature |
-| **Compound irregularity detection** | No — single density parameter | Partial — local density deviation | No — linear covariance only | Yes — multi-layer non-linear encoding [19] |
-| **Auditor interpretability** | Low — unlabelled noise | Medium — score rank | High — cluster profile | High — per-feature error decomposition [20] |
+| **Parameter sensitivity** | High — global ε fails on mixed-density data | Low — k stable across densities | Medium — k must be pre-specified | Low — architecture fixed; λ robust to cross-validation; early stopping handles overfitting |
+| **Government data validation** | Limited: primarily applied to homogeneous datasets | Direct: Li et al. [18] on USA federal spending 2025 | Partial: analogous to Wu [21] on Chinese budget audit | Direct: Shi & Weng [22] on government billing 2024; Zhou & Paffenroth [34] KDD 2017 |
+| **Anomaly signal type** | Binary noise label only | Continuous score — enables triage ranking | Linear distance from centroid | Non-linear reconstruction error on (X−S) per feature |
+| **Compound irregularity detection** | No — single density parameter | Partial — local density deviation | No — linear covariance only | Yes — non-linear encoding + sparse noise isolation [19, 34] |
+| **Training contamination resistance** | N/A | N/A — non-parametric, no training required | None — contaminated cluster centroids absorb anomaly influence | High — sparse noise matrix S absorbs anomalous training records [34] |
+| **Auditor interpretability** | Low — unlabelled noise | Medium — score rank | High — cluster profile | High — per-feature error decomposition on (X−S) [20] |
 
 ---
 
@@ -128,7 +135,7 @@ A Dense Autoencoder trains on the unlabelled dataset, learning to reconstruct no
 | **Method** | Harriz et al. [13], the only ML study specific to village funds, applies supervised CatBoost classification requiring labelled training data; Husnaningtyas and Dewayanto [16] observe unsupervised approaches remain rare in Indonesian financial fraud detection | Employs three unsupervised methods operating on unlabelled absorption records, aligned with real-time monitoring constraints where verified corruption labels are unavailable [16] |
 | **Geography** | Ambarsari and Desyanti [14] apply Isolation Forest to national-level Indonesian procurement data without connecting algorithmic outputs to specific corruption typologies | Conducts province-level, village-activity analysis and maps anomaly flags to modus operandi documented in judicial verdicts [7] and institutional audit reports [8] |
 | **Data Type** | Reviewed studies use aggregate budget statistics or governance survey instruments [12, 16]; Siskeudes activity-level variables — procurement method codes, multi-stage realization amounts, activity identifiers — have not been modelled as anomaly detection features | Constructs a ten-variable feature matrix directly from Siskeudes activity records, operationalising each feature as a computational proxy for a documented corruption modus operandi [7, 8, 15] |
-| **Comparison** | Indonesian public finance anomaly detection studies apply single algorithms [14]; Alam et al. [24] identify multi-paradigm benchmarking as best practice but find it scarcely implemented in domain-specific applications | Benchmarks three algorithmically distinct paradigms — ensemble partitioning (IF), local density estimation (LOF), and neural reconstruction (AE) — providing the comparative evaluation recommended by Alam et al. [24] for rigorous unsupervised detection |
+| **Comparison** | Indonesian public finance anomaly detection studies apply single algorithms [14]; Alam et al. [24] identify multi-paradigm benchmarking as best practice but find it scarcely implemented in domain-specific applications | Benchmarks three algorithmically distinct paradigms — ensemble partitioning (IF), local density estimation (LOF), and deep sparse reconstruction (RDA) — providing the comparative evaluation recommended by Alam et al. [24] for rigorous unsupervised detection |
 
 ---
 
@@ -177,9 +184,11 @@ All features derive from the Penyerapan dataset joined with Pagu. The following 
 | `swakelola_high_value` | 1 if Cara_Pengadaan == 'Swakelola' AND total_realization > threshold | High-value procurement without competitive bidding |
 | `activity_category` | Kode_Output prefix (2-digit) encoded numerically | Activity type for cluster grouping |
 | `year` | 2023/2024/2025 | Inter-year drift in costs for same activity type |
-| `cost_deviation_by_category` | z-score of cost_per_unit within same Kode_Output group | Within-category cost outlier |
+| `cost_deviation_by_category` | z-score of `cost_per_unit` within same `Kode_Output` group, computed **year-stratified** (2023, 2024, 2025 independently) to prevent temporal leakage from pooled-year distribution | Within-category cost outlier — temporally isolated |
 
 *Note: Text-based features (Uraian_Output, Keterangan) — useful for detecting duplicate activity names and fictitious project labels — are excluded from the current numerical feature matrix. Their inclusion via TF-IDF or sentence embeddings constitutes an identified limitation and a designated direction for future work.*
+
+*Note 2: `stage_variance` is computed as `std(Real_T1, Real_T2, Real_T3)` uniformly across all three stages. Activities legitimately disbursed entirely in Stage 1 (T2 = T3 = 0 by single-stage design, per village fund regulation) will exhibit high computed variance, producing structural false positives for this feature specifically. This zero-inflation property is acknowledged as a known limitation; the remaining features provide cross-contextual evidence when interpreting stage_variance-driven flags. Stage-activity type filtering as a mitigation is identified as future work.*
 
 ---
 
@@ -190,28 +199,35 @@ All features derive from the Penyerapan dataset joined with Pagu. The following 
 ```
 Raw Data (Pagu + Penyerapan, 2023-2025, Jambi)
         ↓
-Data Preprocessing & Feature Engineering
+Data Preprocessing
+  · Structural zero annotation (n_stages_active per record)
+  · VIF screening — drop/merge features with VIF > 5 (documented)
+  · Year-stratified z-scores for cost_deviation_by_category
         ↓
-Normalisation (MinMaxScaler / StandardScaler)
+Feature Engineering (post-VIF feature matrix)
         ↓
-┌──────────────┬──────────────┬───────────────────────────┐
-│ Method 1:    │ Method 2:    │ Method 3:                  │
-│ Isolation    │ Local        │ Dense                      │
-│ Forest (IF)  │ Outlier      │ Autoencoder (AE)           │
-│              │ Factor (LOF) │                            │
-└──────┬───────┴──────┬───────┴───────────┬───────────────┘
-       ↓              ↓                   ↓
-    Anomaly        LOF Score          Reconstruction
-    Scores         (continuous)       Error (MSE)
-       └──────────────┴───────────────────┘
-                       ↓
-              Comparative Evaluation
-          (Anomaly Rate Consistency,
-           Inter-Method Agreement κ,
-           Precision @ K, PCA / t-SNE)
-                       ↓
-        Corruption Typology Mapping
-   (Modus: Mark-up / Fiktif / Double Budget / etc.)
+Normalisation (RobustScaler — median/IQR, resistant to anomaly-induced scale distortion)
+        ↓
+┌─────────────┬──────────────┬──────────────┬────────────────────────────┐
+│ Baseline:   │ Method 1:    │ Method 2:    │ Method 3:                  │
+│ IQR Rule-   │ Isolation    │ Local        │ Robust Deep               │
+│ based       │ Forest (IF)  │ Outlier      │ Autoencoder (RDA)         │
+│             │              │ Factor (LOF) │ [sparse noise decomp.]    │
+└──────┬──────┘─────┬───────┘──────┬───────┘─────────┬───────────────┘
+       ↓             ↓              ↓                  ↓
+   IQR Flag      Anomaly        LOF Score         Reconstruction
+                 Scores        (continuous)       Error on (X−S)
+       └─────────────┘─────────────┘──────────────────┘
+                              ↓
+             Comparative Evaluation
+   (IQR Baseline · Anomaly Rate Consistency · Score Distribution
+    Cohen's κ · Precision@K · Village Persistence Score · PCA/t-SNE)
+                              ↓
+           Corruption Typology Mapping
+   (Modus: Mark-up · Fiktif · Double Budget · etc.)
+                              ↓
+      Village-Level Anomaly Persistence Analysis
+  (cross-year flags 2023–2024–2025 per desa → top inspection targets)
 ```
 
 ### 8.2 Method 1 — Isolation Forest
@@ -241,32 +257,41 @@ Two properties make LOF the superior density-based method for village fund absor
 
 **Output**: Continuous LOF score per activity record + binary anomaly flag
 
-### 8.4 Method 3 — Dense Autoencoder
+### 8.4 Method 3 — Robust Deep Autoencoder (RDA)
 
-**Rationale**: A Dense Autoencoder is a feed-forward neural network trained to reconstruct its own numerical input through a compressed bottleneck layer. The model trains exclusively on the unlabelled dataset, learning to encode the dominant patterns of *normal* expenditure behaviour into low-dimensional representations. When presented with an anomalous record — one whose feature combination deviates from learned normal patterns — the decoder cannot faithfully reconstruct it, producing high reconstruction error (MSE). This error serves as both the anomaly score and the explanation vector.
+**Rationale**: A Robust Deep Autoencoder (RDA) [34] extends the standard autoencoder by jointly decomposing the input matrix **X** into two components during training: a reconstructed normal component produced by the neural network, and a sparse noise matrix **S** (same dimensions as the input) that absorbs anomalous feature combinations. The joint optimisation objective is:
 
-Three properties justify replacing K-Means + Mahalanobis Distance with a Dense Autoencoder:
+`Loss = MSE(AE(X − S), (X − S)) + λ‖S‖₁`
 
-1. **Non-linear compound anomaly detection**: The Mahalanobis distance captures linear covariance deviations only. Village fund corruption anomalies manifest as compound non-linear interactions — e.g., simultaneously high `cost_per_unit`, inflated `avg_completion`, zero `Real_T3`, and a `swakelola_high_value` flag. Autoencoder hidden layers learn these compound patterns through non-linear activations, producing detection capabilities that linear distance metrics structurally cannot replicate [19].
+The L1 penalty on **S** forces anomalous records — whose feature combinations the network cannot faithfully reconstruct — into the sparse noise matrix rather than distorting the learned latent representation. This separation means the autoencoder learns exclusively from normal expenditure behaviour even when the training set contains the estimated ~10% anomalous records. At inference, per-record reconstruction error on **(X − S)** serves as both the anomaly score and the variable-level explanation vector.
 
-2. **AUC-ROC superiority on government financial data**: Shi and Weng [22] demonstrate in a 2024 comparative study of government billing anomaly detection that autoencoders achieve higher AUC-ROC than centroid-distance methods, with the performance advantage increasing as the number of engineered input features exceeds five — the condition present here (ten-feature matrix).
+Four properties justify replacing K-Means + Mahalanobis Distance with RDA as the third detection paradigm:
 
-3. **Per-feature reconstruction error as interpretable explanation**: De Meulemeester et al. [20] show that decomposing reconstruction error per input feature gives domain experts a direct diagnostic signal: the specific financial variable responsible for the anomaly flag is observable from the per-feature MSE vector. Auditors receive not only *that* an activity is suspicious, but *which spending variable* is anomalous — preserving and enhancing the interpretability purpose originally attributed to K-Means cluster profiles.
+1. **Training contamination resistance**: Standard autoencoders trained on contaminated datasets learn to partially reconstruct anomaly patterns, suppressing their reconstruction error and reducing detection recall for those anomaly types. RDA's sparse noise matrix absorbs contaminating records during training, isolating normal expenditure behaviour in the learned latent space [34]. This property is critical given the estimated ~10% anomaly prevalence in the Jambi dataset — a contamination rate that would meaningfully bias a standard autoencoder's learned representation.
+
+2. **Non-linear compound anomaly detection**: The Mahalanobis distance captures linear covariance deviations only. Village fund corruption anomalies manifest as compound non-linear interactions — e.g., simultaneously high `cost_per_unit`, inflated `avg_completion`, near-zero `Real_T3`, and `swakelola_high_value` = 1. RDA's encoder layers learn these compound patterns through non-linear activations, producing detection capabilities that linear distance metrics structurally cannot replicate [19].
+
+3. **AUC-ROC superiority on government financial data**: Shi and Weng [22] demonstrate in a 2024 comparative study of government billing anomaly detection that autoencoders achieve higher AUC-ROC than centroid-distance methods, with the performance advantage increasing as the number of engineered input features exceeds five — the condition present here. RDA's contamination-resistant training objective is expected to sustain or exceed this performance advantage on the Jambi dataset.
+
+4. **Per-feature reconstruction error as interpretable explanation**: De Meulemeester et al. [20] demonstrate that decomposing reconstruction error per input feature equips domain experts with actionable diagnostic information: the specific financial variable responsible for the anomaly flag is directly observable from the per-feature MSE vector computed on **(X − S)**. Auditors receive not only *that* an activity is suspicious, but *which spending variable* is anomalous — preserving and substantially enhancing the interpretability purpose originally attributed to K-Means cluster profiles.
 
 **Architecture**:
-- Input: 10 normalised features
+- Input: RobustScaler-normalised feature matrix **X** (post-VIF screening)
+- Sparse noise matrix **S**: same shape as input, jointly optimised with the autoencoder
 - Encoder: Dense(64, ReLU) → Dense(32, ReLU) → Dense(16, ReLU)
 - Bottleneck: Dense(8, ReLU)
-- Decoder: Dense(16, ReLU) → Dense(32, ReLU) → Dense(64, ReLU) → Dense(10, Linear)
-- Loss: Mean Squared Error (MSE)
+- Decoder: Dense(16, ReLU) → Dense(32, ReLU) → Dense(64, ReLU) → Dense(output_dim, Linear)
+- Loss: `MSE(AE(X − S), (X − S)) + λ‖S‖₁`
+- λ (sparse regularisation): swept over [1e-4, 1e-3, 1e-2]; selected via validation MSE
 - Optimiser: Adam (lr = 0.001)
 - Training: 50–100 epochs with early stopping (patience = 10, monitored on validation MSE)
 
 **Key Parameters**:
-- Anomaly threshold: records at ≥ 95th/97.5th percentile of reconstruction error distribution
-- Feature input: same normalised feature set as other methods
+- λ: 1e-3 (default); tuned via cross-validated reconstruction error on held-out records
+- Anomaly threshold: records at ≥ 95th/97.5th percentile of reconstruction error distribution on (X − S)
+- Feature input: same RobustScaler-normalised feature set as other methods
 
-**Output**: Total reconstruction error (MSE) per activity record + per-feature error decomposition vector + binary anomaly flag
+**Output**: Total reconstruction error per activity record + per-feature error decomposition vector on (X − S) + sparse noise component **S** per record + binary anomaly flag
 
 ### 8.5 Evaluation Framework
 
@@ -274,12 +299,14 @@ Since ground truth corruption labels are unavailable (unsupervised setting), eva
 
 | Metric | Purpose | Applicable To |
 |---|---|---|
-| **Anomaly Rate Consistency** | Stability of % anomalies across 2023/2024/2025 — instability indicates parameter sensitivity rather than genuine signal | IF, LOF, AE |
-| **Score Distribution Shape** | Bimodal separation between normal and anomalous tails confirms effective discrimination | IF (anomaly score), LOF (LOF score), AE (MSE) |
-| **Inter-Method Agreement (Cohen's κ)** | Proportion of records flagged by ≥ 2 of 3 methods; high consensus = highest-confidence corruption indications | IF, LOF, AE |
-| **Precision @ K (Expert Validation)** | Top-50 flagged records per method reviewed against documented corruption indicators [7, 8, 15] — primary ground-truth proxy | IF, LOF, AE |
-| **Per-Feature Reconstruction Error** | Identifies which financial variable drives each specific anomaly flag | AE only |
-| **Visualisation (PCA / t-SNE)** | 2D projection confirms visual separation of flagged vs. normal records across all three scoring spaces | IF, LOF, AE |
+| **IQR Rule-Based Baseline** | Flag records outside Q1 − 1.5×IQR / Q3 + 1.5×IQR on `cost_per_unit` and `absorption_ratio`; overlap and false-positive rates compared against all three ML methods to demonstrate whether ML methods add detection value beyond simple statistical screening | Baseline vs. IF, LOF, RDA |
+| **Anomaly Rate Consistency** | Stability of % anomalies across 2023/2024/2025 — instability indicates parameter sensitivity rather than genuine signal | Baseline, IF, LOF, RDA |
+| **Score Distribution Shape** | Bimodal separation between normal and anomalous tails confirms effective discrimination | IF (anomaly score), LOF (LOF score), RDA (MSE on X−S) |
+| **Inter-Method Agreement (Cohen's κ)** | Proportion of records flagged by ≥ 2 of 3 ML methods; high consensus = highest-confidence corruption indications | IF, LOF, RDA |
+| **Precision @ K (Expert Validation)** | Top-50 flagged records per method reviewed by 2 domain experts (APIP operative or IS/audit academic with village fund experience) using a binary Suspicious / Not Suspicious rubric mapped to the 7 modus operandi in Section 9; inter-rater Cohen's κ computed between experts to verify rubric reliability — primary ground-truth proxy | IF, LOF, RDA |
+| **Village Anomaly Persistence Score** | Village-level metric: proportion of fiscal years (2023, 2024, 2025) in which the village's activities include ≥ 1 flagged record; villages flagged in ≥ 2 of 3 years constitute the highest-priority inspection targets, signalling systematic rather than incidental irregularity | IF, LOF, RDA (consensus flags) |
+| **Per-Feature Reconstruction Error** | Identifies which specific financial variable drives each anomaly flag — variable-level diagnostic for auditors derived from per-feature MSE on (X − S) | RDA only |
+| **Visualisation (PCA / t-SNE)** | 2D projection confirms visual separation of flagged vs. normal records across all scoring spaces | IF, LOF, RDA |
 
 ---
 
@@ -291,7 +318,7 @@ Upon anomaly identification, each flagged record is cross-referenced with the 12
 |---|---|---|
 | Mark-up / Price Inflation | `cost_per_unit`, `cost_deviation_by_category` | High z-score within category; Isolation Forest anomaly |
 | Proyek Fiktif (Fictitious Project) | `absorption_ratio`, `avg_completion` | Near-zero total realisation despite full percentage claims |
-| Anggaran Ganda (Double Budget) | `Uraian_Output` similarity + high activity count per village + duplicated cost patterns | Cluster proximity in LOF + high reconstruction error in AE for semantically repeated entries; full text-similarity detection identified as future work |
+| Anggaran Ganda (Double Budget) | `Uraian_Output` similarity + high activity count per village + duplicated cost patterns | Cluster proximity in LOF + high reconstruction error in RDA for semantically repeated entries; full text-similarity detection identified as future work |
 | Pemotongan Honor | Keterangan contains "honor"; low avg_completion | Honoraria line items with anomalously low realization |
 | Laporan Pertanggungjawaban Palsu | `completion_vs_realization` gap | High Pct values with low Real values |
 | Pengadaan without Competition | `swakelola_high_value` = 1 | High-value Swakelola procurement flag |
@@ -305,9 +332,9 @@ Three `.ipynb` notebooks, executable in Google Colab:
 
 | Notebook | Content |
 |---|---|
-| `01_data_preprocessing.ipynb` | Load Pagu + Penyerapan (2023–2025), merge, clean, engineer features, export `features_engineered.csv` |
-| `02_unsupervised_comparison.ipynb` | Train/apply all three methods, compute evaluation metrics, inter-method agreement, export anomaly flags |
-| `03_corruption_typology_analysis.ipynb` | Map anomaly flags to modus operandi, visualise with PCA/t-SNE, produce summary tables, qualitative interpretation |
+| `01_data_preprocessing.ipynb` | Load Pagu + Penyerapan (2023–2025), merge, clean; annotate structural zeros (n_stages_active); compute year-stratified z-scores for `cost_deviation_by_category`; run VIF screening (drop/merge features with VIF > 5); apply RobustScaler; export `features_engineered.csv` |
+| `02_unsupervised_comparison.ipynb` | Apply IQR baseline; train and apply IF, LOF, RDA (all on RobustScaler-normalised features); compute IQR vs. ML overlap; compute anomaly rate consistency, score distribution, inter-method Cohen's κ; compute village anomaly persistence scores; export anomaly flags |
+| `03_corruption_typology_analysis.ipynb` | Map anomaly flags to modus operandi; visualise with PCA/t-SNE; produce summary tables; export Top-50 flagged records per method for expert validation (binary Suspicious / Not Suspicious rubric per Section 9); compute inter-rater Cohen's κ; produce village persistence ranking |
 
 **Libraries**: `pandas`, `numpy`, `scikit-learn`, `tensorflow` / `keras`, `matplotlib`, `seaborn`, `plotly`, `scipy`
 
@@ -317,12 +344,14 @@ Three `.ipynb` notebooks, executable in Google Colab:
 
 ### Theoretical Contributions
 1. Extends IS-grounded anomaly detection frameworks — demonstrated in health insurance data [20] and US federal spending contexts [18] — to Indonesian village fund expenditure, a domain previously approached through legal-forensic and governance lenses [4, 5, 6] rather than computational anomaly screening.
-2. Advances the operationalisation of the Fraud Triangle through computational features derived from expenditure absorption records.
+2. Advances the operationalisation of the Fraud Triangle through computational features derived from expenditure absorption records, including the novel village-level anomaly persistence score as a proxy for sustained opportunity exploitation across fiscal cycles.
+3. Demonstrates the applicability of Robust Deep Autoencoders [34] — an architecture designed for contaminated training sets — to public financial monitoring contexts where ground-truth labels are unavailable and training set purity cannot be guaranteed.
 
 ### Practical Contributions
 1. Produces a replicable, open-source screening tool (Colab notebooks) applicable to any province with equivalent Siskeudes-format data.
 2. Generates a rank-ordered list of suspicious village activities for Inspectorate/BPKP follow-up, reducing audit triage effort.
 3. Demonstrates how three years of longitudinal data (2023–2025) enable inter-year cost deviation analysis beyond the single-period scope characteristic of reviewed Indonesian public finance anomaly studies [14, 17].
+4. Introduces a village-level anomaly persistence score that identifies villages exhibiting repeated anomalous expenditure patterns across multiple fiscal years, providing principled cross-year inspection prioritisation beyond single-cycle screening.
 
 ---
 
@@ -368,22 +397,23 @@ Three `.ipynb` notebooks, executable in Google Colab:
               └────────────┬──────────────────────┬──────────┬────────────┘
                            │                      │          │
        ┌───────────────────▼─┐  ┌─────────────────▼─┐  ┌────▼──────────────────┐
-       │  Isolation Forest   │  │  Local Outlier     │  │   Dense Autoencoder  │
-       │       (IF)          │  │  Factor (LOF)      │  │         (AE)         │
-       │                     │  │                    │  │                      │
-       │  Path-partitioning  │  │  Local density     │  │  Encoder →           │
+       │  Isolation Forest   │  │  Local Outlier     │  │  Robust Deep AE    │
+       │       (IF)          │  │  Factor (LOF)      │  │       (RDA)        │
+       │                     │  │                    │  │                    │
+       │  Path-partitioning  │  │  Local density     │  │  Encoder →          │
        │  ensemble           │  │  estimation        │  │   Bottleneck (dim. ↓)│
-       │  No distr. assump.  │  │  (k-NN based)      │  │    → Decoder (recon.)│
+       │  No distr. assump.  │  │  (k-NN based)      │  │  → (X−S) decomp.    │
        └──────────┬──────────┘  └─────────┬──────────┘  └──────────┬───────────┘
         Anomaly   │ score         LOF      │ score        MSE per   │ feature
                   └─────────────────────────┴────────────────────────┘
                                             │
               ┌─────────────────────────────▼─────────────────────────────┐
               │                  COMPARATIVE EVALUATION                   │
-              │   Anomaly Rate Consistency   (3-year cross-year analysis) │
+              │   IQR Baseline · Anomaly Rate Consistency               │
               │   Score Distribution Shape   (bimodal separation test)    │
               │   Inter-Method Agreement     (Cohen's κ)                  │
-              │   Precision @ K              (expert audit validation)    │
+              │   Precision @ K              (expert rubric, 2 raters)    │
+              │   Village Persistence Score  (cross-year flagging)        │
               │   PCA / t-SNE                (2D cluster projection)      │
               └─────────────────────────────┬─────────────────────────────┘
                                             │  consensus flags (≥ 2 of 3 methods)
@@ -473,6 +503,8 @@ Three `.ipynb` notebooks, executable in Google Colab:
 
 [33] JambiLINK.id, "Tersangka korupsi dana desa Pangkal Duri ditangkap, kerugian negara capai Rp 415 juta," Aug. 2024. [Online]. Available: https://jambilink.id/post/951/tersangka-korupsi-dana-desa-pangkal-duri-ditangkap-kerugian-negara-capai-rp-415-juta
 
+[34] C. Zhou and R. C. Paffenroth, "Anomaly detection with robust deep autoencoders," in *Proc. 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, Halifax, Canada, 2017, pp. 665–674, doi: 10.1145/3097983.3098052. [Online]. Available: https://dl.acm.org/doi/10.1145/3097983.3098052
+
 ---
 
-*Limitations and Future Work: Extending this framework to NLP-based duplicate activity detection (via TF-IDF or sentence embeddings on `Uraian_Output`) and cross-provincial comparative analysis constitutes the primary identified direction for subsequent research building on these findings.*
+*Limitations and Future Work: (1) `stage_variance` is vulnerable to zero-inflation from legitimately single-stage activities (T2 = T3 = 0 by design), producing structural false positives for this feature; stage-activity type filtering is designated as future work. (2) Text-based features (`Uraian_Output`, `Keterangan`) useful for detecting duplicate activity names and fictitious project labels are excluded from the current numerical feature matrix; their inclusion via TF-IDF or sentence embeddings constitutes a primary future direction. (3) Expert validation requires access to APIP operatives or IS/audit academics with village fund experience; the study's Precision@K findings are contingent on this resource. (4) Province-level analysis of Jambi limits generalisability; cross-provincial comparative analysis is identified as a subsequent research direction.*
