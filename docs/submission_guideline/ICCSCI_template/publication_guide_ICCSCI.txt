@@ -1,0 +1,14 @@
+Manuscript Preparation
+Before submitting your manuscript, ensure that it complies with the ICCSCI 2026 guidelines.
+Use IMRaD format (Introduction, Method, Results, Discussion).
+Follow the official conference template.
+Manuscript length must be 3–10 pages.
+Topic must align with computer science scope.
+Remove all author identities for double-blind review.
+Similarity index must not exceed 20%.
+At least 60% of references must be from the last 5 years.
+AI-generated must not exceed 50%
+
+Citation & References
+ICCSCI 2026 uses Vancouver Style. Citations appear as bracketed numbers [1], ordered by appearance.
+References follow the same order. There is no maximum reference limit.
