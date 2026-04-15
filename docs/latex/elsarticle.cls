@@ -1,344 +1,939 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
- <title>CTAN: Package elsarticle</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- <meta name="mobile-web-app-capable" content="yes"/>
+%%
+%% This is file `elsarticle.cls',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% elsarticle.dtx  (with options: `class')
+%% 
+%% Copyright 2007, 2008, 2009, 2010 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% -------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%%
+%% $Id: elsarticle.dtx 26 2010-06-11 11:54:01Z rishi $
+%%
+ \def\RCSfile{elsarticle}%
+ \def\RCSversion{1.21}%
+ \def\RCSdate{2010/06/11}%
+ \def\@shortjnl{\relax}
+ \def\@journal{Elsevier Ltd} \def\@company{Elsevier Ltd}
+ \def\@issn{000-0000}
+ \def\@shortjid{elsarticle}
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesClass{\@shortjid}[\RCSdate, \RCSversion: \@journal]
+\def\ABD{\AtBeginDocument}
+\newif\ifpreprint \preprintfalse
+\newif\iflongmktitle \longmktitlefalse
+\newif\ifnopreprintline \nopreprintlinefalse
+\newif\ifcorexist
+\def\@blstr{1}
+\newdimen\@bls
+\@bls=\baselineskip
 
- <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-touch-icon-57x57-2939b50c47f8b5ca065cd63c9a64973b.png" />
- <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-touch-icon-60x60-337a9d235bc42e9f462aaddb486a76dd.png" />
- <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-touch-icon-72x72-0e57167ccde9e93c5f99c9e71002bfde.png" />
- <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-touch-icon-76x76-3103aee8e8049b3adbc7a4d7b0a2eb40.png" />
- <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-touch-icon-114x114-2cf42426f1437dce3145eed9f7c52733.png" />
- <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-touch-icon-120x120-eae92d87e1eb87421415c318e045fdd4.png" />
- <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-touch-icon-144x144-4e2a869d05c81af869921a31bf5e23f6.png" />
- <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-touch-icon-152x152-20e963587ff34e81bde29b0c97bdc181.png" />
- <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon-180x180-cdeb760ad0aa0db29ecec0ce958f0f85.png" />
- <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32-a101178bc8b3b1faaccae8b3eb747f97.png" sizes="32x32" />
- <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192-beba071413dcab08f0a0c89a58a23457.png" sizes="192x192" />
- <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96-0ec6ea4c2b21cf315aab8d552474015c.png" sizes="96x96" />
- <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16-ecad89e8a3475c9b10c36f82efef3bcd.png" sizes="16x16" />
- <link rel="manifest" href="/assets/favicon/manifest-79a60c90526dbf14f7824aa7aa50579f.json" />
- <link rel="shortcut icon" href="/assets/favicon/favicon-afd4a866cd0c27587b7b06cd4199a57f.ico" />
- <meta name="msapplication-TileColor" content="#2b5797"/>
- <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144-13de7449899120a2a279e89581f29f52.png"/>
- <meta name="msapplication-config" content="/assets/favicon/browserconfig-945ed94c904db71e7a7c54d6ae065f5a.xml"/>
- <meta name="theme-color" content="#ffffff"/>
+\def\@finalWarning{%
+  *****************************************************\MessageBreak
+   This document is typeset in the CRC style which\MessageBreak
+   is not suitable for submission.\MessageBreak
+   \MessageBreak
+   Please typeset again using 'preprint' option\MessageBreak
+   for creating PDF suitable for submission.\MessageBreak
+  ******************************************************\MessageBreak
+}
+
+\DeclareOption{preprint}{\global\preprinttrue
+  \gdef\@blstr{1}\xdef\jtype{0}%
+   \AtBeginDocument{\@twosidefalse\@mparswitchfalse}}
+\DeclareOption{nopreprintline}{\global\nopreprintlinetrue}
+\DeclareOption{final}{\gdef\@blstr{1}\global\preprintfalse}
+\DeclareOption{review}{\global\preprinttrue\gdef\@blstr{1.5}}
+\DeclareOption{authoryear}{\xdef\@biboptions{round,authoryear}}
+\DeclareOption{number}{\xdef\@biboptions{numbers}}
+\DeclareOption{numbers}{\xdef\@biboptions{numbers}}
+\DeclareOption{longtitle}{\global\longmktitletrue}
+\DeclareOption{5p}{\xdef\jtype{5}\global\preprintfalse
+  \ExecuteOptions{twocolumn}}
+  \def\jtype{0}
+\DeclareOption{3p}{\xdef\jtype{3}\global\preprintfalse}
+\DeclareOption{1p}{\xdef\jtype{1}\global\preprintfalse
+  \AtBeginDocument{\@twocolumnfalse}}
+\DeclareOption{times}{\IfFileExists{txfonts.sty}%
+  {\AtEndOfClass{\RequirePackage{txfonts}%
+  \gdef\ttdefault{cmtt}%
+   \let\iint\relax
+  \let\iiint\relax
+  \let\iiiint\relax
+  \let\idotsint\relax
+  \let\openbox\relax}}{\AtEndOfClass{\RequirePackage{times}}}}
+\ExecuteOptions{a4paper,10pt,oneside,onecolumn,number,preprint}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions
+\LoadClass{article}
+\RequirePackage{graphicx}
+\let\comma\@empty
+\let\tnotesep\@empty
+\def\title#1{\gdef\@title{#1}}
+\let\@title\@empty
+
+\def\elsLabel#1{\@bsphack\protected@write\@auxout{}%
+         {\string\Newlabel{#1}{\@currentlabel}}\@esphack}
+\def\Newlabel#1#2{\expandafter\xdef\csname X@#1\endcsname{#2}}
+
+\def\elsRef#1{\@ifundefined{X@#1}{0}{\csname X@#1\endcsname}%
+}
+
+\def\tnotemark[#1]{\textsuperscript{\@for\@@tmark:=#1\do{%
+      \edef\tnotenum{\@ifundefined{X@\@@tmark}{1}{\elsRef{\@@tmark}}}%
+      \ifcase\tnotenum\or\ding{73}\or,\ding{73}\ding{73}\fi}}%
+}
+\let\@tnotemark\@empty
+
+\let\@tnotes\@empty
+\RequirePackage{pifont}
+\newcounter{tnote}
+\def\tnotetext[#1]#2{\g@addto@macro\@tnotes{%
+  \refstepcounter{tnote}\elsLabel{#1}%
+   \def\thefootnote{\ifcase\c@tnote\or\ding{73}\or\ding{73}\ding{73}\fi}%
+    \footnotetext{#2}}}
+
+\let\@nonumnotes\@empty
+\def\nonumnote#1{\g@addto@macro\@nonumnotes{%
+     \let\thefootnote\relax\footnotetext{#1}}}
+
+\newcounter{fnote}
+\def\fnmark[#1]{\let\comma\@empty
+    \def\@fnmark{\@for\@@fnmark:=#1\do{%
+    \edef\fnotenum{\@ifundefined{X@\@@fnmark}{1}{\elsRef{\@@fnmark}}}%
+  \unskip\comma\fnotenum\let\comma,}}%
+}
+
+\let\@fnotes\@empty\let\@fnmark\@empty
+\def\fntext[#1]#2{\g@addto@macro\@fnotes{%
+     \refstepcounter{fnote}\elsLabel{#1}%
+   \def\thefootnote{\thefnote}%
+   \global\setcounter{footnote}{\thefnote}%
+   \footnotetext{#2}}}
+
+\def\cormark[#1]{\edef\cnotenum{\elsRef{#1}}%
+    \unskip\textsuperscript{\sep\ifcase\cnotenum\or
+       $\ast$\or$\ast\ast$\fi\hspace{-1pt}}\let\sep=,}
+
+\let\@cormark\@empty
+\let\@cornotes\@empty
+\newcounter{cnote}
+\def\cortext[#1]#2{\global\corexisttrue\g@addto@macro\@cornotes{%
+    \refstepcounter{cnote}\elsLabel{#1}%
+    \def\thefootnote{\ifcase\thecnote\or$\ast$\or
+    $\ast\ast$\fi}%
+    \footnotetext{#2}}}
+
+\let\@corref\@empty
+\def\corref#1{\global\corexisttrue\edef\cnotenum{\elsRef{#1}}%
+    \edef\@corref{\ifcase\cnotenum\or
+         $\ast$\or$\ast\ast$\fi\hskip-1pt}}
+
+\def\fnref#1{\fnmark[#1]}
+\def\tnoteref#1{\tnotemark[#1]}
+
+\def\resetTitleCounters{\c@cnote=0
+   \c@fnote=0 \c@tnote=0 \c@footnote=0}
+
+\let\eadsep\@empty
+\let\@elseads\@empty
+\let\@elsuads\@empty
+\let\@cormark\@empty
+\def\hashchar{\expandafter\@gobble\string\~}
+\def\underscorechar{\expandafter\@gobble\string\_}
+\def\lbracechar{\expandafter\@gobble\string\{}
+\def\rbracechar{\expandafter\@gobble\string\}}
+
+\def\ead{\@ifnextchar[{\@uad}{\@ead}}
+\gdef\@ead#1{\bgroup\def\_{\string\underscorechar\space}%
+  \def\{{\string\lbracechar\space}%
+   \def~{\hashchar\space}%
+   \def\}{\string\rbracechar\space}%
+   \edef\tmp{\the\@eadauthor}
+   \immediate\write\@auxout{\string\emailauthor
+     {#1}{\expandafter\strip@prefix\meaning\tmp}}%
+  \egroup
+}
+\newcounter{ead}
+\gdef\emailauthor#1#2{\stepcounter{ead}%
+     \g@addto@macro\@elseads{\raggedright%
+      \let\corref\@gobble
+      \eadsep{#1} (#2).\def\eadsep{\unskip,\space}}%
+}
+\gdef\@uad[#1]#2{\bgroup
+  \def~{\string\hashchar\space}%
+  \def\_{\string\underscorechar\space}%
+   \edef\tmp{\the\@eadauthor}
+   \immediate\write\@auxout{\string\urlauthor
+     {#2}{\expandafter\strip@prefix\meaning\tmp}}%
+  \egroup
+}
+\def\urlauthor#1#2{\g@addto@macro\@elsuads{\let\corref\@gobble%
+     \raggedright\eadsep{#1}\space(#2)%
+     \def\eadsep{\unskip,\space}}%
+}
+
+\def\elsauthors{}
+\def\pprinttitle{}
+\let\authorsep\@empty
+\let\sep\@empty
+\newcounter{author}
+\def\author{\@ifnextchar[{\@@author}{\@author}}
+
+\newtoks\@eadauthor
+\def\@@author[#1]#2{\g@addto@macro\elsauthors{%
+    \def\baselinestretch{1}%
+    \authorsep#2\unskip\textsuperscript{%#1%
+      \@for\@@affmark:=#1\do{%
+       \edef\affnum{\@ifundefined{X@\@@affmark}{1}{\elsRef{\@@affmark}}}%
+     \unskip\sep\affnum\let\sep=,}%
+      \ifx\@fnmark\@empty\else\unskip\sep\@fnmark\let\sep=,\fi
+      \ifx\@corref\@empty\else\unskip\sep\@corref\let\sep=,\fi
+      }%
+    \def\authorsep{\unskip,\space}%
+    \global\let\sep\@empty\global\let\@corref\@empty
+    \global\let\@fnmark\@empty}%
+    \@eadauthor={#2}
+}
+
+\def\@author#1{\g@addto@macro\elsauthors{\normalsize%
+    \def\baselinestretch{1}%
+    \upshape\authorsep#1\unskip\textsuperscript{%
+      \ifx\@fnmark\@empty\else\unskip\sep\@fnmark\let\sep=,\fi
+      \ifx\@corref\@empty\else\unskip\sep\@corref\let\sep=,\fi
+      }%
+    \def\authorsep{\unskip,\space}%
+    \global\let\@fnmark\@empty
+    \global\let\@corref\@empty
+    \global\let\sep\@empty}%
+    \@eadauthor={#1}
+}
+
+\def\elsaddress{}
+\def\addsep{\par\vskip6pt}
+\def\address{\@ifnextchar[{\@@address}{\@address}}
+
+%%%%%%%%%\def\correspondingauthor{\@ifnextchar[{\@correspondingauthor}{\@correspondingauthor[]}}
+%%%%%%%%%\def\@correspondingauthor[#1]#2{{\renewcommand\thefootnote{}%
+%%%%%%%%%\footnotetext[-1]{\hspace*{-6.5pt}{${\smash{\raise2pt\hbox{$#1$}}}$}\kern4pt\footnotesize#2}}}%
+
+\def\correspondingauthor{\@ifnextchar[{\@correspondingauthor}{\@correspondingauthor[]}}
+\def\@correspondingauthor[#1]#2{{\renewcommand\thefootnote{}\let\qtoa\Qtoa%
+\footnotetext[-1]{\hspace*{-12pt}\hbox to 12pt{\hfill{$^{\smash{#1}}$}\hskip3pt}\footnotesize#2}\par\vspace*{1pt}}}%
+
+\def\email#1{\global\corexisttrue{\renewcommand\thefootnote{}%
+\footnotetext[-1]{{\itshape E-mail address:}\ #1\par\vspace*{12pt}}}}%
+
+\def\@alph#1{%
+  \ifcase#1\or a\or b\or c\or d\or e\or f\or g\or h\or i\or j\or k\or
+  l\or m\or n\or o\or p\or q\or r\or s\or t\or u\or v\or w\or x\or
+  y\or z%
+  \or aa\or ab\or ac\or ad\or ae\or af\or ag\or ah\or ai\or aj\or
+  ak\or al\or am\or an\or ao\or ap\or aq\or ar\or as\or at\or au\or
+  av\or aw\or ax\or ay\or az%
+  \or ba\or bb\or bc\or bd\or be\or bf\or bg\or bh\or bi\or bj\or
+  bk\or bl\or bm\or bn\or bo\or bp\or bq\or br\or bs\or bt\or bu\or
+  bv\or bw\or bx\or by\or bz%
+  \or ca\or cb\or cc\or cd\or ce\or cf\or cg\or ch\or ci\or cj\or
+  ck\or cl\or cm\or cn\or co\or cp\or cq\or cr\or cs\or ct\or cu\or
+  cv\or cw\or cx\or cy\or cz%
+  \or da\or db\or dc\or dd\or de\or df\or dg\or dh\or di\or dj\or
+  dk\or dl\or dm\or dn\or do\or dp\or dq\or dr\or ds\or dt\or du\or
+  dv\or dw\or dx\or dy\or dz%
+  \or ea\or eb\or ec\or ed\or ee\or ef\or eg\or eh\or ei\or ej\or
+  ek\or el\or em\or en\or eo\or ep\or eq\or er\or es\or et\or eu\or
+  ev\or ew\or ex\or ey\or ez%
+  \or fa\or fb\or fc\or fd\or fe\or ff\or fg\or fh\or fi\or fj\or
+  fk\or fl\or fm\or fn\or fo\or fp\or fq\or fr\or fs\or ft\or fu\or
+  fv\or fw\or fx\or fy\or fz%
+  \or ga\or gb\or gc\or gd\or ge\or gf\or gg\or gh\or gi\or gj\or
+  gk\or gl\or gm\or gn\or go\or gp\or gq\or gr\or gs\or gt\or gu\or
+  gv\or gw\or gx\or gy\or gz%
+  \else\@ctrerr\fi}
+
+\newcounter{affn}
+\renewcommand\theaffn{\alph{affn}}
+
+\long\def\@@address[#1]#2{\g@addto@macro\elsaddress{%
+    \def\baselinestretch{1}%
+     \refstepcounter{affn}
+     \xdef\@currentlabel{\theaffn}
+     \elsLabel{#1}%
+    \textsuperscript{\theaffn}#2\par\vspace*{.5pt}}}
+
+\long\def\@address#1{\g@addto@macro\elsauthors{%
+    \def\baselinestretch{1}%
+    \addsep\footnotesize\itshape#1\def\addsep{\par\vskip6pt}%
+    \def\authorsep{\par\vskip8pt}}}
+
+\newbox\absbox
+\renewenvironment{abstract}{\global\setbox\absbox=\vbox\bgroup
+  \hsize=\textwidth\def\baselinestretch{1}%
+  \noindent\unskip\textbf{Abstract}
+ \par\medskip\noindent\unskip\ignorespaces}
+ {\egroup}
+
+\newbox\keybox
+\def\keyword{%
+  \def\sep{\unskip, }%
+ \def\MSC{\@ifnextchar[{\@MSC}{\@MSC[2000]}}
+  \def\@MSC[##1]{\par\leavevmode\hbox {\it ##1~MSC:\space}}%
+  \def\PACS{\par\leavevmode\hbox {\it PACS:\space}}%
+  \def\JEL{\par\leavevmode\hbox {\it JEL:\space}}%
+  \global\setbox\keybox=\vbox\bgroup\hsize=\textwidth
+  \normalsize\normalfont\def\baselinestretch{1}
+  \parskip\z@
+  \noindent\textit{Keywords: }
+  \raggedright                         % Keywords are not justified.
+  \ignorespaces}
+\def\endkeyword{\par \egroup}
+
+\newdimen\Columnwidth
+\Columnwidth=\columnwidth
+
+\def\printFirstPageNotes{%
+  \iflongmktitle
+   \let\columnwidth=\textwidth\fi
+  \ifx\@tnotes\@empty\else\@tnotes\fi
+  \ifx\@nonumnotes\@empty\else\@nonumnotes\fi
+ \ifx\@cornotes\@empty\else\@cornotes\fi
+  \ifx\@elseads\@empty\relax\else
+   \let\thefootnote\relax
+   \footnotetext{\ifnum\theead=1\relax
+      \textit{E-mail address:\space}\else
+      \textit{E-mail addresses:\space}\fi
+     \@elseads\vspace*{11pt}}\fi
+  \ifx\@elsuads\@empty\relax\else
+   \let\thefootnote\relax
+   \footnotetext{\textit{URL:\space}%
+     \@elsuads}\fi
+  \ifx\@fnotes\@empty\else\@fnotes\fi
+  \iflongmktitle\if@twocolumn
+   \let\columnwidth=\Columnwidth\fi\fi
+}
+
+\long\def\pprintMaketitle{\clearpage
+  \iflongmktitle\if@twocolumn\let\columnwidth=\textwidth\fi\fi
+  \resetTitleCounters
+  \def\baselinestretch{1}%
+  \printFirstPageNotes
+  \begin{center}%
+ \thispagestyle{pprintTitle}%
+   \def\baselinestretch{1}%
+    \Large\@title\par\vskip18pt
+    \normalsize\elsauthors\par\vskip10pt
+    \footnotesize\itshape\elsaddress\par\vskip36pt
+    \hrule\vskip12pt
+    \ifvoid\absbox\else\unvbox\absbox\par\vskip10pt\fi
+    \ifvoid\keybox\else\unvbox\keybox\par\vskip10pt\fi
+    \hrule\vskip12pt
+    \end{center}%
+  \gdef\thefootnote{\arabic{footnote}}%
+  }
+
+\def\printWarning{%
+     \mbox{}\par\vfill\par\bgroup
+     \fboxsep12pt\fboxrule1pt
+     \hspace*{.18\textwidth}
+     \fcolorbox{gray50}{gray10}{\box\warnbox}
+     \egroup\par\vfill\thispagestyle{empty}
+     \setcounter{page}{0}
+     \clearpage}
+
+\long\def\finalMaketitle{%
+  \resetTitleCounters
+  \def\baselinestretch{1}%
+   \MaketitleBox
+   \thispagestyle{pprintTitle}%
+  \gdef\thefootnote{\arabic{footnote}}%
+  }
+
+\long\def\MaketitleBox{%
+  \resetTitleCounters
+  \def\baselinestretch{1}%
+  \begin{center}%
+   \def\baselinestretch{1}%
+    \Large\@title\par\vskip18pt
+    \normalsize\elsauthors\par\vskip10pt
+    \footnotesize\itshape\elsaddress\par\vskip36pt
+    \hrule\vskip12pt
+    \ifvoid\absbox\else\unvbox\absbox\par\vskip10pt\fi
+    \ifvoid\keybox\else\unvbox\keybox\par\vskip10pt\fi
+    \hrule\vskip12pt
+    \end{center}%
+  }
+
+\def\FNtext#1{\par\bgroup\footnotesize#1\egroup}
+\newdimen\space@left
+\def\alarm#1{\typeout{******************************}%
+             \typeout{#1}%
+             \typeout{******************************}%
+}
+\long\def\getSpaceLeft{%\global\@twocolumnfalse%
+   \global\setbox0=\vbox{\hsize=\textwidth\MaketitleBox}%
+   \global\setbox1=\vbox{\hsize=\textwidth
+    \let\footnotetext\FNtext
+    \printFirstPageNotes}%
+    \xdef\noteheight{\the\ht1}%
+    \xdef\titleheight{\the\ht0}%
+    \@tempdima=\vsize
+    \advance\@tempdima-\noteheight
+    \advance\@tempdima-1\baselineskip
+}
+
+  \skip\footins=24pt
+
+\newbox\els@boxa
+\newbox\els@boxb
+
+\ifpreprint
+  \def\maketitle{\pprintMaketitle}
+  \else
+   \ifnum\jtype=1
+    \def\maketitle{%
+      \iflongmktitle\getSpaceLeft
+       \global\setbox\els@boxa=\vsplit0 to \@tempdima
+       \box\els@boxa\par\resetTitleCounters
+       \thispagestyle{pprintTitle}%
+       \printFirstPageNotes
+       \box0%
+      \else
+       \finalMaketitle\printFirstPageNotes
+      \fi
+    \gdef\thefootnote{\arabic{footnote}}}%
+  \else
+ \ifnum\jtype=5
+    \def\maketitle{%
+      \iflongmktitle\getSpaceLeft
+       \global\setbox\els@boxa=\vsplit0 to \@tempdima
+       \box\els@boxa\par\resetTitleCounters
+       \thispagestyle{pprintTitle}%
+       \printFirstPageNotes
+       \twocolumn[\box0]%\printFirstPageNotes
+      \else
+       \twocolumn[\finalMaketitle]\printFirstPageNotes
+     \fi
+     \gdef\thefootnote{\arabic{footnote}}}
+  \else
+  \if@twocolumn
+    \def\maketitle{%
+      \iflongmktitle\getSpaceLeft
+       \global\setbox\els@boxa=\vsplit0 to \@tempdima
+       \box\els@boxa\par\resetTitleCounters
+       \thispagestyle{pprintTitle}%
+       \printFirstPageNotes
+       \twocolumn[\box0]%
+      \else
+       \twocolumn[\finalMaketitle]\printFirstPageNotes
+      \fi
+     \gdef\thefootnote{\arabic{footnote}}}%
+   \else
+    \def\maketitle{%
+      \iflongmktitle\getSpaceLeft
+       \global\setbox\els@boxa=\vsplit0 to \@tempdima
+       \box\els@boxa\par\resetTitleCounters
+       \thispagestyle{pprintTitle}%
+       \printFirstPageNotes
+       \box0%
+     \else
+       \finalMaketitle\printFirstPageNotes
+      \fi
+    \gdef\thefootnote{\arabic{footnote}}\vskip15pt}%
+   \fi
+  \fi
+ \fi
+\fi
+\def\ps@pprintTitle{%
+     \let\@oddhead\@empty
+     \let\@evenhead\@empty
+     \def\@oddfoot{\ifnopreprintline\relax\else\footnotesize\itshape
+       Preprint submitted to \ifx\@journal\@empty Elsevier
+       \else\@journal\fi\hfill\@date\fi}%
+     \let\@evenfoot\@oddfoot}
+\def\@seccntDot{.}
+\def\@seccntformat#1{\csname the#1\endcsname\@seccntDot\hskip 0.5em}
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+           {18\p@ \@plus 6\p@ \@minus 3\p@}%
+           {12.2\p@}% \@plus 6\p@ \@minus 3\p@}%
+           {\normalsize\bfseries\boldmath}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+           {12\p@ \@plus 6\p@ \@minus 3\p@}%
+           {12\p@}% \@plus 6\p@ \@minus 3\p@}%
+           {\normalfont\normalsize\itshape}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+           {12\p@ \@plus 6\p@ \@minus 3\p@}%
+           {\p@}%
+           {\normalfont\normalsize\itshape}}
+
+\def\paragraph{\secdef{\els@aparagraph}{\els@bparagraph}}
+\def\els@aparagraph[#1]#2{\elsparagraph[#1]{#2.}}
+\def\els@bparagraph#1{\elsparagraph*{#1.}}
+
+\newcommand\elsparagraph{\@startsection{paragraph}{4}{0\z@}%
+           {10\p@ \@plus 6\p@ \@minus 3\p@}%
+           {-6\p@}%
+           {\normalfont\itshape}}
+\newdimen\leftMargin
+\leftMargin=2em
+\newtoks\@enLab  %\newtoks\@enfont
+\def\@enQmark{?}
+\def\@enLabel#1#2{%
+  \edef\@enThe{\noexpand#1{\@enumctr}}%
+  \@enLab\expandafter{\the\@enLab\csname the\@enumctr\endcsname}%
+  \@enloop}
+\def\@enSpace{\afterassignment\@enSp@ce\let\@tempa= }
+\def\@enSp@ce{\@enLab\expandafter{\the\@enLab\space}\@enloop}
+\def\@enGroup#1{\@enLab\expandafter{\the\@enLab{#1}}\@enloop}
+\def\@enOther#1{\@enLab\expandafter{\the\@enLab#1}\@enloop}
+\def\@enloop{\futurelet\@entemp\@enloop@}
+\def\@enloop@{%
+  \ifx A\@entemp         \def\@tempa{\@enLabel\Alph  }\else
+  \ifx a\@entemp         \def\@tempa{\@enLabel\alph  }\else
+  \ifx i\@entemp         \def\@tempa{\@enLabel\roman }\else
+  \ifx I\@entemp         \def\@tempa{\@enLabel\Roman }\else
+  \ifx 1\@entemp         \def\@tempa{\@enLabel\arabic}\else
+  \ifx \@sptoken\@entemp \let\@tempa\@enSpace         \else
+  \ifx \bgroup\@entemp   \let\@tempa\@enGroup         \else
+  \ifx \@enum@\@entemp   \let\@tempa\@gobble          \else
+                         \let\@tempa\@enOther
+             \fi\fi\fi\fi\fi\fi\fi\fi
+  \@tempa}
+\newlength{\@sep} \newlength{\@@sep}
+\setlength{\@sep}{12pt}%.5\baselineskip plus.2\baselineskip minus.2\baselineskip}
+\setlength{\@@sep}{12pt}%.1\baselineskip plus.01\baselineskip minus.05\baselineskip}
+\providecommand{\sfbc}{\rmfamily\upshape}
+\providecommand{\sfn}{\rmfamily\upshape}
+\def\@enfont{\ifnum \@enumdepth >1\let\@nxt\sfn \else\let\@nxt\sfbc \fi\@nxt}
+\def\enumerate{\par%
+   \ifnum \@enumdepth >3 \@toodeep\else
+      \advance\@enumdepth \@ne
+      \edef\@enumctr{enum\romannumeral\the\@enumdepth}\fi
+   \@ifnextchar[{\@@enum@}{\@enum@}}
+\def\@@enum@[#1]{%
+  \@enLab{}\let\@enThe\@enQmark
+  \@enloop#1\@enum@
+  \ifx\@enThe\@enQmark\@warning{The counter will not be printed.%
+   ^^J\space\@spaces\@spaces\@spaces The label is: \the\@enLab}\fi
+  \expandafter\edef\csname label\@enumctr\endcsname{\the\@enLab}%
+  \expandafter\let\csname the\@enumctr\endcsname\@enThe
+  \csname c@\@enumctr\endcsname7
+  \expandafter\settowidth
+            \csname leftmargin\romannumeral\@enumdepth\endcsname
+            {\the\@enLab\hskip\labelsep}%
+  \@enum@}
+\def\@enum@{\list{{\@enfont\csname label\@enumctr\endcsname}}%
+           {\usecounter{\@enumctr}\def\makelabel##1{\hss\llap{##1}}%
+     \ifnum \@enumdepth>1\setlength{\topsep}{\@@sep}\else
+           \setlength{\topsep}{12pt}\fi
+     \ifnum \@enumdepth>1\setlength{\itemsep}{0pt}% plus1pt minus1pt}%
+      \else \setlength{\itemsep}{0pt}\fi
+     \setlength\leftmargin{\leftMargin}%%%{1.8em}
+     \setlength{\parsep}{0pt}%plus1pt minus1pt}%
+     \setlength{\parskip}{0pt}%plus1pt minus1pt}
+     \setlength{\topsep}{10pt}%plus1pt minus1pt}
+     %\leftskip0pt
+     }}
+
+\def\endenumerate{\par\ifnum \@enumdepth >1\addvspace{\@@sep}\else
+           \addvspace{\@sep}\fi \endlist}
+
+\def\sitem{\@noitemargtrue\@item[\@itemlabel *]}
 
 
- <link rel="search" type="application/opensearchdescription+xml"
-       title="CTAN Search" href="https://www.ctan.org/search/open-search.xml" />
+\newskip\abovelistskipi\abovelistskipi12pt% plus2pt
+\newskip\belowlistskipi\belowlistskipi12pt% plus2pt
+\newskip\abovelistskipii\abovelistskipii0pt%
+\newskip\belowlistskipii\belowlistskipii0pt%
+\newskip\abovelistskipiii\abovelistskipiii0pt%
+\newskip\belowlistskipiii\belowlistskipiii0pt%
+\newskip\abovelistskipiv\abovelistskipiv0pt%
+\newskip\belowlistskipiv\belowlistskipiv0pt%
+\newskip\abovelistskipv\abovelistskipv0pt%
+\newskip\belowlistskipv\belowlistskipv0pt%
 
- <link rel="alternate" type="application/atom+xml" title="CTAN Atom Feed"
-       href="https://www.ctan.org/ctan-ann/atom.xml"/>
- <link rel="alternate" type="application/rss+xml" title="CTAN RSS Feed"
-       href="https://www.ctan.org/ctan-ann/rss.xml"/>
-      
- <link rel="alternate" hreflang="x-default" href="https://ctan.org/pkg/elsarticle" />
- <link rel="alternate" hreflang="en" href="https://ctan.org/pkg/elsarticle?lang=en" />
- <link rel="alternate" hreflang="de" href="https://ctan.org/pkg/elsarticle?lang=de" />
- <script type="text/javascript" src="/assets/portal-944f93dcc061b0c8fb36b9debe744e42.js" ></script>
-    
-<link rel="alternate" type="application/atom+xml" title="CTAN Atom Feed - elsarticle"
-          href="https://www.ctan.org/ctan-ann/atomelsarticle.xml"/>
-<link rel="alternate" type="application/rss+xml" title="CTAN RSS Feed - elsarticle"
-          href="https://www.ctan.org/ctan-ann/rss/elsarticle.xml"/>
-  <link rel="stylesheet" href="/assets/skin/gray/skin.css">
- <link rel="stylesheet" media="print" href="/assets/skin/print/skin.css">
-</head>
-<body>
- <header>
-  
-  
-  <div class="head">
-   <div><a href="/"><span class="ctan">CTAN</span>
-     Comprehensive T<span class="e">e</span>X Archive Network</a></div>
-  </div>
-  <div class="logo">
-   <a href="/lion/" title="CTAN lion drawing by Duane Bibby" ><span class="lion"></span></a>
-  </div>
- </header>
- <div class="top-bar">
-  <span class="m" title="Menu"></span>
-  <ul>
-   
-   
-    
-     <li><a href="/login" class="b-login" id="login" title="Login with your personal account"
-       rel="nofollow">Login</a></li>
-     
-     
-      <li><a class="b-join" id="join" href="/join" title="Register a new personal account on this site"
-        rel="nofollow">Join</a></li>
-     
-    
-   
-   <li><a class="b-settings" href="/user/settings"
-          title="Adjust the appearance to your taste">Settings</a></li>
-   <li><a class="b-help" href="/help"
-          title="Get some information about this Web site">Help</a></li>
-  </ul>
- </div> <div class="blocks">
-<div class="functions menu-bar">
- <ul class="menu">
-  <li><a class="home" href="/"><span class="text">Cover</span><span class="drop"> </span></a>
-   <ul>
-    <li class="menu-cover-home"><a href="/">Cover</a></li>
-    <li class="menu-cover-starter"><a href="/starter">Starting out with T<span class="e">e</span>X...</a></li>
-    <li class="menu-cover-ctan"><a href="/ctan">CTAN Background</a></li>
-    <li class="menu-cover-mirrors"><a href="/mirrors">Mirrors</a></li>
-    <li class="menu-cover-lugs"><a href="/lugs">T<span class="e">e</span>X user groups</a></li>
-    <li><hr/></li>
-    <li class="menu-cover-privacy"><a href="/privacy">Privacy</a></li>
-    <li class="menu-cover-credits"><a href="/credits">Credits</a></li>
-   </ul>
-  </li>
- </ul>
- <ul class="menu">
-  <li><a class="upload" href="/upload"><span class="text">Upload</span><span class="drop"> </span></a>
-   <ul>
-    <li class="menu-upload-upload"><a href="/upload">Upload</a></li>
-    <li class="menu-upload-basics"><a href="/help/upload-pkg">Upload basics</a></li>
-    <li class="menu-upload-addendum"><a href="/file/help/ctan/CTAN-upload-addendum">Upload addendum</a></li>
-    <li class="menu-upload-licenses"><a href="/license">Licenses</a></li>
-   </ul>
-  </li>
- </ul>
- <ul class="menu">
-  <li><a class="browse" href="/tex-archive"><span class="text">Browse</span><span class="drop"> </span></a>
-   <ul>
-    <li class="menu-browse-archive"><a href="/tex-archive"></i>T<span class="e">e</span>X Archive</a></li>
-    <li class="menu-browse-pkg"><a href="/pkg">Packages</a></li>
-    <li class="menu-browse-topic"><a href="/topics/cloud">Topics</a></li>
-    <li class="menu-browse-author"><a href="/author">Contributors</a></li>
-    <li class="menu-browse-announce"><a href="/ctan-ann">Announcements</a></li>
-   </ul></li>
- </ul>
+\def\itemize{\@ifnextchar[{\@Itemize}{\@Itemize[]}}
+
+\def\@Itemize[#1]{\def\next{#1}%
+  \ifnum \@itemdepth >\thr@@\@toodeep\else
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+   \advance\@itemdepth\@ne
+  \ifx\next\@empty\else\expandafter\def\csname
+   labelitem\romannumeral\the\@itemdepth\endcsname{#1}\fi%
+  \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+  \expandafter\list\csname\@itemitem\endcsname
+  {%
+  \topsep\csname abovelistskip\romannumeral\the\@itemdepth\endcsname%\fi
+  \def\makelabel##1{\hss\llap{##1}}}%
+ \fi\itemsep0pt\parsep0pt\parskip0pt}
+
+
+\def\Itemize{\@ifnextchar[{\@IItemize}{\@IItemize[]}}
+
+\def\@IItemize[#1]{\def\next{#1}%
+  \ifnum \@itemdepth >\thr@@\@toodeep\else
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+   \advance\@itemdepth\@ne
+  \ifx\next\@empty\else\expandafter\def\csname
+   labelitem\romannumeral\the\@itemdepth\endcsname{#1}\fi%
+  \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+  \expandafter\list\csname\@itemitem\endcsname
+  {%
+  \topsep\csname abovelistskip\romannumeral\the\@itemdepth\endcsname%\fi
+  \def\makelabel##1{\hss\lower-.7pt\llap{##1}}}%
+ \fi\itemsep0pt\parsep0pt\parskip0pt}
+
+\def\enditemize{%
+\@topsepadd\csname belowlistskip\romannumeral\the\@itemdepth\endcsname%\fi
+\endlist}
+
+\def\endItemize{%
+\@topsepadd\csname belowlistskip\romannumeral\the\@itemdepth\endcsname%\fi
+\endlist}
  
- <form name="searchForm" id="searchForm" method="get" action="/search"
-       enctype="text/plain">
-  <input class="phrase" name="phrase" type="text" size="24" accept-charset="ISO-8859-1"
-         value="" autofocus />
- </form>
- <ul class="menu search-menu">
-  <li><a class="search" onClick="document.searchForm.submit();return false;"
-   href="/search"><span class="text">Search</span><span class="drop"> </span></a>
-   <ul>
-    <li class="menu-search-extended"><a href="/search?ext=new">Extended search</a></li>
-    <li class="menu-search-files"><a href="/search?ext=false&FILES=on">File search</a></li>
-   </ul></li>
- </ul>
- 
- &nbsp;
- <script>
-   if (window.location.hash !='') window.location.hash = window.location.hash;
- </script>
-</div> <nav class="breadcrumb">
-   Location: <a href="/">CTAN</a>
-   
-         <a href="/pkg/">Packages  </a>
-         <a href="/pkg/elsarticle">elsarticle</a>
-    
-   
-  </nav>
-  
-  
-  
-  
-  <main class="content">
-   
-    <h1 lang="none">elsarticle &ndash; Class for articles for submission to Elsevier journals</h1>
-    <div class="left">
-    <p><p>
-      This class for typesetting journal articles is accepted for
-      submitted articles both in Elsevier’s electronic submission
-      system and elsewhere.
-    </p>
-  <p>
-      Please note that this webpage is meant for uploading updates to
-      the elsarticle software itself, <b>not for submitting articles
-      using it</b> .
-    </p></p>
-    <table class="entry">
-      <tr><td>Sources</td><td><a href="/tex-archive/macros/latex/contrib/elsarticle"><code>/macros/latex/contrib/elsarticle</code></a></td></tr>
-      <tr><td>Documentation</td><td><div class="d-icon-readme" title="Read Me file"><a href="https://mirrors.ctan.org/macros/latex/contrib/elsarticle/README" class="doc-readme">README</a></div><div class="d-icon-pdf" title="Portable Document Format"><a href="https://mirrors.ctan.org/macros/latex/contrib/elsarticle/doc/elsdoc.pdf" class="doc-filetype.pdf">Package documentation</a></div></td></tr>
-      
-      
-      
-      
-      
-      
-      <tr><td>Version</td><td>3.5 2026-01-09</td></tr>
-      <tr><td>Licenses</td><td><a href="/license/lppl1.3">The <span class="t-logo">L<span class="a">a</span>T<span class="e">e</span>X</span> Project Public License 1.3</a><br /></td></tr>
-      <tr><td>Copyright</td><td>2007&ndash;2026 Elsevier Ltd<br /></td></tr>
-      <tr><td>Maintainer</td><td><a href="/author/radhakrishnan">C. V. Radhakrishnan</a><br /><a href="/author/pepping">Simon Pepping (inactive)</a><br /><a href="/author/ruckm">Martin Ruck (inactive)</a><br /></td></tr>
-      
-      <tr><td>Contained&nbsp;in</td><td><a href="/pkg/texlive">T<span class="e">e</span>X&thinsp;Live</a> as elsarticle<br /><a href="/pkg/miktex">MiKT<span class="e">e</span>X</a> as elsarticle</td></tr>
-      <tr><td>Topics</td><td><a href="/topic/journalpub">Journal</a><br /><a href="/topic/class">Class</a><br /></td></tr>
-      
-    </table>
-    <p class="download">
-      <a href="https://mirrors.ctan.org/macros/latex/contrib/elsarticle.zip">Download</a> the contents of this package in one zip archive
-        (1.6M).
-    </p>
-    
-    
- 
-      <div class="comments">
-      	<h2>Community Comments</h2>
-        <div id="commentsDiv">Loading...</div>
-      </div>
-      <script>updateComments(0,4,'elsarticle','commentsDiv');</script>
+\def\newdefinition#1{%
+  \@ifnextchar[{\@odfn{#1}}{\@ndfn{#1}}}%]
+\def\@ndfn#1#2{%
+  \@ifnextchar[{\@xndfn{#1}{#2}}{\@yndfn{#1}{#2}}}
+\def\@xndfn#1#2[#3]{%
+  \expandafter\@ifdefinable\csname #1\endcsname
+    {\@definecounter{#1}\@newctr{#1}[#3]%
+     \expandafter\xdef\csname the#1\endcsname{%
+       \expandafter\noexpand\csname the#3\endcsname \@dfncountersep
+          \@dfncounter{#1}}%
+     \global\@namedef{#1}{\@dfn{#1}{#2}}%
+     \global\@namedef{end#1}{\@enddefinition}}}
+\def\@yndfn#1#2{%
+  \expandafter\@ifdefinable\csname #1\endcsname
+    {\@definecounter{#1}%
+     \expandafter\xdef\csname the#1\endcsname{\@dfncounter{#1}}%
+     \global\@namedef{#1}{\@dfn{#1}{#2}}%
+     \global\@namedef{end#1}{\@enddefinition}}}
+\def\@odfn#1[#2]#3{%
+  \@ifundefined{c@#2}{\@nocounterr{#2}}%
+    {\expandafter\@ifdefinable\csname #1\endcsname
+    {\global\@namedef{the#1}{\@nameuse{the#2}}
+  \global\@namedef{#1}{\@dfn{#2}{#3}}%
+  \global\@namedef{end#1}{\@enddefinition}}}}
+\def\@dfn#1#2{%
+  \refstepcounter{#1}%
+  \@ifnextchar[{\@ydfn{#1}{#2}}{\@xdfn{#1}{#2}}}
+\def\@xdfn#1#2{%
+  \@begindefinition{#2}{\csname the#1\endcsname}\ignorespaces}
+\def\@ydfn#1#2[#3]{%
+  \@opargbegindefinition{#2}{\csname the#1\endcsname}{#3}\ignorespaces}
+\def\@dfncounter#1{\noexpand\arabic{#1}}
+\def\@dfncountersep{.}
+\def\@begindefinition#1#2{\trivlist
+   \item[\hskip\labelsep{\bfseries #1\ #2.}]\upshape}
+\def\@opargbegindefinition#1#2#3{\trivlist
+      \item[\hskip\labelsep{\bfseries #1\ #2\ (#3).}]\upshape}
+\def\@enddefinition{\endtrivlist}
 
-    </div>
-    <div class="right">
-    
-    
-    
-    <h2>Announcements</h2>
-    <script type="text/javascript" src="/assets/heartbeat-23c92f45463bf81850fbb3e1f20e94b6.js" ></script>
-<canvas id="activity-summary" width="800" height="200" style="width:100%;"
-        title="Spectrum indicating the announcements for the package">
- Here you can see a respective diagram in newer browsers.
-</canvas>
-<script>
-  $(function(){
-    new HeartBeat.Spectral("activity-summary")
-      .plotFrom("/pkg/summary/elsarticle")
-  });
-</script>
+\def\@begintheorem#1#2{\trivlist
+  \let\baselinestretch\@blstr
+   \item[\hskip \labelsep{\bfseries #1\ #2.}]\itshape}
+\def\@opargbegintheorem#1#2#3{\trivlist
+  \let\baselinestretch\@blstr
+      \item[\hskip \labelsep{\bfseries #1\ #2\ (#3).}]\itshape}
 
-    <ul class="announcements"><li><a href="/ctan-ann/id/aWI1bXs-BgM-P6Ue@prptp">2026-01-10 CTAN update: elsarticle</a></li><li><a href="/ctan-ann/id/Z4QVhsrNshAJoHep@prptp">2025-01-12 CTAN update: elsarticle</a></li><li><a href="/ctan-ann/id/Z4FjiNz6hiAyJ-WG@prptp">2025-01-10 CTAN update: elsarticle</a></li></ul>
-    <p class="more"><a href="/ctan-ann/pkg/elsarticle">more</a></p>
-    
-    
-    
-    <div class="recommendations">
-     <h2>Suggestions</h2>
-     <p>Maybe you are interested in the following packages as well.</p>
-     <ul>
-      <li><a href="/pkg/aomart">aomart: Typeset articles for the Annals of Mathematics</a></li>
-      <li><a href="/pkg/nwejm">nwejm: Support for the journal “North-Western European Journal of Mathematics”</a></li>
-      <li><a href="/pkg/asaetr">asaetr: Transactions of the ASAE</a></li>
-      <li><a href="/pkg/ejpecp">ejpecp: Class for EJP and ECP</a></li>    
-     </ul>
-     <p class="more"><a href="/recommendations/elsarticle">more</a></p>
-    </div>
-    
-    
-    
-    
-      <div id="rateDiv" class="rating"></div>
-      <script>jQuery(function(){updateRatings('rateDiv', 'elsarticle',true);});</script>
- 
-      <div id="voterDiv"></div>
-      <script>updateVoter('voterDiv','elsarticle');</script>
-    </div>
+\def\newproof#1{%
+  \@ifnextchar[{\@oprf{#1}}{\@nprf{#1}}}
+\def\@nprf#1#2{%
+  \@ifnextchar[{\@xnprf{#1}{#2}}{\@ynprf{#1}{#2}}}
+\def\@xnprf#1#2[#3]{%
+  \expandafter\@ifdefinable\csname #1\endcsname
+    {\@definecounter{#1}\@newctr{#1}[#3]%
+     \expandafter\xdef\csname the#1\endcsname{%
+       \expandafter\noexpand\csname the#3\endcsname \@prfcountersep
+          \@prfcounter{#1}}%
+     \global\@namedef{#1}{\@prf{#1}{#2}}%
+     \global\@namedef{end#1}{\@endproof}}}
+\def\@ynprf#1#2{%
+  \expandafter\@ifdefinable\csname #1\endcsname
+    {\@definecounter{#1}%
+     \expandafter\xdef\csname the#1\endcsname{\@prfcounter{#1}}%
+     \global\@namedef{#1}{\@prf{#1}{#2}}%
+     \global\@namedef{end#1}{\@endproof}}}
+\def\@oprf#1[#2]#3{%
+  \@ifundefined{c@#2}{\@nocounterr{#2}}%
+    {\expandafter\@ifdefinable\csname #1\endcsname
+    {\global\@namedef{the#1}{\@nameuse{the#2}}%
+  \global\@namedef{#1}{\@prf{#2}{#3}}%
+  \global\@namedef{end#1}{\@endproof}}}}
+\def\@prf#1#2{%
+  \refstepcounter{#1}%
+  \@ifnextchar[{\@yprf{#1}{#2}}{\@xprf{#1}{#2}}}
+\def\@xprf#1#2{%
+  \@beginproof{#2}{\csname the#1\endcsname}\ignorespaces}
+\def\@yprf#1#2[#3]{%
+  \@opargbeginproof{#2}{\csname the#1\endcsname}{#3}\ignorespaces}
+\def\@prfcounter#1{\noexpand\arabic{#1}}
+\def\@prfcountersep{.}
+\def\@beginproof#1#2{\trivlist\let\baselinestretch\@blstr
+   \item[\hskip \labelsep{\scshape #1.}]\rmfamily}
+\def\@opargbeginproof#1#2#3{\trivlist\let\baselinestretch\@blstr
+      \item[\hskip \labelsep{\scshape #1\ (#3).}]\rmfamily}
+\def\@endproof{\endtrivlist}
+\newcommand*{\qed}{\hbox{}\hfill$\Box$}
 
-    
-    
-    <div class="readme-dialog"></div>
-    <script>
-      $('a.doc-readme').click(function(){
-          console.log('ping');
-          var id = $(this).attr('href').replace(/^[a-z]*:\/\/[^\/]*\//, '/');
-          console.log(id);
-          $.ajax({
-              url: '/texarchive/ajaxReadme',
-              data: { id: id },
-              success: function(data) {
-                  $('.readme-dialog').html(data);
-                  $('.readme-dialog').dialog({
-                    modal: true, height: '90%', width: '90%', title: id
-                  });
-              }
-          });
-          /*
-          */
-          return false;
-          });
-    </script>
-  
-   <div class="clear"></div>
-  </main>
-  <div class="foot">
-   <a class="guestbook"
-      href="/guestbook"
-      title="Leave some words for other visitors"
-   >Guest Book</a>
-   <a class="sitemap"
-      href="/sitemap"
-      title="Show the structure of this site"
-   >Sitemap</a>
-   <a class="contact"
-      href="/contact"
-      title="Get contact information for the Web site"
-   >Contact</a>
-   <a class="contact-author"
-      href="/help/contact-author"
-      title="Get help on how to contact an author"
-   >Contact Author</a>
-   <a class="feedback"
-      href="mailto:webmaster@ctan.org?subject=Feedback%20for%20/pkg/elsarticle?lang=en"
-      title="Send feedback on the current web page to the Web masters"
-   >Feedback</a>
-  </div>
- </div>
- <div class="footer">
-<a id="share-toggle" class="in" title="Toggle share"
-     href="#" onClick="return toggleShare();">&nbsp;</a>
-<div id="share" class="in"><a class="mail fontawesome" title="Send link to this page by email"
-     href="mailto:?subject=CTAN:%20 Package elsarticle&body=https%3A%2F%2Fwww.ctan.org%2Felsarticle" >&#xf0e0;</a>
-  <!--a class="twitter fontawesome" target="_blank"
-     title="Share link to this page on Twitter"
-     onclick="return shareLink(this.href);"
-     href="https://twitter.com/share?url=https%3A%2F%2Fwww.ctan.org%2Felsarticle&text= Package elsarticle"
-     >&#xf099;</a-->
-  <a class="facebook fontawesome" target="_blank"
-     title="Share link to this page on Facebook"
-     onclick="return shareLink(this.href);"
-     href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ctan.org%2Felsarticle&t= Package elsarticle"
-     >&#xf09a;</a>
-  <!--a class="gplus fontawesome" target="_blank"
-     title="Share link to this page on Google+"
-     onclick="return shareLink(this.href);"
-     href="https://plus.google.com/share?url=https%3A%2F%2Fwww.ctan.org%2Felsarticle"
-     >&#xf0d5;</a-->
-  <a class="linkedin fontawesome" target="_blank"
-     title="Share link to this page on LinkedIn"
-     onclick="return shareLink(this.href);"
-     href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.ctan.org%2Felsarticle&title= Package elsarticle&summary= Package elsarticle&source=CTAN"
-     >&#xf0e1;</a>
-  <a class="pinterest fontawesome" target="_blank"
-     title="Share link to this page on Pinterest"
-     onclick="return shareLink(this.href);"
-     href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.ctan.org%2Felsarticle&description= Package elsarticle&media=https%3A%2F%2Fwww.ctan.org%2Fimages%2Fctan_lion-64.png"
-     >&#xf231;</a>
-  <a class="xing fontawesome" target="_blank"
-     title="Share link to this page on Xing"
-     onclick="return shareLink(this.href);"
-     href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https%3A%2F%2Fwww.ctan.org%2Felsarticle"
-     >&#xf168;</a>
-  <a class="reddit fontawesome" target="_blank"
-     title="Share link to this page on reddit"
-     onclick="return shareLink(this.href);"
-     href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.ctan.org%2Felsarticle"
-     >&#xf281;</a>
-  <a class="tumblr fontawesome" target="_blank"
-     title="Share link to this page on Tumblr"
-     onclick="return shareLink(this.href);"
-     href="https://www.tumblr.com/share/link?url=Share link to this page on StumbleUpon&name= Package elsarticle&description= Package elsarticle"
-     >&#xf173;</a>
-  <a class="stumbleupon fontawesome" target="_blank"
-     title="Share link to this page on StumbleUpon"
-     onclick="return shareLink(this.href);"
-     href="https://www.stumbleupon.com/submit?url=Share link to this page on StumbleUpon&title= Package elsarticle"
-     >&#xf1a4;</a>
- </div>
-  <span class="date">2026-04-15 16:00 CEST</span>
- </div>
- <div id="portal-message"></div>
+\@ifundefined{@biboptions}{\xdef\@biboptions{numbers}}{}
+\InputIfFileExists{\jobname.spl}{}{}
+\RequirePackage[\@biboptions]{natbib}
 
-</body>
-</html>
+\newwrite\splwrite
+\immediate\openout\splwrite=\jobname.spl
+\def\biboptions#1{\def\next{#1}\immediate\write\splwrite{%
+   \string\g@addto@macro\string\@biboptions{%
+    ,\expandafter\strip@prefix\meaning\next}}}
+%\renewcommand\NAT@open{}\renewcommand\NAT@close{}
+\let\baselinestretch=\@blstr
+
+\ifnum\jtype=1
+ \RequirePackage{geometry}
+ \geometry{twoside,
+  paperwidth=210mm,
+  paperheight=297mm,
+  textheight=562pt,
+  textwidth=384pt,
+  centering,
+  headheight=50pt,
+  headsep=12pt,
+  footskip=12pt,
+  footnotesep=24pt plus 2pt minus 12pt,
+ }
+ \global\let\bibfont=\footnotesize
+ \global\bibsep=0pt
+ \if@twocolumn\global\@twocolumnfalse\fi
+\else\ifnum\jtype=3
+ \RequirePackage{geometry}
+ \geometry{twoside,
+  paperwidth=210mm,
+  paperheight=297mm,
+  textheight=622pt,
+  textwidth=468pt,
+  centering,
+  headheight=50pt,
+  headsep=12pt,
+  footskip=18pt,
+  footnotesep=24pt plus 2pt minus 12pt,
+  columnsep=2pc
+ }
+ \global\let\bibfont=\footnotesize
+ \global\bibsep=0pt
+ \if@twocolumn\input{fleqn.clo}\fi
+\else\ifnum\jtype=5
+ \RequirePackage{geometry}
+ \geometry{twoside,
+  paperwidth=210mm,
+  paperheight=297mm,
+  textheight=682pt,
+  textwidth=522pt,
+  centering,
+ headheight=50pt,
+  headsep=12pt,
+  footskip=18pt,
+  footnotesep=24pt plus 2pt minus 12pt,
+  columnsep=18pt
+ }%
+ \global\let\bibfont=\footnotesize
+ \global\bibsep=0pt
+ \input{fleqn.clo}
+ \global\@twocolumntrue
+%%
+%% End of option '5p'
+%%
+\fi\fi\fi
+\def\journal#1{\gdef\@journal{#1}}
+ \let\@journal\@empty
+\newenvironment{frontmatter}{}{\maketitle\ifcorexist \enlargethispage{-4mm}\else\enlargethispage{-12mm}\fi}
+
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip\footnotesize
+  \sbox\@tempboxa{#1: #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    #1: #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+\AtBeginDocument{\@ifpackageloaded{hyperref}
+  {\def\@linkcolor{blue}
+   \def\@anchorcolor{blue}
+   \def\@citecolor{blue}
+   \def\@filecolor{blue}
+   \def\@urlcolor{blue}
+   \def\@menucolor{blue}
+   \def\@pagecolor{blue}
+\begingroup
+  \@makeother\`%
+  \@makeother\=%
+  \edef\x{%
+    \edef\noexpand\x{%
+      \endgroup
+      \noexpand\toks@{%
+        \catcode 96=\noexpand\the\catcode`\noexpand\`\relax
+        \catcode 61=\noexpand\the\catcode`\noexpand\=\relax
+      }%
+    }%
+    \noexpand\x
+  }%
+\x
+\@makeother\`
+\@makeother\=
+}{}}
+%%
+\def\appendixname{Appendix }
+\renewcommand\appendix{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \setcounter{equation}{0}
+  \gdef\thefigure{\@Alph\c@section.\arabic{figure}}%
+  \gdef\thetable{\@Alph\c@section.\arabic{table}}%
+  \gdef\thesection{\appendixname~\@Alph\c@section}%
+  \gdef\thesubsection{\@Alph\c@section.\arabic{subsection}}%
+  \@addtoreset{equation}{section}%
+  \gdef\theequation{\@Alph\c@section.\arabic{equation}}%
+  \addtocontents{toc}{\string\let\string\numberline\string\tmptocnumberline}{}{}
+}
+
+\def\appendixname{Appendix }
+\newcommand\normalMode{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \setcounter{equation}{0}
+  \gdef\thefigure{\@Alph\c@section.\arabic{figure}}%
+  \gdef\thetable{\@Alph\c@section.\arabic{table}}%
+  \gdef\thesection{\@arabic\c@section}%
+  \gdef\thesubsection{\c@section.\arabic{subsection}}%
+  \@addtoreset{equation}{section}%
+  \gdef\theequation{\@Alph\c@section.\arabic{equation}}%
+  \addtocontents{toc}{\string\let\string\numberline\string\tmptocnumberline}{}{}
+}
+
+%%%% \numberline width calculation for appendix.
+\newdimen\appnamewidth
+\def\tmptocnumberline#1{%
+   \setbox0=\hbox{\appendixname}
+   \appnamewidth=\wd0
+   \addtolength\appnamewidth{2.5pc}
+   \hb@xt@\appnamewidth{#1\hfill}
+}
+
+%% Added for work with amsrefs.sty
+
+\@ifpackageloaded{amsrefs}%
+  {}
+  {%\let\bibsection\relax%
+  \AtBeginDocument{\def\cites@b#1#2,#3{%
+    \begingroup[%
+        \toks@{\InnerCite{#2}#1}%
+        \ifx\@empty#3\@xp\@gobble\fi
+        \cites@c#3%
+}}}
+%%
+%% Added for avoiding clash with cleveref.sty
+
+\@ifpackageloaded{cleveref}%
+ {}
+ {\def\tnotetext[#1]#2{\g@addto@macro\@tnotes{%
+    \refstepcounter{tnote}%
+    \immediate\write\@auxout{\string\Newlabel{#1}{\thetnote}}
+    \def\thefootnote{\ifcase\c@tnote\or\ding{73}\or\ding{73}\ding{73}\fi}%
+    \footnotetext{#2}}}
+%%%
+  \def\fntext[#1]#2{\g@addto@macro\@fnotes{%
+    \refstepcounter{fnote}%
+    \immediate\write\@auxout{\string\Newlabel{#1}{\thefnote}}
+    \def\thefootnote{\thefnote}%
+    \global\setcounter{footnote}{\thefnote}%
+    \footnotetext{#2}}}
+%%%
+  \def\cortext[#1]#2{\g@addto@macro\@cornotes{\hspace*{-12pc}%
+    \refstepcounter{cnote}%
+    \immediate\write\@auxout{\string\Newlabel{#1}{\thecnote}}
+    \def\thefootnote{\ifcase\thecnote\or$\ast$\or
+    $\ast\ast$\fi}%
+    \footnotetext{#2 \vspace*{.5pt}}}}
+}
+%%
+\RequirePackage{framed}
+\newbox\tempbox%
+\newenvironment{nomenclature}{%
+  \par\addvspace{8pt plus2pt minus2pt}%
+  \setbox\tempbox\vbox\bgroup\if@twocolumn\hsize19.3pc\else\hsize37.25pc\fi%
+    \vspace*{-14pt}\section*{Nomenclature}}
+  {\vspace*{8pt}\egroup\par%% \noindent\fboxsep10pt\fbox{\box\tempbox}
+\OuterFrameSep0pt\FrameSep10pt%
+\begin{framed}{\unvbox\tempbox}\vspace*{-8pt}\end{framed}%
+    \vskip6pt}
+%
+\newbox\defbox%
+\newdimen\defboxdimen%
+\def\deflist{\@ifnextchar[{\@deflist}{\@deflist[]}}
+\def\@deflist[#1]{%
+  \setbox\defbox\hbox{#1:\quad}%
+  \defboxdimen\wd\defbox%
+  \def\tempa{#1}%
+  \par\addvspace{8pt plus2pt minus2pt}%
+  \setlength\parindent{0pt}%
+  \def\deftitle##1{{\noindent\itshape##1}\par}%
+  \ifx\tempa\@empty
+    \def\defitem##1{\@hangfrom{##1\ }}%%%
+  \else%
+    \def\defitem##1{\@hangfrom{\hbox to \defboxdimen{##1\quad}}}%%
+  \fi%
+  \def\defterm##1{##1\par}
+}
+%
+\def\enddeflist{\par}
+%
+
+\renewcommand\normalsize{%
+   \@setfontsize\normalsize{10}{12}%
+   \abovedisplayskip 22\p@ \@plus1\p@ \@minus.5\p@
+   \abovedisplayshortskip \abovedisplayskip
+   \belowdisplayshortskip \abovedisplayskip
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize{8}{10}%
+   \abovedisplayskip 6\p@ \@plus2\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus\p@
+   \belowdisplayshortskip 3\p@ \@plus\p@ \@minus2\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 3\p@ \@plus\p@ \@minus\p@
+               \parsep 2\p@ \@plus\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+
+
+
+\endinput
+
+
+
+%%
+
+
+%% End of file `elsarticle.cls'.

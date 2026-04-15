@@ -1,0 +1,200 @@
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 1‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 9‬
+You can't use `macro parameter character #' in horizontal mode.
+‪latex/elsarticle.cls, 24‬
+You can't use `macro parameter character #' in horizontal mode.
+‪latex/elsarticle.cls, 27‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 30‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 33‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 38‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 43‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 54‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 68‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 72‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 77‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 119‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 129‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 133‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 133‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 140‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 144‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 149‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 151‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 151‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 172‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 174‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 177‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 177‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 177‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 180‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 188‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 194‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 199‬
+Missing $ inserted.
+‪latex/elsarticle.cls, 211‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 212‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 217‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 232‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 235‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 241‬
+Missing } inserted.
+‪latex/elsarticle.cls, 245‬
+Missing $ inserted.
+‪latex/elsarticle.cls, 245‬
+Missing { inserted.
+‪latex/elsarticle.cls, 245‬
+Missing } inserted.
+‪latex/elsarticle.cls, 247‬
+Too many }'s.
+‪latex/elsarticle.cls, 260‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 263‬
+You can't use `macro parameter character #' in horizontal mode.
+‪latex/elsarticle.cls, 290‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 290‬
+Missing $ inserted.
+‪latex/elsarticle.cls, 293‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 297‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 297‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 302‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 302‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 307‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 307‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 311‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 312‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 312‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 317‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 317‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 322‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 322‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 327‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 327‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 331‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 331‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 332‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 332‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 336‬
+Misplaced alignment tab character &.
+‪latex/elsarticle.cls, 337‬
+You can't use `macro parameter character #' in math mode.
+‪latex/elsarticle.cls, 337‬
+Missing $ inserted.
+‪latex/elsarticle.cls, 342‬
+LaTeX Error: The font size command \normalsize is not defined:
+‪latex/elsarticle.cls, 342‬
+LaTeX Error: Missing \begin{document}.
+‪latex/elsarticle.cls, 343‬
+Package geometry Error: \paperwidth (0.0pt) too short.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty, 1006‬
+Package geometry Error: \paperheight (0.0pt) too short.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty, 1006‬
+Undefined control sequence.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 39‬
+Missing number, treated as zero.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 39‬
+Undefined control sequence.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 55‬
+Missing number, treated as zero.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 55‬
+Undefined control sequence.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 90‬
+Missing number, treated as zero.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 90‬
+LaTeX Error: Environment abstract undefined.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 297‬
+LaTeX Error: Environment thebibliography undefined.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 393‬
+LaTeX Error: Command \newblock undefined.
+‪/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty, 423‬
+LaTeX Error: The font size command \normalsize is not defined:
+‪latex/elsarticle.cls, 59‬
+LaTeX Error: Environment frontmatter undefined.
+‪latex/elsarticle.cls, 60‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 69‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 70‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 71‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 73‬
+Missing number, treated as zero.
+‪latex/elsarticle.cls, 73‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 77‬
+Missing number, treated as zero.
+‪latex/elsarticle.cls, 77‬
+LaTeX Error: The font size command \normalsize is not defined:
+‪latex/elsarticle.cls, 77‬
+LaTeX Error: \begin{document} ended by \end{frontmatter}.
+‪latex/elsarticle.cls, 81‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 82‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 87‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 90‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 90‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 90‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 94‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 94‬
+Undefined control sequence.
+‪latex/elsarticle.cls, 9

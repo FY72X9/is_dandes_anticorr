@@ -1,3 +1,5 @@
+% !TEX root = main.tex
+% !TEX program = pdflatex
 % =====================================================================
 % ICCSCI 2026 — Procedia Computer Science
 % Paper: Detecting Corruption Indications in Village Fund Expenditure:
@@ -13,26 +15,13 @@
 \flushbottom
 
 %% ecrc package — required for Procedia CRC layout
+\PassOptionsToPackage{procedia}{ecrc}   %% forward the procedia class option to ecrc.sty
 \usepackage{ecrc}
 \usepackage[bookmarks=false]{hyperref}
     \hypersetup{colorlinks,
       linkcolor=blue,
       citecolor=blue,
       urlcolor=blue}
-
-%% ============================================================
-%% Logo suppression — Procedia logo files (Procs.pdf, SDlogo-3p.pdf,
-%% elsevier-logo-3p.pdf) are not available in author submissions.
-%% Redefine ecrc macros to produce empty boxes instead of
-%% triggering missing-file errors at compile time.
-%% ============================================================
-\makeatletter
-\def\dummyjnllogo{\parbox[c][61pt][t]{\dummylogowidth}{\mbox{}}}
-\def\elslogo{}
-\def\sdlogo{}
-\def\reprintline{\parbox[t]{\columnwidth}{\centering
-    \mbox{\footnotesize\@journalname~00~(0000)~000--000}}}
-\makeatother
 
 %% Core packages
 \usepackage{graphicx}
@@ -45,8 +34,8 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, shapes.geometric, positioning, backgrounds, fit, calc}
 
-%% Path to chart images (relative from docs/latex/)
-\graphicspath{{../../src/output_v1/charts/}}
+%% Image search paths: result charts + Procedia logo files from template folder
+\graphicspath{{../../src/output_v1/charts/}{../submission_guideline/ICCSCI_template/}}
 
 %% Journal metadata
 \volume{00}
@@ -119,7 +108,7 @@ The DeLone and McLean IS Success Model~\cite{ref10}---in its 2003 formulation---
 \section{Methodology}
 \label{sec:method}
 
-The complete research framework is presented in Fig.~\ref{fig:framework}.
+Fig.~\ref{fig:framework} presents the complete end-to-end pipeline: six processing layers from jaga.id data acquisition through feature construction, three-paradigm detection, multi-method consensus, typology assignment, and APIP inspection workplan generation---with theoretical grounding from the Fraud Triangle, Principal-Agent Theory, and DeLone \& McLean IS Success Model.
 
 \begin{figure*}[htb]
 \centering
@@ -225,21 +214,25 @@ Seven features were engineered to operationalise corruption modus operandi docum
 \end{tabular*}
 \end{table*}
 
-Figs.~\ref{fig:feat_dist} and~\ref{fig:feat_corr} present raw feature distributions and the inter-feature correlation matrix, respectively.
+Fig.~\ref{fig:feat_dist} presents raw feature distributions and the inter-feature correlation structure.
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\textwidth]{feature_distributions.png}
-\caption{Feature distributions across all 99,692 records (clipped at 99th percentile). Extreme right-skew in \texttt{cost\_per\_unit} (median = Rp~5,440,000; max = Rp~$2.8 \times 10^8$) and near-binary concentration in \texttt{absorption\_ratio} (median = 0.02) are consistent with documented incomplete fund absorption patterns.}
-\label{fig:feat_dist}
-\end{figure*}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.90\columnwidth]{feature_correlation_heatmap.png}
-\caption{Pairwise feature correlation matrix (Pearson $r$). Strongest correlation: \texttt{cost\_deviation\_by\_category} $\leftrightarrow$ \texttt{cost\_per\_unit} ($r = 0.59$). All other pairs $|r| < 0.40$, confirming feature independence sufficient for multi-method detection.}
+\begin{minipage}[t]{0.61\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{feature_distributions.png}\\[2pt]
+  {\small\textbf{(a)}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.37\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{feature_correlation_heatmap.png}\\[2pt]
+  {\small\textbf{(b)}}
+\end{minipage}
+\caption{\textbf{(a)} Feature distributions across all 99,692 records (clipped at 99th percentile). Extreme right-skew in \texttt{cost\_per\_unit} (median = Rp~5,440,000; max = Rp~$2.8{\times}10^8$) and near-binary concentration in \texttt{absorption\_ratio} (median = 0.02) are consistent with incomplete fund absorption patterns.
+\textbf{(b)} Pairwise feature correlation matrix (Pearson $r$). Strongest correlation: \texttt{cost\_deviation\_by\_category} $\leftrightarrow$ \texttt{cost\_per\_unit} ($r = 0.59$); all other pairs $|r| < 0.40$, confirming sufficient feature independence for multi-method detection.}
+\label{fig:feat_dist}%
 \label{fig:feat_corr}
-\end{figure}
+\end{figure*}
 
 \subsection{Detection Algorithms}
 
@@ -251,10 +244,10 @@ Figs.~\ref{fig:feat_dist} and~\ref{fig:feat_corr} present raw feature distributi
 
 \subsection{Consensus Framework and Typology Mapping}
 
-A record receives \texttt{consensus\_flag = 1} if flagged by $\geq$\,2 of 3 methods. Consensus-flagged records are post-processed through a rule-based typology assignment module mapping feature patterns to seven typology labels (T1--T7) derived from documented modus operandi (Table~\ref{tab:typo_rules}). Records satisfying no single rule threshold receive an \textit{Unclassified} assignment.
+A record receives \texttt{consensus\_flag = 1} if flagged by $\geq$\,2 of 3 methods. Consensus-flagged records are post-processed through a rule-based typology assignment module mapping feature profiles to seven typology labels (T1--T7). The typology schema synthesises three empirical classification sources: Siregar and Aminudin's modus operandi taxonomy from multi-case East Java analysis~\cite{ref13}, Kartadinata et al.'s systematic classification of 200$+$ KPK prosecution cases~\cite{ref14}, and Hidajat's anti-corruption mode analysis for the Dana Desa context~\cite{ref6}. Table~\ref{tab:typo_rules} presents the full feature-to-typology assignment rules derived from these sources. Records whose combined feature profile satisfies no individual rule threshold receive an \textit{Unclassified} assignment.
 
 \begin{table*}[htb]
-\caption{Corruption typology assignment rules for consensus-flagged records.}
+\caption{Corruption typology assignment rules for consensus-flagged records. Typology schema derived from triangulation of~\cite{ref6,ref13,ref14}.}
 \label{tab:typo_rules}
 \begin{tabular*}{\hsize}{@{\extracolsep{\fill}}cll@{}}
 \toprule
@@ -301,7 +294,7 @@ RDA (Dense AE)        &  4,985 &  5.0\% &  5.5\% &  3.8\% &  5.9\% \\
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\textwidth]{anomaly_rate_consistency.png}
+\includegraphics[width=0.74\textwidth]{anomaly_rate_consistency.png}
 \caption{Anomaly rate consistency per method and fiscal year. LOF exhibits the most stable cross-year profile (range: 4.6--5.8\%); Isolation Forest shows the highest inter-year variance (10.5\% in 2023 vs.\ 6.5\% in 2024), reflecting the post-COVID fiscal expansion context.}
 \label{fig:rate_consist}
 \end{figure*}
@@ -312,7 +305,7 @@ Fig.~\ref{fig:score_dist} presents score distribution histograms annotated with 
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\textwidth]{score_distributions.png}
+\includegraphics[width=0.74\textwidth]{score_distributions.png}
 \caption{Score distribution histograms for all three methods. LOF (BC = 0.957) exhibits a sharply L-shaped distribution; RDA (BC = 0.703) confirms a clear anomaly tail; IF (BC = 0.335) is unimodal---its 95th-percentile threshold cuts through a high-density score region.}
 \label{fig:score_dist}
 \end{figure*}
@@ -358,9 +351,20 @@ Fig.~\ref{fig:typology} and Table~\ref{tab:typology} present typology distributi
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\textwidth]{typology_distribution.png}
-\caption{Corruption typology distribution among 3,107 consensus-flagged records (multi-label). T1 (Mark-up) and T7 (Cross-Category Dump) co-dominate at 50.6\% and 50.5\%. T4 (Stage Lock) registers zero detections---a subthreshold masking pattern examined in Section~\ref{sec:discussion}.}
-\label{fig:typology}
+\begin{minipage}[t]{0.63\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{typology_distribution.png}\\[2pt]
+  {\small\textbf{(a)}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.34\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{village_persistence_tiers.png}\\[2pt]
+  {\small\textbf{(b)}}
+\end{minipage}
+\caption{\textbf{(a)} Corruption typology distribution among 3,107 consensus-flagged records (multi-label). T1 (Mark-up) and T7 (Cross-Category Dump) co-dominate at 50.6\% and 50.5\%. T4 (Stage Lock) registers zero detections---a subthreshold masking pattern discussed in Section~\ref{sec:discussion}.
+\textbf{(b)} Village priority tier distribution based on anomaly persistence across FY~2023--2025. Tier~1 (642 villages, 47.1\%) exhibit consensus flags in $\geq$\,2 fiscal years, indicating entrenched structural vulnerability.}
+\label{fig:typology}%
+\label{fig:village_tiers}
 \end{figure*}
 
 \begin{table}[htb]
@@ -388,63 +392,68 @@ Fig.~\ref{fig:rda_error} decomposes RDA reconstruction error by feature across a
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\textwidth]{rda_error_decomposition.png}
+\includegraphics[width=0.78\textwidth]{rda_error_decomposition.png}
 \caption{Left: Mean RDA reconstruction error per feature across all consensus-flagged records. \texttt{avg\_completion} dominates (MSE $\approx 0.00145$), followed by \texttt{cost\_per\_unit} and \texttt{activity\_category}. Right: Per-record error heatmap for top-50 flagged records (sorted by RDA score). The extreme outlier record shows near-maximum error on both \texttt{cost\_per\_unit} and \texttt{avg\_completion}.}
 \label{fig:rda_error}
 \end{figure*}
 
 \subsection{Village Priority Tier Classification}
 
-Fig.~\ref{fig:village_tiers} presents village-level priority tiers based on multi-year anomaly persistence. Of 1,364 unique villages, 642~(47.1\%) qualify as Tier~1 (High Priority), exhibiting consensus anomalies in two or more fiscal years. The distribution---with nearly half of all villages showing multi-year persistence---is inconsistent with incidental error and indicates systemic, structurally sustained irregular spending patterns.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.9\columnwidth]{village_persistence_tiers.png}
-\caption{Village priority tier distribution based on anomaly persistence score across FY 2023--2025. Tier~1 (642 villages, 47.1\%) exhibit consensus flags in $\geq$\,2 fiscal years, indicating entrenched structural vulnerability.}
-\label{fig:village_tiers}
-\end{figure}
+Fig.~\ref{fig:village_tiers}(b) presents village-level priority tiers based on multi-year anomaly persistence. Of 1,364 unique villages, 642~(47.1\%) qualify as Tier~1 (High Priority), exhibiting consensus anomalies in two or more fiscal years. The distribution---with nearly half of all villages showing multi-year persistence---is inconsistent with incidental error and indicates systemic, structurally sustained irregular spending patterns.
 
 \subsection{Spatial Projection}
 
-Figs.~\ref{fig:pca} and~\ref{fig:tsne} confirm separability structure in the engineered feature space through PCA and t-SNE dimensionality reduction.
+Fig.~\ref{fig:pca} confirms separability structure in the engineered feature space through PCA and t-SNE dimensionality reduction.
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
 \centering
-\includegraphics[width=0.9\columnwidth]{pca_projection.png}
-\caption{PCA projection (PC1 = 26.0\%, PC2 = 12.7\% variance). Consensus anomalies ($n = 3{,}107$, red) distribute along the positive PC1 gradient, with extreme outliers reaching PC1 $> 40$. Partial overlap in 2D space is expected given the 7-dimensional feature structure of the corruption patterns.}
-\label{fig:pca}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.9\columnwidth]{tsne_projection.png}
-\caption{t-SNE projection (sampled: 14,538 normal + 462 anomalous). Anomaly concentration in specific right-periphery sub-clusters is consistent with systematic repetition of the same corruption patterns within programme category neighbourhoods, not random individual deviation.}
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{pca_projection.png}\\[2pt]
+  {\small\textbf{(a)}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{tsne_projection.png}\\[2pt]
+  {\small\textbf{(b)}}
+\end{minipage}
+\caption{\textbf{(a)} PCA projection (PC1 = 26.0\%, PC2 = 12.7\% variance). Consensus anomalies ($n = 3{,}107$, red) distribute along the positive PC1 gradient; extreme outliers reach PC1 $> 40$. Partial overlap is expected in 2D given the 7-dimensional feature structure.
+\textbf{(b)} t-SNE projection (sampled: 14,538 normal + 462 anomalous). Anomaly concentration in specific right-periphery sub-clusters confirms systematic repetition of corruption patterns within programme category neighbourhoods, not random individual deviation.}
+\label{fig:pca}%
 \label{fig:tsne}
-\end{figure}
+\end{figure*}
 
 % =====================================================================
 \section{Discussion}
 \label{sec:discussion}
 
-\subsection{LOF Superiority: A Theoretically Predicted Outcome}
+\subsection{Algorithm Selection: Why LOF's Superiority Is Theoretically Predicted}
 
-LOF's BC of 0.957 is not an empirical surprise; it is a theoretically predictable consequence of how corruption manifests in activity-level Siskeudes records. Village fund activities within the same \texttt{Kode\_Output} prefix form natural local density clusters: PAUD operational expenses, road construction activities, and BLT disbursement entries each share characteristic cost ranges and procurement structures. A fraudulent record within such a cluster---for instance, a road construction activity with \texttt{cost\_per\_unit} at 42.42 standard deviations above its category mean---is correctly identified by LOF as a local outlier even if it appears globally unremarkable to IF's path-partitioning mechanism. This finding empirically demonstrates that LOF identifies a structurally distinct anomaly subset from IF on government spending data~\cite{ref25}, with direct consequences for APIP inspection design: a system relying solely on IF would structurally miss the 3,951 records LOF's local density mechanism uniquely identifies.
+LOF's bimodality coefficient of 0.957 is not an empirical coincidence; it is a theoretically predictable consequence of how corruption manifests structurally in Siskeudes activity records. Village fund activities within the same \texttt{Kode\_Output} prefix code form natural local density clusters: road construction activities, PAUD operational expenses, and BLT disbursement entries share characteristic cost ranges, procurement types, and disbursement stage structures. When a fraudulent record occupies such a cluster---for instance, a road construction activity with \texttt{cost\_per\_unit} at 42.42 standard deviations above its category mean---LOF's local density comparison correctly identifies it as a local outlier ($\text{LOF} \gg 1.0$) even when IF's path-partitioning considers it globally unremarkable against the full feature distribution~\cite{ref25}.
+
+IF's unimodal score distribution (BC = 0.335) reflects an architecture misalignment with the fraud structure: village fund corruption clusters systematically by activity type rather than as globally random sparsity, suppressing the score variance that IF requires to produce clean bimodal separation. This does not invalidate IF's detections---it means IF's 7,974 flagged records carry lower individual confidence and higher weight when corroborated by LOF or RDA. The consensus framework resolves this heterogeneity: the IF $\cap$ RDA intersection (50.3\%, $n = 2{,}506$) captures globally extreme anomalies confirmed by two independent global paradigms; the LOF-unique population identifies locally deviant within-category anomalies; the 156 triple-consensus records represent the highest-confidence fraud signals across all three detection modalities. An APIP system relying solely on IF would structurally miss the 3,951 records LOF uniquely identifies---activities whose cost structure is abnormal relative to their specific programme category but unremarkable in the global expenditure distribution.
 
 \subsection{The Fraud Triangle in the Data}
 
-All three Fraud Triangle conditions find quantitative expression in the results. \textit{Pressure} manifests in IF's elevated 2023 anomaly rate (10.5\% vs.\ 6.5--7.1\% in subsequent years), coinciding with post-COVID-era budget expansion when disbursement targets created stronger incentives for inflated claims. The 98.8\% Swakelola dominance concentrates \textit{Opportunity} in self-managed activities where competitive controls are absent~\cite{ref9}. The 642 Tier-1 villages exhibiting multi-year persistence confirm that Opportunity is entrenched rather than incidental. The dominance of T1 (Mark-up, $n = 1{,}571$) and T7 (Cross-Category Dump, $n = 1{,}568$) over operationally complex schemes provides indirect evidence of \textit{Rationalisation}~\cite{ref17}: the most prevalent schemes are administratively ambiguous enough for perpetrators to perceive as low-detection-risk.
+All three Fraud Triangle conditions find quantitative expression in the empirical results. \textit{Pressure} manifests in IF's elevated 2023 anomaly rate (10.5\% versus 6.5--7.1\% in subsequent years), coinciding with post-COVID village budget expansion when disbursement targets created stronger incentives for inflated claims to fully absorb enlarged allocations. \textit{Opportunity} is most directly confirmed by the 98.8\% Swakelola procurement dominance---the structural condition S{\o}reide~\cite{ref9} identifies as the primary enabler of procurement-stage corruption. Self-managed activities face no competitive bidding, no independent price verification, and no external financial audit prior to disbursement. The 642 Tier-1 villages exhibiting multi-year anomaly persistence (47.1\% of villages) demonstrate that Opportunity is not incidental but entrenched: the same villages display irregular patterns across consecutive fiscal years, confirming a stable accountability vacuum.
 
-\subsection{Principal-Agent Information Asymmetry}
+\textit{Rationalisation} does not produce directly observable quantitative signals but leaves its imprint in the typology distribution. The dominance of T1 (Mark-up, $n = 1{,}571$) and T7 (Cross-Category Dump, $n = 1{,}568$) over operationally complex schemes (T3 Volume Padding = 38; T5 Procurement Irregularity = 26) is consistent with a rationalisation environment where administratively ambiguous schemes---price inflation within defensible deviation ranges, or budget migration across output categories---are perceived as low-detection-risk by perpetrators~\cite{ref17}. The comparative rarity of T2 Ghost Activity ($n = 774$) relative to T1/T7 suggests actors prefer patterns that exploit documentation ambiguity over those requiring systematic falsification of project existence.
 
-\texttt{avg\_completion} as the dominant RDA error feature reveals that completion percentage reporting is the most intensively exploited information gap in the principal-agent relationship~\cite{ref26}. Agents report T1 disbursement near 100\% while T2 and T3 realisations approach zero---a completion profile that the autoencoder reconstructed with maximum error precisely because no legitimate fund absorption behaviour produces this pattern. The actionable implication: APIP inspection procedures should prioritise cross-checking reported stage completion percentages against physical output documentation as the first analytical step, before any cost or procurement analysis.
+\subsection{Principal-Agent Information Asymmetry: Where the Detection Gap Operates}
 
-\subsection{Subthreshold Masking and the Unclassified Problem}
+The dominant RDA error feature---\texttt{avg\_completion}---locates precisely where information asymmetry operates with greatest consequence in the principal-agent relationship~\cite{ref26}. Village heads report T1 disbursement at or near 100\% while T2 and T3 stage realisations approach zero---a tranche progression pattern the autoencoder reconstructed with maximum error (MSE $\approx$ 0.00145) because no legitimate fund absorption behaviour produces this profile. This is not random deviation; it is systematic exploitation of the fact that APIP inspection cycles typically conclude after T3 disbursement windows close, by which time completion reports have already determined subsequent disbursement eligibility.
 
-The 708 unclassified records (22.8\% of consensus flags) represent a significant methodological limitation. These records satisfy the multi-paradigm anomaly threshold---confirmed by $\geq$\,2 independent methods---yet fail every single typology rule threshold. The most plausible explanation is compound fraud: schemes combining moderate mark-up with partial completion manipulation across multiple features, such that no single feature exceeds its individual typology threshold while the joint feature profile is statistically anomalous. Single-threshold rule-based typology assignment is structurally inadequate for compound patterns. This limitation motivates replacement with a multi-label classifier trained on expert-validated samples in Phase~2.
+This finding carries a direct operational implication for APIP inspection design. Currently, most kabupaten-level inspectorates begin examination with procurement documentation (contract comparisons, vendor verification). The RDA error decomposition advises reversing this sequence: cross-checking reported stage completion percentages against field evidence of physical output should be the first analytical step, because the completion reporting channel is where information asymmetry operates most intensively and where document-level manipulation is most feasible without physical corroboration.
 
-\subsection{DeLone and McLean IS Success Evaluation}
+\subsection{Subthreshold Masking: Implications for Audit Intelligence}
 
-Applied to this pipeline, the DeLone and McLean model~\cite{ref10} evaluates three quality dimensions. \textit{Information Quality}: the consensus anomaly scores and typology labels are validated by multi-paradigm convergence, alignment with documented judicial modus operandi~\cite{ref13,ref14}, and the four Jambi prosecution cases confirming that the exact financial patterns targeted here were present in verified fraud~\cite{ref30,ref31,ref32,ref33}. \textit{Individual Impact}: the priority list converts 99,692 undifferentiated records into a targeted 642-village inspection workplan---a 93.5\% search space reduction directly addressing the APIP staffing constraint~\cite{ref12}. \textit{Organisational Impact}: APIP operational coverage gap closure depends on whether inspectorates adopt ranked pipeline outputs as inspection inputs---a governance challenge constituting the central imperative for Phase~2 implementation evaluation.
+The 708 unclassified records (22.8\% of consensus flags) warrant explicit analytical attention beyond treating them as a classification residual. These records satisfy the multi-paradigm anomaly threshold---confirmed anomalous by $\geq$\,2 independent methods---yet fail every individual typology rule threshold. The most plausible explanation is compound fraud: schemes combining moderate mark-up with partial completion manipulation across features simultaneously, such that no single feature exceeds its individual typology threshold while the joint feature profile remains statistically anomalous to independent algorithmic perspectives.
+
+For APIP, these records represent the highest-value targets for field investigation precisely because their anomalous nature is not attributable to any single identifiable feature deviation. They cannot be dismissed as data quality artefacts---two independent algorithms confirm their anomalous status---nor pre-classified into a known scheme. An inspector examining a T1-labelled record knows to look for inflated unit prices against procurement documentation; an inspector examining an unclassified record must approach the file with full inter-feature intelligence, cross-referencing completion, cost, and category dimensions simultaneously. These 708 records should be prioritised for in-depth desk review before any field visit assignment.
+
+\subsection{DeLone and McLean IS Success: Evaluating the Pipeline as an IS Artefact}
+
+Applied to this pipeline, the DeLone and McLean model~\cite{ref10} evaluates three quality dimensions. \textit{Information Quality}: consensus anomaly scores, typology labels, and village priority tiers are validated by multi-paradigm convergence, alignment with documented judicial modus operandi~\cite{ref13,ref14}, and the four Jambi prosecution cases confirming that the financial patterns targeted here were present in verified fraud~\cite{ref30,ref31,ref32,ref33}. \textit{Individual Impact}: the ranked priority list converts 99,692 undifferentiated records into a targeted 642-village inspection workplan---a 93.5\% search space reduction that directly addresses the APIP staffing constraint documented by Srirejeki and Faturokhman~\cite{ref12}. \textit{Organisational Impact}: realising this impact requires that APIP inspectorates institutionalise ranked pipeline outputs as formal pre-inspection intelligence inputs---a governance design challenge demanding internal procedure amendments and inspector training on algorithmic output interpretation. The pipeline's IS success therefore hinges not only on technical detection accuracy but on organisational uptake: its information quality dimension is demonstrably satisfied; its individual and organisational impact dimensions remain contingent on institutional adoption decisions.
 
 % =====================================================================
 \section{Conclusion}
@@ -452,22 +461,24 @@ Applied to this pipeline, the DeLone and McLean model~\cite{ref10} evaluates thr
 
 This study develops and evaluates a comparative unsupervised machine learning pipeline for detecting corruption indications in village fund expenditure absorption records, applied to 99,692 activity-level entries collected via jaga.id from Jambi Province across FY~2023--2025. Three research questions were answered empirically.
 
-\textbf{RQ1 --- Feature discriminating power}: Seven engineered features operationalising documented modus operandi~\cite{ref13,ref14} produce a feature matrix with sufficient discriminating power for multi-paradigm anomaly detection without fraud labels. RDA reconstruction error diagnosis identifies \texttt{avg\_completion} as the dominant corruption signal (MSE $\approx$ 0.00145), with extreme right-skew in \texttt{cost\_per\_unit} (max = 102.83$\sigma$) confirming that price inflation leaves detectable quantitative traces in absorption records.
+\textbf{RQ1 --- Feature discriminating power}: Seven engineered features operationalising documented corruption modus operandi~\cite{ref13,ref14} produce a feature matrix with sufficient discriminating power for multi-paradigm anomaly detection without pre-existing fraud labels. RDA reconstruction error diagnosis identifies \texttt{avg\_completion} as the dominant corruption signal (MSE $\approx$ 0.00145), followed by \texttt{cost\_per\_unit} and \texttt{activity\_category}. The extreme right-skew in \texttt{cost\_per\_unit} (max $= 102.83\sigma$) and \texttt{cost\_deviation\_by\_category} (max $= 42.42\sigma$) confirms that price inflation leaves detectable quantitative traces in Siskeudes absorption records without requiring judicial corroboration.
 
-\textbf{RQ2 --- Algorithm performance}: LOF achieves the highest bimodality coefficient (BC = 0.957), demonstrating the sharpest normal-to-anomalous discrimination. This superiority is theoretically predicted: LOF's local density architecture captures within-category price inflation that global partitioning (IF, BC = 0.335) and global reconstruction (RDA, BC = 0.703) structurally miss. The multi-paradigm consensus framework outperforms any single algorithm for operational inspection triage by aggregating complementary detection channels into a 3,107-record high-confidence flagged set.
+\textbf{RQ2 --- Algorithm performance}: LOF achieves the highest bimodality coefficient (BC = 0.957), demonstrating the sharpest normal-to-anomalous discrimination produced by its local density architecture operating on within-category peer groups. This superiority is theoretically predicted: within-category price inflation is structurally invisible to global methods (IF, BC = 0.335; RDA, BC = 0.703) but directly measurable by LOF's peer-group comparison mechanism. The multi-paradigm consensus framework aggregates complementary detection channels into a 3,107-record high-confidence flagged set that no single algorithm produces independently.
 
-\textbf{RQ3 --- Typology mapping}: Consensus anomalies map predominantly to T1 (Mark-up, 50.6\%) and T7 (Cross-Category Dump, 50.5\%), consistent with Jambi judicial records and prior typology studies~\cite{ref13,ref14}. The 708 unclassified records (22.8\%) expose the limitation of single-threshold rule-based classification for compound fraud patterns.
+\textbf{RQ3 --- Typology mapping}: Consensus anomalies map predominantly to T1 (Mark-up, 50.6\%) and T7 (Cross-Category Dump, 50.5\%), consistent with Jambi judicial records~\cite{ref30,ref31,ref32,ref33} and prior empirical typology studies~\cite{ref13,ref14}. T2 (Ghost Activity, 24.9\%) ranks third. The 708 unclassified records (22.8\%) represent the methodologically most challenging anomaly class---multi-method confirmed but single-feature subthreshold---requiring inter-feature combined analysis rather than single-indicator examination.
 
-The pipeline operationalises the DeLone and McLean information-quality-to-organisational-impact pathway~\cite{ref10} by reducing APIP's inspection search space from 99,692 records to 642 priority villages (93.5\% reduction) without pre-existing labels.
+The pipeline operationalises the DeLone and McLean information-quality-to-organisational-impact pathway~\cite{ref10} by reducing APIP's inspection search space from 99,692 records to 642 priority villages (93.5\% reduction) without pre-existing labels. Beyond audit efficiency, the typology-labelled outputs carry direct implications for law enforcement: the 642 Tier-1 priority villages constitute actionable pre-inspection intelligence for APIP inspectorates, enabling resource reallocation to the highest-anomaly-concentration areas. For KPK and Kejaksaan, the typology-labelled anomaly records provide structured documentation of suspicious financial patterns---mark-up amounts, cross-category budget migration profiles, and stage-completion inconsistencies---that can support preliminary inquiry targeting, potentially reducing the two-to-five-year detection lag documented in Jambi prosecution cases~\cite{ref30,ref31,ref32,ref33}.
 
-\textbf{Limitations}: absence of expert ground-truth validation; single-province data scope limiting national generalisability; rule-based typology inadequacy for compound patterns.
+\textbf{Limitations --- Data}: (1)~Single-province scope limits generalisability to provinces with structurally different disbursement patterns or governance capacity. (2)~jaga.id absorption data is derived from village-entered Siskeudes records; intentional misreporting at data entry constitutes an undetectable systematic data quality risk from the records alone. (3)~Ground-truth labels are unavailable at the activity level; judicial conviction records do not map to specific Siskeudes entries, preventing precision--recall evaluation.
 
-\textbf{Future directions}: (1)~multi-label classifier replacement for the typology module; (2)~provincial extension to Sumatera Utara and Jawa Timur; (3)~real-time dashboard integration with Siskeudes data feeds via jaga.id for within-cycle APIP screening; (4)~implementation evaluation measuring inspection conversion rates from pipeline-ranked outputs to APIP field investigations.
+\textbf{Limitations --- Methodology}: (1)~The 5\% contamination rate is an unverified a priori assumption; miscalibration shifts the IF decision boundary into high-density score regions. (2)~Single-threshold typology rules cannot capture compound fraud schemes where multiple features deviate at moderate but jointly anomalous magnitudes. (3)~LOF's $O(n^2)$ neighbourhood computation limits scalability to datasets significantly exceeding 100k records without approximate search optimisation.
+
+\textbf{Future directions}: (1)~Ground-truth label acquisition through systematic matching of pipeline-flagged activities against KPK and Kejaksaan prosecution indictments, building annotated training data to empirically calibrate typology classification accuracy. (2)~Multi-source data fusion integrating SP2D payment transfer records (Kemendagri) with OM-SPAN budget realisation data (Kemenkeu) as cross-validation layers against jaga.id absorption figures, reducing single-source data quality risk. (3)~Adaptive contamination rate calibration using expert-annotated APIP field inspection samples, replacing the fixed 5\% assumption with category-specific empirical estimates. (4)~Temporal extension to the FY~2018--2025 longitudinal panel to improve persistence detection reliability and enable modelling of corruption pattern evolution across dana desa programme maturation phases.
 
 % =====================================================================
 %% References — Vancouver numbered style, ordered by appearance
 % =====================================================================
-\begin{thebibliography}{34}
+\begin{thebibliography}{32}
 
 \bibitem{ref1}
 Republic of Indonesia. Undang-Undang Nomor 6 Tahun 2014 tentang Desa [Law No.~6 of 2014 on Villages]. Jakarta; 2014.
@@ -520,9 +531,6 @@ Stripling E, vanden Broucke S, Antonio K, vanden Broucke J, Baesens G. Isolation
 \bibitem{ref17}
 Cressey DR. \textit{Other People's Money: A Study in the Social Psychology of Embezzlement}. New York: Free Press; 1953.
 
-\bibitem{ref18}
-[Reference removed --- source not verifiable in Scopus, CrossRef, or Google Scholar databases. No citations to this entry appear in the article text.]
-
 \bibitem{ref19}
 Liu FT, Ting KM, Zhou Z-H. Isolation forest. In: \textit{Proc 8th IEEE Int Conf Data Mining (ICDM)}. Pisa; 2008. p.\ 413--422. DOI: 10.1109/ICDM.2008.17
 
@@ -550,9 +558,6 @@ Groenendijk NS. A principal-agent model of corruption. \textit{Crime Law Soc Cha
 \bibitem{ref27}
 jaga.id. Laporan Pengaduan Dana Desa --- Statistik Nasional. Jakarta: FITRA/KPK; accessed April 2026. Available: \url{https://jaga.id}
 
-\bibitem{ref28}
-Srirejeki K, Faturokhman A. In search of corruption prevention model: case study from Indonesia village fund. \textit{Acta Univ Danubius Oecon}. 2020;16(3):214--229. [Editorial note: identical to reference~\cite{ref12}; consolidate to [12] in final revision.]
-
 \bibitem{ref29}
 Alfada A. The destructive effect of corruption on economic growth in Indonesia: a threshold model. \textit{Economies}. 2019;7(4):1--21. DOI: 10.3390/economies7040111
 
@@ -560,10 +565,10 @@ Alfada A. The destructive effect of corruption on economic growth in Indonesia: 
 JambiTV Disway. Eks Kades Muara Hemat jalani tahap 2 kasus dugaan korupsi dana desa. \textit{JambiTV Disway} [Internet]. Feb 2026. Available: \url{https://jambitv.disway.id/hukum/read/12500/eks-kades-muara-hemat-jalani-tahap-2-kasus-dugaan-korupsi-dana-desa}
 
 \bibitem{ref31}
-JambiTV Disway. Dana desa Jambi Tulo dibekukan: Inspektorat temukan dugaan kegiatan fiktif Rp300 juta lebih. \textit{JambiTV Disway} [Internet]. 2025. Available: \url{https://jambitv.disway.id/muaro-jambi/read/12087}
+JambiTV Disway. Dana desa Jambi Tulo dibekukan: Inspektorat temukan dugaan kegiatan fiktif Rp300 juta lebih. \textit{JambiTV Disway} [Internet]. 2025. Available: \url{https://jambitv.disway.id/muaro-jambi/read/12087/dana-desa-jambi-tulo-dibekukan-inspektorat-temukan-dugaan-kegiat-fiktif-rp300-juta-lebih}
 
 \bibitem{ref32}
-Kompas.com. Kades hingga mantan kades di Kerinci, Jambi korupsi Rp~644 juta dana desa. \textit{Kompas.com Regional} [Internet]. Aug 2025. Available: \url{https://regional.kompas.com/read/2025/08/20/213221778/kades-hingga-mantan-kades-di-kerinci-jambi}
+Kompas.com. Kades hingga mantan kades di Kerinci, Jambi korupsi Rp~644 juta dana desa. \textit{Kompas.com Regional} [Internet]. Aug 2025. Available: \url{https://regional.kompas.com/read/2025/08/20/213221778/kades-hingga-mantan-kades-di-kerinci-jambi-korupsi-rp-644-juta-dana-desa}
 
 \bibitem{ref33}
 JambiLINK.id. Tersangka korupsi dana desa Pangkal Duri ditangkap, kerugian negara capai Rp~415 juta. \textit{JambiLINK.id} [Internet]. Aug 2024. Available: \url{https://jambilink.id/post/951/tersangka-korupsi-dana-desa-pangkal-duri-ditangkap}
