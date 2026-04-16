@@ -27,9 +27,9 @@ Seven features were engineered to operationalise corruption modus operandi docum
 | `swakelola_high_value` | Binary: Swakelola AND realisation > threshold | High-value uncompetitive procurement |
 | `activity_category` | Kode_Output 2-digit prefix (ordinally encoded) | Cross-category activity mismatch |
 | `cost_deviation_by_category` | z-score of `cost_per_unit` within Kode_Output group | Within-category price outlier |
-| `n_stages_active` | Count of disbursement stages with Real > 0 | Incomplete or front-loaded disbursement |
+| `n_stages_active` | Count of disbursement stages with Real > 0 | Incomplete or front-loaded disbursement (metadata annotation; used for post-hoc typology mapping, not ML model input) |
 
-All continuous features were standardised (zero mean, unit variance) prior to model input. The Robust Deep Autoencoder (RDA) uses the five core features (`cost_per_unit`, `avg_completion`, `swakelola_high_value`, `activity_category`, `cost_deviation_by_category`) for reconstruction-error-based detection, while IF and LOF consume the full 7-feature matrix. Figure 1 depicts the raw (pre-normalisation) distributions of six key features, confirming extreme right-skew in `cost_per_unit` (median = Rp 5,440,000; max = Rp 2.8 × 10⁸ clipped at 99th percentile) and near-binary concentration in `absorption_ratio` (median = 0.02), consistent with the prevalence of incomplete fund absorption documented in prior studies [12].
+Two candidate features from the initial design — `stage_variance` and `completion_vs_realization` — were eliminated during Variance Inflation Factor (VIF) screening (threshold VIF > 5) prior to model fitting. `n_stages_active` was retained as a metadata column for typology mapping rather than as a model input feature. All remaining features were normalised using RobustScaler (median centring, IQR scaling), which resists distortion by the outlier records the study intentionally targets for detection. The Robust Deep Autoencoder (RDA) uses the five core features (`cost_per_unit`, `avg_completion`, `swakelola_high_value`, `activity_category`, `cost_deviation_by_category`) for reconstruction-error-based detection, while IF and LOF consume the full 6-feature model input matrix. Figure 1 depicts the raw (pre-normalisation) distributions of six key features, confirming extreme right-skew in `cost_per_unit` (median = Rp 5,440,000; max = Rp 2.8 × 10⁸ clipped at 99th percentile) and near-binary concentration in `absorption_ratio` (median = 0.02), consistent with the prevalence of incomplete fund absorption documented in prior studies [12].
 
 > **[Figure 1: Feature Distributions — Jambi Village Fund 2023–2025]**
 > *Source: `src/output_v1/charts/feature_distributions.png`*
@@ -45,7 +45,7 @@ Figure 2 presents the feature correlation matrix. The strongest pairwise correla
 
 **Local Outlier Factor (LOF)** computes, for each record, the ratio of its estimated local reachability density to the mean local reachability density of its k-nearest neighbours [25]. Records with LOF >> 1.0 are locally dense isolates — statistically deviant within their Kode_Output activity peer group. `n_neighbors = 20`, scored on the full training set (novelty = False).
 
-**Robust Deep Autoencoder (RDA)** decomposes the input matrix **X** into a learned normal representation **L** (encoded and decoded by a 3-layer dense autoencoder) and a sparse noise matrix **S** capturing anomalous patterns (L1-penalised). Per-record anomaly scores are the Mean Squared Error between the original feature vector and its reconstruction **L̂**. The network architecture is `[7 → 32 → 16 → 32 → 7]` with ReLU activations; `epochs = 50`, `batch_size = 256`, `λ_L1 = 0.01`. Flagging threshold is the 95th percentile of MSE on the training set.
+**Robust Deep Autoencoder (RDA)** decomposes the input matrix **X** into a learned normal representation **L** (encoded and decoded by a deep autoencoder) and a sparse noise matrix **S** capturing anomalous patterns (L1-penalised). Per-record anomaly scores are the Mean Squared Error between the original feature vector and its reconstruction **L̂**. The network architecture is `[n → 64 → 32 → 16 → 8 → 16 → 32 → 64 → n]` (n = number of input features; 8-layer symmetric encoder–decoder with bottleneck at dimension 8) with ReLU activations throughout and a linear output layer. Training uses `epochs = 100` with early stopping at `patience = 10`, `batch_size = 256`. The regularisation parameter λ is selected by validation reconstruction MSE from a sweep over {1×10⁻⁴, 1×10⁻³, 1×10⁻²}. Flagging threshold is the 95th percentile of reconstruction MSE on the full dataset.
 
 ### 3.4 Consensus Anomaly Identification and Typology Mapping
 
@@ -57,9 +57,9 @@ Consensus-flagged records are post-processed through a rule-based typology assig
 |---|---|---|
 | T1 | Mark-up / Price Inflation | `cost_per_unit` > 3σ AND `cost_deviation_by_category` > 2σ |
 | T2 | Ghost Activity | `absorption_ratio` < 0.05 AND `avg_completion` < 10% |
-| T3 | Volume Padding | `n_stages_active` = 1 AND `cost_per_unit` within normal range |
+| T3 | Volume Padding | `absorption_ratio` ≥ 0.98 (near-complete single-cycle budget absorption) |
 | T4 | Stage Lock | `n_stages_active` = 0 (budget allocated, zero disbursement) |
-| T5 | Procurement Irregularity | `swakelola_high_value` = 1 AND `cost_per_unit` > 5σ |
+| T5 | Procurement Irregularity | `Cara_Pengadaan` = Pihak ke-3 / Kontrak AND `cost_per_unit` > 75th percentile |
 | T6 | Budget Exhaustion | `absorption_ratio` > 0.98 AND `avg_completion` < 50% |
 | T7 | Cross-Category Dump | `activity_category` mismatch signal relative to Kode_Output peer group |
 

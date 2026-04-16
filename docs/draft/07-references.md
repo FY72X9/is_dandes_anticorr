@@ -63,7 +63,7 @@
 
 [27] jaga.id, "Laporan Pengaduan Dana Desa — Statistik Nasional," Jakarta: Forum Indonesia untuk Transparansi Anggaran (FITRA), accessed April 2026. [Online]. Available: https://jaga.id
 
-[28] K. Srirejeki and A. Faturokhman, "In search of corruption prevention model: case study from Indonesia village fund," *Acta Universitatis Danubius. Oeconomica*, vol. 16, no. 3, pp. 214–229, 2020. *[Editorial note: [28] is the same source as [12]. Consolidate to [12] throughout the article in the final revision.]*
+[28] *[Consolidated. See [12] — K. Srirejeki and A. Faturokhman (2020). All in-text citations updated to [12].]*
 
 [29] A. Alfada, "The destructive effect of corruption on economic growth in Indonesia: a threshold model," *Economies*, vol. 7, no. 4, pp. 1–21, 2019. DOI: 10.3390/economies7040111
 
@@ -82,6 +82,6 @@
 > **Editorial Note (v2.0)**: All placeholder references have been filled with verified citations. Outstanding items requiring author review before submission:
 > - **[18]**: Removed (Li et al. 2025 unverifiable). All chapter citations to [18] must be updated — see changes applied to §2.3 and §5.1.
 > - **[22]** (Albanese & Artello 2019) and **[23]** (Šumah 2018): Not yet cited in chapter text; available for integration in §2.1 discussion of fraud typology frameworks.
-> - **[28]**: Duplicate of [12] (Srirejeki & Faturokhman 2020). Replace all [28] occurrences in article body with [12] in final revision.
+> - **[28]**: Consolidated to [12] (Srirejeki & Faturokhman 2020). All in-text occurrences have been updated to [12].
 > - **[29]**: Journal corrected from *Heliyon* to *Economies* (MDPI). Verify DOI: 10.3390/economies7040111 matches the correct paper before submission.
 > - Jaga.id data source note added to §1 and §3.1 — see updated chapter files.

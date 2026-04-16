@@ -84,7 +84,7 @@ Figure 5 presents the typology distribution among consensus-flagged records, usi
 | T7 | Cross-Category Dump | 1,568 | 50.5% |
 | — | Unclassified | 708 | 22.8% |
 
-T1 (Mark-up) and T7 (Cross-Category Dump) emerge as co-dominant typologies at 50.6% and 50.5% of flagged records respectively, together accounting for the structural core of detected anomalies. T2 (Ghost Activity) represents the third-largest category (24.9%). Stage Lock (T4) records zero detections, consistent with the finding that fully locked activities tend not to generate feature extremes that reach consensus threshold — a subthreshold problem examined in Section 5.4.
+T1 (Mark-up) and T7 (Cross-Category Dump) emerge as co-dominant typologies at 50.6% and 50.5% of flagged records respectively, together accounting for the structural core of detected anomalies. T2 (Ghost Activity) represents the third-largest category (24.9%). Stage Lock (T4) records zero detections in the v1 pipeline. This is a methodological artefact: the v1 rule evaluated `stage_variance`, a feature excluded from the model input matrix during VIF screening and therefore absent from the `anomaly_flags.csv` output columns. The detection rule has been corrected in the notebook pipeline to apply `n_stages_active` = 0 directly; T4 counts will be updated in the next pipeline execution.
 
 ### 4.5 RDA Feature Importance Diagnosis
 
