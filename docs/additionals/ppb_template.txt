@@ -1,0 +1,45 @@
+PENDAHULUAN
+
+(Petunjuk: Pengusul hanya diperkenankan mengisi di tempat yang telah disediakan sesuai dengan petunjuk pengisian dan tidak diperkenankan melakukan modifikasi template atau penghapusan di setiap bagian).
+
+Pendahuluan penelitian tidak lebih dari 1000 kata yang terdiri dari:
+A. Latar belakang dan rumusan permasalahan yang akan diteliti
+B. Pendekatan pemecahan masalah
+C. State of the art dan kebaruan
+D. Peta jalan (road map) penelitian 5 tahun kedepan (jika dalam bentuk konsorsium harus
+dilengkapi dengan roadmap penelitian konsorsium)
+E. Sitasi disusun dan ditulis berdasarkan sistem nomor sesuai dengan urutan pengutipan,
+mengikuti format Vancouver.
+
+Contoh penulisan format Vancouver:
+Kepemimpinan transformasional merupakan faktor penting dalam keberhasilan kepemimpinan dan menjadi faktor penting sebagai penentu keberhasilan usaha para pengikutnya [1].
+
+
+---
+
+TINJAUAN PUSTAKA
+
+Tinjauan pustaka tidak lebih dari 1000 kata dengan mengemukakan state of the art dan peta jalan (road map) dalam bidang yang diteliti. Bagan dan road map dibuat dalam bentuk JPG/PNG yang kemudian disisipkan dalam isian ini. Sumber pustaka/referensi primer yang relevan dan dengan mengutamakan hasil penelitian pada jurnal ilmiah dan/atau paten yang terkini. Disarankan penggunaan sumber pustaka 10 tahun terakhir.
+
+---
+
+METODOLOGI PENELITIAN
+
+Metode atau cara untuk mencapai tujuan yang telah ditetapkan ditulis tidak melebihi 600 kata. Bagian ini dilengkapi dengan diagram alir penelitian yang menggambarkan apa yang sudah dilaksanakan dan yang akan dikerjakan selama waktu yang diusulkan. Format diagram alir dapat berupa file JPG/PNG. Bagan penelitian harus dibuat secara utuh dengan penahapan yang jelas, mulai dari awal bagaimana proses dan luarannya, dan indikator capaian yang ditargetkan. Di bagian ini harus juga mengisi tugas masing-masing anggota pengusul sesuai tahapan penelitian yang diusulkan.
+
+---
+
+JADWAL PENELITIAN
+
+[BUAT DAFTAR LIST KEGIATAN DALAM 12 BULAN, BENTUKNYA TABEL DARI BULAN 1 - 12]
+
+---
+DAFTAR PUSTAKA
+
+Daftar pustaka disusun dan ditulis berdasarkan sistem nomor sesuai dengan urutan pengutipan. Hanya pustaka yang disitasi pada usulan penelitian yang dicantumkan dalam Daftar Pustaka.
+
+Contoh penulisan daftar pustaka sesuai dengan urutan pengutipan di pendahuluan 
+1.	Bass, B. & Avolio, B., (2011), “Full range leadership development: Manual for multifactor leadership questonaire”, Redwood City, California: Mind Garden.
+
+---
+
