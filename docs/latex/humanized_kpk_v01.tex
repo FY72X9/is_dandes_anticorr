@@ -111,7 +111,7 @@ There are three distinct methodological paradigms which operate complementarily,
 
 The information system success model proposed by DeLone and McLean~\cite{ref31} in 2003 underpins the motivation for creating an anomaly detection pipeline as an intervention at the IS level. Pipeline results (scores, typologies, and village tiers) form the Information Quality dimension, which influences both Individual Impact (auditor attention allocation) and Organizational Impact (anti-corruption measures preventing state losses). Mutungi et al.~\cite{ref11} prove that digital interventions which do not address corruption interaction points have no effect on corruption, thus proving the soundness of typology-driven feature engineering methodology applied herein.
 
-\subsection{The Prevention Architecture of KPK and Its Structural Deficiencies}
+\subsection{Operational dimensions of related KPK Anti Corruption Programs}
 \label{sec:kpk_prevention}
 
 Within the Trisula strategy~\cite{ref4}, KPK positions the prevention phase between education and enforcement efforts. For the 2025-2026 period, Stranas PK lists "strengthening village governance" as one of fifteen priority actions, recommending the mandatory implementation of Siswaskeudes and cross-governmental collaboration for data integration within Kemendes, Kemendagri, Kemenkeu, and Bappenas ~\cite{ref7}.
@@ -260,9 +260,7 @@ Fig.~\ref{fig:feat_dist} presents raw feature distributions and the inter-featur
 
 \subsection{Detection Algorithms}
 
-\textbf{Robust Deep Autoencoder (RDA)} decomposes input matrix $\mathbf{X}$ into a learned normal representation $\mathbf{L}$ and a sparse noise matrix $\mathbf{S}$ ($L_1$-penalised), preventing anomalous records from corrupting the learned representation~\cite{ref27}. Anomaly scores are mean squared error between input and reconstruction. Architecture: $[7 \to 32 \to 16 \to 32 \to 7]$, ReLU activations; epochs = 50; batch size = 256; $\lambda_{L1} = 0.01$.
-
-Isolation Forest (IF) performs space partitioning by using random axis-aligned splits ~\cite{ref24,ref25}. The smaller the number of partitions needed to isolate a record, the lower the anomaly score assigned to the record. Contamination = 5\%; Number of estimators = 200; $\texttt{max\_samples} = 256$; $\texttt{random\_state} = 42$.
+\textbf{Isolation Forest (IF)} performs space partitioning by using random axis-aligned splits ~\cite{ref24,ref25}. The smaller the number of partitions needed to isolate a record, the lower the anomaly score assigned to the record. Contamination = 5\%; Number of estimators = 200; $\texttt{max\_samples} = 256$; $\texttt{random\_state} = 42$.
 
 \textbf{Local Outlier Factor (LOF)} measures the ratio between the estimated local reachability density of a record and the average local reachability density of its k-nearest neighbors~\cite{ref26}. If LOF > 1, then the record is a dense isolate within a local neighborhood. Number of neighbors = 20; evaluation based on all training data (\texttt{novelty = False}).
 
@@ -302,50 +300,29 @@ The village tier categorizes the flags from the activity tier into a persistency
 \section{Results}
 \label{sec:results}
 
-\subsection{Per-Method Anomaly Detection Rates}
+\subsection{Detection Rates, Score Quality, and Inter-Method Agreement}
 
-Table~\ref{tab:rates} presents anomaly flag counts and detection rates per method across fiscal years. Fig.~\ref{fig:rate_consist} visualises cross-year rate consistency.
+Table~\ref{tab:rates} reports anomaly flag counts across all three fiscal years. The IQR baseline flags 18.5\% of records---structurally too broad for targeted inspection use. IF's elevated 2023 rate (10.5\% versus 6.5--7.1\% in subsequent years) reflects post-COVID budget expansion, when enlarged allocations incentivised inflated claims. LOF and RDA converge on a stable 5.0\% overall rate. The multi-paradigm consensus ($\geq$\,2 of 3 methods) yields 3,107 records (3.1\%)---a materially tighter target set than any single method alone.
 
-
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=0.74\textwidth]{anomaly_rate_consistency.png}
-\caption{Anomaly rate consistency per method and fiscal year. LOF exhibits the most stable cross-year profile (range: 4.6--5.8\%); Isolation Forest shows the highest inter-year variance (10.5\% in 2023 vs.\ 6.5\% in 2024), reflecting post-COVID fiscal expansion dynamics.}
-\label{fig:rate_consist}
-\end{figure*}
-
-\subsection{Score Distributions and Inter-Method Agreement}
-
-Figure \ref{fig:score_dist} shows histograms of the score distributions with Bimodality Coefficient (BC) labels, where BC > 0.555 is indicative of bimodality in the separation between the normal distribution group and the abnormal tail.
-
-\begin{table}[htb]
-\caption{Per-method anomaly flag counts and detection rates.}
+\begin{table*}[htb]
+\caption{Per-method anomaly flag counts and detection rates across fiscal years.}
 \label{tab:rates}
 \begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lrrrrr@{}}
 \toprule
 \textbf{Method} & \textbf{Total} & \textbf{Overall} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\
 \colrule
-IQR Baseline          & 18,478 & 18.5\% & 21.1\% & 17.6\% & 17.1\% \\
-Isolation Forest (IF) &  7,974 &  8.0\% & 10.5\% &  6.5\% &  7.1\% \\
-LOF                   &  4,985 &  5.0\% &  4.7\% &  4.6\% &  5.8\% \\
-RDA (Dense AE)        &  4,985 &  5.0\% &  5.5\% &  3.8\% &  5.9\% \\
+IQR Baseline                   & 18,478 & 18.5\% & 21.1\% & 17.6\% & 17.1\% \\
+Isolation Forest (IF)          &  7,974 &  8.0\% & 10.5\% &  6.5\% &  7.1\% \\
+LOF                            &  4,985 &  5.0\% &  4.7\% &  4.6\% &  5.8\% \\
+RDA (Dense AE)                 &  4,985 &  5.0\% &  5.5\% &  3.8\% &  5.9\% \\
 \textbf{Consensus ($\geq$2/3)} & \textbf{3,107} & \textbf{3.1\%} & 4.1\% & 2.0\% & 3.3\% \\
 \botrule
 \end{tabular*}
-\end{table}
+\end{table*}
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=0.74\textwidth]{score_distributions.png}
-\caption{Score distribution histograms for all three methods. LOF (BC = 0.957) exhibits a sharply L-shaped distribution; RDA (BC = 0.703) confirms a clear anomaly tail; IF (BC = 0.335) is unimodal---its 95th-percentile threshold cuts through a high-density score region.}
-\label{fig:score_dist}
-\end{figure*}
+Tables~\ref{tab:bc} and~\ref{tab:overlap} characterise score quality and inter-method convergence. LOF achieves the strongest bimodal separation (BC\,=\,0.957), producing a sharp boundary between the normal cluster and the anomaly tail. IF's unimodal distribution (BC\,=\,0.335) means its 95th-percentile threshold intersects a high-density score region, reducing individual flag confidence. RDA occupies an intermediate position (BC\,=\,0.703). On pairwise overlap, IF and RDA share 50.3\% of RDA's flags---both respond to globally extreme multi-feature deviations (\texttt{cost\_per\_unit} at 102.83$\sigma$; \texttt{cost\_deviation\_by\_category} at 42.42$\sigma$). LOF's low overlap with IF (6.4\%) and RDA (12.0\%) confirms it captures a structurally distinct subset through local density comparison. The 156 triple-consensus records constitute the highest-confidence fraud signals across all modalities.
 
-Table \ref{tab:bc} and Table \ref{tab:overlap} show the statistics on the bimodality coefficients and flag overlap counts between different flagging systems. IF and RDA agree on 50.3\% of the flagged records from RDA, which suggests that both techniques react similarly to global outliers with multi-dimensional features (\texttt{cost\_per\_unit} at 102.83$\sigma$; \texttt{cost\_deviation\_by\_category} at 42.42$\sigma$). LOF shows small overlap rates with both techniques (6.4\% for IF; 12.0\% for RDA), which implies that LOF recognizes the anomalies through a unique local density-based mechanism.
-
-
-%% Tables 5 & 6 placed side-by-side horizontally inside one table* float
+%% Tables BC and Overlap side-by-side
 \begin{table*}[htb]
 \begin{minipage}[t]{0.46\textwidth}
 \caption{Bimodality coefficient and score range per method.}
@@ -376,34 +353,17 @@ IF $\cap$ LOF $\cap$ RDA (triple) & 156 & 1.6\% of total \\
 \end{minipage}
 \end{table*}
 
-\subsection{Corruption Typology Distribution}
+\subsection{Corruption Typology and Village Priority Distribution}
 
-Fig.~\ref{fig:typology} and Table~\ref{tab:typology} present typology distribution among consensus-flagged records using multi-label assignment (a record may satisfy multiple typology rules simultaneously).
+Using multi-label assignment (a record may satisfy multiple typology rules simultaneously), Table~\ref{tab:typology} shows that T1 (Mark-up, 50.6\%) and T7 (Cross-Category Dump, 50.5\%) co-dominate the 3,107 consensus-flagged records, consistent with Jambi judicial records~\cite{ref15,ref16,ref17,ref18} and prior typology studies~\cite{ref13,ref14}. T2 (Ghost Activity, 24.9\%) ranks third; operationally complex schemes (T3, T5, T6) remain rare. T4 (Stage Lock) registers zero detections---fully undisbursed budgets fall below the consensus threshold, a subthreshold masking pattern discussed in Section~\ref{sec:discussion}. The 708 unclassified records (22.8\%) pass the multi-paradigm threshold yet satisfy no single typology rule, pointing to compound fraud where no individual feature exceeds its standalone threshold. At the village level (Table~\ref{tab:village_tiers}), 642 villages (47.1\%) qualify as Tier~1 with flags in $\geq$\,2 fiscal years---a prevalence inconsistent with incidental error and indicative of entrenched structural irregularity.
 
-\begin{figure*}[htb]
-\centering
-\begin{minipage}[t]{0.63\textwidth}
-  \centering
-  \includegraphics[width=\linewidth]{typology_distribution.png}\\[2pt]
-  {\small\textbf{(a)}}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.34\textwidth}
-  \centering
-  \includegraphics[width=\linewidth]{village_persistence_tiers.png}\\[2pt]
-  {\small\textbf{(b)}}
-\end{minipage}
-\caption{\textbf{(a)} Corruption typology distribution among 3,107 consensus-flagged records (multi-label). T1 (Mark-up) and T7 (Cross-Category Dump) co-dominate at 50.6\% and 50.5\%. T4 (Stage Lock) registers zero detections---a subthreshold masking pattern discussed in Section~\ref{sec:discussion}.
-\textbf{(b)} Village priority tier distribution based on anomaly persistence across FY~2023--2025. Tier~1 (642 villages, 47.1\%) exhibit consensus flags in $\geq$\,2 fiscal years, indicating entrenched structural vulnerability.}
-\label{fig:typology}%
-\label{fig:village_tiers}
-\end{figure*}
-
-\begin{table}[htb]
-\caption{Corruption typology frequencies (multi-label, consensus-flagged records, $n = 3{,}107$).}
+\begin{table*}[htb]
+\begin{minipage}[t]{0.53\textwidth}
+\caption{Corruption typology frequencies (multi-label; $n = 3{,}107$ consensus-flagged records).}
 \label{tab:typology}
-\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}clrr@{}}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}clrr@{}}
 \toprule
-\textbf{Code} & \textbf{Typology} & \textbf{Count} & \textbf{\% Flagged} \\
+\textbf{Code} & \textbf{Typology} & \textbf{Count} & \textbf{\%} \\
 \colrule
 T1  & Mark-up / Price Inflation  & 1,571 & 50.6\% \\
 T2  & Ghost Activity             &   774 & 24.9\% \\
@@ -415,11 +375,27 @@ T7  & Cross-Category Dump        & 1,568 & 50.5\% \\
 --- & Unclassified               &   708 & 22.8\% \\
 \botrule
 \end{tabular*}
-\end{table}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.43\textwidth}
+\caption{Village priority tier distribution based on anomaly persistence across FY~2023--2025 ($N = 1{,}364$ villages).}
+\label{tab:village_tiers}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}clrr@{}}
+\toprule
+\textbf{Tier} & \textbf{Priority Level} & \textbf{Villages} & \textbf{\%} \\
+\colrule
+1 & High (flags in $\geq$\,2 years) & 642 & 47.1\% \\
+2 & Moderate (flags in 1 year)      & 459 & 33.7\% \\
+3 & Not Flagged (0 years)           & 263 & 19.3\% \\
+\colrule
+  & \textbf{Total}                  & \textbf{1,364} & \textbf{100\%} \\
+\botrule
+\end{tabular*}
+\end{minipage}
+\end{table*}
 
-\subsection{RDA Feature Importance, Village Tiers, and Spatial Projection}
+\subsection{RDA Feature Importance and Spatial Projection}
 
-Fig.~\ref{fig:rda_error} shows a breakdown of the RDA reconstruction error by feature, based on all records identified as consensus errors. The main source of RDA error is the feature \texttt{avg\_completion} with a mean squared error (MSE) of about 0.00145, which means that the distortion in completion percentage results in the highest error compared to the expected behavior of fund absorption. Following \texttt{avg\_completion}, the feature \texttt{cost\_per\_unit} is the second-largest source of RDA error, with MSE being around 0.00095. Out of 1,364 unique villages, 642 villages (47.1\%) qualify as Tier 1 (High Priority) consensus errors, meaning that there are consensus anomalies for two or more fiscal years in these villages. This prevalence level is unlikely to happen by chance and represents the evidence of irregular spending. The separability of the engineered feature space can be validated using Fig.~\ref{fig:pca} through PCA and t-SNE.
+Fig.~\ref{fig:rda_error} decomposes RDA reconstruction error by feature across all consensus-flagged records. \texttt{avg\_completion} dominates reconstruction error (MSE $\approx$ 0.00145)---completion percentage manipulation generates the largest departure from learned normal absorption behaviour. \texttt{cost\_per\_unit} ranks second (MSE $\approx$ 0.00095). Fig.~\ref{fig:pca} confirms feature-space separability via PCA and t-SNE projections.
 
 \begin{figure*}[htb]
 \centering
@@ -469,7 +445,6 @@ The framework developed by DeLone and McLean, focuses on the evaluation of three
 
 It is particularly pertinent to consider the institution of the pipeline in light of the detection gap found in the KPK diagnostic: the two to five-year delay in the Jambi prosecution case study indicates that the prevention channel called Trisula \cite{ref4} is not performing activity-level automated screening during the expenditure realisation year. In the cases where Siswaskeudes has been adopted~\cite{ref6}, typology labelled outputs serve as pre-prioritisation filters; otherwise, the outputs themselves provide automated activity screening TABK (\textit{Teknik Audit Berbantuan Komputer}) and make up the Siswaskeudes adoption business case. MCP’s Tata Kelola Dana Desa governance scoring system considers the input and process indicators, whereas the pipeline considers output indicators, implying that the kabupaten’s MCP score and proportion of Tier-1 villages reveal the divergence between procedural compliance and outcome, providing diagnostic information in its own right. For \textit{Desa Antikorupsi} initiative \cite{ref5}, the 263 Tier-3 villages (19.3\%) with three successive anomaly-free fiscal years provide a pool of empirical candidates for the recognition program, which is scaled to 33 villages nationally due to coverage constraints, into a scaled accountability recognition system.
 
-
 % =====================================================================
 \section{Conclusion}
 \label{sec:conclusion}
@@ -486,7 +461,14 @@ Pipeline operationalises the DeLone and McLean Information Quality-to-Organisati
 
 \textbf{Limitations}: (1) Limitation to Jambi province makes generalisation only possible for provinces with similar disbursement characteristics. (2) jaga.id data have been extracted from the entries made by villages in Siskeudes, thus systematic misreporting at the entry phase represents an undetectable quality risk. (3) Activity-level ground truth labels not available means inability to conduct any precision-recall performance evaluation of results. (4) IF contamination rate of 5\% is a hypothetical prior; incorrect calibration may move decision boundary into denser areas of distribution. (5) Single-threshold typology rules are unable to handle compound fraud at moderate joint anomalies. (6) LOF $O(n^2)$ time complexity restricts scalability to approximately 100,000 records without approximate search optimization.
 
-Future directions: (1) Match pipeline flagged activities with KPK indictments to generate annotated training data for empirical assessment of typology classification. (2) Adjust contamination rates based on expert annotation of APIP inspected sample. (3) Expand the analysis to the Fiscal Year 2018–2025 or other province dataset with natural language approach to enhance persistence-detection capabilities and examine corruption evolution across Dana Desa maturation process stages.
+\textbf{Future directions}: (1) Match pipeline flagged activities with KPK indictments to generate annotated training data for empirical assessment of typology classification. (2) Adjust contamination rates based on expert annotation of APIP inspected sample. (3) Expand the analysis to the Fiscal Year 2018–2025 or other province dataset with natural language approach to enhance persistence-detection capabilities and examine corruption evolution across Dana Desa maturation process stages.
+
+% =====================================================================
+%% Acknowledgements
+% =====================================================================
+\section*{Acknowledgements}
+
+The authors thank the Komisi Pemberantasan Korupsi (KPK) for making village fund expenditure data publicly accessible through the jaga.id platform, and Bina Nusantara University for institutional support throughout this research. \textbf{Author contributions (CRediT):} The first author [a] — Conceptualization, Methodology, Software, Data curation, Writing (original draft); the second author [b] — Conceptualization, Investigation, Validation, Writing (review \& editing); the third author [a] — Formal analysis, Visualization, Writing (review \& editing); the fourth author [a] — Supervision, Project administration, Writing (review \& editing). \textbf{AI use disclosure:} GitHub Copilot (OpenAI/Anthropic, accessed 2025--2026) assisted in code generation for the anomaly detection pipeline and LaTeX typesetting; all analytical decisions, interpretations, and written arguments were made and verified by the authors. AI-assisted content does not exceed 50\% of this manuscript in accordance with ICCSCI~2026 submission guidelines. The authors declare no conflicts of interest.
 
 % =====================================================================
 %% References — Vancouver numbered style, ordered by appearance
@@ -585,24 +567,6 @@ Stripling E, vanden Broucke S, Antonio K, vanden Broucke J, Baesens G. Isolation
 
 \bibitem{ref31}
 DeLone WH, McLean ER. The DeLone and McLean model of information systems success: a ten-year update. \textit{J Manage Inf Syst}. 2003;19(4):9--30. DOI: 10.1080/07421222.2003.11045748
-
-\bibitem{ref32}
-Tanzi V. Corruption around the world: causes, consequences, scope, and cures. \textit{IMF Staff Pap}. 1998;45(4):559--594. DOI: 10.2307/3867585
-
-\bibitem{ref33}
-Triyono A. Framing analysis of village funding corruption in media Suaramerdeka.com in Central Java, Indonesia, 2019. \textit{Int J Criminol Sociol}. 2020;9:1292--1301. DOI: 10.6000/1929-4409.2020.09.136
-
-\bibitem{ref34}
-Svensson J. Eight questions about corruption. \textit{J Econ Perspect}. 2005;19(3):19--42. DOI: 10.1257/089533005774357860
-
-\bibitem{ref35}
-Albanese JS, Artello K. Beyond the fraud triangle: more powerful explanations of fraud and corruption. \textit{J Financ Crime}. 2019;26(3):724--737. Available: \url{https://doi.org/10.1108/JFC-12-2018-0132}
-
-\bibitem{ref36}
-\v{S}umah \v{S}. Corruption, causes and consequences. In: Karakas F, editor. \textit{Trade and Global Market}. London: IntechOpen; 2018. DOI: 10.5772/intechopen.72440
-
-\bibitem{ref37}
-Alfada A. The destructive effect of corruption on economic growth in Indonesia: a threshold model. \textit{Economies}. 2019;7(4):1--21. DOI: 10.3390/economies7040111
 
 \end{thebibliography}
 
