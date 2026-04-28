@@ -243,7 +243,27 @@ Inter-rater reliability applies to **both** Stage 1 (title + abstract screening)
 **Stage 2 — Quality Score Calibration:**
 1. Both coders independently score a random 20% pilot sample (estimated 8–16 papers given target corpus of 40–80)
 2. Per-dimension κ computed; dimensions falling below 0.70 trigger revision of the coding guide before full corpus scoring
-3. Remaining 80% assigned to Coder 1, with Coder 2 reviewing all borderline papers (4.0–5.9 range)
+3. Remaining 80% assigned to Coder 1, with Coder 2 reviewing all borderline papers (4.0–5.4 range)
+
+**Stage 0 — Domain-Relevance Override Protocol (pre-IRR, April 2026 addition)**:
+
+Cross-check of the 52 manually retrieved PDFs in `SLR/papers/` against pipeline outputs revealed a **systematic scoring bias** against developing-country IS journals. Specifically, all village fund governance and Indonesian anti-corruption papers received composite scores of 4.15 — not because of low methodological quality, but because:
+- `score_journal_quality` defaults to 2.0/10 for unranked Indonesian/small journals
+- `score_citation_impact` is depressed (recent papers, 2023–2026, citations ≤ 20)
+- `score_methodological_rigor` assigns 3.0 for quantitative survey designs (not ML-experimental)
+
+These papers are, however, the **primary evidence base for RQ2** (corruption typology operationalization in village-level fiscal systems) and **RQ3** (developing-country applicability gaps) — the very domains that establish this SLR's novelty. Excluding them on journal-tier grounds would produce a corpus systematically blind to its own domain of inquiry.
+
+**Override protocol**:
+1. The `crosscheck_papers.py` script identifies all BORDERLINE papers with HIGH or MEDIUM domain relevance to RQ2/RQ3 — yielding **27 priority-review papers** (12 HIGH, 15 MEDIUM)
+2. Coder 1 reads the abstract of each priority-review paper against three criteria:
+   - Does the paper address village fund / Dana Desa / Indonesian decentralized fiscal governance? → `DOMAIN_OVERRIDE_RQ2`
+   - Does the paper address applicability gaps, contextual barriers, or developing-country IS implementation challenges? → `DOMAIN_OVERRIDE_RQ3`
+   - Does the paper use data-driven or IS-theoretic methods for corruption / fraud detection in government expenditure? → `DOMAIN_OVERRIDE_RQ1_RQ2`
+3. Papers meeting ANY criterion → quality_score manually set to 6.0 in `coded_corpus.csv`; override rationale recorded in `adjudication_note` column
+4. Papers meeting NO criterion → retain pipeline score; exclude if below 5.5
+
+**Precedent**: Petticrew & Roberts (2006, *Systematic Reviews in the Social Sciences*) explicitly advocate purposive sampling supplementary to systematic search when evidence bases in novel domain niches are structurally thin — a condition directly applicable here given the documented absence of prior SLRs on this specific topic (confirmed in scoping run: 0 SLRs on village-level IS corruption detection).
 
 **Expected corpus size**: 40–80 papers in final included set based on preliminary domain density estimate.
 

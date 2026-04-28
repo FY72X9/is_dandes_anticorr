@@ -15,7 +15,8 @@
 | **B** | Search Design — Mini scoping run + search strings | ✅ COMPLETED — 2026-04-28 | `docs/draft/scoping_run_results.md`, `docs/draft/search_strings.md` |
 | **C** | Retrieval — Full database search → `papers_raw.csv` | ✅ COMPLETED — 2026-04-28 | `scripts/papers_raw.csv` |
 | **D** | Filter & Acquire — Run pipeline → corpus + PDFs | ✅ COMPLETED — 2026-04-29 | `papers/`, `scripts/output/` |
-| **E** | IRR & Coding — Co-author screening + quality calibration | ⏳ NOT STARTED | `scripts/output/irr_pilot_results.csv`, `scripts/output/coded_corpus.csv` |
+| **D+** | Cross-check — `crosscheck_papers.py` → PDF vs pipeline audit | ✅ COMPLETED — 2026-04-28 | `scripts/output/crosscheck_report.md`, `scripts/output/crosscheck_detail.csv` |
+| **E** | IRR & Coding — Co-author screening + domain-override adjudication | ⏳ NOT STARTED | `scripts/output/irr_pilot_results.csv`, `scripts/output/coded_corpus.csv` |
 | **F** | Analysis — Sensitivity + bibliometric + synthesis | ⏳ NOT STARTED | `docs/draft/bibliometric_report.md`, `docs/draft/framework_synthesis_matrix.csv` |
 | **G** | Writing — Draft paper + gap matrix + submit | ⏳ NOT STARTED | `docs/draft/`, `docs/latex/` |
 
@@ -200,9 +201,17 @@ Pipeline exited with code 1 (non-fatal). Three resolution paths available:
 
 ## Phase E — IRR & Coding
 
-**Goal**: Dual-coder screening + quality calibration to ensure replicability.
+**Goal**: Dual-coder screening + quality calibration + domain-relevance override protocol.
 
 **Status**: ⏳ NOT STARTED (depends on Phase D)
+
+**Stage 0 — Domain-Relevance Override (NEW — pre-IRR)**:
+- Cross-check of 52 PDFs in `papers/` against pipeline outputs completed: `scripts/output/crosscheck_report.md`
+- **27 BORDERLINE papers identified as PRIORITY REVIEW** — scored low due to journal tier, not low relevance
+- 12 are HIGH-relevance village fund / Dana Desa / Indonesian corruption papers (RQ2/RQ3 direct evidence)
+- Action: Coder 1 reads abstract of each priority paper; if domain criteria met → override quality_score to 6.0
+- Document in `coded_corpus.csv` column `adjudication_note` with reason code `DOMAIN_OVERRIDE_RQ2` or `DOMAIN_OVERRIDE_RQ3`
+- **Rationale**: Pipeline scoring systematically undervalues developing-country IS journals (unranked → score_journal_quality defaults to 2.0/10). Dana Desa governance papers represent the primary evidence base for RQ2 and cannot be excluded on journal-tier grounds alone. Precedent: Petticrew & Roberts (2006) advocate purposive sampling alongside systematic search when domain-specific evidence bases are thin.
 
 **Stage 1 — Title + Abstract Screening IRR**:
 - Both Coder 1 + Coder 2 independently screen 100% of Stage 1 candidates
@@ -212,7 +221,26 @@ Pipeline exited with code 1 (non-fatal). Three resolution paths available:
 **Stage 2 — Quality Score Calibration**:
 - Both coders independently score 20% pilot sample
 - Compute per-dimension κ; revise coding guide for any dimension κ < 0.70
-- Coder 2 reviews all borderline papers (4.0–5.9 range)
+- Coder 2 reviews all borderline papers (4.0–5.4 range)
+- Priority review papers (domain override candidates) assessed separately
+
+**Cross-check findings summary** (`crosscheck_papers.py` — April 28, 2026):
+| Finding | Value |
+|---|---|
+| Total PDFs in `papers/` | 52 |
+| INCLUDED (pipeline score ≥ 5.5) | 11 |
+| BORDERLINE (4.0–5.4) | 41 |
+| MANUAL_ONLY (not in pipeline) | 0 |
+| PRIORITY REVIEW (borderline + HIGH/MEDIUM relevance) | 27 |
+| RQ1 coverage (INCLUDED + priority borderline) | 21 |
+| RQ2 coverage (INCLUDED + priority borderline) | 18 |
+| RQ3 coverage (INCLUDED + priority borderline) | 14 |
+
+**Critical bias finding**: Pipeline quality score systematically undervalues Dana Desa / village fund papers:
+- `score_journal_quality` = 2.0 for unranked Indonesian journals → composite depressed by ~2 pts
+- Result: All village-fund governance papers cluster at score 4.15 (hardfloor from unranked journal + low citations)
+- Net: If domain override applied to all 12 HIGH village-fund papers → effective corpus = 23 + 12 = 35 papers
+- Still below 40 target → Scopus/IEEE/WoS export remains required
 
 **Output**: `scripts/output/irr_pilot_results.csv`, `docs/draft/coding_guide_v1.md`, `scripts/output/coded_corpus.csv`
 
@@ -288,3 +316,6 @@ All other phases are strictly sequential.
 | 2026-04-28 | Cressey (1953) cited via Dorminey et al. (2012) DOI 10.2308/iace-50131 | No primary DOI for 1953 monograph |
 | 2026-04-28 | DiMaggio & Powell (1983) DOI 10.2307/2095101 confirmed (JSTOR) | Primary source accessible |
 | 2026-04-28 | PACIS provisionally preferred over AMCIS | Stronger regional fit; IS theory depth expected |
+| 2026-04-28 | `crosscheck_papers.py` built → cross-checks 52 PDFs in `papers/` against pipeline | Identifies 27 priority-review borderline papers; RQ2/RQ3 coverage confirmed viable |
+| 2026-04-28 | Domain-relevance override protocol added to Phase E | Pipeline scoring bias against developing-country IS journals confirmed; village-fund governance papers (4.15 score) excluded by composite metric despite HIGH RQ2/RQ3 relevance |
+| 2026-04-28 | Effective estimated corpus after domain override: ~35 papers | 23 pipeline-included + 12 HIGH village-fund overrides; below 40 target → Scopus/IEEE/WoS export still required |
