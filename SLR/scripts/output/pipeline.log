@@ -1,0 +1,88 @@
+INFO │ ======================================================================
+INFO │ SLR Quality Filter + Acquisition Pipeline
+INFO │ Input  : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\papers_raw.csv
+INFO │ Output : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output
+INFO │ PDFs   : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
+INFO │ ======================================================================
+INFO │ Loaded 1001 records from papers_raw.csv
+INFO │ 
+── Stage 1: Inclusion / Exclusion Filtering ──
+INFO │   Passed : 113
+INFO │   Excluded (Stage 1) : 888
+INFO │ 
+── Stage 2: Quality Scoring ──
+INFO │   Included (≥6.0)  : 3
+INFO │   Borderline (4.0–5.9) : 93
+INFO │   Excluded (<4.0)   : 17
+INFO │ 
+── Stage 3: OA Acquisition ──
+INFO │   ✓ [OpenAlex] Online Payment Fraud Detection Model Using Machine — OK (2234.4 KB)
+INFO │   ✓ [OpenAlex] The Fingerprints of Fraud: Evidence from Mexico’s  — OK (2336.5 KB)
+INFO │   ✓ [OpenAlex] Decoding the Threat Landscape : ChatGPT, FraudGPT, — OK (417.6 KB)
+INFO │   ✓ [OpenAlex] Fraud Prevention of Village Fund Management — OK (322.0 KB)
+INFO │   ✓ [OpenAlex] Development of integrated village fund governance  — OK (441.5 KB)
+INFO │   ✓ [OpenAlex] Supervision of Village Financial Management: will  — OK (448.3 KB)
+INFO │   ✓ [OpenAlex] Recognising and detecting patterns of village corr — OK (855.9 KB)
+INFO │   ✓ [OpenAlex] The Influence of Apparatus Competence, Internal Co — OK (519.8 KB)
+INFO │   ✓ [OpenAlex] Fraud prevention in village financial management a — OK (293.6 KB)
+INFO │   ✓ [OpenAlex] Effect Of Human Resource Capacity On Village Fund  — OK (464.2 KB)
+INFO │   ✓ [OpenAlex] The Effect of Morality, Whistleblowing and Interna — OK (371.2 KB)
+INFO │   ✓ [OpenAlex] The Effect of Internal Control and Budget Manageme — OK (609.2 KB)
+INFO │   ✓ [OpenAlex] The Influence of Implementation of the Regional Go — OK (442.9 KB)
+INFO │   ✓ [OpenAlex] THE AUDIT AUTHORITY OF THE STATE AUDIT BOARD ON TH — OK (403.9 KB)
+INFO │   ✓ [OpenAlex] EXPLORING THE DETERMINANTS OF FRAUD PREVENTION IN  — OK (459.1 KB)
+INFO │   ✓ [OpenAlex] A Review of Neural Networks for Anomaly Detection — OK (3603.9 KB)
+INFO │   ✓ [OpenAlex] Adaptive Control Models for AI-Driven Marketing Au — OK (373.9 KB)
+INFO │   ✓ [OpenAlex] Rethinking Corruption Tolerance: A Critical Interp — OK (628.5 KB)
+INFO │   ✓ [OpenAlex] Deep Learning Approaches for Anti-Money Laundering — OK (7542.9 KB)
+INFO │   ✓ [OpenAlex] GRAPH NEURAL NETWORK MODELS FOR DETECTING FRAUDULE — OK (516.0 KB)
+INFO │   ✓ [OpenAlex] Fraud In The Digital Age: Assessing Cybercrime Thr — OK (685.6 KB)
+INFO │   ✓ [OpenAlex] THE INFLUENCE OF SECURE DATA SYSTEMS ON FRAUD DETE — OK (754.3 KB)
+INFO │   ✓ [OpenAlex] From Intrusion Detection to Attacker Attribution:  — OK (1086.3 KB)
+INFO │   ✓ [OpenAlex] Blockchain security enhancement: an approach towar — OK (2081.2 KB)
+INFO │   ✓ [OpenAlex] Machine learning in business and finance: a litera — OK (2150.8 KB)
+INFO │   ✓ [OpenAlex] AI integration in financial services: a systematic — OK (3700.9 KB)
+INFO │   ✓ [OpenAlex] Research trends in deep learning and machine learn — OK (1294.2 KB)
+INFO │   ✓ [OpenAlex] Advanced Fraud Detection in Blockchain Transaction — OK (398.7 KB)
+INFO │   ✓ [OpenAlex] Machine Learning Applications in Cryptocurrency: D — OK (643.0 KB)
+INFO │   ✓ [OpenAlex] A Survey of Graph Neural Networks in Real world: I — OK (833.2 KB)
+INFO │   ✓ [OpenAlex] From Portfolio Optimization to Quantum Blockchain  — OK (719.3 KB)
+INFO │   ✓ [OpenAlex] Interpretable Federated Transformer Log Learning f — OK (736.8 KB)
+INFO │   ✓ [OpenAlex] AI-powered threat detection in surveillance system — OK (884.4 KB)
+INFO │   ✓ [OpenAlex] Generative AI revolution in cybersecurity: a compr — OK (2290.3 KB)
+INFO │   ✓ [OpenAlex] Advancing financial stability: The role of ai-driv — OK (692.6 KB)
+INFO │   ✓ [OpenAlex] AI-powered cybersecurity: Strategic approaches to  — OK (688.5 KB)
+INFO │   ✓ [OpenAlex] Quantum Machine Learning Algorithms for Real-Time  — OK (626.7 KB)
+INFO │   ✓ [OpenAlex] Designing Unified Compliance Intelligence Models f — OK (661.6 KB)
+INFO │   ✓ [OpenAlex] Real-Time Risk Assessment Dashboards Using Machine — OK (237.5 KB)
+INFO │   ✓ [OpenAlex] A comprehensive systematic review of intrusion det — OK (803.9 KB)
+INFO │   ✓ [OpenAlex] A comprehensive study of Cybercrime and Digital Fo — OK (1155.3 KB)
+INFO │   ✓ [OpenAlex] U.S.-U.K. PETs Prize Challenge: Anomaly Detection  — OK (1359.9 KB)
+INFO │   ✓ [OpenAlex] Integrating AI with ESG Metrics in Smart Infrastru — OK (243.2 KB)
+INFO │   ✓ [OpenAlex] A systematic review of anomaly detection in IoT se — OK (2048.1 KB)
+INFO │   ✓ [OpenAlex] AI-AUGMENTED RISK DETECTION IN CYBERSECURITY COMPL — OK (743.0 KB)
+INFO │   ✓ [OpenAlex] Starlit: Privacy-Preserving Federated Learning to  — OK (9179.6 KB)
+INFO │   ✓ [OpenAlex] Real-time suspicious detection framework for finan — OK (1525.5 KB)
+INFO │   ✓ [OpenAlex] Fraud, corruption, and collusion in public procure — OK (1373.5 KB)
+INFO │   ✓ [OpenAlex] Corruption red flags in public procurement: new ev — OK (1972.4 KB)
+INFO │   ✓ [OpenAlex] Discussing ethical considerations and solutions fo — OK (776.1 KB)
+INFO │   ✓ [OpenAlex] Artificial intelligence and machine learning in co — OK (2279.2 KB)
+INFO │ 
+── Writing Outputs ──
+INFO │   ✓ slr_included_corpus.csv  (3 papers)
+INFO │   ✓ slr_borderline.csv       (93 papers)
+INFO │   ✓ slr_excluded_log.csv     (905 papers)
+INFO │   ✓ manual_download_log.txt  (45 papers need manual download)
+INFO │ 
+======================================================================
+INFO │ PIPELINE COMPLETE
+INFO │   Total input records     : 1001
+INFO │   Passed Stage 1 filter   : 113
+INFO │   Included corpus (≥6.0)  : 3
+INFO │   Borderline pool         : 93
+INFO │   Excluded (all stages)   : 905
+INFO │   Auto-downloaded PDFs    : 51
+INFO │   Require manual download : 45
+INFO │ ======================================================================
+WARNING │ Corpus size 3 < 40 target minimum.
+WARNING │ Consider: broadening search strings or lowering threshold to 5.5 (sensitivity lower bound).
