@@ -6,8 +6,9 @@ Implements the 3-stage pipeline described in:
 
   Stage 1 │ Inclusion/Exclusion filter (IC-01–IC-06, EC-01–EC-06)
   Stage 2 │ Weighted quality scoring (0–10 composite, 5 dimensions)
-  Stage 3 │ Cascading OA acquisition:
-             OpenAlex → Unpaywall → Semantic Scholar → Direct URL → arXiv
+  Stage 3 │ Cascading OA acquisition (no API key required for first 5):
+             OpenAlex → Unpaywall → MDPI-Direct → CrossRef → arXiv
+             → Semantic Scholar → CORE (optional key) → DirectURL
 
 Usage
 -----
@@ -38,6 +39,7 @@ import time
 import json
 import logging
 import argparse
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Optional
 
@@ -62,7 +64,7 @@ PDF_DIR.mkdir(parents=True, exist_ok=True)
 # ─────────────────────────────────────────────────────────────────────────────
 YEAR_MIN         = 2010
 YEAR_MAX         = 2026
-SCORE_INCLUDE    = 6.0    # ≥ this → included corpus
+SCORE_INCLUDE    = 5.5    # ≥ this → included corpus
 SCORE_BORDER     = 4.0    # ≥ this → borderline review; < this → excluded
 MIN_PDF_BYTES    = 8_000
 REQUEST_TIMEOUT  = 30     # seconds
@@ -92,15 +94,21 @@ HEADERS = {
     "Accept": "application/pdf,*/*;q=0.9",
 }
 
+# Rotate log file so each run appends a fresh session separator
+_LOG_FILE = OUTPUT_DIR / "pipeline.log"
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(levelname)s │ %(message)s",
+    level=logging.DEBUG,
+    format="%(asctime)s %(levelname)-7s │ %(message)s",
+    datefmt="%H:%M:%S",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler(OUTPUT_DIR / "pipeline.log", encoding="utf-8"),
+        logging.FileHandler(_LOG_FILE, mode="a", encoding="utf-8"),
     ],
 )
 log = logging.getLogger(__name__)
+# Keep console at INFO; file gets full DEBUG detail
+logging.getLogger().handlers[0].setLevel(logging.INFO)
+logging.getLogger().handlers[1].setLevel(logging.DEBUG)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -561,9 +569,11 @@ def _download_pdf(url: str, dest: Path) -> tuple[bool, str]:
     try:
         head = requests.head(url, headers=HEADERS, timeout=REQUEST_TIMEOUT, allow_redirects=True)
         ct = head.headers.get("Content-Type", "")
-        if head.status_code >= 400:
+        if head.status_code in (403, 405):
+            pass  # Server blocks HEAD (e.g. MDPI); proceed to GET
+        elif head.status_code >= 400:
             return False, f"HEAD {head.status_code}"
-        if "html" in ct.lower() and not url.lower().endswith(".pdf"):
+        elif "html" in ct.lower() and not (url.lower().endswith(".pdf") or url.lower().endswith("/pdf")):
             return False, "Content-Type HTML — likely landing page"
     except Exception:
         pass  # Proceed to GET if HEAD unsupported
@@ -608,13 +618,19 @@ def acquire_openalex(doi: str) -> Optional[str]:
     try:
         resp = requests.get(url, timeout=REQUEST_TIMEOUT,
                             params={"select": "open_access"})
+        log.debug(f"    [OpenAlex] HTTP {resp.status_code} for doi:{doi}")
         if resp.status_code == 200:
             data = resp.json()
             oa = data.get("open_access", {})
             pdf = oa.get("oa_url") or oa.get("landing_page_url")
-            return pdf if pdf and pdf.startswith("http") else None
-    except Exception:
-        pass
+            if pdf and pdf.startswith("http"):
+                log.debug(f"    [OpenAlex] Found URL: {pdf[:80]}")
+                return pdf
+            log.debug("    [OpenAlex] No OA URL in response")
+        else:
+            log.debug(f"    [OpenAlex] Non-200 response: {resp.status_code}")
+    except Exception as exc:
+        log.debug(f"    [OpenAlex] Exception: {exc}")
     return None
 
 
@@ -626,13 +642,19 @@ def acquire_unpaywall(doi: str) -> Optional[str]:
     try:
         resp = requests.get(url, timeout=REQUEST_TIMEOUT,
                             params={"email": UNPAYWALL_EMAIL})
+        log.debug(f"    [Unpaywall] HTTP {resp.status_code} for doi:{doi}")
         if resp.status_code == 200:
             data = resp.json()
             best = data.get("best_oa_location") or {}
             pdf = best.get("url_for_pdf") or best.get("url")
-            return pdf if pdf and pdf.startswith("http") else None
-    except Exception:
-        pass
+            if pdf and pdf.startswith("http"):
+                log.debug(f"    [Unpaywall] Found URL: {pdf[:80]}")
+                return pdf
+            log.debug("    [Unpaywall] No OA location in response")
+        else:
+            log.debug(f"    [Unpaywall] Non-200 response: {resp.status_code}")
+    except Exception as exc:
+        log.debug(f"    [Unpaywall] Exception: {exc}")
     return None
 
 
@@ -646,13 +668,173 @@ def acquire_semantic_scholar(doi: str) -> Optional[str]:
         resp = requests.get(url, timeout=REQUEST_TIMEOUT,
                             params={"fields": "openAccessPdf"},
                             headers=headers)
+        log.debug(f"    [S2] HTTP {resp.status_code} for doi:{doi}")
         if resp.status_code == 200:
             data = resp.json()
             pdf_info = data.get("openAccessPdf") or {}
             pdf = pdf_info.get("url")
-            return pdf if pdf and pdf.startswith("http") else None
-    except Exception:
-        pass
+            if pdf and pdf.startswith("http"):
+                log.debug(f"    [S2] Found URL: {pdf[:80]}")
+                return pdf
+            log.debug("    [S2] No openAccessPdf in response")
+        elif resp.status_code == 429:
+            log.debug("    [S2] 429 rate-limited (no API key set)")
+        else:
+            log.debug(f"    [S2] Non-200 response: {resp.status_code}")
+    except Exception as exc:
+        log.debug(f"    [S2] Exception: {exc}")
+    return None
+
+
+def acquire_mdpi(doi: str) -> Optional[str]:
+    """Construct direct PDF URL for MDPI journals (DOI prefix 10.3390/).
+
+    MDPI is a fully open-access publisher; all articles are freely available
+    at https://www.mdpi.com/{doi}/pdf  — no API key required.
+    """
+    if not doi or not doi.strip().startswith("10.3390/"):
+        return None
+    pdf_url = f"https://www.mdpi.com/{doi.strip()}/pdf"
+    log.debug(f"    [MDPI] Constructed URL: {pdf_url}")
+    return pdf_url
+
+
+def acquire_crossref(doi: str) -> Optional[str]:
+    """Query CrossRef Works API for an open-access PDF link.
+
+    CrossRef stores publisher-supplied PDF links in the 'link' array.
+    No API key required — uses the polite pool with a mailto User-Agent.
+    """
+    if not doi or not is_doi(doi):
+        return None
+    url = f"https://api.crossref.org/works/{doi}"
+    headers = {
+        "User-Agent": f"SLR-pipeline/1.0 (mailto:{UNPAYWALL_EMAIL})"
+    }
+    try:
+        resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        log.debug(f"    [CrossRef] HTTP {resp.status_code} for doi:{doi}")
+        if resp.status_code == 200:
+            links = resp.json().get("message", {}).get("link", [])
+            # Prefer explicit PDF content-type first
+            for link in links:
+                if link.get("content-type") == "application/pdf":
+                    pdf = link.get("URL", "")
+                    if pdf.startswith("http"):
+                        log.debug(f"    [CrossRef] Found PDF link: {pdf[:80]}")
+                        return pdf
+            # Fallback: any link whose URL looks like a PDF
+            for link in links:
+                pdf = link.get("URL", "")
+                if pdf.startswith("http") and pdf.lower().endswith(".pdf"):
+                    log.debug(f"    [CrossRef] Found .pdf link: {pdf[:80]}")
+                    return pdf
+            log.debug(f"    [CrossRef] {len(links)} links but no PDF found")
+        else:
+            log.debug(f"    [CrossRef] Non-200 response: {resp.status_code}")
+    except Exception as exc:
+        log.debug(f"    [CrossRef] Exception: {exc}")
+    return None
+
+
+def acquire_arxiv(doi: str, title: str = "") -> Optional[str]:
+    """Search arXiv for a preprint version of the paper.
+
+    Tries DOI-based arXiv search first, then falls back to title search.
+    No API key required. Returns direct PDF URL (abs → pdf redirect).
+    """
+    def _pdf_from_entry(entry: ET.Element, ns: dict) -> Optional[str]:
+        for link in entry.findall("atom:link", ns):
+            if link.get("type") == "application/pdf":
+                href = link.get("href", "")
+                if href.startswith("http"):
+                    return href
+        # Fallback: construct from <id>
+        id_el = entry.find("atom:id", ns)
+        if id_el is not None and id_el.text:
+            arxiv_id = id_el.text.strip()
+            # Convert abs URL to PDF URL
+            pdf = arxiv_id.replace("/abs/", "/pdf/")
+            if not pdf.endswith(".pdf"):
+                pdf += ".pdf"
+            return pdf
+        return None
+
+    ns = {"atom": "http://www.w3.org/2005/Atom"}
+    search_url = "https://export.arxiv.org/search/"
+
+    # Tier A: search by DOI field
+    if doi and is_doi(doi):
+        try:
+            resp = requests.get(
+                search_url,
+                params={"searchtype": "all", "query": doi, "start": 0, "max_results": 3},
+                timeout=REQUEST_TIMEOUT,
+            )
+            log.debug(f"    [arXiv-DOI] HTTP {resp.status_code} query={doi}")
+            if resp.status_code == 200:
+                root = ET.fromstring(resp.text)
+                for entry in root.findall("atom:entry", ns):
+                    pdf = _pdf_from_entry(entry, ns)
+                    if pdf:
+                        log.debug(f"    [arXiv-DOI] Found: {pdf[:80]}")
+                        return pdf
+                log.debug("    [arXiv-DOI] No matching entries")
+        except Exception as exc:
+            log.debug(f"    [arXiv-DOI] Exception: {exc}")
+
+    # Tier B: title search
+    if title and title.strip():
+        query = title.strip()[:100]
+        try:
+            resp = requests.get(
+                search_url,
+                params={"searchtype": "ti", "query": f'"{query}"', "start": 0, "max_results": 3},
+                timeout=REQUEST_TIMEOUT,
+            )
+            log.debug(f"    [arXiv-Title] HTTP {resp.status_code} query='{query[:50]}'")
+            if resp.status_code == 200:
+                root = ET.fromstring(resp.text)
+                for entry in root.findall("atom:entry", ns):
+                    pdf = _pdf_from_entry(entry, ns)
+                    if pdf:
+                        log.debug(f"    [arXiv-Title] Found: {pdf[:80]}")
+                        return pdf
+                log.debug("    [arXiv-Title] No matching entries")
+        except Exception as exc:
+            log.debug(f"    [arXiv-Title] Exception: {exc}")
+
+    return None
+
+
+def acquire_oabutton(doi: str) -> Optional[str]:
+    """Query OA Button (Open Access Button) API for a free PDF link.
+
+    OA Button aggregates legal OA versions from repositories, author pages,
+    and publisher OA programmes. No API key required.
+    Endpoint: https://api.openaccessbutton.org/find?id={doi}
+    """
+    if not doi or not is_doi(doi):
+        return None
+    try:
+        resp = requests.get(
+            "https://api.openaccessbutton.org/find",
+            params={"id": doi},
+            headers={"User-Agent": f"SLR-pipeline/1.0 (mailto:{UNPAYWALL_EMAIL})"},
+            timeout=REQUEST_TIMEOUT,
+        )
+        log.debug(f"    [OAButton] HTTP {resp.status_code} for doi:{doi}")
+        if resp.status_code == 200:
+            data = resp.json()
+            url = data.get("url") or (data.get("data", {}) or {}).get("url")
+            if url and url.startswith("http"):
+                log.debug(f"    [OAButton] Found URL: {url[:80]}")
+                return url
+            log.debug("    [OAButton] No URL in response")
+        else:
+            log.debug(f"    [OAButton] Non-200 response: {resp.status_code}")
+    except Exception as exc:
+        log.debug(f"    [OAButton] Exception: {exc}")
     return None
 
 
@@ -675,12 +857,17 @@ def acquire_core(doi: str, title: str = "") -> Optional[str]:
                 headers=auth_headers,
                 timeout=REQUEST_TIMEOUT,
             )
+            log.debug(f"    [CORE-DOI] HTTP {resp.status_code} for doi:{doi}")
             if resp.status_code == 200:
                 pdf = resp.json().get("downloadUrl")
                 if pdf and pdf.startswith("http"):
+                    log.debug(f"    [CORE-DOI] Found URL: {pdf[:80]}")
                     return pdf
-        except Exception:
-            pass
+                log.debug("    [CORE-DOI] No downloadUrl in response")
+            else:
+                log.debug(f"    [CORE-DOI] Non-200 response: {resp.status_code}")
+        except Exception as exc:
+            log.debug(f"    [CORE-DOI] Exception: {exc}")
 
     # --- Tier B: title-based search (when DOI fails or is missing) ---
     if title and title.strip():
@@ -692,13 +879,19 @@ def acquire_core(doi: str, title: str = "") -> Optional[str]:
                 params={"q": f'title:"{query}"', "limit": 3},
                 timeout=REQUEST_TIMEOUT,
             )
+            log.debug(f"    [CORE-Title] HTTP {resp.status_code} query='{query[:50]}'")
             if resp.status_code == 200:
-                for hit in resp.json().get("results", []):
+                hits = resp.json().get("results", [])
+                for hit in hits:
                     pdf = hit.get("downloadUrl")
                     if pdf and pdf.startswith("http"):
+                        log.debug(f"    [CORE-Title] Found URL: {pdf[:80]}")
                         return pdf
-        except Exception:
-            pass
+                log.debug(f"    [CORE-Title] {len(hits)} hits but none with downloadUrl")
+            else:
+                log.debug(f"    [CORE-Title] Non-200 response: {resp.status_code}")
+        except Exception as exc:
+            log.debug(f"    [CORE-Title] Exception: {exc}")
 
     return None
 
@@ -721,39 +914,60 @@ def acquire_paper(row: pd.Series, pdf_dir: Path) -> tuple[bool, str, str]:
     sources = [
         ("OpenAlex",       lambda: acquire_openalex(doi)),
         ("Unpaywall",      lambda: acquire_unpaywall(doi)),
+        ("MDPI",           lambda: acquire_mdpi(doi)),
+        ("CrossRef",       lambda: acquire_crossref(doi)),
+        ("arXiv",          lambda: acquire_arxiv(doi, title)),
+        ("OAButton",       lambda: acquire_oabutton(doi)),
         ("SemanticScholar",lambda: acquire_semantic_scholar(doi)),
         ("CORE",           lambda: acquire_core(doi, title)),
         ("DirectURL",      lambda: safe_str(row.get("oa_url", "")) or None),
     ]
 
+    log.debug(f"  Trying acquisition for: {title[:60]}")
     for source_name, url_fn in sources:
         time.sleep(DELAY_SEC)
         try:
             pdf_url = url_fn()
-        except Exception:
+        except Exception as exc:
+            log.debug(f"    [{source_name}] url_fn raised: {exc}")
             pdf_url = None
         if not pdf_url:
+            log.debug(f"    [{source_name}] No URL returned — skipping")
             continue
         pdf_url = normalise_arxiv_url(pdf_url)
+        log.debug(f"    [{source_name}] Attempting download: {pdf_url[:80]}")
         success, msg = _download_pdf(pdf_url, dest)
         if success:
             log.info(f"  ✓ [{source_name}] {title[:50]} — {msg}")
             return True, dest.name, f"Downloaded via {source_name}"
+        log.debug(f"    [{source_name}] Download failed: {msg}")
 
-    tried = "OpenAlex, Unpaywall, SemanticScholar" + (", CORE" if CORE_API_KEY else "") + ", DirectURL"
-    return False, "", f"No open-access version found (tried {tried})"
+    always_tried = "OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar"
+    opt_tried = (", CORE" if CORE_API_KEY else "") + ", DirectURL"
+    return False, "", f"No open-access version found (tried {always_tried}{opt_tried})"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Main pipeline orchestration
 # ─────────────────────────────────────────────────────────────────────────────
 
+# Per-source success counter (module-level so acquire_paper can update it)
+_SOURCE_COUNTS: dict[str, int] = {}
+
+
 def run_pipeline(input_path: Path) -> None:
+    global _SOURCE_COUNTS
+    _SOURCE_COUNTS = {}
+    log.info("\n" + "=" * 70)
+    log.info(f"{'SLR Quality Filter + Acquisition Pipeline':^70}")
     log.info("=" * 70)
-    log.info("SLR Quality Filter + Acquisition Pipeline")
     log.info(f"Input  : {input_path}")
     log.info(f"Output : {OUTPUT_DIR}")
     log.info(f"PDFs   : {PDF_DIR}")
+    log.info(f"Log    : {_LOG_FILE}")
+    log.info("Free sources  : OpenAlex, Unpaywall, MDPI-Direct, CrossRef, arXiv, OAButton (always active)")
+    log.info(f"CORE API  : {'✓ configured' if CORE_API_KEY else '✗ not set (skip CORE tier)'}")
+    log.info(f"S2 API    : {'✓ configured' if S2_API_KEY else '✗ not set (may hit 429)'}")
     log.info("=" * 70)
 
     # ── Load input ──────────────────────────────────────────────────────────
@@ -801,6 +1015,12 @@ def run_pipeline(input_path: Path) -> None:
         acquire_targets.at[idx, "pdf_filename"] = fname
         acquire_targets.at[idx, "acquisition_status"] = reason
         pdf_results[idx] = fname
+        # Track per-source success
+        if success and reason != "Already exists":
+            src = reason.replace("Downloaded via ", "")
+            _SOURCE_COUNTS[src] = _SOURCE_COUNTS.get(src, 0) + 1
+        elif reason == "Already exists":
+            _SOURCE_COUNTS["Already exists"] = _SOURCE_COUNTS.get("Already exists", 0) + 1
         if not success:
             manual_list.append({
                 "title":  str(row.get("title", "")),
@@ -853,6 +1073,10 @@ def run_pipeline(input_path: Path) -> None:
     log.info(f"  Excluded (all stages)   : {len(all_excluded)}")
     log.info(f"  Auto-downloaded PDFs    : {auto_success}")
     log.info(f"  Require manual download : {len(manual_list)}")
+    log.info("─" * 70)
+    log.info("  Acquisition breakdown by source:")
+    for src, cnt in sorted(_SOURCE_COUNTS.items(), key=lambda x: -x[1]):
+        log.info(f"    {src:<20} : {cnt}")
     log.info("=" * 70)
 
     if len(included_final) < 40:
