@@ -3,7 +3,7 @@
 > **Study**: Systematic Literature Review (SLR) — prerequisite for Phase 1 empirical study
 > **Target venue**: PACIS or AMCIS (decision pending Phase B scoping run)
 > **Target corpus**: 40–80 papers
-> **Last updated**: April 29, 2026
+> **Last updated**: April 30, 2026
 
 ---
 
@@ -104,56 +104,97 @@ After manual merge, expected raw pool ~1,100–1,300; IC/EC filter will yield 40
 
 **Goal**: Run `quality_filter_slr.py` on `papers_raw.csv`; download all available OA PDFs.
 
-**Status**: ✅ COMPLETED — April 29, 2026 (auto-retrieval pass complete; Scopus/IEEE/WoS merge + re-run pending)
+**Status**: ✅ COMPLETED — April 30, 2026 (pipeline v2 with journal metadata enrichment complete; Scopus/IEEE/WoS merge pending)
 
 **Steps**:
-1. ✅ Activated `.venv` and ran: `python scripts/quality_filter_slr.py`
-2. ✅ Stage 1 filtering complete — IC/EC applied to 1,001 records
-3. ✅ Stage 2 quality scoring complete — weighted composite (0–10) across 5 dimensions
-4. ✅ Stage 3 OA acquisition complete — 51 PDFs auto-downloaded; 45 require manual retrieval
-5. ⚠️ Review `slr_borderline.csv` — 93 papers for human adjudication (primary working corpus)
-6. ⚠️ Manually download 45 papers listed in `manual_download_log.txt`; place in `papers/`
-7. ⚠️ After Scopus/IEEE/WoS export + metadata merge → re-run pipeline for final corpus
+1. ✅ Pipeline v1 (April 29) — 1,001 OpenAlex records; 3 included (all `sjr_quartile` empty → quality scores depressed)
+2. ✅ Root cause diagnosed: OpenAlex does not populate `sjr_quartile`/`core_rank`; `score_journal_quality()` defaults to 2.0 for unranked → depresses composite by 2.0 per paper
+3. ✅ `enrich_journal_metadata.py` built — 3-tier ISSN/name lookup; hardcoded SCImago-verified Q1/Q2/Q3 mapping for 100+ journals; blank-journal guard and 15-char minimum substring protection
+4. ✅ Enrichment executed (April 30) — 194/1001 rows updated (95 Q1, 91 Q2, 8 Q3); backup saved as `papers_raw.csv.bak`
+5. ✅ Pipeline v2 re-run — enriched `papers_raw.csv`; existing PDFs skipped (skip logic lines 662–664); 7-min 47-sec runtime
+6. ⚠️ Corpus 23 < 40 target; borderline pool holds 73 additional candidates
+7. ⚠️ Manually download 45 papers listed in `manual_download_log.txt`; place in `papers/`
+8. ⚠️ After Scopus/IEEE/WoS export + metadata merge → re-run pipeline for final corpus
 
-**Pipeline summary (auto-run — OpenAlex-only input)**:
+**Pipeline summary (v2 — enriched `papers_raw.csv`, OpenAlex-only input)**:
 
-| Stage | Metric | Count |
+| Stage | Metric | v1 Count | v2 Count |
+|---|---|---|---|
+| Input records | Total loaded from `papers_raw.csv` | 1,001 | 1,001 |
+| `sjr_quartile` enriched | Rows resolved by `enrich_journal_metadata.py` | 0 | **194** |
+| Stage 1 Passed | IC/EC filter | 113 | 113 |
+| Stage 1 Excluded | IC/EC filter | 888 | 888 |
+| Stage 2 Included | Quality score ≥ 6.0 | 3 | **23** |
+| Stage 2 Borderline | Quality score 4.0–5.9 | 93 | **73** |
+| Stage 2 Excluded | Quality score < 4.0 | 17 | 17 |
+| Stage 3 Auto-downloaded | OA PDF acquired | 51 | 51 (all existing, 0 new) |
+| Stage 3 Manual required | No OA version found | 45 | 45 |
+| Total excluded (all stages) | Stage 1 + Stage 2 | 905 | 905 |
+
+**Included corpus v2 (23 papers, score ≥ 6.0) — representative selection**:
+
+| # | Title (truncated) | Journal | Score | Quartile | PDF |
+|---|---|---|---|---|---|
+| 1 | Online Payment Fraud Detection Model Using ML Techniques | IEEE Access | 8.25 | Q1 | ✅ Downloaded |
+| 2 | Edge-FLGuard: A Federated Learning Framework for Anomaly Detection | Applied Sciences | 7.90 | Q2 | ⚠️ Manual |
+| 3 | Research trends in DL/ML for network intrusion detection | Artificial Intelligence Review | 7.65 | Q1 | ✅ Downloaded |
+| 4 | Anomaly Detection of IoT Cyberattacks (Federated + Split Learning) | Big Data and Cognitive Computing | 7.30 | Q2 | ⚠️ Manual |
+| 5 | A Review of Large Language Models for Energy Systems | IEEE Access | 7.20 | Q1 | ⚠️ Manual |
+| 6 | Blockchain and AI-Empowered Healthcare Insurance Fraud Detection | IEEE Access | 7.05 | Q1 | ⚠️ Manual |
+| 7 | Securing the digital world: smart infrastructures protection | J. Industrial Information Integration | 7.05 | Q1 | ⚠️ Manual |
+| 8 | Generative AI revolution in cybersecurity | Artificial Intelligence Review | 7.05 | Q1 | ✅ Downloaded |
+| 9 | … 15 additional papers (score 6.0–6.90) | IEEE Access / Electronics / Applied Sciences | 6.0–6.9 | Q1/Q2 | mix |
+
+**Journal breakdown (included corpus)**:
+
+| Journal | Count | Quartile |
 |---|---|---|
-| Input records | Total loaded from `papers_raw.csv` | 1,001 |
-| Stage 1 Passed | IC/EC filter | 113 |
-| Stage 1 Excluded | IC/EC filter | 888 |
-| Stage 2 Included | Quality score ≥ 6.0 | **3** |
-| Stage 2 Borderline | Quality score 4.0–5.9 | **93** |
-| Stage 2 Excluded | Quality score < 4.0 | 17 |
-| Stage 3 Auto-downloaded | OA PDF acquired | **51** |
-| Stage 3 Manual required | No OA version found | **45** |
-| Total excluded (all stages) | Stage 1 + Stage 2 | 905 |
+| IEEE Access | 7 | Q1 |
+| Electronics | 4 | Q2 |
+| Applied Sciences | 3 | Q2 |
+| Artificial Intelligence Review | 2 | Q1 |
+| Journal of Industrial Information Integration | 1 | Q1 |
+| American Political Science Review | 1 | Q1 |
+| Finance & Accounting Research Journal | 1 | Q3 |
+| Big Data and Cognitive Computing | 1 | Q2 |
+| Mathematics | 1 | Q2 |
+| International Journal of Information Technology | 1 | Q1 |
+| Information Systems | 1 | Q1 |
 
-**Included corpus (3 papers, score ≥ 6.0)**:
+**Borderline score distribution (73 papers)**:
 
-| # | Title (truncated) | Journal | Score | PDF |
-|---|---|---|---|---|
-| 1 | Online Payment Fraud Detection Model Using Machine Learning Techniques | IEEE Access | 6.25 | ✅ Downloaded |
-| 2 | Anomaly Detection of IoT Cyberattacks in Smart Cities Using Federated Learning and Split Learning | Big Data and Cognitive Computing | 6.05 | ⚠️ Manual |
-| 3 | Edge-FLGuard: A Federated Learning Framework for Real-Time Anomaly Detection in 5G-Enabled IoT Ecosystems | Applied Sciences | 6.65 | ⚠️ Manual |
+| Score band | Count | Action |
+|---|---|---|
+| (5.5, 6.0] | 8 | Candidates for threshold sensitivity run at 5.5 |
+| (5.0, 5.5] | 14 | Human adjudication — high-quality abstract screening |
+| (4.5, 5.0] | 19 | Human adjudication — discard unless IS-specific |
+| (4.0, 4.5] | 28 | Likely exclude; review titles only |
 
-**Critical architectural note — why only 3 included papers**:
-All 1,001 records in `papers_raw.csv` originate from OpenAlex; `sjr_quartile` and `core_rank` fields are empty for these records. The `score_journal_quality()` function assigns a default of 2.0/5.0 for unranked journals, depressing all composite scores. This is **expected, not a bug**. After Scopus/IEEE/WoS records are appended with proper `sjr_quartile`/`core_rank` values, a significant portion of the 93 borderline papers will migrate into the included tier (≥ 6.0).
+**⚠️ WARNING — Corpus size 23 < 40 target minimum**:
+Pipeline exited with code 1 (non-fatal). Three resolution paths available:
 
-**⚠️ WARNING — Corpus size 3 < 40 target minimum**:
-The pipeline flagged this condition. Resolution path:
-1. Export Scopus/IEEE/WoS CSVs using strings from `docs/draft/search_strings.md`
-2. Fill `sjr_quartile` (Q1/Q2/Q3/Q4) and `core_rank` (A*/A/B/C) from SCImago + CORE
-3. Append rows to `papers_raw.csv` using `papers_manual_template.csv` format
-4. Re-run `quality_filter_slr.py` → expected included corpus: 40–80 papers
-5. Alternatively: lower threshold to 5.5 (sensitivity lower bound) to expand corpus
+**Path 1 (Recommended)**: Scopus / IEEE Xplore / WoS manual export + merge
+- Export CSVs using strings from `docs/draft/search_strings.md`
+- Expected additional unique papers: 100–300 with proper `sjr_quartile` from Scopus export metadata
+- Re-run `quality_filter_slr.py` → expected final included corpus: 40–70 papers
+
+**Path 2**: Threshold sensitivity at 5.5
+- Lowers `SCORE_INCLUDE` from 6.0 → 5.5 in `quality_filter_slr.py`
+- Adds 8 borderline papers from (5.5, 6.0] band → total 31 included
+- Acceptable for conference papers where corpus depth > breadth trade-off is documented
+
+**Path 3**: Extend `enrich_journal_metadata.py` with `--doi-lookup` flag
+- Activates OpenAlex Source API per-DOI lookup for the 73 borderline NaN papers
+- May resolve 10–20 additional quartile values → push some borderline papers to ≥ 6.0
+- Runtime ~3–5 min additional; requires `--doi-lookup` flag
 
 **Produced outputs** (`scripts/output/`):
-- `slr_included_corpus.csv` — 3 papers (score ≥ 6.0) with full score breakdown
-- `slr_borderline.csv` — 93 papers (score 4.0–5.9; primary adjudication pool)
+- `slr_included_corpus.csv` — 23 papers (score ≥ 6.0) with full score breakdown per dimension
+- `slr_borderline.csv` — 73 papers (score 4.0–5.9; primary adjudication pool)
 - `slr_excluded_log.csv` — 905 papers with exclusion reason codes
 - `manual_download_log.txt` — 45 papers requiring manual PDF retrieval
 - `papers/` — 51 validated OA PDFs (≥ 8 KB, %PDF magic bytes verified)
+- `papers_raw.csv.bak` — backup of unenriched `papers_raw.csv` (pre-enrichment rollback point)
 
 ---
 

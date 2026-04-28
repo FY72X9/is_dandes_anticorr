@@ -71,6 +71,12 @@ DELAY_SEC        = 1.5    # polite delay between API calls
 # Unpaywall requires an email for ToS compliance
 UNPAYWALL_EMAIL  = "researcher@binus.ac.id"
 
+# Optional API keys — leave empty string "" to skip that tier
+# CORE API key: free signup at https://core.ac.uk/services/api
+CORE_API_KEY     = ""  # e.g. "abcdef1234567890..."
+# Semantic Scholar API key: free at https://www.semanticscholar.org/product/api
+S2_API_KEY       = ""  # e.g. "AbCdEfGh1234..."
+
 # Predatory journal indicators (lightweight keyword list; extend as needed)
 PREDATORY_KEYWORDS = [
     "omics international", "omicsonline", "sciforschenonline",
@@ -635,9 +641,11 @@ def acquire_semantic_scholar(doi: str) -> Optional[str]:
     if not doi or not is_doi(doi):
         return None
     url = f"https://api.semanticscholar.org/graph/v1/paper/DOI:{doi}"
+    headers = {"x-api-key": S2_API_KEY} if S2_API_KEY else {}
     try:
         resp = requests.get(url, timeout=REQUEST_TIMEOUT,
-                            params={"fields": "openAccessPdf"})
+                            params={"fields": "openAccessPdf"},
+                            headers=headers)
         if resp.status_code == 200:
             data = resp.json()
             pdf_info = data.get("openAccessPdf") or {}
@@ -645,6 +653,53 @@ def acquire_semantic_scholar(doi: str) -> Optional[str]:
             return pdf if pdf and pdf.startswith("http") else None
     except Exception:
         pass
+    return None
+
+
+def acquire_core(doi: str, title: str = "") -> Optional[str]:
+    """Query CORE API v3 for direct PDF download URL.
+
+    Falls back to title search when DOI lookup yields no PDF.
+    Requires CORE_API_KEY (free at core.ac.uk/services/api).
+    Without a key the function is skipped to avoid 401 errors.
+    """
+    if not CORE_API_KEY:
+        return None
+    auth_headers = {"Authorization": f"Bearer {CORE_API_KEY}"}
+
+    # --- Tier A: exact DOI lookup ---
+    if doi and is_doi(doi):
+        try:
+            resp = requests.get(
+                f"https://api.core.ac.uk/v3/works/doi/{doi}",
+                headers=auth_headers,
+                timeout=REQUEST_TIMEOUT,
+            )
+            if resp.status_code == 200:
+                pdf = resp.json().get("downloadUrl")
+                if pdf and pdf.startswith("http"):
+                    return pdf
+        except Exception:
+            pass
+
+    # --- Tier B: title-based search (when DOI fails or is missing) ---
+    if title and title.strip():
+        query = title.strip()[:120]  # keep query concise
+        try:
+            resp = requests.get(
+                "https://api.core.ac.uk/v3/search/works",
+                headers=auth_headers,
+                params={"q": f'title:"{query}"', "limit": 3},
+                timeout=REQUEST_TIMEOUT,
+            )
+            if resp.status_code == 200:
+                for hit in resp.json().get("results", []):
+                    pdf = hit.get("downloadUrl")
+                    if pdf and pdf.startswith("http"):
+                        return pdf
+        except Exception:
+            pass
+
     return None
 
 
@@ -667,6 +722,7 @@ def acquire_paper(row: pd.Series, pdf_dir: Path) -> tuple[bool, str, str]:
         ("OpenAlex",       lambda: acquire_openalex(doi)),
         ("Unpaywall",      lambda: acquire_unpaywall(doi)),
         ("SemanticScholar",lambda: acquire_semantic_scholar(doi)),
+        ("CORE",           lambda: acquire_core(doi, title)),
         ("DirectURL",      lambda: safe_str(row.get("oa_url", "")) or None),
     ]
 
@@ -684,7 +740,8 @@ def acquire_paper(row: pd.Series, pdf_dir: Path) -> tuple[bool, str, str]:
             log.info(f"  ✓ [{source_name}] {title[:50]} — {msg}")
             return True, dest.name, f"Downloaded via {source_name}"
 
-    return False, "", "No open-access version found (tried OpenAlex, Unpaywall, SemanticScholar, DirectURL)"
+    tried = "OpenAlex, Unpaywall, SemanticScholar" + (", CORE" if CORE_API_KEY else "") + ", DirectURL"
+    return False, "", f"No open-access version found (tried {tried})"
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -86,3 +86,40 @@ INFO │   Require manual download : 45
 INFO │ ======================================================================
 WARNING │ Corpus size 3 < 40 target minimum.
 WARNING │ Consider: broadening search strings or lowering threshold to 5.5 (sensitivity lower bound).
+INFO │ ======================================================================
+INFO │ SLR Quality Filter + Acquisition Pipeline
+INFO │ Input  : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\papers_raw.csv
+INFO │ Output : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output
+INFO │ PDFs   : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
+INFO │ ======================================================================
+INFO │ Loaded 1001 records from papers_raw.csv
+INFO │ 
+── Stage 1: Inclusion / Exclusion Filtering ──
+INFO │   Passed : 113
+INFO │   Excluded (Stage 1) : 888
+INFO │ 
+── Stage 2: Quality Scoring ──
+INFO │   Included (≥6.0)  : 23
+INFO │   Borderline (4.0–5.9) : 73
+INFO │   Excluded (<4.0)   : 17
+INFO │ 
+── Stage 3: OA Acquisition ──
+INFO │ 
+── Writing Outputs ──
+INFO │   ✓ slr_included_corpus.csv  (23 papers)
+INFO │   ✓ slr_borderline.csv       (73 papers)
+INFO │   ✓ slr_excluded_log.csv     (905 papers)
+INFO │   ✓ manual_download_log.txt  (45 papers need manual download)
+INFO │ 
+======================================================================
+INFO │ PIPELINE COMPLETE
+INFO │   Total input records     : 1001
+INFO │   Passed Stage 1 filter   : 113
+INFO │   Included corpus (≥6.0)  : 23
+INFO │   Borderline pool         : 73
+INFO │   Excluded (all stages)   : 905
+INFO │   Auto-downloaded PDFs    : 51
+INFO │   Require manual download : 45
+INFO │ ======================================================================
+WARNING │ Corpus size 23 < 40 target minimum.
+WARNING │ Consider: broadening search strings or lowering threshold to 5.5 (sensitivity lower bound).
