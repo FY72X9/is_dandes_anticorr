@@ -807,91 +807,38 @@ def acquire_arxiv(doi: str, title: str = "") -> Optional[str]:
     return None
 
 
-def acquire_base(doi: str) -> Optional[str]:
-    """Query BASE (Bielefeld Academic Search Engine) for an OA PDF link.
-
-    BASE indexes 300M+ documents from 10,000+ OA repositories.
-    No API key required.
-    """
-    if not doi or not is_doi(doi):
-        return None
-    try:
-        resp = requests.get(
-            "https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi",
-            params={"func": "PerformSearch", "query": f"dcdoi:{doi}",
-                    "hits": 5, "format": "json"},
-            headers={"User-Agent": f"SLR-pipeline/1.0 (mailto:{UNPAYWALL_EMAIL})"},
-            timeout=REQUEST_TIMEOUT,
-        )
-        log.debug(f"    [BASE] HTTP {resp.status_code} for doi:{doi}")
-        if resp.status_code == 200:
-            docs = resp.json().get("response", {}).get("docs", [])
-            for doc in docs:
-                links = doc.get("dclinkaccess", [])
-                fmts  = doc.get("dcformat", [])
-                if isinstance(links, str):
-                    links = [links]
-                if isinstance(fmts, str):
-                    fmts = [fmts]
-                # Prefer explicit PDF format
-                for i, link in enumerate(links):
-                    if link.startswith("http"):
-                        fmt = fmts[i] if i < len(fmts) else ""
-                        if "pdf" in str(fmt).lower():
-                            log.debug(f"    [BASE] Found PDF link: {link[:80]}")
-                            return link
-                # Fallback: any link
-                for link in links:
-                    if link.startswith("http"):
-                        log.debug(f"    [BASE] Found fallback link: {link[:80]}")
-                        return link
-            log.debug(f"    [BASE] {len(docs)} docs but no usable link")
-        else:
-            log.debug(f"    [BASE] Non-200 response: {resp.status_code}")
-    except Exception as exc:
-        log.debug(f"    [BASE] Exception: {exc}")
-    return None
-
-
 def acquire_ieee(doi: str) -> Optional[str]:
     """Attempt direct PDF download for IEEE Open Access papers.
 
-    Uses the IEEE Xplore internal REST API (no key required) to retrieve
-    the pdfUrl for papers marked as OPEN_ACCESS.  Only tried for 10.1109/*
-    DOIs; fails gracefully for non-OA IEEE papers.
+    Resolves the DOI redirect to obtain the correct IEEE Xplore article number
+    (the DOI suffix is NOT the article number), then tries stamp.jsp.
+    Only attempted for 10.1109/* DOIs.
     """
     if not doi or not is_doi(doi):
         return None
     if not doi.lower().startswith("10.1109/"):
         return None
-    # Article number = last numeric segment of the DOI
-    article_num = doi.strip().split(".")[-1]
-    if not article_num.isdigit():
-        return None
-    api_url = f"https://ieeexplore.ieee.org/rest/document/{article_num}"
-    headers = {
-        "User-Agent": HEADERS["User-Agent"],
-        "Accept": "application/json, text/plain, */*",
-        "Referer": f"https://ieeexplore.ieee.org/document/{article_num}",
-    }
+    # Step 1: Resolve DOI to get actual IEEE Xplore article number
     try:
-        resp = requests.get(api_url, headers=headers, timeout=REQUEST_TIMEOUT)
-        log.debug(f"    [IEEE] HTTP {resp.status_code} for article:{article_num}")
-        if resp.status_code == 200:
-            data = resp.json()
-            if data.get("accessType") == "OPEN_ACCESS":
-                pdf_path = data.get("pdfUrl") or data.get("pdfPath", "")
-                if pdf_path:
-                    pdf_url = (pdf_path if pdf_path.startswith("http")
-                               else f"https://ieeexplore.ieee.org{pdf_path}")
-                    log.debug(f"    [IEEE] Found OA PDF: {pdf_url[:80]}")
-                    return pdf_url
-            log.debug(f"    [IEEE] accessType={data.get('accessType')} — not OA or no pdfUrl")
-        else:
-            log.debug(f"    [IEEE] Non-200 response: {resp.status_code}")
+        r = requests.get(
+            f"https://doi.org/{doi}",
+            headers={"User-Agent": HEADERS["User-Agent"]},
+            allow_redirects=True,
+            timeout=REQUEST_TIMEOUT,
+        )
+        import re as _re
+        m = _re.search(r'/document/(\d+)', r.url)
+        if not m:
+            log.debug(f"    [IEEE] Could not extract article # from: {r.url}")
+            return None
+        arnumber = m.group(1)
     except Exception as exc:
-        log.debug(f"    [IEEE] Exception: {exc}")
-    return None
+        log.debug(f"    [IEEE] DOI resolution failed: {exc}")
+        return None
+    # Step 2: Try stamp.jsp (requires browser session — will fail without cookie)
+    stamp_url = f"https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber={arnumber}"
+    log.debug(f"    [IEEE] stamp URL: {stamp_url}")
+    return stamp_url
 
 
 def acquire_core(doi: str, title: str = "") -> Optional[str]:
@@ -973,7 +920,6 @@ def acquire_paper(row: pd.Series, pdf_dir: Path) -> tuple[bool, str, str]:
         ("MDPI",           lambda: acquire_mdpi(doi)),
         ("CrossRef",       lambda: acquire_crossref(doi)),
         ("arXiv",          lambda: acquire_arxiv(doi, title)),
-        ("BASE",           lambda: acquire_base(doi)),
         ("IEEE",           lambda: acquire_ieee(doi)),
         ("SemanticScholar",lambda: acquire_semantic_scholar(doi)),
         ("CORE",           lambda: acquire_core(doi, title)),
@@ -999,7 +945,7 @@ def acquire_paper(row: pd.Series, pdf_dir: Path) -> tuple[bool, str, str]:
             return True, dest.name, f"Downloaded via {source_name}"
         log.debug(f"    [{source_name}] Download failed: {msg}")
 
-    always_tried = "OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar"
+    always_tried = "OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, IEEE, SemanticScholar"
     opt_tried = (", CORE" if CORE_API_KEY else "") + ", DirectURL"
     return False, "", f"No open-access version found (tried {always_tried}{opt_tried})"
 
@@ -1022,7 +968,7 @@ def run_pipeline(input_path: Path) -> None:
     log.info(f"Output : {OUTPUT_DIR}")
     log.info(f"PDFs   : {PDF_DIR}")
     log.info(f"Log    : {_LOG_FILE}")
-    log.info("Free sources  : OpenAlex, Unpaywall, MDPI-Direct, CrossRef, arXiv, BASE, IEEE (always active)")
+    log.info("Free sources  : OpenAlex, Unpaywall, MDPI-Direct, CrossRef, arXiv, IEEE (always active)")
     log.info(f"CORE API  : {'✓ configured' if CORE_API_KEY else '✗ not set (skip CORE tier)'}")
     log.info(f"S2 API    : {'✓ configured' if S2_API_KEY else '✗ not set (may hit 429)'}")
     log.info("=" * 70)

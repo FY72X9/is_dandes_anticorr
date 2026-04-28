@@ -5,220 +5,205 @@
 [1] [score=6.3] Financial Fraud Detection Based on Machine Learning: A Systematic Literature Review
     DOI       : 10.3390/app12199637
     Publisher : https://doi.org/10.3390/app12199637
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
 [2] [score=6.6] Financial Cybercrime: A Comprehensive Survey of Deep Learning Approaches to Tackle the Evolving Financial Crime Landscape
     DOI       : 10.1109/access.2021.3134076
     Publisher : https://doi.org/10.1109/access.2021.3134076
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
 [3] [score=6.3] Imperative Role of Integrating Digitalization in the Firms Finance: A Technological Perspective
     DOI       : 10.3390/electronics11193252
     Publisher : https://doi.org/10.3390/electronics11193252
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[4] [score=7.05] Securing the digital world: Protecting smart infrastructures and digital industries with artificial intelligence (AI)-enabled malware and intrusion detection
-    DOI       : 10.1016/j.jii.2023.100520
-    Publisher : https://doi.org/10.1016/j.jii.2023.100520
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
-
-[5] [score=7.05] Blockchain and AI-Empowered Healthcare Insurance Fraud Detection: an Analysis, Architecture, and Future Prospects
+[4] [score=7.05] Blockchain and AI-Empowered Healthcare Insurance Fraud Detection: an Analysis, Architecture, and Future Prospects
     DOI       : 10.1109/access.2022.3194569
     Publisher : https://doi.org/10.1109/access.2022.3194569
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[6] [score=6.4] INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVICES SECURITY
+[5] [score=6.4] INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVICES SECURITY
     DOI       : 10.51594/farj.v6i3.855
     Publisher : https://doi.org/10.51594/farj.v6i3.855
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[7] [score=5.7] The Role of IT Governance in the Integration of AI in Accounting and Auditing Operations
+[6] [score=5.7] The Role of IT Governance in the Integration of AI in Accounting and Auditing Operations
     DOI       : 10.3390/economies12080199
     Publisher : https://doi.org/10.3390/economies12080199
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[8] [score=7.05] Anomaly Detection in Smart Environments: A Comprehensive Survey
+[7] [score=7.05] Anomaly Detection in Smart Environments: A Comprehensive Survey
     DOI       : 10.1109/access.2024.3395051
     Publisher : https://doi.org/10.1109/access.2024.3395051
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[9] [score=5.85] Chained Anomaly Detection Models for Federated Learning: An Intrusion Detection Case Study
+[8] [score=5.85] Chained Anomaly Detection Models for Federated Learning: An Intrusion Detection Case Study
     DOI       : 10.3390/app8122663
     Publisher : https://doi.org/10.3390/app8122663
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[10] [score=6.3] DDoS Attack Detection in IoT-Based Networks Using Machine Learning Models: A Survey and Research Directions
+[9] [score=6.3] DDoS Attack Detection in IoT-Based Networks Using Machine Learning Models: A Survey and Research Directions
     DOI       : 10.3390/electronics12143103
     Publisher : https://doi.org/10.3390/electronics12143103
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[11] [score=6.6] Hardware-Assisted Machine Learning in Resource-Constrained IoT Environments for Security: Review and Future Prospective
+[10] [score=6.6] Hardware-Assisted Machine Learning in Resource-Constrained IoT Environments for Security: Review and Future Prospective
     DOI       : 10.1109/access.2022.3179047
     Publisher : https://doi.org/10.1109/access.2022.3179047
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[12] [score=7.3] Anomaly Detection of IoT Cyberattacks in Smart Cities Using Federated Learning and Split Learning
+[11] [score=7.3] Anomaly Detection of IoT Cyberattacks in Smart Cities Using Federated Learning and Split Learning
     DOI       : 10.3390/bdcc8030021
     Publisher : https://doi.org/10.3390/bdcc8030021
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[13] [score=6.9] Defense and Security Mechanisms in the Internet of Things: A Review
+[12] [score=6.9] Defense and Security Mechanisms in the Internet of Things: A Review
     DOI       : 10.3390/app15020499
     Publisher : https://doi.org/10.3390/app15020499
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[14] [score=6.3] Artificial Intelligence in Maritime Cybersecurity: A Systematic Review of AI-Driven Threat Detection and Risk Mitigation Strategies
+[13] [score=6.3] Artificial Intelligence in Maritime Cybersecurity: A Systematic Review of AI-Driven Threat Detection and Risk Mitigation Strategies
     DOI       : 10.3390/electronics14091844
     Publisher : https://doi.org/10.3390/electronics14091844
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[15] [score=7.9] Edge-FLGuard: A Federated Learning Framework for Real-Time Anomaly Detection in 5G-Enabled IoT Ecosystems
+[14] [score=7.9] Edge-FLGuard: A Federated Learning Framework for Real-Time Anomaly Detection in 5G-Enabled IoT Ecosystems
     DOI       : 10.3390/app15126452
     Publisher : https://doi.org/10.3390/app15126452
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[16] [score=6.9] AI-Driven Anomaly Detection for Securing IoT Devices in 5G-Enabled Smart Cities
+[15] [score=6.9] AI-Driven Anomaly Detection for Securing IoT Devices in 5G-Enabled Smart Cities
     DOI       : 10.3390/electronics14122492
     Publisher : https://doi.org/10.3390/electronics14122492
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[17] [score=6.9] AI-Assisted Real-Time Monitoring of Infectious Diseases in Urban Areas
+[16] [score=6.9] AI-Assisted Real-Time Monitoring of Infectious Diseases in Urban Areas
     DOI       : 10.3390/math13121911
     Publisher : https://doi.org/10.3390/math13121911
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[18] [score=7.2] A Review of Large Language Models for Energy Systems: Applications, Challenges, and Future Prospects
+[17] [score=7.2] A Review of Large Language Models for Energy Systems: Applications, Challenges, and Future Prospects
     DOI       : 10.1109/access.2025.3610994
     Publisher : https://doi.org/10.1109/access.2025.3610994
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[19] [score=6.0] AI-based decision support system for public procurement
+[18] [score=6.0] AI-based decision support system for public procurement
     DOI       : 10.1016/j.is.2023.102284
     Publisher : https://doi.org/10.1016/j.is.2023.102284
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[20] [score=5.6] FinChain-BERT: A High-Accuracy Automatic Fraud Detection Model Based on NLP Methods for Financial Scenarios
+[19] [score=5.6] FinChain-BERT: A High-Accuracy Automatic Fraud Detection Model Based on NLP Methods for Financial Scenarios
     DOI       : 10.3390/info14090499
     Publisher : https://doi.org/10.3390/info14090499
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[21] [score=5.05] AI-Driven Cloud Security: Examining the Impact of User Behavior Analysis on Threat Detection
+[20] [score=5.05] AI-Driven Cloud Security: Examining the Impact of User Behavior Analysis on Threat Detection
     DOI       : 10.9734/ajrcos/2024/v17i3424
     Publisher : https://doi.org/10.9734/ajrcos/2024/v17i3424
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[22] [score=5.2] Unleashing efficiency and insights: Exploring the potential applications and challenges of ChatGPT in accounting
+[21] [score=5.2] Unleashing efficiency and insights: Exploring the potential applications and challenges of ChatGPT in accounting
     DOI       : 10.1002/jcaf.22663
     Publisher : https://doi.org/10.1002/jcaf.22663
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[23] [score=5.05] EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMPARATIVE ANALYSIS OF AI-DRIVEN MODELS AND BLOCKCHAIN TECHNOLOGY IN U.S. TAX ADMINISTRATION
+[22] [score=5.05] EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMPARATIVE ANALYSIS OF AI-DRIVEN MODELS AND BLOCKCHAIN TECHNOLOGY IN U.S. TAX ADMINISTRATION
     DOI       : 10.51594/csitrj.v5i2.759
     Publisher : https://doi.org/10.51594/csitrj.v5i2.759
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[24] [score=4.15] Determinants of fraud in the village government: testing whistleblowing systems, internal control systems, village apparatus competencies
+[23] [score=4.15] Determinants of fraud in the village government: testing whistleblowing systems, internal control systems, village apparatus competencies
     DOI       : 10.22219/jaa.v7i4.36914
     Publisher : https://doi.org/10.22219/jaa.v7i4.36914
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[25] [score=4.15] The Influence of Village Apparatus Competence, Government Compliance in Financial Reporting, Internal Control System and Moral Sensitivity to the Prevention of Village Fund Fraud in Villages in Sipahutar District, Nort Tapanuli Regency
+[24] [score=4.15] The Influence of Village Apparatus Competence, Government Compliance in Financial Reporting, Internal Control System and Moral Sensitivity to the Prevention of Village Fund Fraud in Villages in Sipahutar District, Nort Tapanuli Regency
     DOI       : 10.55927/ijbae.v4i3.150
     Publisher : https://doi.org/10.55927/ijbae.v4i3.150
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[26] [score=4.45] The landscape of public procurement research: a bibliometric analysis and topic modelling based on Scopus
+[25] [score=4.45] [DOWNLOADED] The landscape of public procurement research: a bibliometric analysis and topic modelling based on Scopus
     DOI       : 10.1108/jopp-06-2022-0031
     Publisher : https://doi.org/10.1108/jopp-06-2022-0031
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[27] [score=4.6] Intelligent Anti-Money Laundering Fraud Control Using Graph-Based Machine Learning Model for the Financial Domain
+[26] [score=4.6] [DOWNLOADED] Intelligent Anti-Money Laundering Fraud Control Using Graph-Based Machine Learning Model for the Financial Domain
     DOI       : 10.4018/jcit.316665
     Publisher : https://doi.org/10.4018/jcit.316665
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[28] [score=5.35] Securing Government Revenue: A Cloud-Based AI Model for Predictive Detection of Tax-Related Financial Crimes
+[27] [score=5.35] [DOWNLOADED] Securing Government Revenue: A Cloud-Based AI Model for Predictive Detection of Tax-Related Financial Crimes
     DOI       : 10.7753/ijcatr1405.1007
     Publisher : https://doi.org/10.7753/ijcatr1405.1007
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[29] [score=4.15] Using data analytics to distinguish legitimate and illegitimate shell companies
+[28] [score=4.15] [DOWNLOADED] Using data analytics to distinguish legitimate and illegitimate shell companies
     DOI       : 10.1016/j.jeconc.2024.100123
     Publisher : https://doi.org/10.1016/j.jeconc.2024.100123
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[30] [score=4.15] Machine Learning Analysis of Public Procurement in the Dominican Republic: Impacts on Economic Efficiency and Inclusive Sourcing
+[29] [score=4.15] [DOWNLOADED] Machine Learning Analysis of Public Procurement in the Dominican Republic: Impacts on Economic Efficiency and Inclusive Sourcing
     DOI       : 10.20944/preprints202310.0571.v1
     Publisher : https://doi.org/10.20944/preprints202310.0571.v1
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[31] [score=5.05] Deep Learning in the Fast Lane: A Survey on Advanced Intrusion Detection Systems for Intelligent Vehicle Networks
+[30] [score=5.05] [DOWNLOADED] Deep Learning in the Fast Lane: A Survey on Advanced Intrusion Detection Systems for Intelligent Vehicle Networks
     DOI       : 10.1109/ojvt.2024.3422253
     Publisher : https://doi.org/10.1109/ojvt.2024.3422253
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[32] [score=4.15] Federated and Privacy-Preserving Learning of Accounting Data in Financial Statement Audits
-    DOI       : 10.1145/3533271.3561674
-    Publisher : https://doi.org/10.1145/3533271.3561674
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
-
-[33] [score=4.75] riskAIchain: AI-Driven IT Infrastructure—Blockchain-Backed Approach for Enhanced Risk Management
+[31] [score=4.75] [DOWNLOADED] riskAIchain: AI-Driven IT Infrastructure—Blockchain-Backed Approach for Enhanced Risk Management
     DOI       : 10.3390/risks12120206
     Publisher : https://doi.org/10.3390/risks12120206
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[34] [score=4.15] Towards a Secure Technology-Driven Architecture for Smart Health Insurance Systems: An Empirical Study
+[32] [score=4.15] [DOWNLOADED] Towards a Secure Technology-Driven Architecture for Smart Health Insurance Systems: An Empirical Study
     DOI       : 10.3390/healthcare11162257
     Publisher : https://doi.org/10.3390/healthcare11162257
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[35] [score=4.15] Smart data-driven medical decisions through collective and individual anomaly detection in healthcare time series
+[33] [score=4.15] [DOWNLOADED] Smart data-driven medical decisions through collective and individual anomaly detection in healthcare time series
     DOI       : 10.1016/j.ijmedinf.2024.105696
     Publisher : https://doi.org/10.1016/j.ijmedinf.2024.105696
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[36] [score=4.75] Cloud-Based Knowledge Management Systems with AI-Enhanced Compliance and Data Privacy Safeguards
+[34] [score=4.75] [DOWNLOADED] Cloud-Based Knowledge Management Systems with AI-Enhanced Compliance and Data Privacy Safeguards
     DOI       : 10.54660/ijmfd.2023.4.2.67-77
     Publisher : https://doi.org/10.54660/ijmfd.2023.4.2.67-77
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[37] [score=5.35] AI and Financial Fraud Prevention: Mapping the Trends and Challenges Through a Bibliometric Lens
+[35] [score=5.35] [DOWNLOADED] AI and Financial Fraud Prevention: Mapping the Trends and Challenges Through a Bibliometric Lens
     DOI       : 10.3390/jrfm18060323
     Publisher : https://doi.org/10.3390/jrfm18060323
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[38] [score=5.35] Exploring the role of Machine Learning and Deep Learning in Anti-Money Laundering (AML) strategies within U.S. Financial Industry: A systematic review of implementation, effectiveness, and challenges
+[36] [score=5.35] [DOWNLOADED] Exploring the role of Machine Learning and Deep Learning in Anti-Money Laundering (AML) strategies within U.S. Financial Industry: A systematic review of implementation, effectiveness, and challenges
     DOI       : 10.51594/farj.v7i1.1808
     Publisher : https://doi.org/10.51594/farj.v7i1.1808
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[39] [score=4.75] Intrusion Detection and Real-Time Adaptive Security in Medical IoT Using a Cyber-Physical System Design
+[37] [score=4.75] [DOWNLOADED] Intrusion Detection and Real-Time Adaptive Security in Medical IoT Using a Cyber-Physical System Design
     DOI       : 10.3390/s25154720
     Publisher : https://doi.org/10.3390/s25154720
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[40] [score=4.9] Tax Fraud Detection Using Artificial Intelligence-Based Technologies: Trends and Implications
+[38] [score=4.9] [DOWNLOADED] Tax Fraud Detection Using Artificial Intelligence-Based Technologies: Trends and Implications
     DOI       : 10.3390/jrfm18090502
     Publisher : https://doi.org/10.3390/jrfm18090502
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[41] [score=4.75] An Advanced Machine Learning Model for Detecting Synthetic Identity Fraud in E-Commerce Platforms
+[39] [score=4.75] [DOWNLOADED] An Advanced Machine Learning Model for Detecting Synthetic Identity Fraud in E-Commerce Platforms
     DOI       : 10.54660/.ijmrge.2023.4.6.1418-1429
     Publisher : https://doi.org/10.54660/.ijmrge.2023.4.6.1418-1429
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[42] [score=5.05] Blockchain-Enabled Supply Chain platform for Indian Dairy Industry: Safety and Traceability
+[40] [score=5.05] [DOWNLOADED] Blockchain-Enabled Supply Chain platform for Indian Dairy Industry: Safety and Traceability
     DOI       : 10.3390/foods11172716
     Publisher : https://doi.org/10.3390/foods11172716
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 
-[43] [score=4.0] Outsider Oversight: Designing a Third Party Audit Ecosystem for AI Governance
-    DOI       : 10.1145/3514094.3534181
-    Publisher : https://doi.org/10.1145/3514094.3534181
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
-
-[44] [score=5.35] Enhancing fraud detection in accounting through AI: Techniques and case studies
+[41] [score=5.35] [BLOCKED] Enhancing fraud detection in accounting through AI: Techniques and case studies
     DOI       : 10.51594/farj.v6i6.1232
     Publisher : https://doi.org/10.51594/farj.v6i6.1232
-    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, OAButton, SemanticScholar, DirectURL)
+    Reason    : No open-access version found (tried OpenAlex, Unpaywall, MDPI, CrossRef, arXiv, BASE, IEEE, SemanticScholar, DirectURL)
 

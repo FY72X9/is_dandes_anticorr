@@ -1,0 +1,10 @@
+20:37:43 INFO    │ ============================================================
+20:37:43 INFO    │ Playwright Manual PDF Downloader
+20:37:43 INFO    │ ============================================================
+20:37:43 INFO    │ Manual log : d:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output\manual_download_log.txt
+20:37:43 INFO    │ PDF output : d:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
+20:37:43 INFO    │ Parsed 41 entries from manual_download_log.txt
+20:37:43 INFO    │ Papers remaining (not yet downloaded): 41
+20:37:43 ERROR   │ Playwright not installed. Run:
+20:37:43 ERROR   │     pip install playwright
+20:37:43 ERROR   │     playwright install chromium
