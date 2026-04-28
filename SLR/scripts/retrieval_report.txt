@@ -1,0 +1,30 @@
+Phase C — Retrieval Report
+Date: 2026-04-28
+============================================================
+
+  S3-OA (Village Fund / Dana Desa): 58 records retrieved
+  S4-OA (Feature Engineering + Corruption Typology): 293 records retrieved
+  S5-OA (Decentralized Fund Audit Analytics): 300 records retrieved
+  S1-OA (Core ML + Public Finance Fraud (capped)): 200 records retrieved
+  S6-OA (Procurement Fraud ML (capped)): 150 records retrieved
+  OpenAlex subtotal: 1001
+
+  S3-S2 (Village Fund Corruption Detection): 0 records retrieved
+  S4-S2 (Feature Engineering Corruption Typology): 0 records retrieved
+  S5-S2 (Decentralized Public Fund Anomaly ML): 0 records retrieved
+  S1-S2 (Fraud Detection Public Sector IS (capped)): 0 records retrieved
+  Semantic Scholar subtotal: 0
+
+Total raw records   : 1001
+Duplicates flagged  : 56
+Unique records      : 945
+
+NOTE: Scopus, IEEE Xplore, WoS records NOT included.
+      Add manually using papers_manual_template.csv, then re-run dedup.
+
+── Coverage check ──
+  openalex                 : 945 unique
+  semantic_scholar         : 0 unique
+
+ADVISORY: Large raw pool. IC/EC filtering in quality_filter_slr.py
+  will reduce this significantly — expected ~15–25% pass rate.

@@ -1,0 +1,4 @@
+doi,title,year,journal,sjr_quartile,core_rank,citations,source_db,oa_url,abstract,is_duplicate,language,authors,paper_type
+10.XXXX/example,[Replace with title from SCOPUS export],2024,[Journal / Conference name],[Q1/Q2/Q3/Q4 — look up at scimago.com],[A*/A/B/C — look up at core.edu.au if conference],0,scopus,,[Paste abstract here],False,en,[Author1; Author2],article
+10.XXXX/example,[Replace with title from IEEE export],2024,[Journal / Conference name],[Q1/Q2/Q3/Q4 — look up at scimago.com],[A*/A/B/C — look up at core.edu.au if conference],0,ieee,,[Paste abstract here],False,en,[Author1; Author2],article
+10.XXXX/example,[Replace with title from WOS export],2024,[Journal / Conference name],[Q1/Q2/Q3/Q4 — look up at scimago.com],[A*/A/B/C — look up at core.edu.au if conference],0,wos,,[Paste abstract here],False,en,[Author1; Author2],article
