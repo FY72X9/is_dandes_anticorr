@@ -3,5 +3,6 @@
 concept/.unchecked
 .venv
 .dev-memory/
+.env
 
 SLR/papers

@@ -34,6 +34,7 @@ Requirements
 from __future__ import annotations
 
 import re
+import os
 import sys
 import time
 import json
@@ -46,6 +47,10 @@ from typing import Optional
 import pandas as pd
 import requests
 from tqdm import tqdm
+from dotenv import load_dotenv
+
+# Load .env from repo root (two levels up from this script: SLR/scripts/ → root)
+load_dotenv(Path(__file__).parent.parent.parent / ".env")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Paths
@@ -73,11 +78,11 @@ DELAY_SEC        = 1.5    # polite delay between API calls
 # Unpaywall requires an email for ToS compliance
 UNPAYWALL_EMAIL  = "researcher@binus.ac.id"
 
-# Optional API keys — leave empty string "" to skip that tier
+# Optional API keys — loaded from .env (see .env.example at repo root)
 # CORE API key: free signup at https://core.ac.uk/services/api
-CORE_API_KEY     = ""  # e.g. "abcdef1234567890..."
+CORE_API_KEY     = os.getenv("CORE_API_KEY", "")
 # Semantic Scholar API key: free at https://www.semanticscholar.org/product/api
-S2_API_KEY       = ""  # e.g. "AbCdEfGh1234..."
+S2_API_KEY       = os.getenv("S2_API_KEY", "")
 
 # Predatory journal indicators (lightweight keyword list; extend as needed)
 PREDATORY_KEYWORDS = [
