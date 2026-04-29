@@ -16,7 +16,7 @@
 | **C** | Retrieval — Full database search → `papers_raw.csv` | ✅ COMPLETED — 2026-04-28 | `scripts/papers_raw.csv` |
 | **D** | Filter & Acquire — Run pipeline → corpus + PDFs | ✅ COMPLETED — 2026-04-29 (v3: SCORE_INCLUDE=5.0 → 45 included) | `papers/`, `scripts/output/` |
 | **D+** | Cross-check — `crosscheck_papers.py` → PDF vs pipeline audit | ✅ COMPLETED — 2026-04-28 | `scripts/output/crosscheck_report.md`, `scripts/output/crosscheck_detail.csv` |
-| **E** | IRR & Coding — Co-author screening + domain-override adjudication | ⏳ NOT STARTED | `scripts/output/irr_pilot_results.csv`, `scripts/output/coded_corpus.csv` |
+| **E** | IRR & Coding — Co-author screening + domain-override adjudication | 🔄 IN PROGRESS — Stage 0 scaffolding done (2026-04-29); Stage 0 override ready to apply | `scripts/output/coded_corpus.csv` ✅, `docs/coding_guide_v1.md` ✅, `scripts/domain_override.py` ✅ |
 | **F** | Analysis — Sensitivity + bibliometric + synthesis | ⏳ NOT STARTED | `docs/draft/bibliometric_report.md`, `docs/draft/framework_synthesis_matrix.csv` |
 | **G** | Writing — Draft paper + gap matrix + submit | ⏳ NOT STARTED | `docs/draft/`, `docs/latex/` |
 
@@ -184,15 +184,17 @@ After manual merge, expected raw pool ~1,100–1,300; IC/EC filter will yield 40
 
 **Goal**: Dual-coder screening + quality calibration + domain-relevance override protocol.
 
-**Status**: ⏳ NOT STARTED (depends on Phase D)
+**Status**: 🔄 IN PROGRESS — Stage 0 scaffolding complete (April 29, 2026); Stage 0 override execution pending Coder 1 abstract review
 
 **Stage 0 — Domain-Relevance Override (NEW — pre-IRR)**:
-- Cross-check of 52 PDFs in `papers/` against pipeline outputs completed: `scripts/output/crosscheck_report.md`
-- **27 BORDERLINE papers identified as PRIORITY REVIEW** — scored low due to journal tier, not low relevance
-- 12 are HIGH-relevance village fund / Dana Desa / Indonesian corruption papers (RQ2/RQ3 direct evidence)
-- Action: Coder 1 reads abstract of each priority paper; if domain criteria met → override quality_score to 6.0
-- Document in `coded_corpus.csv` column `adjudication_note` with reason code `DOMAIN_OVERRIDE_RQ2` or `DOMAIN_OVERRIDE_RQ3`
-- **Rationale**: Pipeline scoring systematically undervalues developing-country IS journals (unranked → score_journal_quality defaults to 2.0/10). Dana Desa governance papers represent the primary evidence base for RQ2 and cannot be excluded on journal-tier grounds alone. Precedent: Petticrew & Roberts (2006) advocate purposive sampling alongside systematic search when domain-specific evidence bases are thin.
+- Cross-check of 90 PDFs in `papers/` against pipeline outputs completed; `scripts/output/crosscheck_report.md` (stale — pre-v3; regenerate after Stage 0 apply)
+- **12 papers identified as DOMAIN_OVERRIDE candidates** — all score 4.15 due to unranked journal bias, all directly evidence RQ2/RQ3 (Dana Desa / village fund governance)
+- Script built: `scripts/domain_override.py` — dry-run confirmed 12/12 candidates detected
+- **To execute Stage 0**: `python SLR/scripts/domain_override.py --apply --auto`
+- After apply: `python SLR/scripts/crosscheck_papers.py` to regenerate crosscheck_report.md
+- Projected effective corpus after override: **45 + 12 = 57 papers**
+- Coding template built: `scripts/output/coded_corpus.csv` (96 rows: 45 included + 51 borderline, `domain_override_candidate` pre-flagged)
+- Coding guide written: `docs/coding_guide_v1.md`
 
 **Stage 1 — Title + Abstract Screening IRR**:
 - Both Coder 1 + Coder 2 independently screen 100% of Stage 1 candidates
@@ -223,7 +225,7 @@ After manual merge, expected raw pool ~1,100–1,300; IC/EC filter will yield 40
 - Result: All village-fund governance papers cluster at score 4.15 (hardfloor from unranked journal + low citations)
 - Net: If domain override applied to all 12 HIGH village-fund papers → effective corpus = 45 + 12 = **57 papers** (well within 40–80 target)
 
-**Output**: `scripts/output/irr_pilot_results.csv`, `docs/draft/coding_guide_v1.md`, `scripts/output/coded_corpus.csv`
+**Output**: `scripts/output/coded_corpus.csv` ✅, `docs/coding_guide_v1.md` ✅, `scripts/domain_override.py` ✅, `scripts/output/irr_pilot_results.csv` ⏳
 
 ---
 
