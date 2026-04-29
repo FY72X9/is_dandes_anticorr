@@ -17,11 +17,20 @@ PAPERS_DIR = pathlib.Path(__file__).parent.parent / "papers"
 def sanitize(name: str, max_len: int = 80) -> str:
     name = re.sub(r'[<>:"/\\|?*]', "_", name)
     name = re.sub(r"\s+", "_", name.strip())
-    return name[:max_len].rstrip("_")
+    return name[:max_len].rstrip("-_")
 
 
 # old_filename → (paper_no, title)  — confirmed matches only
 RENAME_MAP = {
+    # ── Manually downloaded papers (403/paywall blocked) ─────────────────────
+    "855-Article Text-2345-1-10-20240315.pdf": (
+        5,
+        "INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVICES SECURITY",
+    ),
+    "Intelligent-Anti-Money-Laundering-Fraud-Control-Using-Graph-Based-Machine-Learning-Model-for-the-Financial-Domain.pdf": (
+        26,
+        "Intelligent Anti-Money Laundering Fraud Control Using Graph-Based Machine Learning Model for the Financial Domain",
+    ),
     "preprints202310.0571.v1.pdf": (
         29,
         "Machine Learning Analysis of Public Procurement in the Dominican Republic: Impacts on Economic Efficiency and Inclusive Sourcing",

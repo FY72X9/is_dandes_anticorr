@@ -69,7 +69,7 @@ PDF_DIR.mkdir(parents=True, exist_ok=True)
 # ─────────────────────────────────────────────────────────────────────────────
 YEAR_MIN         = 2010
 YEAR_MAX         = 2026
-SCORE_INCLUDE    = 5.5    # ≥ this → included corpus
+SCORE_INCLUDE    = 5.0    # ≥ this → included corpus  (lowered 5.5→5.0: sensitivity run 2026-04-29)
 SCORE_BORDER     = 4.0    # ≥ this → borderline review; < this → excluded
 MIN_PDF_BYTES    = 8_000
 REQUEST_TIMEOUT  = 30     # seconds

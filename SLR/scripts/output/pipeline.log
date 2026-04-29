@@ -2005,3 +2005,735 @@
 11:07:47 INFO    │ ======================================================================
 11:07:47 WARNING │ Corpus size 31 < 40 target minimum.
 11:07:47 WARNING │ Consider: broadening search strings or lowering threshold to 5.5 (sensitivity lower bound).
+12:34:22 INFO    │ 
+======================================================================
+12:34:22 INFO    │               SLR Quality Filter + Acquisition Pipeline               
+12:34:22 INFO    │ ======================================================================
+12:34:22 INFO    │ Input  : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\papers_raw.csv
+12:34:22 INFO    │ Output : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output
+12:34:22 INFO    │ PDFs   : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
+12:34:22 INFO    │ Log    : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output\pipeline.log
+12:34:22 INFO    │ Free sources  : OpenAlex, Unpaywall, MDPI-Direct, CrossRef, arXiv, IEEE (always active)
+12:34:22 INFO    │ CORE API  : ✓ configured
+12:34:22 INFO    │ S2 API    : ✓ configured
+12:34:22 INFO    │ ======================================================================
+12:34:22 INFO    │ Loaded 1001 records from papers_raw.csv
+12:34:22 INFO    │ 
+── Stage 1: Inclusion / Exclusion Filtering ──
+12:34:23 INFO    │   Passed : 113
+12:34:23 INFO    │   Excluded (Stage 1) : 888
+12:34:23 INFO    │ 
+── Stage 2: Quality Scoring ──
+12:34:23 INFO    │   Included (≥5.0)  : 45
+12:34:23 INFO    │   Borderline (4.0–4.9) : 51
+12:34:23 INFO    │   Excluded (<4.0)   : 17
+12:34:23 INFO    │ 
+── Stage 3: OA Acquisition ──
+12:34:23 DEBUG   │   Trying acquisition for: AI-Driven Cloud Security: Examining the Impact of User Behav
+12:34:24 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:34:25 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.9734/ajrcos/2024/v17i3424?select=open_access HTTP/1.1" 200 None
+12:34:25 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.9734/ajrcos/2024/v17i3424
+12:34:25 DEBUG   │     [OpenAlex] Found URL: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:25 DEBUG   │     [OpenAlex] Attempting download: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:25 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:26 DEBUG   │ https://journalajrcos.com:443 "HEAD /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 0
+12:34:26 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:26 DEBUG   │ https://journalajrcos.com:443 "GET /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 None
+12:34:26 DEBUG   │     [OpenAlex] Download failed: HTTP 403
+12:34:28 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:34:29 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.9734/ajrcos/2024/v17i3424?email=researcher%40binus.ac.id HTTP/1.1" 200 953
+12:34:29 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.9734/ajrcos/2024/v17i3424
+12:34:29 DEBUG   │     [Unpaywall] Found URL: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:29 DEBUG   │     [Unpaywall] Attempting download: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:29 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:29 DEBUG   │ https://journalajrcos.com:443 "HEAD /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 0
+12:34:29 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:30 DEBUG   │ https://journalajrcos.com:443 "GET /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 None
+12:34:30 DEBUG   │     [Unpaywall] Download failed: HTTP 403
+12:34:31 DEBUG   │     [MDPI] No URL returned — skipping
+12:34:33 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:34:34 DEBUG   │ https://api.crossref.org:443 "GET /works/10.9734/ajrcos/2024/v17i3424 HTTP/1.1" 200 2240
+12:34:34 DEBUG   │     [CrossRef] HTTP 200 for doi:10.9734/ajrcos/2024/v17i3424
+12:34:34 DEBUG   │     [CrossRef] Found PDF link: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:34 DEBUG   │     [CrossRef] Attempting download: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:34 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:34 DEBUG   │ https://journalajrcos.com:443 "HEAD /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 0
+12:34:34 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:35 DEBUG   │ https://journalajrcos.com:443 "GET /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 None
+12:34:35 DEBUG   │     [CrossRef] Download failed: HTTP 403
+12:34:36 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:34:37 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.9734%2Fajrcos%2F2024%2Fv17i3424&start=0&max_results=3 HTTP/1.1" 200 735
+12:34:37 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.9734/ajrcos/2024/v17i3424
+12:34:37 DEBUG   │     [arXiv-DOI] No matching entries
+12:34:37 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:34:38 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22AI-Driven+Cloud+Security%3A+Examining+the+Impact+of+User+Behav%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:34:38 DEBUG   │     [arXiv-Title] HTTP 200 query='AI-Driven Cloud Security: Examining the Impact of '
+12:34:38 DEBUG   │     [arXiv-Title] No matching entries
+12:34:38 DEBUG   │     [arXiv] No URL returned — skipping
+12:34:39 DEBUG   │     [IEEE] No URL returned — skipping
+12:34:41 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:34:41 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.9734/ajrcos/2024/v17i3424?fields=openAccessPdf HTTP/1.1" 200 188
+12:34:41 DEBUG   │     [S2] HTTP 200 for doi:10.9734/ajrcos/2024/v17i3424
+12:34:41 DEBUG   │     [S2] Found URL: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:41 DEBUG   │     [SemanticScholar] Attempting download: https://journalajrcos.com/index.php/AJRCOS/article/download/424/839
+12:34:41 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:42 DEBUG   │ https://journalajrcos.com:443 "HEAD /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 0
+12:34:42 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:42 DEBUG   │ https://journalajrcos.com:443 "GET /index.php/AJRCOS/article/download/424/839 HTTP/1.1" 403 None
+12:34:42 DEBUG   │     [SemanticScholar] Download failed: HTTP 403
+12:34:43 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:34:44 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.9734/ajrcos/2024/v17i3424 HTTP/1.1" 404 None
+12:34:44 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.9734/ajrcos/2024/v17i3424
+12:34:44 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:34:44 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:34:45 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22AI-Driven+Cloud+Security%3A+Examining+the+Impact+of+User+Behav%22&limit=3 HTTP/1.1" 301 None
+12:34:45 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22AI-Driven+Cloud+Security%3A+Examining+the+Impact+of+User+Behav%22&limit=3 HTTP/1.1" 200 None
+12:34:45 DEBUG   │     [CORE-Title] HTTP 200 query='AI-Driven Cloud Security: Examining the Impact of '
+12:34:45 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:34:45 DEBUG   │     [CORE] No URL returned — skipping
+12:34:47 DEBUG   │     [DirectURL] Attempting download: https://journalajrcos.com/index.php/ajrcos/article/download/424/839
+12:34:47 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:47 DEBUG   │ https://journalajrcos.com:443 "HEAD /index.php/ajrcos/article/download/424/839 HTTP/1.1" 403 0
+12:34:47 DEBUG   │ Starting new HTTPS connection (1): journalajrcos.com:443
+12:34:47 DEBUG   │ https://journalajrcos.com:443 "GET /index.php/ajrcos/article/download/424/839 HTTP/1.1" 403 None
+12:34:47 DEBUG   │     [DirectURL] Download failed: HTTP 403
+12:34:47 DEBUG   │   Trying acquisition for: Unleashing efficiency and insights: Exploring the potential 
+12:34:49 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:34:49 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.1002/jcaf.22663?select=open_access HTTP/1.1" 200 None
+12:34:49 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.1002/jcaf.22663
+12:34:49 DEBUG   │     [OpenAlex] Found URL: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcaf.22663
+12:34:49 DEBUG   │     [OpenAlex] Attempting download: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcaf.22663
+12:34:49 DEBUG   │ Starting new HTTPS connection (1): onlinelibrary.wiley.com:443
+12:34:50 DEBUG   │ https://onlinelibrary.wiley.com:443 "HEAD /doi/pdfdirect/10.1002/jcaf.22663 HTTP/1.1" 403 0
+12:34:50 DEBUG   │ Starting new HTTPS connection (1): onlinelibrary.wiley.com:443
+12:34:50 DEBUG   │ https://onlinelibrary.wiley.com:443 "GET /doi/pdfdirect/10.1002/jcaf.22663 HTTP/1.1" 403 None
+12:34:50 DEBUG   │     [OpenAlex] Download failed: HTTP 403
+12:34:52 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:34:53 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.1002/jcaf.22663?email=researcher%40binus.ac.id HTTP/1.1" 200 754
+12:34:53 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.1002/jcaf.22663
+12:34:53 DEBUG   │     [Unpaywall] Found URL: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcaf.22663
+12:34:53 DEBUG   │     [Unpaywall] Attempting download: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcaf.22663
+12:34:53 DEBUG   │ Starting new HTTPS connection (1): onlinelibrary.wiley.com:443
+12:34:53 DEBUG   │ https://onlinelibrary.wiley.com:443 "HEAD /doi/pdfdirect/10.1002/jcaf.22663 HTTP/1.1" 403 0
+12:34:53 DEBUG   │ Starting new HTTPS connection (1): onlinelibrary.wiley.com:443
+12:34:54 DEBUG   │ https://onlinelibrary.wiley.com:443 "GET /doi/pdfdirect/10.1002/jcaf.22663 HTTP/1.1" 403 None
+12:34:54 DEBUG   │     [Unpaywall] Download failed: HTTP 403
+12:34:55 DEBUG   │     [MDPI] No URL returned — skipping
+12:34:57 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:34:57 DEBUG   │ https://api.crossref.org:443 "GET /works/10.1002/jcaf.22663 HTTP/1.1" 200 4740
+12:34:57 DEBUG   │     [CrossRef] HTTP 200 for doi:10.1002/jcaf.22663
+12:34:57 DEBUG   │     [CrossRef] 1 links but no PDF found
+12:34:57 DEBUG   │     [CrossRef] No URL returned — skipping
+12:34:59 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:35:00 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.1002%2Fjcaf.22663&start=0&max_results=3 HTTP/1.1" 200 715
+12:35:00 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.1002/jcaf.22663
+12:35:00 DEBUG   │     [arXiv-DOI] No matching entries
+12:35:00 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:35:00 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22Unleashing+efficiency+and+insights%3A+Exploring+the+potential%22&start=0&max_results=3 HTTP/1.1" 200 803
+12:35:00 DEBUG   │     [arXiv-Title] HTTP 200 query='Unleashing efficiency and insights: Exploring the '
+12:35:00 DEBUG   │     [arXiv-Title] No matching entries
+12:35:00 DEBUG   │     [arXiv] No URL returned — skipping
+12:35:02 DEBUG   │     [IEEE] No URL returned — skipping
+12:35:03 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:35:04 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.1002/jcaf.22663?fields=openAccessPdf HTTP/1.1" 200 123
+12:35:04 DEBUG   │     [S2] HTTP 200 for doi:10.1002/jcaf.22663
+12:35:04 DEBUG   │     [S2] No openAccessPdf in response
+12:35:04 DEBUG   │     [SemanticScholar] No URL returned — skipping
+12:35:06 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:35:06 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.1002/jcaf.22663 HTTP/1.1" 404 None
+12:35:06 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.1002/jcaf.22663
+12:35:06 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:35:06 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:35:07 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22Unleashing+efficiency+and+insights%3A+Exploring+the+potential%22&limit=3 HTTP/1.1" 301 None
+12:35:07 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22Unleashing+efficiency+and+insights%3A+Exploring+the+potential%22&limit=3 HTTP/1.1" 200 None
+12:35:07 DEBUG   │     [CORE-Title] HTTP 200 query='Unleashing efficiency and insights: Exploring the '
+12:35:07 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:35:07 DEBUG   │     [CORE] No URL returned — skipping
+12:35:09 DEBUG   │     [DirectURL] Attempting download: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcaf.22663
+12:35:09 DEBUG   │ Starting new HTTPS connection (1): onlinelibrary.wiley.com:443
+12:35:09 DEBUG   │ https://onlinelibrary.wiley.com:443 "HEAD /doi/pdfdirect/10.1002/jcaf.22663 HTTP/1.1" 403 0
+12:35:09 DEBUG   │ Starting new HTTPS connection (1): onlinelibrary.wiley.com:443
+12:35:09 DEBUG   │ https://onlinelibrary.wiley.com:443 "GET /doi/pdfdirect/10.1002/jcaf.22663 HTTP/1.1" 403 None
+12:35:09 DEBUG   │     [DirectURL] Download failed: HTTP 403
+12:35:09 DEBUG   │   Trying acquisition for: EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMPARATIVE AN
+12:35:11 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:35:11 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.51594/csitrj.v5i2.759?select=open_access HTTP/1.1" 200 None
+12:35:11 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.51594/csitrj.v5i2.759
+12:35:11 DEBUG   │     [OpenAlex] Found URL: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:11 DEBUG   │     [OpenAlex] Attempting download: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:11 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:12 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 0
+12:35:12 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:12 DEBUG   │ https://fepbl.com:443 "GET /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 None
+12:35:12 DEBUG   │     [OpenAlex] Download failed: HTTP 403
+12:35:14 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:35:14 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.51594/csitrj.v5i2.759?email=researcher%40binus.ac.id HTTP/1.1" 200 1006
+12:35:14 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.51594/csitrj.v5i2.759
+12:35:14 DEBUG   │     [Unpaywall] Found URL: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:14 DEBUG   │     [Unpaywall] Attempting download: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:14 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:15 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 0
+12:35:15 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:15 DEBUG   │ https://fepbl.com:443 "GET /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 None
+12:35:15 DEBUG   │     [Unpaywall] Download failed: HTTP 403
+12:35:17 DEBUG   │     [MDPI] No URL returned — skipping
+12:35:18 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:35:19 DEBUG   │ https://api.crossref.org:443 "GET /works/10.51594/csitrj.v5i2.759 HTTP/1.1" 200 2100
+12:35:19 DEBUG   │     [CrossRef] HTTP 200 for doi:10.51594/csitrj.v5i2.759
+12:35:19 DEBUG   │     [CrossRef] Found PDF link: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:19 DEBUG   │     [CrossRef] Attempting download: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:19 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:19 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 0
+12:35:19 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:20 DEBUG   │ https://fepbl.com:443 "GET /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 None
+12:35:20 DEBUG   │     [CrossRef] Download failed: HTTP 403
+12:35:21 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:35:22 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.51594%2Fcsitrj.v5i2.759&start=0&max_results=3 HTTP/1.1" 200 727
+12:35:22 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.51594/csitrj.v5i2.759
+12:35:22 DEBUG   │     [arXiv-DOI] No matching entries
+12:35:22 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:35:22 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22EVOLVING+TAX+COMPLIANCE+IN+THE+DIGITAL+ERA%3A+A+COMPARATIVE+AN%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:35:22 DEBUG   │     [arXiv-Title] HTTP 200 query='EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMP'
+12:35:22 DEBUG   │     [arXiv-Title] No matching entries
+12:35:22 DEBUG   │     [arXiv] No URL returned — skipping
+12:35:24 DEBUG   │     [IEEE] No URL returned — skipping
+12:35:25 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:35:26 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.51594/csitrj.v5i2.759?fields=openAccessPdf HTTP/1.1" 200 186
+12:35:26 DEBUG   │     [S2] HTTP 200 for doi:10.51594/csitrj.v5i2.759
+12:35:26 DEBUG   │     [S2] Found URL: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:26 DEBUG   │     [SemanticScholar] Attempting download: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:26 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:26 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 0
+12:35:26 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:27 DEBUG   │ https://fepbl.com:443 "GET /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 None
+12:35:27 DEBUG   │     [SemanticScholar] Download failed: HTTP 403
+12:35:28 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:35:29 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.51594/csitrj.v5i2.759 HTTP/1.1" 404 None
+12:35:29 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.51594/csitrj.v5i2.759
+12:35:29 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:35:29 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:35:30 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22EVOLVING+TAX+COMPLIANCE+IN+THE+DIGITAL+ERA%3A+A+COMPARATIVE+AN%22&limit=3 HTTP/1.1" 301 None
+12:35:30 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22EVOLVING+TAX+COMPLIANCE+IN+THE+DIGITAL+ERA%3A+A+COMPARATIVE+AN%22&limit=3 HTTP/1.1" 200 None
+12:35:30 DEBUG   │     [CORE-Title] HTTP 200 query='EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMP'
+12:35:30 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:35:30 DEBUG   │     [CORE] No URL returned — skipping
+12:35:31 DEBUG   │     [DirectURL] Attempting download: https://fepbl.com/index.php/csitrj/article/download/759/953
+12:35:31 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:32 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 0
+12:35:32 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:35:32 DEBUG   │ https://fepbl.com:443 "GET /index.php/csitrj/article/download/759/953 HTTP/1.1" 403 None
+12:35:32 DEBUG   │     [DirectURL] Download failed: HTTP 403
+12:35:32 DEBUG   │   Trying acquisition for: Securing Government Revenue: A Cloud-Based AI Model for Pred
+12:35:34 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:35:34 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.7753/ijcatr1405.1007?select=open_access HTTP/1.1" 200 None
+12:35:34 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.7753/ijcatr1405.1007
+12:35:34 DEBUG   │     [OpenAlex] Found URL: https://doi.org/10.7753/ijcatr1405.1007
+12:35:34 DEBUG   │     [OpenAlex] Attempting download: https://doi.org/10.7753/ijcatr1405.1007
+12:35:34 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:35:35 DEBUG   │ https://doi.org:443 "HEAD /10.7753/ijcatr1405.1007 HTTP/1.1" 302 0
+12:35:35 DEBUG   │ Starting new HTTPS connection (1): ijcat.com:443
+12:35:35 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:35:36 DEBUG   │ https://doi.org:443 "GET /10.7753/ijcatr1405.1007 HTTP/1.1" 302 None
+12:35:36 DEBUG   │ Starting new HTTPS connection (1): ijcat.com:443
+12:35:36 DEBUG   │     [OpenAlex] Download failed: Connection error
+12:35:37 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:35:39 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.7753/ijcatr1405.1007?email=researcher%40binus.ac.id HTTP/1.1" 200 571
+12:35:39 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.7753/ijcatr1405.1007
+12:35:39 DEBUG   │     [Unpaywall] Found URL: https://doi.org/10.7753/ijcatr1405.1007
+12:35:39 DEBUG   │     [Unpaywall] Attempting download: https://doi.org/10.7753/ijcatr1405.1007
+12:35:39 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:35:39 DEBUG   │ https://doi.org:443 "HEAD /10.7753/ijcatr1405.1007 HTTP/1.1" 302 0
+12:35:39 DEBUG   │ Starting new HTTPS connection (1): ijcat.com:443
+12:35:40 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:35:40 DEBUG   │ https://doi.org:443 "GET /10.7753/ijcatr1405.1007 HTTP/1.1" 302 None
+12:35:40 DEBUG   │ Starting new HTTPS connection (1): ijcat.com:443
+12:35:40 DEBUG   │     [Unpaywall] Download failed: Connection error
+12:35:42 DEBUG   │     [MDPI] No URL returned — skipping
+12:35:43 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:35:44 DEBUG   │ https://api.crossref.org:443 "GET /works/10.7753/ijcatr1405.1007 HTTP/1.1" 200 690
+12:35:44 DEBUG   │     [CrossRef] HTTP 200 for doi:10.7753/ijcatr1405.1007
+12:35:44 DEBUG   │     [CrossRef] 0 links but no PDF found
+12:35:44 DEBUG   │     [CrossRef] No URL returned — skipping
+12:35:46 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:35:47 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.7753%2Fijcatr1405.1007&start=0&max_results=3 HTTP/1.1" 200 725
+12:35:47 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.7753/ijcatr1405.1007
+12:35:47 DEBUG   │     [arXiv-DOI] No matching entries
+12:35:47 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:35:47 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22Securing+Government+Revenue%3A+A+Cloud-Based+AI+Model+for+Pred%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:35:47 DEBUG   │     [arXiv-Title] HTTP 200 query='Securing Government Revenue: A Cloud-Based AI Mode'
+12:35:47 DEBUG   │     [arXiv-Title] No matching entries
+12:35:47 DEBUG   │     [arXiv] No URL returned — skipping
+12:35:49 DEBUG   │     [IEEE] No URL returned — skipping
+12:35:50 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:35:51 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.7753/ijcatr1405.1007?fields=openAccessPdf HTTP/1.1" 200 119
+12:35:51 DEBUG   │     [S2] HTTP 200 for doi:10.7753/ijcatr1405.1007
+12:35:51 DEBUG   │     [S2] No openAccessPdf in response
+12:35:51 DEBUG   │     [SemanticScholar] No URL returned — skipping
+12:35:52 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:35:53 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.7753/ijcatr1405.1007 HTTP/1.1" 404 None
+12:35:53 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.7753/ijcatr1405.1007
+12:35:53 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:35:53 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:35:54 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22Securing+Government+Revenue%3A+A+Cloud-Based+AI+Model+for+Pred%22&limit=3 HTTP/1.1" 301 None
+12:35:54 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22Securing+Government+Revenue%3A+A+Cloud-Based+AI+Model+for+Pred%22&limit=3 HTTP/1.1" 200 None
+12:35:54 DEBUG   │     [CORE-Title] HTTP 200 query='Securing Government Revenue: A Cloud-Based AI Mode'
+12:35:54 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:35:54 DEBUG   │     [CORE] No URL returned — skipping
+12:35:55 DEBUG   │     [DirectURL] Attempting download: https://doi.org/10.7753/ijcatr1405.1007
+12:35:55 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:35:56 DEBUG   │ https://doi.org:443 "HEAD /10.7753/ijcatr1405.1007 HTTP/1.1" 302 0
+12:35:56 DEBUG   │ Starting new HTTPS connection (1): ijcat.com:443
+12:35:56 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:35:56 DEBUG   │ https://doi.org:443 "GET /10.7753/ijcatr1405.1007 HTTP/1.1" 302 None
+12:35:56 DEBUG   │ Starting new HTTPS connection (1): ijcat.com:443
+12:35:57 DEBUG   │     [DirectURL] Download failed: Connection error
+12:35:57 DEBUG   │   Trying acquisition for: AI-based decision support system for public procurement
+12:35:59 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:35:59 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.1016/j.is.2023.102284?select=open_access HTTP/1.1" 200 None
+12:35:59 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.1016/j.is.2023.102284
+12:35:59 DEBUG   │     [OpenAlex] Found URL: https://doi.org/10.1016/j.is.2023.102284
+12:35:59 DEBUG   │     [OpenAlex] Attempting download: https://doi.org/10.1016/j.is.2023.102284
+12:35:59 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:36:00 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.is.2023.102284 HTTP/1.1" 302 0
+12:36:00 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:36:01 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S0306437923001205 HTTP/1.1" 200 0
+12:36:01 DEBUG   │     [OpenAlex] Download failed: Content-Type HTML — likely landing page
+12:36:03 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:36:03 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.1016/j.is.2023.102284?email=researcher%40binus.ac.id HTTP/1.1" 200 880
+12:36:03 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.1016/j.is.2023.102284
+12:36:03 DEBUG   │     [Unpaywall] Found URL: https://doi.org/10.1016/j.is.2023.102284
+12:36:03 DEBUG   │     [Unpaywall] Attempting download: https://doi.org/10.1016/j.is.2023.102284
+12:36:03 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:36:04 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.is.2023.102284 HTTP/1.1" 302 0
+12:36:04 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:36:05 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S0306437923001205 HTTP/1.1" 200 0
+12:36:05 DEBUG   │     [Unpaywall] Download failed: Content-Type HTML — likely landing page
+12:36:06 DEBUG   │     [MDPI] No URL returned — skipping
+12:36:08 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:36:09 DEBUG   │ https://api.crossref.org:443 "GET /works/10.1016/j.is.2023.102284 HTTP/1.1" 200 4999
+12:36:09 DEBUG   │     [CrossRef] HTTP 200 for doi:10.1016/j.is.2023.102284
+12:36:09 DEBUG   │     [CrossRef] 2 links but no PDF found
+12:36:09 DEBUG   │     [CrossRef] No URL returned — skipping
+12:36:11 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:36:11 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.1016%2Fj.is.2023.102284&start=0&max_results=3 HTTP/1.1" 200 727
+12:36:11 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.1016/j.is.2023.102284
+12:36:11 DEBUG   │     [arXiv-DOI] No matching entries
+12:36:11 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:36:12 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22AI-based+decision+support+system+for+public+procurement%22&start=0&max_results=3 HTTP/1.1" 200 795
+12:36:12 DEBUG   │     [arXiv-Title] HTTP 200 query='AI-based decision support system for public procur'
+12:36:12 DEBUG   │     [arXiv-Title] No matching entries
+12:36:12 DEBUG   │     [arXiv] No URL returned — skipping
+12:36:14 DEBUG   │     [IEEE] No URL returned — skipping
+12:36:15 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:36:16 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.1016/j.is.2023.102284?fields=openAccessPdf HTTP/1.1" 200 169
+12:36:16 DEBUG   │     [S2] HTTP 200 for doi:10.1016/j.is.2023.102284
+12:36:16 DEBUG   │     [S2] Found URL: https://doi.org/10.1016/j.is.2023.102284
+12:36:16 DEBUG   │     [SemanticScholar] Attempting download: https://doi.org/10.1016/j.is.2023.102284
+12:36:16 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:36:16 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.is.2023.102284 HTTP/1.1" 302 0
+12:36:16 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:36:17 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S0306437923001205 HTTP/1.1" 200 0
+12:36:17 DEBUG   │     [SemanticScholar] Download failed: Content-Type HTML — likely landing page
+12:36:19 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:36:19 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.1016/j.is.2023.102284 HTTP/1.1" 404 None
+12:36:19 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.1016/j.is.2023.102284
+12:36:19 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:36:19 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:36:20 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22AI-based+decision+support+system+for+public+procurement%22&limit=3 HTTP/1.1" 301 None
+12:36:20 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22AI-based+decision+support+system+for+public+procurement%22&limit=3 HTTP/1.1" 200 None
+12:36:20 DEBUG   │     [CORE-Title] HTTP 200 query='AI-based decision support system for public procur'
+12:36:20 DEBUG   │     [CORE-Title] 1 hits but none with downloadUrl
+12:36:20 DEBUG   │     [CORE] No URL returned — skipping
+12:36:22 DEBUG   │     [DirectURL] Attempting download: https://doi.org/10.1016/j.is.2023.102284
+12:36:22 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:36:22 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.is.2023.102284 HTTP/1.1" 302 0
+12:36:22 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:36:23 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S0306437923001205 HTTP/1.1" 200 0
+12:36:23 DEBUG   │     [DirectURL] Download failed: Content-Type HTML — likely landing page
+12:36:23 DEBUG   │   Trying acquisition for: Enhancing fraud detection in accounting through AI: Techniqu
+12:36:24 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:36:25 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.51594/farj.v6i6.1232?select=open_access HTTP/1.1" 200 None
+12:36:25 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.51594/farj.v6i6.1232
+12:36:25 DEBUG   │     [OpenAlex] Found URL: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:25 DEBUG   │     [OpenAlex] Attempting download: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:25 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:26 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 0
+12:36:26 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:26 DEBUG   │ https://fepbl.com:443 "GET /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 None
+12:36:26 DEBUG   │     [OpenAlex] Download failed: HTTP 403
+12:36:27 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:36:28 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.51594/farj.v6i6.1232?email=researcher%40binus.ac.id HTTP/1.1" 200 783
+12:36:28 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.51594/farj.v6i6.1232
+12:36:28 DEBUG   │     [Unpaywall] Found URL: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:28 DEBUG   │     [Unpaywall] Attempting download: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:28 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:28 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 0
+12:36:28 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:29 DEBUG   │ https://fepbl.com:443 "GET /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 None
+12:36:29 DEBUG   │     [Unpaywall] Download failed: HTTP 403
+12:36:30 DEBUG   │     [MDPI] No URL returned — skipping
+12:36:32 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:36:33 DEBUG   │ https://api.crossref.org:443 "GET /works/10.51594/farj.v6i6.1232 HTTP/1.1" 200 2705
+12:36:33 DEBUG   │     [CrossRef] HTTP 200 for doi:10.51594/farj.v6i6.1232
+12:36:33 DEBUG   │     [CrossRef] Found PDF link: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:33 DEBUG   │     [CrossRef] Attempting download: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:33 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:34 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 0
+12:36:34 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:34 DEBUG   │ https://fepbl.com:443 "GET /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 None
+12:36:34 DEBUG   │     [CrossRef] Download failed: HTTP 403
+12:36:36 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:36:36 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.51594%2Ffarj.v6i6.1232&start=0&max_results=3 HTTP/1.1" 200 725
+12:36:36 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.51594/farj.v6i6.1232
+12:36:36 DEBUG   │     [arXiv-DOI] No matching entries
+12:36:36 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:36:37 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22Enhancing+fraud+detection+in+accounting+through+AI%3A+Techniqu%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:36:37 DEBUG   │     [arXiv-Title] HTTP 200 query='Enhancing fraud detection in accounting through AI'
+12:36:37 DEBUG   │     [arXiv-Title] No matching entries
+12:36:37 DEBUG   │     [arXiv] No URL returned — skipping
+12:36:39 DEBUG   │     [IEEE] No URL returned — skipping
+12:36:40 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:36:41 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.51594/farj.v6i6.1232?fields=openAccessPdf HTTP/1.1" 200 186
+12:36:41 DEBUG   │     [S2] HTTP 200 for doi:10.51594/farj.v6i6.1232
+12:36:41 DEBUG   │     [S2] Found URL: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:41 DEBUG   │     [SemanticScholar] Attempting download: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:41 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:41 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 0
+12:36:41 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:41 DEBUG   │ https://fepbl.com:443 "GET /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 None
+12:36:41 DEBUG   │     [SemanticScholar] Download failed: HTTP 403
+12:36:43 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:36:43 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.51594/farj.v6i6.1232 HTTP/1.1" 404 None
+12:36:43 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.51594/farj.v6i6.1232
+12:36:43 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:36:43 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:36:44 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22Enhancing+fraud+detection+in+accounting+through+AI%3A+Techniqu%22&limit=3 HTTP/1.1" 301 None
+12:36:44 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22Enhancing+fraud+detection+in+accounting+through+AI%3A+Techniqu%22&limit=3 HTTP/1.1" 200 None
+12:36:44 DEBUG   │     [CORE-Title] HTTP 200 query='Enhancing fraud detection in accounting through AI'
+12:36:44 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:36:44 DEBUG   │     [CORE] No URL returned — skipping
+12:36:46 DEBUG   │     [DirectURL] Attempting download: https://fepbl.com/index.php/farj/article/download/1232/1458
+12:36:46 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:46 DEBUG   │ https://fepbl.com:443 "HEAD /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 0
+12:36:46 DEBUG   │ Starting new HTTPS connection (1): fepbl.com:443
+12:36:47 DEBUG   │ https://fepbl.com:443 "GET /index.php/farj/article/download/1232/1458 HTTP/1.1" 403 None
+12:36:47 DEBUG   │     [DirectURL] Download failed: HTTP 403
+12:36:47 DEBUG   │   Trying acquisition for: Determinants of fraud in the village government: testing whi
+12:36:48 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:36:49 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.22219/jaa.v7i4.36914?select=open_access HTTP/1.1" 200 None
+12:36:49 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.22219/jaa.v7i4.36914
+12:36:49 DEBUG   │     [OpenAlex] Found URL: https://ejournal.umm.ac.id/index.php/jaa/article/download/36914/15606
+12:36:49 DEBUG   │     [OpenAlex] Attempting download: https://ejournal.umm.ac.id/index.php/jaa/article/download/36914/15606
+12:36:49 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:36:49 DEBUG   │ https://ejournal.umm.ac.id:443 "HEAD /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 0
+12:36:49 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:36:49 DEBUG   │ https://ejournal.umm.ac.id:443 "GET /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 None
+12:36:49 DEBUG   │     [OpenAlex] Download failed: HTTP 403
+12:36:51 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:36:52 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.22219/jaa.v7i4.36914?email=researcher%40binus.ac.id HTTP/1.1" 200 858
+12:36:52 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.22219/jaa.v7i4.36914
+12:36:52 DEBUG   │     [Unpaywall] Found URL: https://ejournal.umm.ac.id/index.php/jaa/article/download/36914/15606
+12:36:52 DEBUG   │     [Unpaywall] Attempting download: https://ejournal.umm.ac.id/index.php/jaa/article/download/36914/15606
+12:36:52 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:36:52 DEBUG   │ https://ejournal.umm.ac.id:443 "HEAD /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 0
+12:36:52 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:36:52 DEBUG   │ https://ejournal.umm.ac.id:443 "GET /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 None
+12:36:53 DEBUG   │     [Unpaywall] Download failed: HTTP 403
+12:36:54 DEBUG   │     [MDPI] No URL returned — skipping
+12:36:56 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:36:56 DEBUG   │ https://api.crossref.org:443 "GET /works/10.22219/jaa.v7i4.36914 HTTP/1.1" 200 1639
+12:36:56 DEBUG   │     [CrossRef] HTTP 200 for doi:10.22219/jaa.v7i4.36914
+12:36:56 DEBUG   │     [CrossRef] Found PDF link: https://ejournal.umm.ac.id/index.php/jaa/article/download/36914/15606
+12:36:56 DEBUG   │     [CrossRef] Attempting download: https://ejournal.umm.ac.id/index.php/jaa/article/download/36914/15606
+12:36:56 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:36:57 DEBUG   │ https://ejournal.umm.ac.id:443 "HEAD /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 0
+12:36:57 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:36:57 DEBUG   │ https://ejournal.umm.ac.id:443 "GET /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 None
+12:36:57 DEBUG   │     [CrossRef] Download failed: HTTP 403
+12:36:58 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:36:59 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.22219%2Fjaa.v7i4.36914&start=0&max_results=3 HTTP/1.1" 200 725
+12:36:59 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.22219/jaa.v7i4.36914
+12:36:59 DEBUG   │     [arXiv-DOI] No matching entries
+12:36:59 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:37:00 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22Determinants+of+fraud+in+the+village+government%3A+testing+whi%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:37:00 DEBUG   │     [arXiv-Title] HTTP 200 query='Determinants of fraud in the village government: t'
+12:37:00 DEBUG   │     [arXiv-Title] No matching entries
+12:37:00 DEBUG   │     [arXiv] No URL returned — skipping
+12:37:01 DEBUG   │     [IEEE] No URL returned — skipping
+12:37:03 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:37:04 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.22219/jaa.v7i4.36914?fields=openAccessPdf HTTP/1.1" 200 119
+12:37:04 DEBUG   │     [S2] HTTP 200 for doi:10.22219/jaa.v7i4.36914
+12:37:04 DEBUG   │     [S2] No openAccessPdf in response
+12:37:04 DEBUG   │     [SemanticScholar] No URL returned — skipping
+12:37:05 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:37:06 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.22219/jaa.v7i4.36914 HTTP/1.1" 404 None
+12:37:06 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.22219/jaa.v7i4.36914
+12:37:06 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:37:06 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:37:06 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22Determinants+of+fraud+in+the+village+government%3A+testing+whi%22&limit=3 HTTP/1.1" 301 None
+12:37:07 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22Determinants+of+fraud+in+the+village+government%3A+testing+whi%22&limit=3 HTTP/1.1" 200 None
+12:37:07 DEBUG   │     [CORE-Title] HTTP 200 query='Determinants of fraud in the village government: t'
+12:37:07 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:37:07 DEBUG   │     [CORE] No URL returned — skipping
+12:37:08 DEBUG   │     [DirectURL] Attempting download: https://ejournal.umm.ac.id/index.php/jaa/article/download/36914/15606
+12:37:08 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:37:08 DEBUG   │ https://ejournal.umm.ac.id:443 "HEAD /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 0
+12:37:08 DEBUG   │ Starting new HTTPS connection (1): ejournal.umm.ac.id:443
+12:37:09 DEBUG   │ https://ejournal.umm.ac.id:443 "GET /index.php/jaa/article/download/36914/15606 HTTP/1.1" 403 None
+12:37:09 DEBUG   │     [DirectURL] Download failed: HTTP 403
+12:37:09 DEBUG   │   Trying acquisition for: The Influence of Village Apparatus Competence, Government Co
+12:37:10 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:37:11 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.55927/ijbae.v4i3.150?select=open_access HTTP/1.1" 200 None
+12:37:11 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.55927/ijbae.v4i3.150
+12:37:11 DEBUG   │     [OpenAlex] Found URL: https://nblformosapublisher.org/index.php/ijbae/article/download/150/185
+12:37:11 DEBUG   │     [OpenAlex] Attempting download: https://nblformosapublisher.org/index.php/ijbae/article/download/150/185
+12:37:11 DEBUG   │ Starting new HTTPS connection (1): nblformosapublisher.org:443
+12:37:11 DEBUG   │ https://nblformosapublisher.org:443 "HEAD /index.php/ijbae/article/download/150/185 HTTP/1.1" 404 0
+12:37:11 DEBUG   │     [OpenAlex] Download failed: HEAD 404
+12:37:13 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:37:14 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.55927/ijbae.v4i3.150?email=researcher%40binus.ac.id HTTP/1.1" 200 813
+12:37:14 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.55927/ijbae.v4i3.150
+12:37:14 DEBUG   │     [Unpaywall] Found URL: https://nblformosapublisher.org/index.php/ijbae/article/download/150/185
+12:37:14 DEBUG   │     [Unpaywall] Attempting download: https://nblformosapublisher.org/index.php/ijbae/article/download/150/185
+12:37:14 DEBUG   │ Starting new HTTPS connection (1): nblformosapublisher.org:443
+12:37:14 DEBUG   │ https://nblformosapublisher.org:443 "HEAD /index.php/ijbae/article/download/150/185 HTTP/1.1" 404 0
+12:37:14 DEBUG   │     [Unpaywall] Download failed: HEAD 404
+12:37:16 DEBUG   │     [MDPI] No URL returned — skipping
+12:37:17 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:37:18 DEBUG   │ https://api.crossref.org:443 "GET /works/10.55927/ijbae.v4i3.150 HTTP/1.1" 200 1433
+12:37:18 DEBUG   │     [CrossRef] HTTP 200 for doi:10.55927/ijbae.v4i3.150
+12:37:18 DEBUG   │     [CrossRef] Found PDF link: https://nblformosapublisher.org/index.php/ijbae/article/download/150/185
+12:37:18 DEBUG   │     [CrossRef] Attempting download: https://nblformosapublisher.org/index.php/ijbae/article/download/150/185
+12:37:18 DEBUG   │ Starting new HTTPS connection (1): nblformosapublisher.org:443
+12:37:18 DEBUG   │ https://nblformosapublisher.org:443 "HEAD /index.php/ijbae/article/download/150/185 HTTP/1.1" 404 0
+12:37:18 DEBUG   │     [CrossRef] Download failed: HEAD 404
+12:37:20 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:37:21 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.55927%2Fijbae.v4i3.150&start=0&max_results=3 HTTP/1.1" 200 725
+12:37:21 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.55927/ijbae.v4i3.150
+12:37:21 DEBUG   │     [arXiv-DOI] No matching entries
+12:37:21 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:37:21 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22The+Influence+of+Village+Apparatus+Competence%2C+Government+Co%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:37:21 DEBUG   │     [arXiv-Title] HTTP 200 query='The Influence of Village Apparatus Competence, Gov'
+12:37:21 DEBUG   │     [arXiv-Title] No matching entries
+12:37:21 DEBUG   │     [arXiv] No URL returned — skipping
+12:37:23 DEBUG   │     [IEEE] No URL returned — skipping
+12:37:24 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:37:25 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.55927/ijbae.v4i3.150?fields=openAccessPdf HTTP/1.1" 200 119
+12:37:25 DEBUG   │     [S2] HTTP 200 for doi:10.55927/ijbae.v4i3.150
+12:37:25 DEBUG   │     [S2] No openAccessPdf in response
+12:37:25 DEBUG   │     [SemanticScholar] No URL returned — skipping
+12:37:26 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:37:27 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.55927/ijbae.v4i3.150 HTTP/1.1" 404 None
+12:37:27 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.55927/ijbae.v4i3.150
+12:37:27 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:37:27 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:37:28 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22The+Influence+of+Village+Apparatus+Competence%2C+Government+Co%22&limit=3 HTTP/1.1" 301 None
+12:37:28 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22The+Influence+of+Village+Apparatus+Competence%2C+Government+Co%22&limit=3 HTTP/1.1" 200 None
+12:37:28 DEBUG   │     [CORE-Title] HTTP 200 query='The Influence of Village Apparatus Competence, Gov'
+12:37:28 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:37:28 DEBUG   │     [CORE] No URL returned — skipping
+12:37:30 DEBUG   │     [DirectURL] Attempting download: https://nblformosapublisher.org/index.php/ijbae/article/download/150/185
+12:37:30 DEBUG   │ Starting new HTTPS connection (1): nblformosapublisher.org:443
+12:37:30 DEBUG   │ https://nblformosapublisher.org:443 "HEAD /index.php/ijbae/article/download/150/185 HTTP/1.1" 404 0
+12:37:30 DEBUG   │     [DirectURL] Download failed: HEAD 404
+12:37:30 DEBUG   │   Trying acquisition for: The landscape of public procurement research: a bibliometric
+12:37:32 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:37:32 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.1108/jopp-06-2022-0031?select=open_access HTTP/1.1" 200 None
+12:37:32 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.1108/jopp-06-2022-0031
+12:37:32 DEBUG   │     [OpenAlex] Found URL: https://www.emerald.com/insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?t
+12:37:32 DEBUG   │     [OpenAlex] Attempting download: https://www.emerald.com/insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?t
+12:37:32 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:33 DEBUG   │ https://www.emerald.com:443 "HEAD /insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 0
+12:37:33 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:33 DEBUG   │ https://www.emerald.com:443 "GET /insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 None
+12:37:33 DEBUG   │     [OpenAlex] Download failed: HTTP 403
+12:37:35 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:37:35 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.1108/jopp-06-2022-0031?email=researcher%40binus.ac.id HTTP/1.1" 200 1430
+12:37:35 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.1108/jopp-06-2022-0031
+12:37:35 DEBUG   │     [Unpaywall] Found URL: https://www.emerald.com/insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?t
+12:37:35 DEBUG   │     [Unpaywall] Attempting download: https://www.emerald.com/insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?t
+12:37:35 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:36 DEBUG   │ https://www.emerald.com:443 "HEAD /insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 0
+12:37:36 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:36 DEBUG   │ https://www.emerald.com:443 "GET /insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 None
+12:37:36 DEBUG   │     [Unpaywall] Download failed: HTTP 403
+12:37:37 DEBUG   │     [MDPI] No URL returned — skipping
+12:37:39 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:37:41 DEBUG   │ https://api.crossref.org:443 "GET /works/10.1108/jopp-06-2022-0031 HTTP/1.1" 200 14378
+12:37:41 DEBUG   │     [CrossRef] HTTP 200 for doi:10.1108/jopp-06-2022-0031
+12:37:41 DEBUG   │     [CrossRef] 2 links but no PDF found
+12:37:41 DEBUG   │     [CrossRef] No URL returned — skipping
+12:37:42 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:37:43 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.1108%2Fjopp-06-2022-0031&start=0&max_results=3 HTTP/1.1" 200 729
+12:37:43 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.1108/jopp-06-2022-0031
+12:37:43 DEBUG   │     [arXiv-DOI] No matching entries
+12:37:43 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:37:44 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22The+landscape+of+public+procurement+research%3A+a+bibliometric%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:37:44 DEBUG   │     [arXiv-Title] HTTP 200 query='The landscape of public procurement research: a bi'
+12:37:44 DEBUG   │     [arXiv-Title] No matching entries
+12:37:44 DEBUG   │     [arXiv] No URL returned — skipping
+12:37:45 DEBUG   │     [IEEE] No URL returned — skipping
+12:37:47 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:37:47 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.1108/jopp-06-2022-0031?fields=openAccessPdf HTTP/1.1" 200 314
+12:37:47 DEBUG   │     [S2] HTTP 200 for doi:10.1108/jopp-06-2022-0031
+12:37:47 DEBUG   │     [S2] Found URL: https://www.emerald.com/insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?t
+12:37:47 DEBUG   │     [SemanticScholar] Attempting download: https://www.emerald.com/insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?t
+12:37:47 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:47 DEBUG   │ https://www.emerald.com:443 "HEAD /insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 0
+12:37:47 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:48 DEBUG   │ https://www.emerald.com:443 "GET /insight/content/doi/10.1108/JOPP-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 None
+12:37:48 DEBUG   │     [SemanticScholar] Download failed: HTTP 403
+12:37:49 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:37:50 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.1108/jopp-06-2022-0031 HTTP/1.1" 404 None
+12:37:50 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.1108/jopp-06-2022-0031
+12:37:50 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:37:50 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:37:50 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22The+landscape+of+public+procurement+research%3A+a+bibliometric%22&limit=3 HTTP/1.1" 301 None
+12:37:51 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22The+landscape+of+public+procurement+research%3A+a+bibliometric%22&limit=3 HTTP/1.1" 200 None
+12:37:51 DEBUG   │     [CORE-Title] HTTP 200 query='The landscape of public procurement research: a bi'
+12:37:51 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:37:51 DEBUG   │     [CORE] No URL returned — skipping
+12:37:52 DEBUG   │     [DirectURL] Attempting download: https://www.emerald.com/insight/content/doi/10.1108/jopp-06-2022-0031/full/pdf?t
+12:37:52 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:53 DEBUG   │ https://www.emerald.com:443 "HEAD /insight/content/doi/10.1108/jopp-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 0
+12:37:53 DEBUG   │ Starting new HTTPS connection (1): www.emerald.com:443
+12:37:53 DEBUG   │ https://www.emerald.com:443 "GET /insight/content/doi/10.1108/jopp-06-2022-0031/full/pdf?title=the-landscape-of-public-procurement-research-a-bibliometric-analysis-and-topic-modelling-based-on-scopus HTTP/1.1" 403 None
+12:37:53 DEBUG   │     [DirectURL] Download failed: HTTP 403
+12:37:53 DEBUG   │   Trying acquisition for: Intelligent Anti-Money Laundering Fraud Control Using Graph-
+12:37:54 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:37:55 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.4018/jcit.316665?select=open_access HTTP/1.1" 200 None
+12:37:55 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.4018/jcit.316665
+12:37:55 DEBUG   │     [OpenAlex] Found URL: https://www.igi-global.com/ViewTitle.aspx?TitleId=316665&isxn=9781668478943
+12:37:55 DEBUG   │     [OpenAlex] Attempting download: https://www.igi-global.com/ViewTitle.aspx?TitleId=316665&isxn=9781668478943
+12:37:55 DEBUG   │ Starting new HTTPS connection (1): www.igi-global.com:443
+12:37:55 DEBUG   │ https://www.igi-global.com:443 "HEAD /ViewTitle.aspx?TitleId=316665&isxn=9781668478943 HTTP/1.1" 429 0
+12:37:55 DEBUG   │     [OpenAlex] Download failed: HEAD 429
+12:37:57 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:37:58 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.4018/jcit.316665?email=researcher%40binus.ac.id HTTP/1.1" 200 762
+12:37:58 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.4018/jcit.316665
+12:37:58 DEBUG   │     [Unpaywall] Found URL: https://www.igi-global.com/ViewTitle.aspx?TitleId=316665&isxn=9781668478943
+12:37:58 DEBUG   │     [Unpaywall] Attempting download: https://www.igi-global.com/ViewTitle.aspx?TitleId=316665&isxn=9781668478943
+12:37:58 DEBUG   │ Starting new HTTPS connection (1): www.igi-global.com:443
+12:37:59 DEBUG   │ https://www.igi-global.com:443 "HEAD /ViewTitle.aspx?TitleId=316665&isxn=9781668478943 HTTP/1.1" 429 0
+12:37:59 DEBUG   │     [Unpaywall] Download failed: HEAD 429
+12:38:00 DEBUG   │     [MDPI] No URL returned — skipping
+12:38:02 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:38:02 DEBUG   │ https://api.crossref.org:443 "GET /works/10.4018/jcit.316665 HTTP/1.1" 200 4526
+12:38:02 DEBUG   │     [CrossRef] HTTP 200 for doi:10.4018/jcit.316665
+12:38:02 DEBUG   │     [CrossRef] 1 links but no PDF found
+12:38:02 DEBUG   │     [CrossRef] No URL returned — skipping
+12:38:04 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:38:05 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.4018%2Fjcit.316665&start=0&max_results=3 HTTP/1.1" 200 717
+12:38:05 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.4018/jcit.316665
+12:38:05 DEBUG   │     [arXiv-DOI] No matching entries
+12:38:05 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:38:06 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22Intelligent+Anti-Money+Laundering+Fraud+Control+Using+Graph-%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:38:06 DEBUG   │     [arXiv-Title] HTTP 200 query='Intelligent Anti-Money Laundering Fraud Control Us'
+12:38:06 DEBUG   │     [arXiv-Title] No matching entries
+12:38:06 DEBUG   │     [arXiv] No URL returned — skipping
+12:38:07 DEBUG   │     [IEEE] No URL returned — skipping
+12:38:09 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:38:09 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.4018/jcit.316665?fields=openAccessPdf HTTP/1.1" 200 196
+12:38:09 DEBUG   │     [S2] HTTP 200 for doi:10.4018/jcit.316665
+12:38:09 DEBUG   │     [S2] Found URL: https://www.igi-global.com/ViewTitle.aspx?TitleId=316665&isxn=9781668478943
+12:38:09 DEBUG   │     [SemanticScholar] Attempting download: https://www.igi-global.com/ViewTitle.aspx?TitleId=316665&isxn=9781668478943
+12:38:09 DEBUG   │ Starting new HTTPS connection (1): www.igi-global.com:443
+12:38:10 DEBUG   │ https://www.igi-global.com:443 "HEAD /ViewTitle.aspx?TitleId=316665&isxn=9781668478943 HTTP/1.1" 429 0
+12:38:10 DEBUG   │     [SemanticScholar] Download failed: HEAD 429
+12:38:11 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:38:12 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.4018/jcit.316665 HTTP/1.1" 404 None
+12:38:12 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.4018/jcit.316665
+12:38:12 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:38:12 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:38:12 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22Intelligent+Anti-Money+Laundering+Fraud+Control+Using+Graph-%22&limit=3 HTTP/1.1" 301 None
+12:38:13 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22Intelligent+Anti-Money+Laundering+Fraud+Control+Using+Graph-%22&limit=3 HTTP/1.1" 200 None
+12:38:13 DEBUG   │     [CORE-Title] HTTP 200 query='Intelligent Anti-Money Laundering Fraud Control Us'
+12:38:13 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:38:13 DEBUG   │     [CORE] No URL returned — skipping
+12:38:14 DEBUG   │     [DirectURL] Attempting download: https://www.igi-global.com/viewtitle.aspx?titleid=316665&isxn=9781668478943
+12:38:14 DEBUG   │ Starting new HTTPS connection (1): www.igi-global.com:443
+12:38:15 DEBUG   │ https://www.igi-global.com:443 "HEAD /viewtitle.aspx?titleid=316665&isxn=9781668478943 HTTP/1.1" 429 0
+12:38:15 DEBUG   │     [DirectURL] Download failed: HEAD 429
+12:38:15 DEBUG   │   Trying acquisition for: Using data analytics to distinguish legitimate and illegitim
+12:38:16 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:38:17 DEBUG   │ https://api.openalex.org:443 "GET /works/doi:10.1016/j.jeconc.2024.100123?select=open_access HTTP/1.1" 200 None
+12:38:17 DEBUG   │     [OpenAlex] HTTP 200 for doi:10.1016/j.jeconc.2024.100123
+12:38:17 DEBUG   │     [OpenAlex] Found URL: https://doi.org/10.1016/j.jeconc.2024.100123
+12:38:17 DEBUG   │     [OpenAlex] Attempting download: https://doi.org/10.1016/j.jeconc.2024.100123
+12:38:17 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:38:17 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.jeconc.2024.100123 HTTP/1.1" 302 0
+12:38:17 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:38:19 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S2949791424000757 HTTP/1.1" 200 0
+12:38:19 DEBUG   │     [OpenAlex] Download failed: Content-Type HTML — likely landing page
+12:38:20 DEBUG   │ Starting new HTTPS connection (1): api.unpaywall.org:443
+12:38:21 DEBUG   │ https://api.unpaywall.org:443 "GET /v2/10.1016/j.jeconc.2024.100123?email=researcher%40binus.ac.id HTTP/1.1" 200 1074
+12:38:21 DEBUG   │     [Unpaywall] HTTP 200 for doi:10.1016/j.jeconc.2024.100123
+12:38:21 DEBUG   │     [Unpaywall] Found URL: https://doi.org/10.1016/j.jeconc.2024.100123
+12:38:21 DEBUG   │     [Unpaywall] Attempting download: https://doi.org/10.1016/j.jeconc.2024.100123
+12:38:21 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:38:21 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.jeconc.2024.100123 HTTP/1.1" 302 0
+12:38:21 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:38:22 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S2949791424000757 HTTP/1.1" 200 0
+12:38:22 DEBUG   │     [Unpaywall] Download failed: Content-Type HTML — likely landing page
+12:38:24 DEBUG   │     [MDPI] No URL returned — skipping
+12:38:25 DEBUG   │ Starting new HTTPS connection (1): api.crossref.org:443
+12:38:26 DEBUG   │ https://api.crossref.org:443 "GET /works/10.1016/j.jeconc.2024.100123 HTTP/1.1" 200 13814
+12:38:26 DEBUG   │     [CrossRef] HTTP 200 for doi:10.1016/j.jeconc.2024.100123
+12:38:26 DEBUG   │     [CrossRef] 2 links but no PDF found
+12:38:26 DEBUG   │     [CrossRef] No URL returned — skipping
+12:38:28 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:38:29 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=all%3A10.1016%2Fj.jeconc.2024.100123&start=0&max_results=3 HTTP/1.1" 200 735
+12:38:29 DEBUG   │     [arXiv-DOI] HTTP 200 query=10.1016/j.jeconc.2024.100123
+12:38:29 DEBUG   │     [arXiv-DOI] No matching entries
+12:38:29 DEBUG   │ Starting new HTTPS connection (1): export.arxiv.org:443
+12:38:29 DEBUG   │ https://export.arxiv.org:443 "GET /api/query?search_query=ti%3A%22Using+data+analytics+to+distinguish+legitimate+and+illegitim%22&start=0&max_results=3 HTTP/1.1" 200 805
+12:38:29 DEBUG   │     [arXiv-Title] HTTP 200 query='Using data analytics to distinguish legitimate and'
+12:38:29 DEBUG   │     [arXiv-Title] No matching entries
+12:38:29 DEBUG   │     [arXiv] No URL returned — skipping
+12:38:31 DEBUG   │     [IEEE] No URL returned — skipping
+12:38:32 DEBUG   │ Starting new HTTPS connection (1): api.semanticscholar.org:443
+12:38:33 DEBUG   │ https://api.semanticscholar.org:443 "GET /graph/v1/paper/DOI:10.1016/j.jeconc.2024.100123?fields=openAccessPdf HTTP/1.1" 200 167
+12:38:33 DEBUG   │     [S2] HTTP 200 for doi:10.1016/j.jeconc.2024.100123
+12:38:33 DEBUG   │     [S2] Found URL: https://doi.org/10.1016/j.jeconc.2024.100123
+12:38:33 DEBUG   │     [SemanticScholar] Attempting download: https://doi.org/10.1016/j.jeconc.2024.100123
+12:38:33 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:38:33 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.jeconc.2024.100123 HTTP/1.1" 302 0
+12:38:33 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:38:34 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S2949791424000757 HTTP/1.1" 200 0
+12:38:34 DEBUG   │     [SemanticScholar] Download failed: Content-Type HTML — likely landing page
+12:38:36 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:38:53 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/works/doi/10.1016/j.jeconc.2024.100123 HTTP/1.1" 404 None
+12:38:53 DEBUG   │     [CORE-DOI] HTTP 404 for doi:10.1016/j.jeconc.2024.100123
+12:38:53 DEBUG   │     [CORE-DOI] Non-200 response: 404
+12:38:53 DEBUG   │ Starting new HTTPS connection (1): api.core.ac.uk:443
+12:38:53 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works?q=title%3A%22Using+data+analytics+to+distinguish+legitimate+and+illegitim%22&limit=3 HTTP/1.1" 301 None
+12:38:54 DEBUG   │ https://api.core.ac.uk:443 "GET /v3/search/works/?q=title%3A%22Using+data+analytics+to+distinguish+legitimate+and+illegitim%22&limit=3 HTTP/1.1" 200 None
+12:38:54 DEBUG   │     [CORE-Title] HTTP 200 query='Using data analytics to distinguish legitimate and'
+12:38:54 DEBUG   │     [CORE-Title] 0 hits but none with downloadUrl
+12:38:54 DEBUG   │     [CORE] No URL returned — skipping
+12:38:55 DEBUG   │     [DirectURL] Attempting download: https://doi.org/10.1016/j.jeconc.2024.100123
+12:38:55 DEBUG   │ Starting new HTTPS connection (1): doi.org:443
+12:38:56 DEBUG   │ https://doi.org:443 "HEAD /10.1016/j.jeconc.2024.100123 HTTP/1.1" 302 0
+12:38:56 DEBUG   │ Starting new HTTPS connection (1): linkinghub.elsevier.com:443
+12:38:57 DEBUG   │ https://linkinghub.elsevier.com:443 "HEAD /retrieve/pii/S2949791424000757 HTTP/1.1" 200 0
+12:38:57 DEBUG   │     [DirectURL] Download failed: Content-Type HTML — likely landing page
+12:38:57 INFO    │ 
+── Writing Outputs ──
+12:38:57 INFO    │   ✓ slr_included_corpus.csv  (45 papers)
+12:38:57 INFO    │   ✓ slr_borderline.csv       (51 papers)
+12:38:57 INFO    │   ✓ slr_excluded_log.csv     (905 papers)
+12:38:57 INFO    │   ✓ manual_download_log.txt  (11 papers need manual download)
+12:38:57 INFO    │ 
+======================================================================
+12:38:57 INFO    │ PIPELINE COMPLETE
+12:38:57 INFO    │   Total input records     : 1001
+12:38:57 INFO    │   Passed Stage 1 filter   : 113
+12:38:57 INFO    │   Included corpus (≥5.0)  : 45
+12:38:57 INFO    │   Borderline pool         : 51
+12:38:57 INFO    │   Excluded (all stages)   : 905
+12:38:57 INFO    │   Auto-downloaded PDFs    : 85
+12:38:57 INFO    │   Require manual download : 11
+12:38:57 INFO    │ ──────────────────────────────────────────────────────────────────────
+12:38:57 INFO    │   Acquisition breakdown by source:
+12:38:57 INFO    │     Already exists       : 85
+12:38:57 INFO    │ ======================================================================
