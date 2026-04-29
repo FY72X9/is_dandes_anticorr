@@ -1,10 +1,406 @@
-20:37:43 INFO    │ ============================================================
-20:37:43 INFO    │ Playwright Manual PDF Downloader
-20:37:43 INFO    │ ============================================================
-20:37:43 INFO    │ Manual log : d:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output\manual_download_log.txt
-20:37:43 INFO    │ PDF output : d:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
-20:37:43 INFO    │ Parsed 41 entries from manual_download_log.txt
-20:37:43 INFO    │ Papers remaining (not yet downloaded): 41
-20:37:43 ERROR   │ Playwright not installed. Run:
-20:37:43 ERROR   │     pip install playwright
-20:37:43 ERROR   │     playwright install chromium
+11:32:25 INFO    │ ============================================================
+11:32:25 INFO    │ Playwright Manual PDF Downloader
+11:32:25 INFO    │ ============================================================
+11:32:25 INFO    │ Manual log : d:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output\manual_download_log.txt
+11:32:25 INFO    │ PDF output : d:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
+11:32:25 INFO    │ Parsed 30 entries from manual_download_log.txt
+11:32:25 INFO    │ Papers remaining (not yet downloaded): 30
+11:32:25 DEBUG   │ Using proactor: IocpProactor
+11:32:26 INFO    │ [1/30] Financial Fraud Detection Based on Machine Learning: A Syste
+11:32:29 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app12199637/pdf
+11:32:29 DEBUG   │     APIRequest: HTTP 403
+11:32:59 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:32:59 WARNING │   ✗ all strategies failed
+11:33:01 INFO    │ [2/30] Financial Cybercrime: A Comprehensive Survey of Deep Learnin
+11:33:07 DEBUG   │   Extracted PDF URL: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9642993
+11:33:07 DEBUG   │     APIRequest: not a valid PDF (size=8088, header=b'\n\n\n\n\n\r\n<')
+11:33:19 INFO    │   ✓ Download (3226 KB)
+11:33:21 INFO    │ [3/30] Imperative Role of Integrating Digitalization in the Firms F
+11:33:23 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics11193252/pdf
+11:33:24 DEBUG   │     APIRequest: HTTP 403
+11:33:54 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:33:54 WARNING │   ✗ all strategies failed
+11:33:56 INFO    │ [4/30] Blockchain and AI-Empowered Healthcare Insurance Fraud Detec
+11:33:59 DEBUG   │   Extracted PDF URL: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9843995
+11:34:02 DEBUG   │     APIRequest: not a valid PDF (size=8088, header=b'\n\n\n\n\n\r\n<')
+11:34:17 INFO    │   ✓ Download (3747 KB)
+11:34:19 INFO    │ [5/30] INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVIC
+11:34:21 DEBUG   │   Extracted PDF URL: None
+11:34:21 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/farj/article/view/855)
+11:34:21 INFO    │ [6/30] The Role of IT Governance in the Integration of AI in Accoun
+11:34:24 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/economies12080199/pdf
+11:34:24 DEBUG   │     APIRequest: HTTP 403
+11:34:54 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:34:54 WARNING │   ✗ all strategies failed
+11:34:56 INFO    │ [7/30] Anomaly Detection in Smart Environments: A Comprehensive Sur
+11:35:00 DEBUG   │   Extracted PDF URL: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10510320
+11:35:01 DEBUG   │     APIRequest: not a valid PDF (size=8091, header=b'\n\n\n\n\n\r\n<')
+11:35:22 INFO    │   ✓ Download (4246 KB)
+11:35:24 INFO    │ [8/30] Chained Anomaly Detection Models for Federated Learning: An 
+11:35:26 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app8122663/pdf
+11:35:26 DEBUG   │     APIRequest: HTTP 403
+11:35:56 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:35:56 WARNING │   ✗ all strategies failed
+11:35:58 INFO    │ [9/30] DDoS Attack Detection in IoT-Based Networks Using Machine Le
+11:36:00 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics12143103/pdf
+11:36:00 DEBUG   │     APIRequest: HTTP 403
+11:36:31 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:36:31 WARNING │   ✗ all strategies failed
+11:36:33 INFO    │ [10/30] Hardware-Assisted Machine Learning in Resource-Constrained I
+11:36:36 DEBUG   │   Extracted PDF URL: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9785622
+11:36:37 DEBUG   │     APIRequest: not a valid PDF (size=8088, header=b'\n\n\n\n\n\r\n<')
+11:36:53 INFO    │   ✓ Download (3820 KB)
+11:36:55 INFO    │ [11/30] Anomaly Detection of IoT Cyberattacks in Smart Cities Using 
+11:36:57 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/bdcc8030021/pdf
+11:36:57 DEBUG   │     APIRequest: HTTP 403
+11:37:27 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:37:27 WARNING │   ✗ all strategies failed
+11:37:29 INFO    │ [12/30] Defense and Security Mechanisms in the Internet of Things: A
+11:37:31 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app15020499/pdf
+11:37:31 DEBUG   │     APIRequest: HTTP 403
+11:38:01 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:38:01 WARNING │   ✗ all strategies failed
+11:38:03 INFO    │ [13/30] Artificial Intelligence in Maritime Cybersecurity: A Systema
+11:38:05 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics14091844/pdf
+11:38:05 DEBUG   │     APIRequest: HTTP 403
+11:38:35 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:38:35 WARNING │   ✗ all strategies failed
+11:38:37 INFO    │ [14/30] Edge-FLGuard: A Federated Learning Framework for Real-Time A
+11:38:40 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app15126452/pdf
+11:38:40 DEBUG   │     APIRequest: HTTP 403
+11:39:10 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:39:10 WARNING │   ✗ all strategies failed
+11:39:12 INFO    │ [15/30] AI-Driven Anomaly Detection for Securing IoT Devices in 5G-E
+11:39:14 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics14122492/pdf
+11:39:14 DEBUG   │     APIRequest: HTTP 403
+11:39:44 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:39:44 WARNING │   ✗ all strategies failed
+11:39:46 INFO    │ [16/30] AI-Assisted Real-Time Monitoring of Infectious Diseases in U
+11:39:48 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/math13121911/pdf
+11:39:48 DEBUG   │     APIRequest: HTTP 403
+11:40:18 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:40:18 WARNING │   ✗ all strategies failed
+11:40:20 INFO    │ [17/30] A Review of Large Language Models for Energy Systems: Applic
+11:40:25 DEBUG   │   Extracted PDF URL: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11168242
+11:40:25 DEBUG   │     APIRequest: not a valid PDF (size=8091, header=b'\n\n\n\n\n\r\n<')
+11:40:49 INFO    │   ✓ Download (5615 KB)
+11:40:51 INFO    │ [18/30] AI-based decision support system for public procurement
+11:40:54 DEBUG   │   Extracted PDF URL: None
+11:40:54 WARNING │   ✗ Could not extract PDF URL from page (https://www.sciencedirect.com/science/article/pii/S030643792)
+11:40:54 INFO    │ [19/30] FinChain-BERT: A High-Accuracy Automatic Fraud Detection Mod
+11:40:56 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/info14090499/pdf
+11:40:57 DEBUG   │     APIRequest: HTTP 403
+11:41:27 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:41:27 WARNING │   ✗ all strategies failed
+11:41:29 INFO    │ [20/30] AI-Driven Cloud Security: Examining the Impact of User Behav
+11:41:31 DEBUG   │   Extracted PDF URL: None
+11:41:31 WARNING │   ✗ Could not extract PDF URL from page (https://journalajrcos.com/index.php/AJRCOS/article/view/424)
+11:41:31 INFO    │ [21/30] Unleashing efficiency and insights: Exploring the potential 
+11:41:33 DEBUG   │   Extracted PDF URL: None
+11:41:33 WARNING │   ✗ Could not extract PDF URL from page (https://onlinelibrary.wiley.com/doi/10.1002/jcaf.22663)
+11:41:33 INFO    │ [22/30] EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMPARATIVE AN
+11:41:45 DEBUG   │   Extracted PDF URL: None
+11:41:45 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/csitrj/article/view/759)
+11:41:45 INFO    │ [23/30] Determinants of fraud in the village government: testing whi
+11:41:48 DEBUG   │   Extracted PDF URL: None
+11:41:48 WARNING │   ✗ Could not extract PDF URL from page (https://ejournal.umm.ac.id/index.php/jaa/article/view/36914)
+11:41:48 INFO    │ [24/30] The Influence of Village Apparatus Competence, Government Co
+11:41:51 DEBUG   │   Extracted PDF URL: None
+11:41:51 WARNING │   ✗ Could not extract PDF URL from page (https://nblformosapublisher.org/index.php/ijbae/article/view)
+11:41:51 INFO    │ [25/30] The landscape of public procurement research: a bibliometric
+11:41:56 DEBUG   │   Extracted PDF URL: None
+11:41:56 WARNING │   ✗ Could not extract PDF URL from page (https://www.emerald.com/jopp/article/23/2/145/241784/The-lan)
+11:41:56 INFO    │ [26/30] Intelligent Anti-Money Laundering Fraud Control Using Graph-
+11:41:58 DEBUG   │   Extracted PDF URL: None
+11:41:58 WARNING │   ✗ Could not extract PDF URL from page (https://services.igi-global.com/resolvedoi/resolve.aspx?doi=)
+11:41:58 INFO    │ [27/30] Securing Government Revenue: A Cloud-Based AI Model for Pred
+11:41:59 WARNING │   ✗ Exception: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://doi.org/10.7753/ijcatr1405.1007
+Call log:
+  - navigating to "https://doi.org/10.7753/ijcatr1405.1007", waiting until "domcontentloaded"
+
+11:42:01 INFO    │ [28/30] Using data analytics to distinguish legitimate and illegitim
+11:42:03 DEBUG   │   Extracted PDF URL: None
+11:42:03 WARNING │   ✗ Could not extract PDF URL from page (https://www.sciencedirect.com/science/article/pii/S294979142)
+11:42:03 INFO    │ [29/30] Blockchain-Enabled Supply Chain platform for Indian Dairy In
+11:42:05 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/foods11172716/pdf
+11:42:05 DEBUG   │     APIRequest: HTTP 403
+11:42:35 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:42:35 WARNING │   ✗ all strategies failed
+11:42:37 INFO    │ [30/30] Enhancing fraud detection in accounting through AI: Techniqu
+11:42:40 DEBUG   │   Extracted PDF URL: None
+11:42:40 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/farj/article/view/1232)
+11:42:40 INFO    │ 
+============================================================
+11:42:40 INFO    │ DONE
+11:42:40 INFO    │   Success  : 5
+11:42:40 INFO    │   Skipped  : 0
+11:42:40 INFO    │   Failed   : 25
+11:42:40 INFO    │ ============================================================
+11:51:59 INFO    │ ============================================================
+11:51:59 INFO    │ Playwright Manual PDF Downloader
+11:51:59 INFO    │ ============================================================
+11:51:59 INFO    │ Manual log : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output\manual_download_log.txt
+11:51:59 INFO    │ PDF output : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
+11:51:59 INFO    │ Parsed 30 entries from manual_download_log.txt
+11:51:59 INFO    │ Papers remaining (not yet downloaded): 25
+11:51:59 DEBUG   │ Using proactor: IocpProactor
+11:52:01 INFO    │ [1/25] Financial Fraud Detection Based on Machine Learning: A Syste
+11:52:06 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app12199637/pdf
+11:52:06 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:06 WARNING │   ✗ MDPI: click strategy failed
+11:52:08 INFO    │ [2/25] Imperative Role of Integrating Digitalization in the Firms F
+11:52:11 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics11193252/pdf
+11:52:11 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:11 WARNING │   ✗ MDPI: click strategy failed
+11:52:13 INFO    │ [3/25] INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVIC
+11:52:15 DEBUG   │   Extracted PDF URL: None
+11:52:15 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/farj/article/view/855)
+11:52:15 INFO    │ [4/25] The Role of IT Governance in the Integration of AI in Accoun
+11:52:17 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/economies12080199/pdf
+11:52:17 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:17 WARNING │   ✗ MDPI: click strategy failed
+11:52:19 INFO    │ [5/25] Chained Anomaly Detection Models for Federated Learning: An 
+11:52:22 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app8122663/pdf
+11:52:22 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:22 WARNING │   ✗ MDPI: click strategy failed
+11:52:24 INFO    │ [6/25] DDoS Attack Detection in IoT-Based Networks Using Machine Le
+11:52:26 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics12143103/pdf
+11:52:26 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:26 WARNING │   ✗ MDPI: click strategy failed
+11:52:28 INFO    │ [7/25] Anomaly Detection of IoT Cyberattacks in Smart Cities Using 
+11:52:30 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/bdcc8030021/pdf
+11:52:30 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:30 WARNING │   ✗ MDPI: click strategy failed
+11:52:32 INFO    │ [8/25] Defense and Security Mechanisms in the Internet of Things: A
+11:52:34 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app15020499/pdf
+11:52:34 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:34 WARNING │   ✗ MDPI: click strategy failed
+11:52:36 INFO    │ [9/25] Artificial Intelligence in Maritime Cybersecurity: A Systema
+11:52:38 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics14091844/pdf
+11:52:38 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:38 WARNING │   ✗ MDPI: click strategy failed
+11:52:40 INFO    │ [10/25] Edge-FLGuard: A Federated Learning Framework for Real-Time A
+11:52:43 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/app15126452/pdf
+11:52:43 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:43 WARNING │   ✗ MDPI: click strategy failed
+11:52:45 INFO    │ [11/25] AI-Driven Anomaly Detection for Securing IoT Devices in 5G-E
+11:52:47 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/electronics14122492/pdf
+11:52:47 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:47 WARNING │   ✗ MDPI: click strategy failed
+11:52:49 INFO    │ [12/25] AI-Assisted Real-Time Monitoring of Infectious Diseases in U
+11:52:51 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/math13121911/pdf
+11:52:51 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:51 WARNING │   ✗ MDPI: click strategy failed
+11:52:53 INFO    │ [13/25] AI-based decision support system for public procurement
+11:52:56 DEBUG   │   Extracted PDF URL: None
+11:52:56 WARNING │   ✗ Could not extract PDF URL from page (https://www.sciencedirect.com/science/article/pii/S030643792)
+11:52:56 INFO    │ [14/25] FinChain-BERT: A High-Accuracy Automatic Fraud Detection Mod
+11:52:59 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/info14090499/pdf
+11:52:59 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:52:59 WARNING │   ✗ MDPI: click strategy failed
+11:53:01 INFO    │ [15/25] AI-Driven Cloud Security: Examining the Impact of User Behav
+11:53:03 DEBUG   │   Extracted PDF URL: None
+11:53:03 WARNING │   ✗ Could not extract PDF URL from page (https://journalajrcos.com/index.php/AJRCOS/article/view/424)
+11:53:03 INFO    │ [16/25] Unleashing efficiency and insights: Exploring the potential 
+11:53:05 DEBUG   │   Extracted PDF URL: None
+11:53:05 WARNING │   ✗ Could not extract PDF URL from page (https://onlinelibrary.wiley.com/doi/10.1002/jcaf.22663)
+11:53:05 INFO    │ [17/25] EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMPARATIVE AN
+11:53:08 DEBUG   │   Extracted PDF URL: None
+11:53:08 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/csitrj/article/view/759)
+11:53:08 INFO    │ [18/25] Determinants of fraud in the village government: testing whi
+11:53:11 DEBUG   │   Extracted PDF URL: https://ejournal.umm.ac.id/index.php/jaa/article/view/36914/15606
+11:53:11 DEBUG   │     APIRequest: HTTP 403
+11:53:41 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+11:53:41 WARNING │   ✗ all strategies failed
+11:53:43 INFO    │ [19/25] The Influence of Village Apparatus Competence, Government Co
+11:53:46 DEBUG   │   Extracted PDF URL: None
+11:53:46 WARNING │   ✗ Could not extract PDF URL from page (https://nblformosapublisher.org/index.php/ijbae/article/view)
+11:53:46 INFO    │ [20/25] The landscape of public procurement research: a bibliometric
+11:53:51 DEBUG   │   Extracted PDF URL: None
+11:53:51 WARNING │   ✗ Could not extract PDF URL from page (https://www.emerald.com/jopp/article/23/2/145/241784/The-lan)
+11:53:51 INFO    │ [21/25] Intelligent Anti-Money Laundering Fraud Control Using Graph-
+11:53:54 DEBUG   │   Extracted PDF URL: None
+11:53:54 WARNING │   ✗ Could not extract PDF URL from page (https://services.igi-global.com/resolvedoi/resolve.aspx?doi=)
+11:53:54 INFO    │ [22/25] Securing Government Revenue: A Cloud-Based AI Model for Pred
+11:53:56 DEBUG   │   Extracted PDF URL: None
+11:53:56 WARNING │   ✗ Could not extract PDF URL from page (https://ijcat.com/archieve/volume14/issue5/ijcatr14051008.pd)
+11:53:56 INFO    │ [23/25] Using data analytics to distinguish legitimate and illegitim
+11:53:59 DEBUG   │   Extracted PDF URL: None
+11:53:59 WARNING │   ✗ Could not extract PDF URL from page (https://www.sciencedirect.com/science/article/pii/S294979142)
+11:53:59 INFO    │ [24/25] Blockchain-Enabled Supply Chain platform for Indian Dairy In
+11:54:01 DEBUG   │   Extracted PDF URL: https://www.mdpi.com/10.3390/foods11172716/pdf
+11:54:01 DEBUG   │     MDPI: no a[href*='/pdf'] found on page
+11:54:01 WARNING │   ✗ MDPI: click strategy failed
+11:54:03 INFO    │ [25/25] Enhancing fraud detection in accounting through AI: Techniqu
+11:54:06 DEBUG   │   Extracted PDF URL: None
+11:54:06 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/farj/article/view/1232)
+11:54:06 INFO    │ 
+============================================================
+11:54:06 INFO    │ DONE
+11:54:06 INFO    │   Success  : 0
+11:54:06 INFO    │   Skipped  : 0
+11:54:06 INFO    │   Failed   : 25
+11:54:06 INFO    │ ============================================================
+12:03:19 INFO    │ ============================================================
+12:03:19 INFO    │ Playwright Manual PDF Downloader
+12:03:19 INFO    │ ============================================================
+12:03:19 INFO    │ Manual log : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\scripts\output\manual_download_log.txt
+12:03:19 INFO    │ PDF output : D:\BINUS Works\Codes\research_banks\research\is_dandes_anticorr\SLR\papers
+12:03:19 INFO    │ Parsed 30 entries from manual_download_log.txt
+12:03:19 INFO    │ Papers remaining (not yet downloaded): 25
+12:03:20 DEBUG   │ Using proactor: IocpProactor
+12:03:21 INFO    │ [1/25] Financial Fraud Detection Based on Machine Learning: A Syste
+12:03:21 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:21 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/app12199637 HTTP/1.1" 200 None
+12:03:22 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2076-3417/12/19/9637/pdf?version=1664239132
+12:03:23 INFO    │   ✓ curl_cffi (1934 KB)
+12:03:25 INFO    │ [2/25] Imperative Role of Integrating Digitalization in the Firms F
+12:03:25 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:26 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/electronics11193252 HTTP/1.1" 200 None
+12:03:26 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2079-9292/11/19/3252/pdf?version=1665564139
+12:03:27 INFO    │   ✓ curl_cffi (2509 KB)
+12:03:29 INFO    │ [3/25] INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVIC
+12:03:32 DEBUG   │   Extracted PDF URL: None
+12:03:32 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/farj/article/view/855)
+12:03:32 INFO    │ [4/25] The Role of IT Governance in the Integration of AI in Accoun
+12:03:32 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:32 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/economies12080199 HTTP/1.1" 200 None
+12:03:33 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2227-7099/12/8/199/pdf?version=1722499221
+12:03:34 INFO    │   ✓ curl_cffi (1343 KB)
+12:03:36 INFO    │ [5/25] Chained Anomaly Detection Models for Federated Learning: An 
+12:03:36 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:37 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/app8122663 HTTP/1.1" 200 None
+12:03:37 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2076-3417/8/12/2663/pdf?version=1545293822
+12:03:38 INFO    │   ✓ curl_cffi (2163 KB)
+12:03:40 INFO    │ [6/25] DDoS Attack Detection in IoT-Based Networks Using Machine Le
+12:03:40 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:41 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/electronics12143103 HTTP/1.1" 200 None
+12:03:41 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2079-9292/12/14/3103/pdf?version=1689603528
+12:03:42 INFO    │   ✓ curl_cffi (956 KB)
+12:03:44 INFO    │ [7/25] Anomaly Detection of IoT Cyberattacks in Smart Cities Using 
+12:03:44 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:45 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/bdcc8030021 HTTP/1.1" 200 None
+12:03:45 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2504-2289/8/3/21/pdf?version=1708618712
+12:03:46 INFO    │   ✓ curl_cffi (2800 KB)
+12:03:48 INFO    │ [8/25] Defense and Security Mechanisms in the Internet of Things: A
+12:03:48 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:49 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/app15020499 HTTP/1.1" 200 None
+12:03:49 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2076-3417/15/2/499/pdf?version=1736239159
+12:03:50 INFO    │   ✓ curl_cffi (543 KB)
+12:03:52 INFO    │ [9/25] Artificial Intelligence in Maritime Cybersecurity: A Systema
+12:03:52 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:53 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/electronics14091844 HTTP/1.1" 200 None
+12:03:54 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2079-9292/14/9/1844/pdf?version=1746020763
+12:03:55 INFO    │   ✓ curl_cffi (4437 KB)
+12:03:57 INFO    │ [10/25] Edge-FLGuard: A Federated Learning Framework for Real-Time A
+12:03:57 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:03:58 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/app15126452 HTTP/1.1" 200 None
+12:03:59 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2076-3417/15/12/6452/pdf?version=1749381219
+12:04:00 INFO    │   ✓ curl_cffi (1390 KB)
+12:04:02 INFO    │ [11/25] AI-Driven Anomaly Detection for Securing IoT Devices in 5G-E
+12:04:02 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:04:02 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/electronics14122492 HTTP/1.1" 200 None
+12:04:03 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2079-9292/14/12/2492/pdf?version=1750335270
+12:04:04 INFO    │   ✓ curl_cffi (2825 KB)
+12:04:06 INFO    │ [12/25] AI-Assisted Real-Time Monitoring of Infectious Diseases in U
+12:04:06 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:04:07 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/math13121911 HTTP/1.1" 200 None
+12:04:07 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2227-7390/13/12/1911/pdf?version=1749291012
+12:04:09 INFO    │   ✓ curl_cffi (6130 KB)
+12:04:11 INFO    │ [13/25] AI-based decision support system for public procurement
+12:04:14 DEBUG   │   Extracted PDF URL: None
+12:04:14 WARNING │   ✗ Could not extract PDF URL from page (https://www.sciencedirect.com/science/article/pii/S030643792)
+12:04:14 INFO    │ [14/25] FinChain-BERT: A High-Accuracy Automatic Fraud Detection Mod
+12:04:14 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:04:15 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/info14090499 HTTP/1.1" 200 None
+12:04:15 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2078-2489/14/9/499/pdf?version=1694593496
+12:04:16 INFO    │   ✓ curl_cffi (1592 KB)
+12:04:18 INFO    │ [15/25] AI-Driven Cloud Security: Examining the Impact of User Behav
+12:04:21 DEBUG   │   Extracted PDF URL: None
+12:04:21 WARNING │   ✗ Could not extract PDF URL from page (https://journalajrcos.com/index.php/AJRCOS/article/view/424)
+12:04:21 INFO    │ [16/25] Unleashing efficiency and insights: Exploring the potential 
+12:04:23 DEBUG   │   Extracted PDF URL: None
+12:04:23 WARNING │   ✗ Could not extract PDF URL from page (https://onlinelibrary.wiley.com/doi/10.1002/jcaf.22663)
+12:04:23 INFO    │ [17/25] EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMPARATIVE AN
+12:04:26 DEBUG   │   Extracted PDF URL: None
+12:04:26 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/csitrj/article/view/759)
+12:04:26 INFO    │ [18/25] Determinants of fraud in the village government: testing whi
+12:04:29 DEBUG   │   Extracted PDF URL: https://ejournal.umm.ac.id/index.php/jaa/article/view/36914/15606
+12:04:29 DEBUG   │     APIRequest: HTTP 403
+12:04:59 DEBUG   │     expect_download failed: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+12:04:59 WARNING │   ✗ all strategies failed
+12:05:01 INFO    │ [19/25] The Influence of Village Apparatus Competence, Government Co
+12:05:04 DEBUG   │   Extracted PDF URL: None
+12:05:04 WARNING │   ✗ Could not extract PDF URL from page (https://nblformosapublisher.org/index.php/ijbae/article/view)
+12:05:04 INFO    │ [20/25] The landscape of public procurement research: a bibliometric
+12:05:09 DEBUG   │   Extracted PDF URL: None
+12:05:09 WARNING │   ✗ Could not extract PDF URL from page (https://www.emerald.com/jopp/article/23/2/145/241784/The-lan)
+12:05:09 INFO    │ [21/25] Intelligent Anti-Money Laundering Fraud Control Using Graph-
+12:05:12 DEBUG   │   Extracted PDF URL: None
+12:05:12 WARNING │   ✗ Could not extract PDF URL from page (https://services.igi-global.com/resolvedoi/resolve.aspx?doi=)
+12:05:12 INFO    │ [22/25] Securing Government Revenue: A Cloud-Based AI Model for Pred
+12:05:14 DEBUG   │   Extracted PDF URL: None
+12:05:14 WARNING │   ✗ Could not extract PDF URL from page (https://ijcat.com/archieve/volume14/issue5/ijcatr14051008.pd)
+12:05:14 INFO    │ [23/25] Using data analytics to distinguish legitimate and illegitim
+12:05:17 DEBUG   │   Extracted PDF URL: None
+12:05:17 WARNING │   ✗ Could not extract PDF URL from page (https://www.sciencedirect.com/science/article/pii/S294979142)
+12:05:17 INFO    │ [24/25] Blockchain-Enabled Supply Chain platform for Indian Dairy In
+12:05:17 DEBUG   │ Starting new HTTPS connection (1): api.openalex.org:443
+12:05:18 DEBUG   │ https://api.openalex.org:443 "GET /works/https://doi.org/10.3390/foods11172716 HTTP/1.1" 200 None
+12:05:18 DEBUG   │     MDPI curl_cffi URL: https://www.mdpi.com/2304-8158/11/17/2716/pdf?version=1662449467
+12:05:20 INFO    │   ✓ curl_cffi (2749 KB)
+12:05:22 INFO    │ [25/25] Enhancing fraud detection in accounting through AI: Techniqu
+12:05:24 DEBUG   │   Extracted PDF URL: None
+12:05:24 WARNING │   ✗ Could not extract PDF URL from page (https://fepbl.com/index.php/farj/article/view/1232)
+12:05:24 INFO    │ 
+============================================================
+12:05:24 INFO    │ DONE
+12:05:24 INFO    │   Success  : 13
+12:05:24 INFO    │   Skipped  : 0
+12:05:24 INFO    │   Failed   : 12
+12:05:24 INFO    │ ============================================================
