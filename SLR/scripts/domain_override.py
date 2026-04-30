@@ -70,7 +70,7 @@ def main():
     rows = load_corpus(CORPUS_PATH)
     fieldnames = list(rows[0].keys())
 
-    candidates = [r for r in rows if r.get("domain_override_candidate") == "TRUE"]
+    candidates = [r for r in rows if str(r.get("domain_override_candidate", "")).strip().upper() == "TRUE"]
     print(f"\n{'='*70}")
     print(f"  Phase E Stage 0 — Domain Override")
     print(f"  Corpus: {CORPUS_PATH.name}  ({len(rows)} total papers)")
@@ -82,7 +82,7 @@ def main():
     skipped = 0
 
     for row in rows:
-        if row.get("domain_override_candidate") != "TRUE":
+        if str(row.get("domain_override_candidate", "")).strip().upper() != "TRUE":
             continue
 
         doi = row.get("doi", "").strip()
