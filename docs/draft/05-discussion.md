@@ -1,50 +1,182 @@
-# Chapter 5: Discussion
+# Section 5: Discussion
 
-> **Draft Status**: v1.0 — April 2026
-> **Target Venue**: ICCSCI (Procedia Computer Science, Elsevier)
-> **Word Count Target**: ~900 words
-> **Citation Format**: IEEE (continuous numbering per references.md)
+> **Basis**: Synthesis of SLR F2–F7 findings — 45 papers, 4 analytical themes,
+> 5 structured gaps, DSR framework, narrative logic model
 
 ---
 
-## 5. Discussion
+## 5.1 Principal Findings
 
-### 5.1 Algorithm Selection: Why LOF's Superiority Is Theoretically Predicted
+This systematic literature review synthesized 45 empirical studies on ML-based financial
+anomaly detection and IS governance of public funds to establish the state of knowledge
+at the intersection of these two research traditions. Four analytical themes emerge from
+the cross-paper analysis.
 
-LOF's bimodality coefficient of 0.957 — the highest among the three methods — is not an empirical surprise. It is a theoretically predictable consequence of how corruption manifests structurally in Siskeudes activity records. Village fund activities within the same Kode_Output prefix code form natural local density clusters: all PAUD operational expense records, all road construction activities, all BLT disbursement entries share similar cost ranges, procurement types, and disbursement stage structures. When a fraudulent record occupies such a cluster — for instance, a road construction activity with `cost_per_unit` at 42.42 standard deviations above its category mean — LOF's local density comparison correctly identifies it as a local outlier (LOF >> 1.0) even if it appears globally unremarkable to Isolation Forest's path-partitioning mechanism, which compares the record against the global feature distribution rather than its Kode_Output peer group.
+### AT1: The Operationalization Chasm
 
-This finding empirically demonstrates that LOF identifies a structurally distinct anomaly subset from Isolation Forest on government spending data — a direct consequence of LOF's local density architecture [25] operating on within-category peer groups rather than the global feature space. The implication for APIP inspection design is consequential: an audit prioritisation system relying solely on IF would structurally miss the 3,951 records that LOF's local density mechanism uniquely identifies — activities whose cost structure is abnormal relative to their specific programme category but unremarkable in the global expenditure distribution.
+The corpus divides structurally into two non-communicating research traditions: an ML
+detection cluster (23 papers) that has developed high-performing computational methods
+without application to village governance contexts, and an IS governance cluster
+(26 papers) that has documented corruption mechanisms in detail without computational
+operationalization. Only nine papers span both clusters, and none of these bridge papers
+test detection artifacts on Dana Desa or equivalent sub-national village fund data.
 
-IF's unimodal score distribution (BC = 0.335) reflects an architecture misalignment with the fraud structure: village fund corruption clusters systematically by activity type rather than manifesting as globally random sparsity, suppressing the score variance that IF's path-partitioning needs to produce clean bimodal separation. This does not invalidate IF's detections — it means IF's 7,974 flagged records include genuine anomalies that should carry lower individual weight and higher weight when corroborated by LOF or RDA.
+The bibliometric cluster analysis (F4) confirms this structure: ML and governance
+keywords exhibit near-zero co-occurrence across clusters, despite both literatures
+claiming to address 'public fund corruption'. This is not a minor gap — it represents
+the complete absence of a research tradition that this study initiates.
 
-The consensus framework — requiring convergence from at least two methodologically independent algorithms — resolves this architectural heterogeneity. Records in the IF∩RDA intersection (50.3% overlap) represent globally extreme anomalies confirmed by two independent global paradigms; records in the LOF-unique population represent locally deviant within-category anomalies; triple-consensus records (n = 156) represent the highest-confidence fraud signals across all three detection modalities.
+### AT2: The Scalability Illusion
 
-### 5.2 The Fraud Triangle in the Data
+Performance claims in the ML detection literature are systematically inflated by
+evaluation conditions that do not generalize to decentralized governance contexts.
+The four papers assuming centralized databases (AC-CENTRAL) achieve AUC scores that
+cannot be replicated in settings where data is fragmented across 74,000 village
+governments. The twelve papers using synthetic training data create a circular validation
+problem: high performance on synthetic data does not evidence detection capability on
+real corrupt transactions, which by definition were designed to evade detection.
 
-The three Fraud Triangle conditions — Pressure, Opportunity, and Rationalisation — each find quantitative expression in the empirical results.
+### AT3: The Absence of IS Theory
 
-**Pressure** manifests in the fiscal expansion trajectory: Isolation Forest's elevated 2023 anomaly rate (10.5% versus 6.5–7.1% in subsequent years) coincides with post-COVID-era village budget expansion, when disbursement targets created stronger incentives for inflated claims to fully absorb enlarged allocations. The high-value Swakelola prevalence (24.7% of all activities) constrains the feasible range of procurement manipulation to self-managed activities, concentrating Pressure on the activity types where competitive controls are absent.
+Sixty-two percent of included papers (28/45) apply no IS theory. This rate exceeds what
+would be expected for interdisciplinary research bridging computer science and information
+systems; it indicates that the ML detection strand treats fraud detection as a purely
+computational rather than socio-institutional phenomenon. The governance strand, while
+more theoretically grounded, applies IS theory to institutional analysis rather than to
+computational artifact design. No paper applies Agency Theory to motivate detection
+feature selection; no paper uses the IS Success Model to evaluate deployment effectiveness.
 
-**Opportunity** is confirmed most directly by the 98.8% Swakelola procurement dominance — the structural condition Søreide [9] identifies as the primary enabler of procurement-stage corruption. The 642 Tier-1 villages exhibiting multi-year anomaly persistence (47.1% of all villages) demonstrate that Opportunity is not incidental but entrenched: the same villages display irregular patterns across consecutive fiscal years, consistent with a stable accountability vacuum rather than isolated administrative error.
+### AT4: The Ground Truth Paradox
 
-**Rationalisation** does not produce directly observable quantitative signals — it operates within the cognitive domain of perpetrators. However, the typology analysis offers indirect evidence: the dominance of T1 (Mark-up, n = 1,571) and T7 (Cross-Category Dump, n = 1,568) over more operationally complex schemes (T3 Volume Padding = 38, T5 Procurement Irregularity = 26) suggests that low-detection-risk, high-frequency forms predominate. This is consistent with a rationalisation environment where mark-up and cross-category budget migration are perceived as administratively ambiguous enough to evade detection — rather than involving the elaborate construction of completely fictitious activities (T2, n = 774).
+The label scarcity problem identified in 17 papers is not merely a practical constraint —
+it is an epistemological paradox specific to governance contexts. In private sector fraud
+detection, historical labeled datasets exist (successful prosecutions, confirmed fraud
+cases). In village fund governance, corruption is often undetected or unprosecuted,
+meaning the absence of labels reflects the severity of the problem rather than the
+absence of fraudulent activity. Supervised methods claiming high F1 scores on labeled
+village datasets are detecting the corruption that was already discovered, not the
+corruption that remains hidden.
 
-### 5.3 Principal-Agent Information Asymmetry: Where the Gap Operates
+---
 
-The principal-agent relationship in village fund governance positions the village head (agent) with substantial information advantages relative to the principal chain (kabupaten inspectorate, BPKP, KPK). The empirical detection results locate where this asymmetry operates with greatest consequence: `avg_completion` as the primary RDA error feature — dominant in 43.5% of Tier-1 village reconstructions — reveals that completion percentage reporting is the most exploited information gap. Agents report T1 disbursement at or near 100% while T2 and T3 realisations approach zero, creating a completion profile that the autoencoder reconstructed with maximum error precisely because no legitimate fund absorption behaviour produces this pattern.
+## 5.2 Research Gap Analysis
 
-This finding carries a direct operational implication: APIP inspection procedures should prioritise cross-checking reported stage completion percentages against physical output documentation as the first analytical step, before any cost or procurement analysis, because the completion reporting channel is where information asymmetry operates most intensively.
+**Table 3: Structured Gap Matrix**
 
-### 5.4 The Subthreshold Masking Problem
+| Gap ID | Gap Statement (abbreviated) | Severity | Evidence Basis | Primary Study Response |
+|---|---|---|---|---|
+| G1 | No existing study applies ML anomaly detection to Dana Desa (village fund) financial trans... | **CRITICAL** | Literature void — confirmed by keyword search, clu... | Design and evaluate ML anomaly detection artifact using real... |
+| G2 | Ground truth unavailability for village fraud labels creates an epistemological paradox: s... | **CRITICAL** | LIM-NOLABEL (17 papers), DS-SYNTH (12 papers), cir... | Adopt unsupervised ensemble approach (no labels required). U... |
+| G3 | No validated feature engineering methodology exists for village fund fraud detection. The ... | **CRITICAL** | FE category thin (<5 papers on budget absorption);... | Construct 12-feature taxonomy for Dana Desa fraud detection ... |
+| G4 | IS theoretical grounding is absent from 62% of included papers. The ML detection literatur... | **PARTIAL** | IST-NONE: 28/45 (62%); 0 D&M IS Success Model appl... | Ground primary study in Agency Theory (principal-agent corru... |
+| G5 | All validated ML detection methods require batch processing of historical transaction data... | **METHODOLOGICAL** | GAP-RT (4 papers explicitly note real-time gap); D... | Explicitly scope primary study as audit-support tool (post-p... |
 
-The 708 unclassified records (22.8% of consensus flags) represent a methodological limitation that warrants explicit analytical attention. These records satisfy the multi-paradigm anomaly threshold — they are confirmed anomalous by at least two independent detection methods — but simultaneously fail to meet any single typology rule's feature threshold. The most plausible explanation is compound fraud: schemes that combine moderate mark-up with partial completion manipulation across multiple features simultaneously, such that no single feature exceeds its individual typology threshold while the joint feature profile is nonetheless statistically anomalous. Single-threshold rule-based typology assignment is structurally inadequate for compound patterns. Future work should replace the rule-based typology module with a multi-label classifier trained on expert-validated samples that explicitly models feature interaction effects.
+**Table 4: DSR Framework — Empty Quadrant Analysis**
 
-### 5.5 DeLone and McLean IS Success: Evaluating the Pipeline as an IS Artefact
+| DSR Cycle | Context Level | N Papers | Research Status |
+|---|---|---|---|
+| DESIGN | cross-national (developed) | 4 | N=4 |
+| DESIGN | cross-national (developing) | 0 | Empty |
+| DESIGN | national | 2 | N=2 |
+| DESIGN | sub-national | 0 | **EMPTY — Primary contribution** |
+| DESIGN | unspecified | 5 | N=5 |
+| DESIGN | village | 0 | **EMPTY — Primary contribution** |
+| RELEVANCE | cross-national (developed) | 0 | Empty |
+| RELEVANCE | cross-national (developing) | 0 | Empty |
+| RELEVANCE | national | 1 | N=1 |
+| RELEVANCE | sub-national | 0 | Empty |
+| RELEVANCE | unspecified | 2 | N=2 |
+| RELEVANCE | village | 12 | N=12 |
+| RIGOR | cross-national (developed) | 4 | N=4 |
+| RIGOR | cross-national (developing) | 5 | N=5 |
+| RIGOR | national | 5 | N=5 |
+| RIGOR | sub-national | 2 | N=2 |
+| RIGOR | unspecified | 1 | N=1 |
+| RIGOR | village | 2 | N=2 |
 
-The DeLone and McLean IS Success Model assesses systems along three quality dimensions (Information Quality, System Quality, Service Quality) leading to use, individual impact, and organisational impact [10]. Applied to this pipeline:
+The most consequential empty cell in Table 4 is the intersection of DESIGN cycle
+and village-level context. Hevner et al. [ref] define the design cycle as the
+iterative construction and evaluation of IS artifacts within their intended use context.
+Eleven papers operate in the DESIGN cycle, but none targets the village/sub-national
+governance context. This structural absence motivates the primary study's DSR framing:
+its contribution is precisely the artifact produced by filling this empty cell.
 
-- **Information Quality**: The consensus anomaly scores, typology labels, and village priority tiers constitute information outputs whose quality is validated by (a) multi-paradigm convergence, (b) alignment with documented modus operandi from judicial records [13, 14], and (c) the four Jambi prosecution cases confirming that the exact financial patterns this pipeline targets were present in verified fraud cases [30–33].
-- **Individual Impact**: The ranked village priority list and typology-labelled activity records convert an undifferentiated population of 99,692 records into a targeted inspection workplan covering 642 Tier-1 villages — a 93.5% reduction in the inspection search space.
-- **Organisational Impact**: APIP operational coverage gap closure depends on whether inspectorates adopt ranked pipeline outputs as inspection inputs. This study does not measure adoption rates (an inherent limitation of technical research without implementation evaluation), but the inspection search space reduction directly addresses the staffing constraint Srirejeki and Faturokhman [12] document.
+---
 
-The pipeline satisfies the DeLone and McLean success pathway from information quality to organisational impact provided that inspectorates operationalise ranked outputs as inspection inputs — a governance and institutional design challenge outside the scope of technical detection research but constituting the central imperative for Phase 2 implementation evaluation.
+## 5.3 Theoretical Implications
+
+**For IS theory**: This review demonstrates that IS theory remains systematically
+disconnected from computational methods in the fraud detection domain. This is
+not a failure of individual researchers — it reflects the structural absence of
+interdisciplinary venue conventions that would require ML papers to theorize their
+governance implications. The primary study models an alternative approach: grounding
+feature engineering choices in Agency Theory principal-agent dynamics, rather than
+treating feature selection as a purely statistical optimization problem.
+
+**For design science research**: The DSR three-cycle model predicts that artifacts
+developed in isolation from their relevance environments will fail in deployment.
+The Scalability Illusion (AT2) and Ground Truth Paradox (AT4) are exactly the
+failures predicted by DSR: when design-cycle work proceeds without relevance-cycle
+grounding, the resulting artifacts perform well in lab conditions but inadequately
+in real governance environments.
+
+**For development informatics**: The concentration of 21 papers in high-capacity
+institutional contexts (banking, federal systems) and the near-absence of papers
+addressing decentralized, low-capacity governance confirms the development informatics
+critique that IS research systematically underserves the institutional conditions of
+the Global South. The village fund governance context — characterized by 74,000
+fragmented administrative units, limited data infrastructure, and enforcement gaps —
+represents exactly the institutional environment that development informatics demands
+IS researchers to address.
+
+---
+
+## 5.4 Practical Implications
+
+The review findings carry direct implications for Indonesian government agencies:
+
+**For KPK (Corruption Eradication Commission)**: The absence of a validated ML
+detection methodology for Dana Desa means that current fraud screening relies on
+manual audit sampling with inherently limited coverage. The primary study's contribution
+provides a prototype methodology that could be integrated into JAGA (KPK's anti-corruption
+monitoring platform) to prioritize village-level audits based on anomaly score rankings.
+
+**For Kemendesa**: The feature engineering taxonomy constructed for this study identifies
+six operationally actionable fraud indicators derived from budget realization data already
+collected in SISKEUDES. Automated flag generation requires no new data collection —
+only algorithmic analysis of existing administrative records.
+
+**For BPK/BPKP**: The logic model (F5) identifies the 'last mile' gap between ML
+anomaly output and audit work product. Future research should focus on designing
+the human-AI interaction interface that translates anomaly scores into investigation
+referrals compatible with BPK/BPKP evidentiary standards.
+
+---
+
+## 5.5 Limitations of the Review
+
+Several limitations constrain the scope of this review's conclusions:
+
+**Language bias**: The search strategy retrieved only English-language publications.
+Indonesian-language research on Dana Desa governance (published in national journals)
+was not systematically captured, potentially underrepresenting governance-specific
+feature engineering knowledge.
+
+**Publication bias**: Null results and failed ML deployments are underreported in the
+corpus. The high AUC scores in the ML cluster may reflect publication bias toward
+positive technical results.
+
+**Temporal limitation**: The corpus covers 2018–2025. The rapid pace of LLM and
+foundation model development means detection methods based on transformer architectures
+(emerging 2023–2025) may be underrepresented relative to their actual capability level.
+
+**Sensitivity analysis caveat**: The three-tier sensitivity analysis (F6) reveals that
+6 of 10 descriptive themes show proportional shifts when quality thresholds are raised.
+This indicates that medium-quality papers (quality score 4.0–4.5) contribute substantially
+to the thematic picture; researchers requiring a higher-confidence sub-corpus should
+apply the T2 threshold (≥4.5, N=23) for replication studies.
+
+---
+
+_This discussion section was generated by Phase F7 gap matrix synthesis._
+_All analytical claims are traceable to specific codes, papers, and quantitative evidence in the SLR analysis files._

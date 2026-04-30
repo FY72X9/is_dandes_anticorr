@@ -1,0 +1,35 @@
+paper_id,title,year,sjr_quartile,citations,pipeline_status,coder1_screen,coder2_screen,c2_note
+P002,To the moon: defining and detecting cryptocurrency pump-and-dumps,2018.0,Q2,160.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: Cryptocurrency pump-and-dump — purely private crypto market; no govt fina
+P004,Imperative Role of Integrating Digitalization in the Firms Finance: A ,2022.0,Q2,147.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: Digitalization in 'firms' finance — corporate-only; no public sector angl
+P005,Securing the digital world: Protecting smart infrastructures and digit,2023.0,Q1,123.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: AI malware/intrusion detection for smart infrastructure — no financial fr
+P006,Blockchain and AI-Empowered Healthcare Insurance Fraud Detection: an A,2022.0,Q1,114.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: Blockchain+AI for healthcare insurance — private sector health insurance.
+P007,Online Payment Fraud Detection Model Using Machine Learning Techniques,2023.0,Q1,112.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: Online payment fraud detection — private fintech/banking domain only.
+P008,The Fingerprints of Fraud: Evidence from Mexico’s 1988 Presidential El,2019.0,Q1,108.0,INCLUDED,INCLUDE,EXCLUDE,"EC-07: Electoral vote-tally fraud (Mexico 1988) — political fraud, not financial"
+P009,AI-Driven Cloud Security: Examining the Impact of User Behavior Analys,2024.0,,100.0,INCLUDED,INCLUDE,EXCLUDE,"EC-07: AI cloud security / user behaviour analysis — cybersecurity, no financial"
+P010,Unleashing efficiency and insights: Exploring the potential applicatio,2023.0,Q3,60.0,INCLUDED,INCLUDE,EXCLUDE,EC-04: ChatGPT in accounting — general efficiency review; no fraud detection met
+P011,INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVICES SECURIT,2024.0,Q3,53.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: AI+blockchain for financial services security — banking sector only.
+P014,Anomaly Detection in Smart Environments: A Comprehensive Survey,2024.0,Q1,49.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: Anomaly detection in smart environments (IoT sensors/buildings) — not fin
+P017,Chained Anomaly Detection Models for Federated Learning: An Intrusion ,2018.0,Q2,315.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: FL for network intrusion detection — cybersecurity domain; no financial f
+P018,Blockchain security enhancement: an approach towards hybrid consensus ,2024.0,,126.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: Blockchain consensus + ML for blockchain security — network security only
+P019,Deep Learning in the Fast Lane: A Survey on Advanced Intrusion Detecti,2024.0,,94.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: DL for vehicle network IDS — completely off-topic.
+P020,DDoS Attack Detection in IoT-Based Networks Using Machine Learning Mod,2023.0,Q2,81.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: DDoS detection in IoT using ML — cybersecurity; no financial fraud connec
+P021,Hardware-Assisted Machine Learning in Resource-Constrained IoT Environ,2022.0,Q1,77.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: Hardware-assisted ML in IoT security — embedded security; no financial an
+P023,AI integration in financial services: a systematic review of trends an,2025.0,,57.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: AI in financial services (private sector) — primarily banking/fintech sco
+P024,Research trends in deep learning and machine learning for cloud comput,2024.0,Q1,49.0,INCLUDED,INCLUDE,EXCLUDE,"EC-07: DL/ML for cloud computing security — cloud security, no financial fraud."
+P025,Anomaly Detection of IoT Cyberattacks in Smart Cities Using Federated ,2024.0,Q2,49.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: FL anomaly detection for IoT cyberattacks in smart cities — no financial 
+P026,Advanced Fraud Detection in Blockchain Transactions: An Ensemble Learn,2024.0,,44.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: Blockchain fraud in crypto transactions — private crypto domain.
+P027,"Machine Learning Applications in Cryptocurrency: Detection, Prediction",2025.0,,26.0,INCLUDED,INCLUDE,EXCLUDE,EC-02: ML for Bitcoin/cryptocurrency fraud in USA — private crypto market.
+P028,Defense and Security Mechanisms in the Internet of Things: A Review,2025.0,Q2,20.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: IoT defense/security mechanisms review — IoT cybersecurity.
+P029,Artificial Intelligence in Maritime Cybersecurity: A Systematic Review,2025.0,Q2,19.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: AI in maritime cybersecurity — off-topic.
+P030,Edge-FLGuard: A Federated Learning Framework for Real-Time Anomaly Det,2025.0,Q2,17.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: FL framework for 5G IoT anomaly detection — IoT cybersecurity.
+P031,AI-Driven Anomaly Detection for Securing IoT Devices in 5G-Enabled Sma,2025.0,Q2,16.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: AI anomaly detection for 5G IoT in smart cities — IoT cybersecurity.
+P032,Generative AI revolution in cybersecurity: a comprehensive review of t,2025.0,Q1,14.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: Generative AI for cybersecurity/threat intelligence — no financial fraud.
+P033,Quantum Machine Learning Algorithms for Real-Time Epidemic Surveillanc,2024.0,,12.0,INCLUDED,INCLUDE,EXCLUDE,"EC-07: Quantum ML for epidemic surveillance — healthcare/public health, not fina"
+P034,AI-Assisted Real-Time Monitoring of Infectious Diseases in Urban Areas,2025.0,Q2,11.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: AI for infectious disease monitoring — public health; no financial fraud.
+P036,A comprehensive systematic review of intrusion detection systems: emer,2025.0,,10.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: Comprehensive IDS review — network intrusion detection only.
+P038,"A Review of Large Language Models for Energy Systems: Applications, Ch",2025.0,Q1,9.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: LLMs for energy systems — completely off-topic.
+P040,A systematic review of anomaly detection in IoT security: towards quan,2025.0,,7.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: Anomaly detection in IoT security + quantum ML — IoT cybersecurity only.
+P042,Blockchain-Enabled Supply Chain platform for Indian Dairy Industry: Sa,2022.0,,103.0,INCLUDED,INCLUDE,EXCLUDE,EC-07: Blockchain for dairy supply chain (food safety) — off-topic.
+P069,Fraud In The Digital Age: Assessing Cybercrime Through The Lens of The,2025.0,,0.0,BORDERLINE,EXCLUDE,INCLUDE,RQ2: Fraud Hexagon theory for digital fraud — typological model for RQ2 conceptu
+P073,From Portfolio Optimization to Quantum Blockchain and Security: A Syst,2023.0,,23.0,BORDERLINE,EXCLUDE,INCLUDE,RQ1: Quantum computing in finance including fraud detection — methods for RQ1.
+P087,AI-AUGMENTED RISK DETECTION IN CYBERSECURITY COMPLIANCE: A GRC-BASED E,2025.0,,7.0,BORDERLINE,EXCLUDE,INCLUDE,RQ1: GRC AI compliance risk detection in financial/regulated sectors — IS govern
