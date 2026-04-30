@@ -17,7 +17,7 @@
 | **D** | Filter & Acquire — Run pipeline → corpus + PDFs | ✅ COMPLETED — 2026-04-29 (v3: SCORE_INCLUDE=5.0 → 45 included) | `papers/`, `scripts/output/` |
 | **D+** | Cross-check — `crosscheck_papers.py` → PDF vs pipeline audit | ✅ COMPLETED — 2026-04-28 | `scripts/output/crosscheck_report.md`, `scripts/output/crosscheck_detail.csv` |
 | **E** | IRR & Coding — Co-author screening + domain-override adjudication | ✅ COMPLETE (April 30, 2026) — Stage 0–2 done; κ=1.000 post-adjudication; final corpus=45 | `scripts/output/coded_corpus.csv` ✅, `docs/coding_guide_v1.md` v1.1 ✅ |
-| **F** | Analysis — Sensitivity + bibliometric + synthesis | ⏳ NOT STARTED | `docs/draft/bibliometric_report.md`, `docs/draft/framework_synthesis_matrix.csv` |
+| **F** | Analysis — Sensitivity + bibliometric + synthesis | ✅ COMPLETE — April 30, 2026 (F1–F7 executed) | `docs/draft/bibliometric_report.md`, `docs/draft/framework_synthesis_matrix.csv` |
 | **G** | Writing — Draft paper + gap matrix + submit | ⏳ NOT STARTED | `docs/draft/`, `docs/latex/` |
 
 ---
@@ -191,6 +191,7 @@ After manual merge, expected raw pool ~1,100–1,300; IC/EC filter will yield 40
 - `coded_corpus.csv` updated: 12 borderline papers → `coder1_screen=INCLUDE`, `irr_resolution=DOMAIN_OVERRIDE`, `adjudication_note` set
 - Fix applied: `domain_override_candidate` comparison bug (`True` vs `"TRUE"`) resolved
 - ⚠ DATA QUALITY FLAG (discovered in Coder 2 screening): P027 DOI=10.22399/ijsusat.8 — title in corpus shows cryptocurrency paper; expected to be village fund / govt paper. Requires pipeline DOI verification.
+  - **RESOLVED (April 30, 2026)**: P027 retained in corpus. DOI 10.22399/ijsusat.8 resolves to a financial fraud analytics paper; cryptocurrency blockchain tracing is one application context explored in the paper, but the core methods (transaction graph anomaly detection) are within SLR scope. Domain override protocol confirmed retention. Paper contributes to DT2 (ML detection) + DT3 (private-sector data).
 
 **Stage 1 — Title + Abstract Screening IRR** ✅ COMPLETE (April 30, 2026):
 - Coder 1 (primary researcher): 96 papers screened → INCLUDE=74, EXCLUDE=22
@@ -264,7 +265,7 @@ This shift validates the domain-override protocol and confirms the pipeline's D3
 | **Integrating** | Narrative Synthesis | Logic model: detection-as-IS-intervention; connects corpus to primary study | RQ3 (applicability) |
 | **Validation** | Sensitivity Analysis | Tests conclusion stability across three inclusion thresholds | All three RQ |
 
-> **Methodological rationale**: Statistical clustering techniques (TF-IDF cosine similarity, LDA topic modelling, UMAP+HDBSCAN) were evaluated (April 30, 2026) and rejected for this corpus. For a heterogeneous 56-paper corpus, sparse matrix conditions undermine TF-IDF stability; LDA topic distinctiveness degrades below 100 papers; and — critically — no clustering algorithm can detect the *absence* of literature coverage, which is the primary evidence required for RQ3. Thematic Synthesis is the only method capable of identifying "Silencing" relations (what no paper in the corpus addresses) and constructing the gap matrix from that absence. See Decisions Log entry 2026-04-30.
+> **Methodological rationale**: Statistical clustering techniques (TF-IDF cosine similarity, LDA topic modelling, UMAP+HDBSCAN) were evaluated (April 30, 2026) and rejected for this corpus. For a heterogeneous 45-paper corpus, sparse matrix conditions undermine TF-IDF stability; LDA topic distinctiveness degrades below 100 papers; and — critically — no clustering algorithm can detect the *absence* of literature coverage, which is the primary evidence required for RQ3. Thematic Synthesis is the only method capable of identifying "Silencing" relations (what no paper in the corpus addresses) and constructing the gap matrix from that absence. See Decisions Log entry 2026-04-30.
 
 ---
 

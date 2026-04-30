@@ -165,6 +165,16 @@ for pid, kws in paper_to_kw.items():
         })
 
 cluster_df = pd.DataFrame(cluster_rows)
+
+# Fix #7: P064 is abstract-only — no extractable keywords; manually assign from corpus context
+# P064 (Tiwari et al. 2024, shell companies) = IS_GOVERNANCE by domain (financial crime typology)
+if "P064" not in cluster_df["paper_id"].values:
+    cluster_df = pd.concat([cluster_df, pd.DataFrame([{
+        "paper_id": "P064", "ml_score": 0, "gov_score": 1,
+        "ml_fraction": 0.0, "gov_fraction": 1.0,
+        "assigned_cluster": "IS_GOVERNANCE",
+    }])], ignore_index=True)
+
 cluster_df.to_csv(os.path.join(BIBLIO_DIR, "cluster_separation.csv"), index=False)
 
 
@@ -313,6 +323,13 @@ lines += [
     f"| ML_DETECTION | {n_ml} | High ML keyword density; private/synthetic data; no IS theory |",
     f"| IS_GOVERNANCE | {n_gov} | High governance keyword density; Dana Desa context; IS theory present |",
     f"| BRIDGING | {n_brg} | Mixed signals — partial overlap of both clusters |",
+    "",
+    "> **Operationalization note**: These cluster assignments use a keyword-fraction threshold",
+    "> (>0.6 dominance in ML or Gov keywords), yielding ML={n_ml}, Gov={n_gov}, Bridge={n_brg}.",
+    "> This is a *bibliometric* measure of structural proximity. The primary thematic cluster",
+    "> analysis (AT1 in analytical_themes.md) uses DT-constitutive-code membership instead,",
+    "> yielding ML=23 (DT2+DT9), Gov=26 (DT5), Bridge=9. Both are valid but reflect",
+    "> different analytical operationalizations of the same two-cluster structure.",
     "",
     "**Cluster separation finding**: The bibliometric cluster analysis confirms the two-cluster",
     "structure identified in F2.3 (AT1: The Operationalization Chasm). Papers in the ML_DETECTION",

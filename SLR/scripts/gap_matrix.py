@@ -70,7 +70,7 @@ gap_definitions = [
         ),
         "evidence_type": "Literature void — confirmed by keyword search, cluster analysis, DSR framework mapping",
         "analytical_theme": "AT1 — Operationalization Chasm",
-        "rq_addressed": "RQ1, RQ2, RQ4",
+        "rq_addressed": "RQ1, RQ2, RQ3",
         "severity": "CRITICAL",
         "evidence_codes": ["DS-DANDES","CTX-VILLAGE","GAP-VILLAGE"],
         "dsr_cycle_gap": "DESIGN — 0 papers reach village/sub-national context",
@@ -138,7 +138,7 @@ gap_definitions = [
         ),
         "evidence_type": "IST-NONE: 28/45 (62%); 0 D&M IS Success Model applications; 0 TTF applications; 0 AT papers on village detection",
         "analytical_theme": "AT3 — Absence of IS Theory",
-        "rq_addressed": "RQ4",
+        "rq_addressed": "RQ3",
         "severity": "PARTIAL",
         "evidence_codes": ["IST-NONE","IST-AT","IST-IT"],
         "dsr_cycle_gap": "RIGOR — bibliometric foundations present but not connected to detection artifact design",
@@ -152,16 +152,20 @@ gap_definitions = [
     {
         "gap_id": "G5",
         "gap_statement": (
-            "All validated ML detection methods require batch processing of historical "
-            "transaction data and cannot accommodate real-time or near-real-time detection "
-            "during active village fund disbursement periods. This limitation means the "
-            "intervention can only serve as post-hoc audit support, not preventive control."
+            "Operational deployment of ML detection artifacts remains unaddressed: "
+            "four papers explicitly note that their systems lack explainability sufficient "
+            "for auditor adoption, and a further four identify interpretability as a "
+            "barrier to regulatory compliance use. No paper in the corpus designs an "
+            "output interface that translates anomaly scores into actionable audit work "
+            "products — a prerequisite for real-world governance deployment. Additionally, "
+            "all validated methods require batch processing of historical data, precluding "
+            "real-time or near-real-time monitoring during active disbursement periods."
         ),
-        "evidence_type": "GAP-RT (4 papers explicitly note real-time gap); DT7: only 4 papers; no streaming architecture paper exists for governance context",
-        "analytical_theme": "AT1 — Operationalization Chasm (real-time sub-gap)",
+        "evidence_type": "GAP-EXPLAIN (4 papers) + LIM-INTERP (4 papers) note deployment and explainability gaps; DT7 constitutive evidence; no streaming architecture paper exists for governance context",
+        "analytical_theme": "AT1 — Operationalization Chasm (deployment sub-gap)",
         "rq_addressed": "RQ3",
         "severity": "METHODOLOGICAL",
-        "evidence_codes": ["GAP-RT","MC-STREAM"],
+        "evidence_codes": ["GAP-EXPLAIN","LIM-INTERP"],
         "dsr_cycle_gap": "DESIGN — no streaming/edge deployment architecture for village-level systems",
         "primary_study_response": (
             "Explicitly scope primary study as audit-support tool (post-period batch "

@@ -69,7 +69,7 @@ corruption that remains hidden.
 | G2 | Ground truth unavailability for village fraud labels creates an epistemological paradox: s... | **CRITICAL** | LIM-NOLABEL (17 papers), DS-SYNTH (12 papers), cir... | Adopt unsupervised ensemble approach (no labels required). U... |
 | G3 | No validated feature engineering methodology exists for village fund fraud detection. The ... | **CRITICAL** | FE category thin (<5 papers on budget absorption);... | Construct 12-feature taxonomy for Dana Desa fraud detection ... |
 | G4 | IS theoretical grounding is absent from 62% of included papers. The ML detection literatur... | **PARTIAL** | IST-NONE: 28/45 (62%); 0 D&M IS Success Model appl... | Ground primary study in Agency Theory (principal-agent corru... |
-| G5 | All validated ML detection methods require batch processing of historical transaction data... | **METHODOLOGICAL** | GAP-RT (4 papers explicitly note real-time gap); D... | Explicitly scope primary study as audit-support tool (post-p... |
+| G5 | Operational deployment of ML detection artifacts remains unaddressed: four papers explicit... | **METHODOLOGICAL** | GAP-EXPLAIN (4 papers) + LIM-INTERP (4 papers) not... | Explicitly scope primary study as audit-support tool (post-p... |
 
 **Table 4: DSR Framework — Empty Quadrant Analysis**
 
