@@ -2,8 +2,8 @@
 crosscheck_papers.py — Cross-check SLR/papers/ PDFs against pipeline outputs
 =============================================================================
 Compares all PDF files in SLR/papers/ against:
-  1. slr_included_corpus.csv  (quality_score >= 5.5)
-  2. slr_borderline.csv       (quality_score 4.0–5.4)
+  1. slr_included_corpus.csv  (quality_score >= 5.0)
+  2. slr_borderline.csv       (quality_score 4.0–4.9)
   3. papers_raw.csv           (full raw retrieval pool)
 
 For PDFs not found in the pipeline, uses title-keyword heuristics to
@@ -356,8 +356,8 @@ lines.append("## 1. Summary")
 lines.append("")
 lines.append("| Category | Count |")
 lines.append("|---|---|")
-lines.append(f"| ✅ INCLUDED (quality_score ≥ 5.5) | {n_included} |")
-lines.append(f"| 🔶 BORDERLINE (quality_score 4.0–5.4) | {n_borderline} |")
+lines.append(f"| ✅ INCLUDED (quality_score ≥ 5.0) | {n_included} |")
+    lines.append(f"| 🔶 BORDERLINE (quality_score 4.0–4.9) | {n_borderline} |")
 lines.append(f"| ⚪ IN_RAW_NOT_SCORED (failed IC/EC or scored below 4.0) | {n_raw_not_scored} |")
 lines.append(f"| 🆕 MANUAL_ONLY (not in papers_raw.csv at all) | {n_manual_only} |")
 lines.append(f"| **Total** | **{total_pdfs}** |")
