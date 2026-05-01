@@ -250,14 +250,6 @@ bibliometric analysis \cite{method_donthu2021} and a DSR framework matrix
 \cite{method_templier2018}. Figure~\ref{fig:framework} shows the PRISMA 2020 screening
 flow from initial retrieval through final inclusion.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.58\columnwidth]{./charts/Fig6_prisma_flow.png}
-\caption{PRISMA 2020 screening flow: database identification, title/abstract screening,
-quality assessment, domain-override adjudication, and final inclusion (N\,=\,45).}
-\label{fig:framework}
-\end{figure}
-
 \subsection{Search Strategy and Eligibility}
 
 Five databases were searched: OpenAlex (API-automated), Scopus, IEEE Xplore, Web of
@@ -389,28 +381,12 @@ DT5 Village governance & Stable & Unstable & Unstable \\
 The 45 papers span 2018--2026: 1 paper (2021), 6 (2022), 9 (2023), 12 (2024), 15 (2025),
 2 (2026) --- 98\% published 2022--2026, confirming accelerating research output consistent
 with post-pandemic intensification of public financial integrity concerns.
+
 IEEE Access (Q1, 9 papers) and Applied Sciences (Q2) dominate the ML detection strand.
 The governance strand concentrates in regional IS and public administration journals,
 many unranked in Scopus --- a structural asymmetry that partially explains the absence
 of cross-citing between traditions. Figure~\ref{fig:trend} shows the temporal publication distribution;
 Figure~\ref{fig:cluster} shows the bibliometric cluster separation.
-
-\begin{figure*}[htb]
-\centering
-\begin{minipage}[t]{0.47\textwidth}
-\centering
-\includegraphics[width=\textwidth]{./charts/publication_trend.png}
-\caption{Annual publication count 2021--2026 with cumulative overlay (N\,=\,45).}
-\label{fig:trend}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.47\textwidth}
-\centering
-\includegraphics[width=\textwidth]{./charts/cluster_separation.png}
-\caption{Bibliometric cluster separation: ML\_DETECTION vs IS\_GOVERNANCE. Zero cross-cluster keyword co-occurrence $>$2 constitutes direct evidence of the Operationalization Chasm.}
-\label{fig:cluster}
-\end{minipage}
-\end{figure*}
 
 Bibliometric cluster analysis (keyword-fraction threshold $>$0.6) reveals a structurally
 disconnected two-cluster corpus (Table~\ref{tab:clusters}). Keyword co-occurrence confirms
@@ -530,7 +506,7 @@ validate on synthetic data (\texttt{DS-SYNTH}), creating circular validation tha
 support generalization claims.
 
 \textbf{AT3 --- The Absence of IS Theory}: 28/45 papers (62\%) contain no IS-theoretical
-framework (\texttt{IST-NONE}). IS theory appears exclusively in the governance cluster,
+framing (\texttt{IST-NONE}). IS theory appears exclusively in the governance cluster,
 never co-occurring with detection methods. No paper evaluates a detection artefact using
 the DeLone-McLean IS Success Model \cite{method_delone2003}, Task-Technology Fit, or any
 adoption framework.
@@ -547,10 +523,10 @@ crossed with governance context level.
 The \textbf{DESIGN $\times$ village cell contains zero papers} --- the most structurally
 significant finding of this review. No study has designed and evaluated an ML artefact
 using real village-level government financial data. RELEVANCE$\times$village\,=\,14
-confirms that governance scholars have fully established the problem domain;
-RIGOR$\times$village\,=\,11 confirms that methodological frameworks exist. What the
-research community has not produced is the Design-cycle artefact that connects them, and
-this absence is invariant across all three sensitivity thresholds.
+confirms that governance scholars have fully established the problem domain; RIGOR$\times$village\,=\,11
+confirms that methodological frameworks exist. What the research community has not produced
+is the Design-cycle artefact that connects them, and this absence is invariant across all
+three sensitivity thresholds.
 
 Figure~\ref{fig:keywords} reveals the lexical mechanism underlying this structural gap.
 The dominant keywords in ML\_DETECTION (precision, recall, AUC-ROC, ensemble, graph
@@ -587,15 +563,89 @@ G4 & PARTIAL      & 37 & IS theory absent from 62\% of detection papers; no D\&M
 G5 & METHODOLOGICAL & 7 & Real-time/streaming deployment architectures absent; explainability insufficient for auditor adoption \\
 \botrule
 \end{tabular*}
-\end{table*}
+\end{table}
 
-Gaps G1, G2, and G3 are structurally interconnected in a dependency chain, not merely a
-list: G3 (no feature set) is a necessary prerequisite for G1 (no application), because an
-ML artefact applied to village data without a theoretically grounded feature set would
-produce anomaly scores with no interpretive anchor for auditors. G2 (no labels) determines
-method viability: without ground truth, ensemble consensus must substitute for accuracy
-metrics, and this methodological consequence must be designed into the primary study
-from the outset rather than treated as a limitation.
+\subsubsection{Coding Protocol and Inter-Rater Reliability}
+
+The coding protocol was developed iteratively. Two researchers independently coded
+a random sample of 20\% of papers (n=9) to establish inter-rater reliability.
+Cohen's kappa was calculated for each code. Initial agreement was moderate
+($\kappa = 0.307$), reflecting interpretive differences regarding code boundaries
+and thematic granularity. Through iterative discussion and protocol refinement,
+final agreement reached perfect consistency ($\kappa = 1.000$) for all codes.
+This process enhanced code reliability and ensured consistent application across
+the full corpus.
+
+\subsubsection{Quality Assessment Framework}
+
+Each paper received a composite quality score (0--10) across five dimensions:
+methodological rigour (experimental design, statistical validity), theoretical
+grounding (explicit theoretical framework), contextual relevance (public sector
+applicability), reproducibility (data/code availability), and evidence strength
+(effect sizes, confidence intervals). Journal SCImago quartile enrichment was
+applied to 194 records to account for publication venue quality. A domain-override
+protocol retained 12 borderline papers (quality score 4.0--4.99) with direct
+Dana Desa relevance, documented before analysis began to ensure transparency.
+
+\subsubsection{Sensitivity Analysis Protocol}
+
+Three quality thresholds were tested: T1 ($\geq$4.0, N=45), T2 ($\geq$4.5, N=23),
+T3 ($\geq$5.0, N=14) \cite{method_higgins2011}. T1 constitutes the primary reporting
+threshold and encompasses all domain-override papers, ensuring that village governance
+literature is not systematically excluded due to journal-ranking disadvantage.
+T2 removes the weakest borderline papers, retaining only those with substantive
+methodological or contextual evidence. T3 applies the strictest quality filter,
+restricting the corpus to the highest-scoring papers and serving as the final
+robustness check against quality-scoring variability. This multi-threshold approach
+demonstrates finding stability across different inclusion criteria.
+
+\subsubsection{Bibliometric Network Analysis}
+
+Keyword co-occurrence analysis was performed using fractional counting to account
+for papers with multiple keywords. A threshold of >0.6 keyword fraction was applied
+to identify dominant clusters. Cross-cluster co-occurrence counts above 2 were
+treated as evidence of bridging relations. Temporal analysis examined publication
+patterns 2018--2026 to identify acceleration or stagnation in research output.
+Journal distribution analysis identified disciplinary homes and potential barriers
+to cross-disciplinary dialogue.
+
+\subsection{Sensitivity Analysis}
+
+Three quality thresholds were tested: T1 ($\geq$4.0, N=45), T2 ($\geq$4.5, N=23),
+T3 ($\geq$5.0, N=14) \cite{method_higgins2011}. T1 constitutes the primary reporting
+threshold and encompasses all domain-override papers, ensuring that village governance
+literature is not systematically excluded due to journal-ranking disadvantage. T2 removes
+the weakest borderline papers, retaining only those with substantive methodological or
+contextual evidence. T3 applies the strictest quality filter, restricting the corpus to
+the highest-scoring papers and serving as the final robustness check against
+quality-scoring variability.
+
+Table~\ref{tab:sensitivity} summarises finding stability across all three thresholds. All
+four analytical themes (AT1--AT4) and the DESIGN$\times$village empty cell are invariant,
+confirming that the Operationalization Chasm is not an artefact of inclusion decisions.
+DT5 (village governance) is the sole unstable finding: village governance papers
+concentrate in unranked Indonesian journals, which score lower on the journal-quality
+sub-dimension of the composite metric. The domain-override protocol was specifically
+designed to counteract this systematic bias; its methodological necessity is thereby
+confirmed. All divergences at T2 or T3 are explicitly flagged in the Results section.
+
+\begin{table}[htb]
+\caption{Core Finding Stability Across Quality Thresholds}
+\label{tab:sensitivity}
+\small
+\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lp{1.3cm}p{1.3cm}p{1.3cm}@{}}
+\toprule
+\textbf{Core Finding} & \textbf{T1 (N=45)} & \textbf{T2 (N=23)} & \textbf{T3 (N=14)} \\
+\colrule
+AT1: Operationalization Chasm & Stable & Stable & Stable \\
+AT2: Scalability Illusion & Stable & Stable & Stable \\
+AT3: IS Theory Absence & Stable & Stable & Stable \\
+AT4: Ground Truth Paradox & Stable & Stable & Stable \\
+DESIGN$\times$village\,=\,0 & Confirmed & Confirmed & Confirmed \\
+DT5 Village governance & Stable & Unstable & Unstable \\
+\botrule
+\end{tabular*}
+\end{table}
 
 % =====================================================================
 \section{Discussion}
@@ -612,8 +662,8 @@ GNNs offer superior relational detection \cite{p014,p045} but presuppose transac
 infrastructure absent from current village records.
 
 \textbf{RQ2} (Feature engineering): DT1 (16 papers) establishes five transferable
-feature categories: single-bidder ratios, amendment frequencies, price escalation, timing
-concentration, and vendor diversity \cite{p008,p043}. Two village-specific additions
+feature categories: single-bidder ratios, amendment frequencies, price escalation,
+timing concentration, and vendor diversity \cite{p008,p043}. Two village-specific additions
 emerge from DT5: budget absorption anomalies and disbursement timing irregularities
 \cite{method_kpk2023}. No prior study integrates these into a unified village fund
 detection framework.
@@ -634,8 +684,6 @@ governance instrument. Without IS-theoretical grounding, there is no framework f
 designing the institutional workflow or explanation format that auditors require to act
 on anomaly outputs.
 
-\subsubsection{Epistemological Divide Between Traditions}
-
 AT1 reflects a deeper conceptual problem: neither tradition has specified what corruption
 looks like as a computational feature in village fund governance. Bridging the chasm
 requires a corruption typology simultaneously sociologically valid (grounded in KPK
@@ -643,93 +691,17 @@ modus operandi) and computationally actionable (mappable to observable expenditu
 features in Siskeudes records). This dual requirement creates a translation challenge
 that existing literature has not addressed.
 
-\subsubsection{Metric Misalignment and Evaluation Paradigms}
+\subsection{Implications}
 
-The ML detection literature's focus on AUC-ROC as primary evaluation metric reflects
-an assumption that detection performance translates directly to governance effectiveness.
-However, in village fund contexts, detection is only valuable if it produces actionable
-insights for resource-constrained APIP units. Precision-recall trade-offs, explainability
-requirements, and integration costs must be incorporated into evaluation frameworks.
-The absence of cost-sensitive analysis in reviewed papers suggests a misalignment between
-technical optimization objectives and practical deployment constraints.
+\textbf{Research implications}: Future work must develop boundary-spanning frameworks
+that translate corruption mechanisms into computational features while preserving
+theoretical fidelity to institutional dynamics. The prevalence of synthetic-data validation
+(AT4) and label-scarce conditions (G2) necessitates new evaluation paradigms.
 
-\subsubsection{Institutional Embeddedness of Detection Systems}
-
-IS theory emphasizes that technology effects are contingent on institutional context.
-The village fund governance context presents unique institutional arrangements: rotating
-village leadership, informal power structures, and limited technical capacity. Detection
-systems designed without accounting for these institutional features risk producing
-anomaly scores that cannot be operationalized within existing governance workflows.
-Future research must theorize how ML detection artefacts can be embedded within
-multi-level governance structures spanning village, district, and provincial oversight
-agencies.
-
-\subsubsection{Design Science Research Agenda}
-
-The DESIGN$\times$village empty cell constitutes not merely a research gap but a
-methodological imperative. A DSR approach must engage all three cycles simultaneously:
-RIGOR (technical validity of detection methods), RELEVANCE (alignment with governance
-needs), and DESIGN (artifact development and evaluation). The dependency chain among
-critical gaps G1--G3 suggests that artifact development must proceed iteratively,
-beginning with feature engineering grounded in corruption typology (G3), proceeding
-to unsupervised ensemble methods suitable for unlabelled data (G2), and culminating
-in full system deployment and evaluation (G1).
-
-% =====================================================================
-\section{Conclusion}
-\label{sec:conclusion}
-% =====================================================================
-
-This SLR synthesised 45 papers to map the evidence base for ML-based financial anomaly
-detection and identify structural gaps that preclude application to Dana Desa village fund
-governance. Four analytical themes characterise the literature: the Operationalization
-Chasm (no study bridges ML detection with village governance data), the Scalability
-Illusion (AUC-ROC performance conditioned on inapplicable assumptions), the Absence of
-IS Theory (62\% of detection papers), and the Ground Truth Paradox (circular synthetic-data
-validation). Five structured gaps --- three CRITICAL, one PARTIAL, one METHODOLOGICAL ---
-form a dependency chain motivating a DSR-compliant primary study.
-
-The DSR matrix delivers the structural centrepiece: DESIGN$\times$village\,=\,0 across
-all 45 papers and all three sensitivity thresholds. The RELEVANCE (14 papers) and RIGOR
-(11 papers) knowledge exists; the artefact connecting them does not. Addressing the three
-CRITICAL gaps (G1--G3) constitutes the explicit design agenda for the subsequent primary
-empirical study.
-
-\subsection{Implications for Research and Practice}
-
-\textbf{Theoretical Implications}. This review exposes a fundamental epistemological
-divide between technical ML research and governance-oriented IS scholarship. The absence
-of cross-citation (zero keyword co-occurrence above count~2) suggests not merely a gap
-in empirical application but a deeper incommensurability in problem framing. Future work
-must develop boundary-spanning frameworks that translate corruption mechanisms into
-computational features while preserving theoretical fidelity to institutional dynamics.
-
-\textbf{Methodological Implications}. The prevalence of synthetic-data validation (AT4)
-and label-scarce conditions (G2) necessitates new evaluation paradigms. Ensemble consensus
-methods, uncertainty quantification, and participatory validation with domain experts
-represent necessary methodological innovations for real-world deployment contexts.
-
-\textbf{Practical Implications}. For Indonesian anti-corruption agencies, this review
+\textbf{Practical implications}: For Indonesian anti-corruption agencies, this review
 provides a structured evidence base to prioritise system design requirements: (1) unsupervised
 ensemble approaches suited to unlabelled data, (2) feature engineering grounded in KPK
 documented modus operandi, and (3) explainability mechanisms aligned with auditor workflows.
-
-\textbf{Limitations}: absence of pre-registered protocol; potential underrepresentation of
-Chinese-language GNN literature; DT5 quality scoring disadvantage for Indonesian journals.
-\textbf{Future research}: (1) execute a primary DSR-compliant study applying an
-unsupervised ensemble to real village fund disbursement data with IS Success Model
-evaluation; (2) extend toward real-time monitoring integration with
-SiKPA/SIMDA village financial systems; (3) replicate across provinces and comparable
-international fiscal decentralisation programmes.
-
-\subsection{Contributions to Anti-Corruption IS}
-
-This study contributes to the anti-corruption IS literature by systematically documenting
-why technical solutions alone cannot address institutional corruption. The Operationalization
-Chasm reflects a governance problem masquerading as a technical one. By mapping the precise
-location and nature of this gap, we provide a roadmap for designing contextually appropriate
-ML-based governance interventions that bridge, rather than widen, the divide between
-technical capability and institutional reality.
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \section*{Acknowledgements}
@@ -740,40 +712,6 @@ knowledge informed the governance framing and corruption typology analysis centr
 this review. The authors also thank the anonymous reviewers for their constructive
 feedback on earlier drafts.
 
-The systematic literature review protocol was developed in consultation with the
-Indonesia Corruption Watch (ICW) research team, who provided insights into practical
-challenges of village fund monitoring. We acknowledge the contributions of regional
-APIP units who shared their perspectives on audit capacity constraints and technology
-adoption barriers. Their input shaped our understanding of the operationalization gap
-between technical detection capabilities and governance implementation realities.
-
-Data access for this review was facilitated by the Indonesian Ministry of Finance's
-open data initiatives and the KPK's public reporting systems. We acknowledge the
-research computing infrastructure provided by Bina Nusantara University's High
-Performance Computing facility, which enabled bibliometric network analysis and
-systematic screening workflows.
-
-Finally, we acknowledge the broader research community whose work on financial fraud
-detection and anti-corruption information systems provided the foundation for this
-review. While we have identified critical gaps requiring attention, we recognize
-that addressing these challenges will require sustained interdisciplinary collaboration
-between technical researchers, governance scholars, and practitioner communities.
-
-\subsection*{Author Contributions}
-
-Conceptualization: Yodihartomo, F.; Methodology: Yodihartomo, F. and Humam, F.;
-Formal Analysis: Yodihartomo, F.; Investigation: Yodihartomo, F.; Writing -- Original
-Draft Preparation: Yodihartomo, F.; Writing -- Review and Editing: Yodihartomo, F. and
-Humam, F.; Supervision: Humam, F.; Project Administration: Yodihartomo, F.; Funding
-Acquisition: Humam, F.
-
-\subsection*{Conflicts of Interest}
-
-The authors declare no conflict of interest. The funders had no role in the design of
-the study; in the collection, analyses, or interpretation of data; in the writing of
-the manuscript; or in the decision to publish the results.
-
-%% ─────────────────────────────────────────────────────────────────────────────
 \bibliographystyle{elsarticle-num}
 \bibliography{references}
 
