@@ -31,13 +31,6 @@
 \usepackage{tabularx}
 \usepackage{etoolbox}
 
-% Tighten spacing for 9-page limit
-\setlength{\abovecaptionskip}{2pt}
-\setlength{\belowcaptionskip}{1pt}
-\setlength{\bibsep}{0pt plus 0.1ex}
-\pretocmd{\thebibliography}{\scriptsize}{}{}
-\renewcommand{\baselinestretch}{0.92}
-
 \graphicspath{{../../analysis/bibliometric/}{../../analysis/themes/charts/}}
 
 %% Journal metadata
@@ -82,7 +75,7 @@ systematic literature review \sep information systems governance
 
 Village fund governance in Indonesia operates at a scale that makes it both critical and vulnerable. The Village Law (UU No.~6/2014) channels fiscal allocations to over 74,000 village governments annually --- exceeding IDR~70 trillion per fiscal year. This fiscal decentralisation model places budget execution authority with village officials who frequently operate outside formal audit supervision. The KPK recorded 601 Dana Desa corruption cases between 2015 and 2023 \cite{method_kpk2023}, implicating village officials in embezzlement, fictitious project expenditure, and budget absorption manipulation. The financial exposure is systemic, not episodic: recurrence across consecutive fiscal years suggests structural principal-agent failure \cite{method_jensen1976}.
 
-Current governance responses rely primarily on ex-post audit cycles, which detect fraud after disbursement has occurred. The capacity gap is structural: Inspektorat Daerah (APIP) units audit a small fraction of villages annually, and Badan Pemeriksa Keuangan (BPK) sampling is confined to aggregate financial statements rather than activity-level expenditure records. This leaves the operationally critical data layer --- Siskeudes, the village financial management information system --- largely unscrutinised in real time. ML-based financial fraud detection has accumulated substantial evidence, with Isolation Forest, Local Outlier Factor (LOF), graph neural networks (GNNs), and autoencoder-based methods reporting AUC-ROC values exceeding 0.90 on benchmark datasets \cite{p003,p007,p015,p022,p026,p041,p043}. Yet this technical literature addresses fundamentally different problem conditions: centralised commercial systems with labelled transaction data. Whether these methods adapt to village governance conditions --- fragmented records, unlabelled data, sub-national institutional variation --- is an open question no existing study addresses.
+Current governance responses rely primarily on ex-post audit cycles, which detect fraud after disbursement has occurred. The capacity gap is structural: Inspektorat Daerah (APIP) units audit a small fraction of villages annually, and Badan Pemeriksa Keuangan (BPK) sampling is confined to aggregate financial statements rather than activity-level expenditure records. This leaves the operationally critical data layer --- Siskeudes, the village financial management information system --- largely unscrutinised in real time. ML-based financial fraud detection has accumulated substantial evidence, with Isolation Forest, Local Outlier Factor (LOF), graph neural networks (GNNs), and autoencoder-based methods reporting AUC-ROC values exceeding 0.90 \cite{p003,p007,p015,p022,p026,p041,p043}. Yet this technical literature addresses fundamentally different problem conditions: centralised commercial systems with labelled transaction data. Whether these methods adapt to village governance conditions --- fragmented records, unlabelled data, sub-national institutional variation --- is an open question no existing study addresses.
 
 This SLR pursues three research questions:
 \begin{itemize}
@@ -106,7 +99,7 @@ Existing SLRs share a critical boundary condition they rarely make explicit: the
 
 \subsection{Village Fund Governance and Corruption Patterns}
 
-Dana Desa governance literature documents a consistent corruption typology grounded in agency theory \cite{method_jensen1976}, the fraud triangle, and institutional control frameworks: budget absorption manipulation, fictitious procurement, and administrative fraud \cite{method_kpk2023}. The governance tradition's contribution extends beyond cataloguing modus operandi: it establishes the institutional conditions --- weak oversight, rotating village heads, limited audit capacity --- that transform latent corruption opportunity into observed behaviour. Digital governance studies \cite{p013,p016,p039,p044} provide IS framing for how technology intersects with these institutional dynamics but contain no computational detection methods. This omission reveals a division of intellectual labour that this SLR characterises as structurally problematic: the community with the richest understanding of corruption mechanisms (governance) has not attempted to operationalize that understanding as computable features; the community with the strongest detection algorithms (ML) has not sought to apply them to governance contexts where the fraud mechanisms differ fundamentally from commercial transaction fraud.
+Dana Desa governance literature documents a consistent corruption typology grounded in agency theory \cite{method_jensen1976}, the fraud triangle, and institutional control frameworks: budget absorption manipulation, fictitious procurement, and administrative fraud \cite{method_kpk2023}. The governance tradition establishes institutional conditions --- weak oversight, rotating village heads, limited audit capacity --- that transform latent corruption opportunity into observed behaviour. Digital governance studies \cite{p013,p016,p039,p044} provide IS framing for how technology intersects with these institutional dynamics but contain no computational detection methods. This omission reveals a division of intellectual labour: the community with the richest understanding of corruption mechanisms (governance) has not attempted to operationalize that understanding as computable features; the community with the strongest detection algorithms (ML) has not sought to apply them to governance contexts where the fraud mechanisms differ fundamentally from commercial transaction fraud.
 
 \subsection{Theoretical Framework: DSR and IS Success}
 
@@ -173,7 +166,7 @@ DT5 Village governance & Stable & Unstable & Unstable \\
 
 \subsection{Bibliometric Characteristics}
 
-The 45 papers span 2018--2026: 1 paper (2021), 6 (2022), 9 (2023), 12 (2024), 15 (2025), 2 (2026) --- 98\% published 2022--2026, confirming accelerating research output. IEEE Access (Q1, 9 papers) and Applied Sciences (Q2) dominate the ML detection strand. The governance strand concentrates in regional IS and public administration journals, many unranked in Scopus --- a structural asymmetry that partially explains the absence of cross-citing between traditions. Figure~\ref{fig:trend} shows the temporal publication distribution; Figure~\ref{fig:cluster} shows the bibliometric cluster separation.
+The 45 papers span 2018--2026: 1 paper (2021), 6 (2022), 9 (2023), 12 (2024), 15 (2025), 2 (2026) --- 98\% published 2022--2026. IEEE Access (Q1, 9 papers) and Applied Sciences (Q2) dominate the ML detection strand. The governance strand concentrates in regional IS and public administration journals, many unranked in Scopus --- a structural asymmetry that partially explains the absence of cross-citing between traditions. Figure~\ref{fig:trend} shows the temporal publication distribution; Figure~\ref{fig:cluster} shows the bibliometric cluster separation.
 
 \begin{figure*}[htb]
 \centering
@@ -270,26 +263,19 @@ DT10 & Explainability \& audit requirements   & 7  & 1,3 \\
 
 \subsection{Analytical Themes}
 
-Cross-paper relationship analysis (121 inter-paper relations) produced four analytical themes, characterised by the lexical separation between clusters documented in Table~\ref{tab:clusters}.
+Cross-paper relationship analysis produced four analytical themes (Table~\ref{tab:clusters}).
 
-\textbf{AT1 --- The Operationalization Chasm} (Figure~\ref{fig:chasm}): The corpus bifurcates into two non-communicating traditions: 23 papers develop ML methods without governance engagement (DT2, DT3, DT9); 26 papers document village corruption without computational approaches (DT5). Three bridging papers exist but none unite both traditions in a single study design. Six silencing relations confirm the absence: no paper applies ML to Dana Desa data; no paper proposes a village fund feature set; no paper maps corruption typology to ML-detectable signals.
+\textbf{AT1 --- The Operationalization Chasm}: The corpus bifurcates into two non-communicating traditions: 23 papers develop ML methods without governance engagement; 26 papers document village corruption without computational approaches. Three bridging papers exist but none unite both traditions. Six silencing relations confirm the absence: no paper applies ML to Dana Desa data; no paper proposes a village fund feature set; no paper maps corruption typology to ML-detectable signals.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.58\columnwidth]{./charts/Fig3_operationalization_chasm.png}
-\caption{Operationalization Chasm: structural gap between ML\_DETECTION and IS\_GOVERNANCE clusters, with BRIDGING papers ($n=3$) shown at the boundary.}
-\label{fig:chasm}
-\end{figure}
+\textbf{AT2 --- The Scalability Illusion}: Technical papers report AUC-ROC $>$0.95 under assumptions that do not hold in village governance: centralised databases (4 papers), labelled data (12 papers), and high transaction volume. Five papers validate on synthetic data, creating circular validation.
 
-\textbf{AT2 --- The Scalability Illusion}: Technical papers report AUC-ROC $>$0.95 under assumptions that do not hold in village governance: centralised databases (4 papers), labelled data (12 papers), and high transaction volume. Five papers validate on synthetic data, creating circular validation that cannot support generalization claims.
+\textbf{AT3 --- The Absence of IS Theory}: 28/45 papers (62\%) contain no IS-theoretical framework. IS theory appears exclusively in the governance cluster, never co-occurring with detection methods. No paper evaluates a detection artefact using the DeLone-McLean IS Success Model \cite{method_delone2003} or any adoption framework.
 
-\textbf{AT3 --- The Absence of IS Theory}: 28/45 papers (62\%) contain no IS-theoretical framework. IS theory appears exclusively in the governance cluster, never co-occurring with detection methods. No paper evaluates a detection artefact using the DeLone-McLean IS Success Model \cite{method_delone2003}, Task-Technology Fit, or any adoption framework.
-
-\textbf{AT4 --- The Ground Truth Paradox}: Five papers report high performance on synthetic or self-labelled data while acknowledging that real-world fraud labels are unavailable --- a circular validation pattern that cannot support operational deployment claims.
+\textbf{AT4 --- The Ground Truth Paradox}: Five papers report high performance on synthetic or self-labelled data while acknowledging that real-world fraud labels are unavailable --- a circular validation pattern.
 
 \subsection{DSR Framework Matrix}
 
-Table~\ref{tab:clusters} (right) maps each included paper to its primary DSR cycle, crossed with governance context level. The \textbf{DESIGN $\times$ village cell contains zero papers} --- the most structurally significant finding of this review. No study has designed and evaluated an ML artefact using real village-level government financial data. RELEVANCE$\times$village\,=\,14 confirms that governance scholars have fully established the problem domain; RIGOR$\times$village\,=\,11 confirms that methodological frameworks exist. What the research community has not produced is the Design-cycle artefact that connects them, and this absence is invariant across all three sensitivity thresholds.
+Table~\ref{tab:clusters} (right) maps each included paper to its primary DSR cycle, crossed with governance context level. The \textbf{DESIGN $\times$ village cell contains zero papers} --- the most structurally significant finding. No study has designed and evaluated an ML artefact using real village-level government financial data. RELEVANCE$\times$village\,=\,14 confirms that governance scholars have fully established the problem domain; RIGOR$\times$village\,=\,11 confirms that methodological frameworks exist. What the research community has not produced is the Design-cycle artefact that connects them, and this absence is invariant across all three sensitivity thresholds.
 
 Figure~\ref{fig:keywords} reveals the lexical mechanism underlying this structural gap. The dominant keywords in ML\_DETECTION (precision, recall, AUC-ROC, ensemble, graph neural network) and IS\_GOVERNANCE (dana desa, principal-agent, inspektorat, APIP, transparency) share zero co-occurrence above count~2. This semantic separation explains why the Design cycle has not been attempted at the village context level.
 
@@ -311,15 +297,15 @@ Figure~\ref{fig:keywords} reveals the lexical mechanism underlying this structur
 \textbf{ID} & \textbf{Severity} & \textbf{N} & \textbf{Gap Statement} \\
 \colrule
 G1 & CRITICAL     & 14 & No ML artefact applies to Dana Desa financial data (DESIGN $\times$ village = 0) \\
-G2 & CRITICAL     & 19 & Label scarcity eliminates supervised approaches; unsupervised methods remain methodologically underspecified for village governance \\
-G3 & CRITICAL     & 40 & No validated feature engineering framework exists for village fund fraud; budget absorption features have $<$5 papers of foundation \\
+G2 & CRITICAL     & 19 & Label scarcity eliminates supervised approaches; unsupervised methods remain methodologically underspecified \\
+G3 & CRITICAL     & 40 & No validated feature engineering framework exists for village fund fraud \\
 G4 & PARTIAL      & 37 & IS theory absent from 62\% of detection papers; no D\&M IS Success Model application found \\
-G5 & METHODOLOGICAL & 7 & Real-time/streaming deployment architectures absent; explainability insufficient for auditor adoption \\
+G5 & METHODOLOGICAL & 7 & Real-time/streaming deployment architectures absent; explainability insufficient \\
 \botrule
 \end{tabular*}
 \end{table}
 
-Gaps G1, G2, and G3 are structurally interconnected in a dependency chain, not merely a list: G3 (no feature set) is a necessary prerequisite for G1 (no application), because an ML artefact applied to village data without a theoretically grounded feature set would produce anomaly scores with no interpretive anchor for auditors. G2 (no labels) determines method viability: without ground truth, ensemble consensus must substitute for accuracy metrics.
+Gaps G1, G2, and G3 are structurally interconnected: G3 (no feature set) is a prerequisite for G1 (no application), because an ML artefact applied to village data without a theoretically grounded feature set would produce anomaly scores with no interpretive anchor for auditors. G2 (no labels) determines method viability: without ground truth, ensemble consensus must substitute for accuracy metrics.
 
 % =====================================================================
 \section{Discussion}
@@ -328,11 +314,11 @@ Gaps G1, G2, and G3 are structurally interconnected in a dependency chain, not m
 
 \subsection{Answering the Research Questions}
 
-\textbf{RQ1} (ML methods): Isolation Forest \cite{p015}, LOF \cite{p041}, and Autoencoder-based methods \cite{p003,p015} demonstrate the strongest fit for unlabelled, low-volume village fund data conditions. Supervised methods dominate the corpus \cite{p003,p007,p022,p026,p039} but require labels unavailable in the Dana Desa context. GNNs offer superior relational detection \cite{p014,p045} but presuppose transaction-graph infrastructure absent from current village records.
+\textbf{RQ1} (ML methods): Isolation Forest \cite{p015}, LOF \cite{p041}, and Autoencoder-based methods \cite{p003,p015} demonstrate the strongest fit for unlabelled, low-volume village fund data. Supervised methods dominate the corpus \cite{p003,p007,p022,p026,p039} but require labels unavailable in the Dana Desa context. GNNs offer superior relational detection \cite{p014,p045} but presuppose transaction-graph infrastructure absent from current village records.
 
 \textbf{RQ2} (Feature engineering): DT1 (16 papers) establishes five transferable feature categories: single-bidder ratios, amendment frequencies, price escalation, timing concentration, and vendor diversity \cite{p008,p043}. Two village-specific additions emerge from DT5: budget absorption anomalies and disbursement timing irregularities \cite{method_kpk2023}. No prior study integrates these into a unified village fund detection framework.
 
-\textbf{RQ3} (Structural gaps): Three CRITICAL gaps preclude direct application (G1, G2, G3), confirmed through convergent triangulation of thematic synthesis, bibliometric disconnection, and DSR empty cells. The Operationalization Chasm is not merely a practical gap --- it reflects an epistemological difference that neither tradition has bridged.
+\textbf{RQ3} (Structural gaps): Three CRITICAL gaps preclude direct application (G1, G2, G3), confirmed through convergent triangulation of thematic synthesis, bibliometric disconnection, and DSR empty cells. The Operationalization Chasm reflects an epistemological difference that neither tradition has bridged.
 
 \subsection{Theoretical Contributions}
 
@@ -350,7 +336,7 @@ The absence of IS theory in 62\% of detection papers is particularly consequenti
 
 \subsection{Limitations}
 
-This review's scope excludes Chinese-language GNN literature and pre-2010 foundational works. The 45-paper corpus reflects database coverage and search string limitations. Quality scoring disadvantages Indonesian village governance papers published in unranked journals, addressed through domain-override protocol but not fully resolved.
+This review's scope excludes pre-2010 foundational works. The 45-paper corpus reflects database coverage and search string limitations. Quality scoring disadvantages Indonesian village governance papers published in unranked journals, addressed through domain-override protocol but not fully resolved.
 
 % =====================================================================
 \section{Conclusion}
@@ -361,17 +347,350 @@ This SLR synthesised 45 papers to map the evidence base for ML-based financial a
 
 The DSR matrix delivers the structural centrepiece: DESIGN$\times$village\,=\,0 across all 45 papers and all three sensitivity thresholds. The RELEVANCE (14 papers) and RIGOR (11 papers) knowledge exists; the artefact connecting them does not. Addressing the three CRITICAL gaps (G1--G3) constitutes the explicit design agenda for the subsequent primary empirical study.
 
-\textbf{Limitations}: absence of pre-registered protocol; potential underrepresentation of Chinese-language GNN literature; DT5 quality scoring disadvantage for Indonesian journals. \textbf{Future research}: (1) execute a primary DSR-compliant study applying an unsupervised ensemble to real village fund disbursement data with IS Success Model evaluation; (2) extend toward real-time monitoring integration with SiKPA/SIMDA village financial systems; (3) replicate across provinces and comparable international fiscal decentralisation programmes.
+\textbf{Limitations}: absence of pre-registered protocol; DT5 quality scoring disadvantage for Indonesian journals. \textbf{Future research}: (1) execute a primary DSR-compliant study applying an unsupervised ensemble to real village fund disbursement data with IS Success Model evaluation; (2) extend toward real-time monitoring integration with SiKPA/SIMDA village financial systems; (3) replicate across provinces and comparable international fiscal decentralisation programmes.
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \section*{Acknowledgements}
 This research was supported by Bina Nusantara University through its research and publication development programme. The authors gratefully acknowledge the institutional expertise contributed by Komisi Pemberantasan Korupsi (KPK) practitioners, whose domain knowledge informed the governance framing and corruption typology analysis central to this review. The authors also thank the anonymous reviewers for their constructive feedback on earlier drafts.
 
-%% ─────────────────────────────────────────────────────────────────────────────
-% Suppress redundant url field (every url = https://doi.org/[doi], DOI link already present)
-\def\url#1{}%
-\def\urlprefix{}%
-\bibliographystyle{elsarticle-num}
-\bibliography{references}
+%% =====================================================================
+%% References — Vancouver numbered style, ordered by appearance
+%% =====================================================================
+\begin{thebibliography}{46}
+
+\bibitem{method_kpk2023}
+Komisi Pemberantasan Korupsi.
+Laporan Monitoring Dana Desa 2015--2023.
+KPK Directorate of Research and Development, 2023.
+Jakarta, Indonesia.
+URL: https://www.kpk.go.id/id/publikasi/laporan-kinerja
+
+\bibitem{method_jensen1976}
+Jensen, Michael C. and Meckling, William H.
+Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure.
+\textit{Journal of Financial Economics}, 1976.
+Volume 3, number 4, pages 305--360.
+DOI: 10.1016/0304-405X(76)90026-X
+
+\bibitem{p003}
+Jack Nicholls and Aditya Kuppa and Nhien‐An Le‐Khac.
+Financial Cybercrime: A Comprehensive Survey of Deep Learning Approaches to Tackle the Evolving Financial Crime Landscape.
+\textit{IEEE Access}, 2021.
+DOI: 10.1109/access.2021.3134076
+
+\bibitem{p007}
+Abdulwahab Ali Almazroi and Nasir Ayub.
+Online Payment Fraud Detection Model Using Machine Learning Techniques.
+\textit{IEEE Access}, 2023.
+DOI: 10.1109/access.2023.3339226
+
+\bibitem{p015}
+José Edson de Albuquerque Filho and Laislla Carolina Pinheiro Brandão and Bruno Fernandes.
+A Review of Neural Networks for Anomaly Detection.
+\textit{IEEE Access}, 2022.
+DOI: 10.1109/access.2022.3216007
+
+\bibitem{p022}
+Hanyao Gao and Gang Kou and Haiming Liang.
+Machine learning in business and finance: a literature review and research opportunities.
+\textit{Financial Innovation}, 2024.
+DOI: 10.1186/s40854-024-00629-z
+
+\bibitem{p026}
+Shimal Sh. Taher and Siddeeq Y. Ameen and Jihan A. Ahmed.
+Advanced Fraud Detection in Blockchain Transactions: An Ensemble Learning and Explainable AI Approach.
+\textit{Engineering Technology \& Applied Science Research}, 2024.
+DOI: 10.48084/etasr.6641
+
+\bibitem{p041}
+Elshan Gadimov and Ermiyas Birihanu.
+Real-time suspicious detection framework for financial data streams.
+\textit{International Journal of Information Technology}, 2025.
+DOI: 10.1007/s41870-025-02529-6
+
+\bibitem{p043}
+Lucia Siciliani and Vincenzo Taccardi and Pierpaolo Basile.
+AI-based decision support system for public procurement.
+\textit{Information Systems}, 2023.
+DOI: 10.1016/j.is.2023.102284
+
+\bibitem{method_hevner2004}
+Hevner, Alan R. and March, Salvatore T. and Park, Jinsoo and Ram, Sudha.
+Design Science in Information Systems Research.
+\textit{MIS Quarterly}, 2004.
+Volume 28, number 1, pages 75--105.
+DOI: 10.2307/25148625
+
+\bibitem{p001}
+Abdulalem Ali and Shukor Abd Razak and Siti Hajar Othman.
+Financial Fraud Detection Based on Machine Learning: A Systematic Literature Review.
+\textit{Applied Sciences}, 2022.
+DOI: 10.3390/app12199637
+
+\bibitem{p004}
+Deepa Bisht and Rajesh Singh and Anita Gehlot.
+Imperative Role of Integrating Digitalization in the Firms Finance: A Technological Perspective.
+\textit{Electronics}, 2022.
+DOI: 10.3390/electronics11193252
+
+\bibitem{p037}
+Luiz Moura and André Barcauí and Renan Carriço Payer.
+AI and Financial Fraud Prevention: Mapping the Trends and Challenges Through a Bibliometric Lens.
+\textit{Journal of risk and financial management}, 2025.
+DOI: 10.3390/jrfm18060323
+
+\bibitem{p008}
+Francisco Cantú.
+The Fingerprints of Fraud: Evidence from Mexico’s 1988 Presidential Election.
+\textit{American Political Science Review}, 2019.
+DOI: 10.1017/s0003055419000285
+
+\bibitem{method_delone2003}
+DeLone, William H. and McLean, Ephraim R.
+The {DeLone} and {McLean} Model of Information Systems Success: A Ten-Year Update.
+\textit{Journal of Management Information Systems}, 2003.
+Volume 19, number 4, pages 9--30.
+DOI: 10.1080/07421222.2003.11045748
+
+\bibitem{method_prisma2020}
+Page, Matthew J. and McKenzie, Joanne E. and Bossuyt, Patrick M. and Boutron, Isabelle and Hoffmann, Tammy C. and Mulrow, Cynthia D. and Shamseer, Larissa and Tetzlaff, Jennifer M. and Akl, Elie A. and Brennan, Sue E.
+The {PRISMA} 2020 Statement: An Updated Guideline for Reporting Systematic Reviews.
+\textit{BMJ}, 2021.
+Volume 372, n71.
+DOI: 10.1136/bmj.n71
+
+\bibitem{method_thomas2008}
+Thomas, James and Harden, Angela.
+Methods for the Thematic Synthesis of Qualitative Research in Systematic Reviews.
+\textit{BMC Medical Research Methodology}, 2008.
+Volume 8, number 1, pages 45.
+DOI: 10.1186/1471-2288-8-45
+
+\bibitem{method_donthu2021}
+Donthu, Naveen and Kumar, Satish and Mukherjee, Debmalya and Pandey, Nitesh and Lim, Weng Marc.
+How to Conduct a Bibliometric Analysis: An Overview and Guidelines.
+\textit{Journal of Business Research}, 2021.
+Volume 133, pages 285--296.
+DOI: 10.1016/j.jbusres.2021.04.070
+
+\bibitem{method_templier2018}
+Templier, Mathieu and {Par\'e}, Guy.
+Transparency in Literature Reviews: An Assessment of Reporting Practices across Review Types and Genres in Top {IS} Journals.
+\textit{European Journal of Information Systems}, 2018.
+Volume 27, number 5, pages 503--550.
+DOI: 10.1080/0960085X.2017.1398880
+
+\bibitem{p002}
+Josh Kamps and Bennett Kleinberg.
+To the moon: defining and detecting cryptocurrency pump-and-dumps.
+\textit{Crime Science}, 2018.
+DOI: 10.1186/s40163-018-0093-5
+
+\bibitem{p005}
+Marc Schmitt.
+Securing the digital world: Protecting smart infrastructures and digital industries with artificial intelligence (AI)-enabled malware and intrusion detection.
+\textit{Journal of Industrial Information Integration}, 2023.
+DOI: 10.1016/j.jii.2023.100520
+
+\bibitem{p006}
+Khyati Kapadiya and Usha Patel and Rajesh Gupta.
+Blockchain and AI-Empowered Healthcare Insurance Fraud Detection: an Analysis, Architecture, and Future Prospects.
+\textit{IEEE Access}, 2022.
+DOI: 10.1109/access.2022.3194569
+
+\bibitem{p009}
+Samuel Oladiipo Olabanji and Yewande Alice Marquis and Chinasa Susan Adigwe.
+AI-Driven Cloud Security: Examining the Impact of User Behavior Analysis on Threat Detection.
+\textit{Asian Journal of Research in Computer Science}, 2024.
+DOI: 10.9734/ajrcos/2024/v17i3424
+
+\bibitem{p010}
+Joanna Zhao and Xinruo Wang.
+Unleashing efficiency and insights: Exploring the potential applications and challenges of ChatGPT in accounting.
+\textit{Journal of Corporate Accounting \& Finance}, 2023.
+DOI: 10.1002/jcaf.22663
+
+\bibitem{p011}
+Olubusola Odeyemi and Chinwe Chinazo Okoye and Onyeka Chrisanctus Ofodile.
+INTEGRATING AI WITH BLOCKCHAIN FOR ENHANCED FINANCIAL SERVICES SECURITY.
+\textit{Finance \& Accounting Research Journal}, 2024.
+DOI: 10.51594/farj.v6i3.855
+
+\bibitem{p012}
+Odunayo Adewunmi Adelekan and Olawale Adisa and Bamidele Segun Ilugbusi.
+EVOLVING TAX COMPLIANCE IN THE DIGITAL ERA: A COMPARATIVE ANALYSIS OF AI-DRIVEN MODELS AND BLOCKCHAIN TECHNOLOGY IN U.S. TAX ADMINISTRATION.
+\textit{Computer Science \& IT Research Journal}, 2024.
+DOI: 10.51594/csitrj.v5i2.759
+
+\bibitem{p013}
+Faozi A. Almaqtari.
+The Role of IT Governance in the Integration of AI in Accounting and Auditing Operations.
+\textit{Economies}, 2024.
+DOI: 10.3390/economies12080199
+
+\bibitem{p014}
+Daniel Fährmann and Laura Martín and Luı́s Sánchez.
+Anomaly Detection in Smart Environments: A Comprehensive Survey.
+\textit{IEEE Access}, 2024.
+DOI: 10.1109/access.2024.3395051
+
+\bibitem{p016}
+Felix Adebayo and Bakare Haslam and Olumide Ikumapayi.
+Securing Government Revenue: A Cloud-Based AI Model for Predictive Detection of Tax-Related Financial Crimes.
+\textit{International Journal of Computer Applications Technology and Research}, 2025.
+DOI: 10.7753/ijcatr1405.1007
+
+\bibitem{p017}
+Davy Preuveneers and Vera Rimmer and Ilias Tsingenopoulos.
+Chained Anomaly Detection Models for Federated Learning: An Intrusion Detection Case Study.
+\textit{Applied Sciences}, 2018.
+DOI: 10.3390/app8122663
+
+\bibitem{p018}
+K. Venkatesan and Syarifah Bahiyah Rahayu.
+Blockchain security enhancement: an approach towards hybrid consensus algorithms and machine learning techniques.
+\textit{Scientific Reports}, 2024.
+DOI: 10.1038/s41598-024-51578-7
+
+\bibitem{p019}
+Mohammed Almehdhar and Abdullatif Albaseer and Muhammad Asif Khan.
+Deep Learning in the Fast Lane: A Survey on Advanced Intrusion Detection Systems for Intelligent Vehicle Networks.
+\textit{IEEE Open Journal of Vehicular Technology}, 2024.
+DOI: 10.1109/ojvt.2024.3422253
+
+\bibitem{p020}
+Amal A. Alahmadi and Malak Aljabri and Fahd Alhaidari.
+DDoS Attack Detection in IoT-Based Networks Using Machine Learning Models: A Survey and Research Directions.
+\textit{Electronics}, 2023.
+DOI: 10.3390/electronics12143103
+
+\bibitem{p021}
+George Kornaros.
+Hardware-Assisted Machine Learning in Resource-Constrained IoT Environments for Security: Review and Future Prospective.
+\textit{IEEE Access}, 2022.
+DOI: 10.1109/access.2022.3179047
+
+\bibitem{p023}
+Darko Vuković and Senanu Dekpo-Adza and Stefana Matović.
+AI integration in financial services: a systematic review of trends and regulatory challenges.
+\textit{Humanities and Social Sciences Communications}, 2025.
+DOI: 10.1057/s41599-025-04850-8
+
+\bibitem{p024}
+Yehia Ibrahim Alzoubi and Alok Mishra and Ahmet E. Topcu.
+Research trends in deep learning and machine learning for cloud computing security.
+\textit{Artificial Intelligence Review}, 2024.
+DOI: 10.1007/s10462-024-10776-5
+
+\bibitem{p025}
+Ishaani Priyadarshini.
+Anomaly Detection of IoT Cyberattacks in Smart Cities Using Federated Learning and Split Learning.
+\textit{Big Data and Cognitive Computing}, 2024.
+DOI: 10.3390/bdcc8030021
+
+\bibitem{p027}
+Saru Kumari.
+Machine Learning Applications in Cryptocurrency: Detection, Prediction, and Behavioral Analysis of Bitcoin Market and Scam Activities in the USA.
+\textit{International Journal of Sustainable Science and Technology}, 2025.
+DOI: 10.22399/ijsusat.8
+
+\bibitem{p028}
+Sabina Szymoniak and Jacek Piątkowski and Mirosław Kurkowski.
+Defense and Security Mechanisms in the Internet of Things: A Review.
+\textit{Applied Sciences}, 2025.
+DOI: 10.3390/app15020499
+
+\bibitem{p029}
+Tymoteusz Miller and Irmina Durlik and Ewelina Kostecka.
+Artificial Intelligence in Maritime Cybersecurity: A Systematic Review of AI-Driven Threat Detection and Risk Mitigation Strategies.
+\textit{Electronics}, 2025.
+DOI: 10.3390/electronics14091844
+
+\bibitem{p030}
+Manuel J. C. S. Reis.
+Edge-FLGuard: A Federated Learning Framework for Real-Time Anomaly Detection in 5G-Enabled IoT Ecosystems.
+\textit{Applied Sciences}, 2025.
+DOI: 10.3390/app15126452
+
+\bibitem{p031}
+Manuel J. C. S. Reis.
+AI-Driven Anomaly Detection for Securing IoT Devices in 5G-Enabled Smart Cities.
+\textit{Electronics}, 2025.
+DOI: 10.3390/electronics14122492
+
+\bibitem{p032}
+Mueen Uddin and Muhammad Irshad and Irfan Ali Kandhro.
+Generative AI revolution in cybersecurity: a comprehensive review of threat intelligence and operations.
+\textit{Artificial Intelligence Review}, 2025.
+DOI: 10.1007/s10462-025-11219-5
+
+\bibitem{p033}
+Olasehinde Omolayo and Ajao Ebenezer Taiwo and Tope David Aduloju.
+Quantum Machine Learning Algorithms for Real-Time Epidemic Surveillance and Health Policy Simulation: A Review of Emerging Frameworks and Implementation Challenges.
+\textit{International Journal of Multidisciplinary Research and Growth Evaluation}, 2024.
+DOI: 10.54660/.ijmrge.2024.5.3.1100-1108
+
+\bibitem{p034}
+Mohammed M. Alwakeel.
+AI-Assisted Real-Time Monitoring of Infectious Diseases in Urban Areas.
+\textit{Mathematics}, 2025.
+DOI: 10.3390/math13121911
+
+\bibitem{p035}
+Babawale Patrick Okare and Olasehinde Omolayo and Tope David Aduloju.
+Designing Unified Compliance Intelligence Models for Scalable Risk Detection and Prevention in SME Financial Platforms.
+\textit{International Journal of Multidisciplinary Research and Growth Evaluation}, 2025.
+DOI: 10.54660/.ijmrge.2024.5.4.1421-1433
+
+\bibitem{p036}
+Arjun Kumar Bose Arnob and Rajarshi Roy Chowdhury and Nusrat Alam Chaiti.
+A comprehensive systematic review of intrusion detection systems: emerging techniques, challenges, and future research directions.
+\textit{Journal of Edge Computing}, 2025.
+DOI: 10.55056/jec.885
+
+\bibitem{p038}
+Hamid Mirshekali and Mohammad Reza Shadi and Fatemehsadat Ghanadi Ladani.
+A Review of Large Language Models for Energy Systems: Applications, Challenges, and Future Prospects.
+\textit{IEEE Access}, 2025.
+DOI: 10.1109/access.2025.3610994
+
+\bibitem{p039}
+Elizabeth Kuukua Amoako and Victor Boateng and Ola Ajay.
+Exploring the role of Machine Learning and Deep Learning in Anti-Money Laundering (AML) strategies within U.S. Financial Industry: A systematic review of implementation, effectiveness, and challenges.
+\textit{Finance \& Accounting Research Journal}, 2025.
+DOI: 10.51594/farj.v7i1.1808
+
+\bibitem{p040}
+Andres J. Aparcana-Tasayco and Xianjun Deng and Jong Hyuk Park.
+A systematic review of anomaly detection in IoT security: towards quantum machine learning approach.
+\textit{EPJ Quantum Technology}, 2025.
+DOI: 10.1140/epjqt/s40507-025-00414-6
+
+\bibitem{p042}
+Abhirup Khanna and Sapna Jain and Alessandro Burgio.
+Blockchain-Enabled Supply Chain platform for Indian Dairy Industry: Safety and Traceability.
+\textit{Foods}, 2022.
+DOI: 10.3390/foods11172716
+
+\bibitem{p044}
+Beatrice Oyinkansola Adelakun and Ebere Ruth Onwubuariri and Gbenga Adeniyi Adeniran.
+Enhancing fraud detection in accounting through AI: Techniques and case studies.
+\textit{Finance \& Accounting Research Journal}, 2024.
+DOI: 10.51594/farj.v6i6.1232
+
+\bibitem{p045}
+Xinze Yang and Chunkai Zhang and Yizhi Sun.
+FinChain-BERT: A High-Accuracy Automatic Fraud Detection Model Based on NLP Methods for Financial Scenarios.
+\textit{Information}, 2023.
+DOI: 10.3390/info14090499
+
+\bibitem{method_higgins2011}
+Higgins, Julian P. T. and Green, Sally (editors).
+Cochrane Handbook for Systematic Reviews of Interventions.
+Edition 5.1.0.
+The Cochrane Collaboration, 2011.
+URL: https://handbook-5-1.cochrane.org/
+
+\end{thebibliography}
 
 \end{document}
