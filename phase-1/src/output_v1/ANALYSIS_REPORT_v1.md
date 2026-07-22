@@ -216,7 +216,7 @@ Operasional activities (PKD, PAUD, RT/RW, PKK) appearing uniformly high in the f
 | Kerjasama antar Desa | 3 | 0.1% |
 | Kontrak | 3 | 0.1% |
 
-Consensus anomalies are **96.4% Swakelola** — slightly higher than the baseline prevalence (98.8%), suggesting that non-Swakelola procurement is marginally over-represented in Penyertaan Modal flags (2.7% of consensus vs. 0.8% baseline), consistent with the equity-injection fraud vector.
+Consensus anomalies are **96.4% Swakelola** — slightly *lower* than the baseline prevalence (98.8%), meaning Swakelola is marginally **under-represented** among consensus flags relative to its share of all activities. The correct over-representation finding is for non-Swakelola modes: Penyertaan Modal constitutes 2.7% of consensus flags vs. 0.8% of all records — a 3.4× over-representation consistent with the equity-injection fraud vector. Swakelola dominates the detection space by volume, while non-Swakelola modes are flagged at a disproportionately elevated rate relative to their baseline frequency. *(v2.0 correction: prior text incorrectly described 96.4% < 98.8% as Swakelola over-representation.)*
 
 ---
 

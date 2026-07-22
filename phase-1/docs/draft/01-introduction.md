@@ -1,6 +1,6 @@
 # Chapter 1: Introduction
 
-> **Draft Status**: v1.0 — April 2026
+> **Draft Status**: v2.0 — July 2026 (revised from v1.0 April 2026)
 > **Target Venue**: ICCSCI (Procedia Computer Science, Elsevier)
 > **Word Count Target**: ~600 words
 > **Citation Format**: IEEE (continuous numbering per references.md)
@@ -19,6 +19,6 @@ Existing research on dana desa fraud concentrates overwhelmingly on retrospectiv
 
 Four contemporaneous prosecution cases in Jambi Province — collectively documenting Rp 2.301 billion in verified losses across Kerinci, Muaro Jambi, and Tanjung Jabung Timur kabupaten [30, 31, 32, 33] — confirm that the detection lag between fund diversion and prosecution ranges from two to five years. All four cases involved financial irregularities that generated quantifiable signals in Siskeudes absorption records: fictitious construction outputs, zero-realisation procurement activities, and cross-period fund diversion — precisely the patterns the engineered features in this study target.
 
-This study asks three questions: (1) Which feature constructs derived from village fund expenditure absorption data serve as the most discriminating signals of expenditure anomaly? (2) Which algorithm — Isolation Forest (IF), Local Outlier Factor (LOF), or Robust Deep Autoencoder (RDA) — demonstrates superior anomaly discrimination on Jambi village fund data? (3) How do algorithmically identified anomalies map to established corruption typologies documented in judicial and institutional records?
+This study asks three questions: (1) Which feature constructs derived from village fund expenditure absorption data serve as the most discriminating signals of expenditure anomaly? (2) Which algorithm — Isolation Forest (IF), Local Outlier Factor (LOF), or Deep Autoencoder (DA) — demonstrates superior anomaly discrimination on Jambi village fund data? (3) How do algorithmically identified anomalies map to established corruption typologies documented in judicial and institutional records?
 
 The remainder of this paper proceeds as follows. Section 2 reviews related work on corruption typology, anomaly detection methodology, and Indonesia-specific dana desa fraud literature. Section 3 describes the dataset, feature engineering protocol, and three-algorithm pipeline. Section 4 presents empirical results. Section 5 interprets findings through the Fraud Triangle, Principal-Agent Theory, and the DeLone and McLean IS Success Model. Section 6 concludes with implications for APIP inspection practice and future research directions.
