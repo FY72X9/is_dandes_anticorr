@@ -1,9 +1,8 @@
 # Chapter 7: References
 
-> **Draft Status**: v1.0 — April 2026
+> **Draft Status**: v2.1 — July 2026 (Revised IEEE continuous numbering)
 > **Format**: IEEE (continuous numbering)
-> **Source**: Subset of verified references from concept/conceptual/references.md — full list maintained there
-> **Note**: Only references cited in the article draft are listed here. Numbers follow continuous order from Introduction through Conclusion.
+> **Source**: Verified references from Scopus/ISI-indexed sources, official legislation, and empirical datasets.
 
 ---
 
@@ -43,39 +42,36 @@
 
 [17] D. R. Cressey, *Other People's Money: A Study in the Social Psychology of Embezzlement*. New York: Free Press, 1953.
 
-[18] *[Reference removed — previously attributed to Li et al. (2025); paper not confirmed in Scopus, CrossRef, or Google Scholar databases. Claims attributed to [18] in prior draft versions have been removed from the article text. LOF algorithm should be cited using [25].]*
+[18] F. T. Liu, K. M. Ting, and Z.-H. Zhou, "Isolation forest," in *Proc. 8th IEEE Int. Conf. on Data Mining (ICDM)*, Pisa, Italy, 2008, pp. 413–422. DOI: 10.1109/ICDM.2008.17
 
-[19] F. T. Liu, K. M. Ting, and Z.-H. Zhou, "Isolation forest," in *Proc. 8th IEEE Int. Conf. on Data Mining (ICDM)*, Pisa, Italy, 2008, pp. 413–422. DOI: 10.1109/ICDM.2008.17
+[19] F. T. Liu, K. M. Ting, and Z.-H. Zhou, "Isolation-based anomaly detection," *ACM Trans. Knowl. Discov. Data*, vol. 6, no. 1, pp. 1–39, 2012. DOI: 10.1145/2133360.2133363
 
-[20] F. T. Liu, K. M. Ting, and Z.-H. Zhou, "Isolation-based anomaly detection," *ACM Trans. Knowl. Discov. Data*, vol. 6, no. 1, pp. 1–39, 2012. DOI: 10.1145/2133360.2133363
+[20] J. Svensson, "Eight questions about corruption," *Journal of Economic Perspectives*, vol. 19, no. 3, pp. 19–42, 2005. DOI: 10.1257/089533005774357860
 
-[21] J. Svensson, "Eight questions about corruption," *Journal of Economic Perspectives*, vol. 19, no. 3, pp. 19–42, 2005. DOI: 10.1257/089533005774357860
+[21] J. S. Albanese and K. Artello, "Beyond the fraud triangle: More powerful explanations of fraud and corruption," *Journal of Financial Crime*, vol. 26, no. 3, pp. 724–737, 2019. DOI: 10.1108/JFC-12-2018-0132
 
-[22] J. S. Albanese and K. Artello, "Beyond the fraud triangle: More powerful explanations of fraud and corruption," *Journal of Financial Crime*, vol. 26, no. 3, pp. 724–737, 2019. [Online]. Available: https://www.emerald.com/insight/content/doi/10.1108/JFC-12-2018-0132
+[22] Š. Šumah, "Corruption, causes and consequences," in *Trade and Global Market*, F. Karakas, Ed. London: IntechOpen, 2018. DOI: 10.5772/intechopen.72440
 
-[23] Š. Šumah, "Corruption, causes and consequences," in *Trade and Global Market*, F. Karakas, Ed. London: IntechOpen, 2018. DOI: 10.5772/intechopen.72440
+[23] V. Chandola, A. Banerjee, and V. Kumar, "Anomaly detection: A survey," *ACM Comput. Surv.*, vol. 41, no. 3, Art. 15, Jul. 2009. DOI: 10.1145/1541880.1541882
 
-[24] V. Chandola, A. Banerjee, and V. Kumar, "Anomaly detection: A survey," *ACM Comput. Surv.*, vol. 41, no. 3, Art. 15, Jul. 2009. DOI: 10.1145/1541880.1541882
+[24] M. M. Breunig, H.-P. Kriegel, R. T. Ng, and J. Sander, "LOF: Identifying density-based local outliers," in *Proc. 2000 ACM SIGMOD Int. Conf. on Management of Data*, Dallas, TX, May 2000, pp. 93–104. DOI: 10.1145/342009.335388
 
-[25] M. M. Breunig, H.-P. Kriegel, R. T. Ng, and J. Sander, "LOF: Identifying density-based local outliers," in *Proc. 2000 ACM SIGMOD Int. Conf. on Management of Data*, Dallas, TX, May 2000, pp. 93–104. DOI: 10.1145/342009.335388
+[25] N. S. Groenendijk, "A principal-agent model of corruption," *Crime, Law and Social Change*, vol. 27, no. 3–4, pp. 207–229, 1997.
 
-[26] N. S. Groenendijk, "A principal-agent model of corruption," *Crime, Law and Social Change*, vol. 27, no. 3–4, pp. 207–229, 1997.
+[26] jaga.id, "Laporan Pengaduan Dana Desa — Statistik Nasional," Jakarta: Forum Indonesia untuk Transparansi Anggaran (FITRA), accessed April 2026. [Online]. Available: https://jaga.id
 
-[27] jaga.id, "Laporan Pengaduan Dana Desa — Statistik Nasional," Jakarta: Forum Indonesia untuk Transparansi Anggaran (FITRA), accessed April 2026. [Online]. Available: https://jaga.id
+[27] A. Alfada, "The destructive effect of corruption on economic growth in Indonesia: a threshold model," *Economies*, vol. 7, no. 4, pp. 1–21, 2019. DOI: 10.3390/economies7040111
 
-[28] *[Consolidated. See [12] — K. Srirejeki and A. Faturokhman (2020). All in-text citations updated to [12].]*
+[28] JambiTV Disway, "Eks Kades Muara Hemat jalani tahap 2 kasus dugaan korupsi dana desa," *JambiTV Disway*, Feb. 2026. [Online]. Available: https://jambitv.disway.id/hukum/read/12500/eks-kades-muara-hemat-jalani-tahap-2-kasus-dugaan-korupsi-dana-desa
 
-[29] A. Alfada, "The destructive effect of corruption on economic growth in Indonesia: a threshold model," *Economies*, vol. 7, no. 4, pp. 1–21, 2019. DOI: 10.3390/economies7040111
+[29] JambiTV Disway, "Dana desa Jambi Tulo dibekukan: Inspektorat temukan dugaan kegiatan fiktif Rp300 juta lebih," *JambiTV Disway*, 2025. [Online]. Available: https://jambitv.disway.id/muaro-jambi/read/12087/dana-desa-jambi-tulo-dibekukan-inspektorat-temukan-dugaan-kegiat-fiktif-rp300-juta-lebih
 
-[30] JambiTV Disway, "Eks Kades Muara Hemat jalani tahap 2 kasus dugaan korupsi dana desa," *JambiTV Disway*, Feb. 2026. [Online]. Available: https://jambitv.disway.id/hukum/read/12500/eks-kades-muara-hemat-jalani-tahap-2-kasus-dugaan-korupsi-dana-desa
+[30] Kompas.com, "Kades hingga mantan kades di Kerinci, Jambi korupsi Rp 644 juta dana desa," *Kompas.com Regional*, Aug. 2025. [Online]. Available: https://regional.kompas.com/read/2025/08/20/213221778/kades-hingga-mantan-kades-di-kerinci-jambi-korupsi-rp-644-juta-dana-desa
 
-[31] JambiTV Disway, "Dana desa Jambi Tulo dibekukan: Inspektorat temukan dugaan kegiatan fiktif Rp300 juta lebih," *JambiTV Disway*, 2025. [Online]. Available: https://jambitv.disway.id/muaro-jambi/read/12087/dana-desa-jambi-tulo-dibekukan-inspektorat-temukan-dugaan-kegiat-fiktif-rp300-juta-lebih
+[31] JambiLINK.id, "Tersangka korupsi dana desa Pangkal Duri ditangkap, kerugian negara capai Rp 415 juta," *JambiLINK.id*, Aug. 2024. [Online]. Available: https://jambilink.id/post/951/tersangka-korupsi-dana-desa-pangkal-duri-ditangkap-kerugian-negara-capai-rp-415-juta
 
-[32] Kompas.com, "Kades hingga mantan kades di Kerinci, Jambi korupsi Rp 644 juta dana desa," *Kompas.com Regional*, Aug. 2025. [Online]. Available: https://regional.kompas.com/read/2025/08/20/213221778/kades-hingga-mantan-kades-di-kerinci-jambi-korupsi-rp-644-juta-dana-desa
+[32] C. Zhou and R. C. Paffenroth, "Anomaly detection with robust deep autoencoders," in *Proc. 23rd ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining*, Halifax, NS, Canada, Aug. 2017, pp. 665–674. DOI: 10.1145/3097983.3098052
 
-[33] JambiLINK.id, "Tersangka korupsi dana desa Pangkal Duri ditangkap, kerugian negara capai Rp 415 juta," *JambiLINK.id*, Aug. 2024. [Online]. Available: https://jambilink.id/post/951/tersangka-korupsi-dana-desa-pangkal-duri-ditangkap-kerugian-negara-capai-rp-415-juta
-
-[34] C. Zhou and R. C. Paffenroth, "Anomaly detection with robust deep autoencoders," in *Proc. 23rd ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining*, Halifax, NS, Canada, Aug. 2017, pp. 665–674. DOI: 10.1145/3097983.3098052
 
 ---
 

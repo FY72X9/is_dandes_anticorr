@@ -94,64 +94,41 @@ corruption that remains hidden.
 | RIGOR | unspecified | 1 | N=1 |
 | RIGOR | village | 2 | N=2 |
 
-The most consequential empty cell in Table 4 is the intersection of DESIGN cycle
-and village-level context. Hevner et al. [ref] define the design cycle as the
-iterative construction and evaluation of IS artifacts within their intended use context.
-Eleven papers operate in the DESIGN cycle, but none targets the village/sub-national
-governance context. This structural absence motivates the primary study's DSR framing:
-its contribution is precisely the artifact produced by filling this empty cell.
+The most consequential empty cell in Table 4 is the intersection of DESIGN cycle and village-level context. Hevner et al. [10] define the design cycle as the iterative construction and evaluation of IS artifacts within their intended use context. Eleven papers operate in the DESIGN cycle, but none targets the village/sub-national governance context. This structural absence motivates the primary study's DSR framing: its contribution is precisely the artifact produced by filling this empty cell.
 
 ---
 
 ## 5.3 Theoretical Implications
 
-**For IS theory**: This review demonstrates that IS theory remains systematically
-disconnected from computational methods in the fraud detection domain. This is
-not a failure of individual researchers — it reflects the structural absence of
-interdisciplinary venue conventions that would require ML papers to theorize their
-governance implications. The primary study models an alternative approach: grounding
-feature engineering choices in Agency Theory principal-agent dynamics, rather than
-treating feature selection as a purely statistical optimization problem.
+**For IS theory**: This review demonstrates that IS theory remains systematically disconnected from computational methods in the fraud detection domain. This is not a failure of individual researchers — it reflects the structural absence of interdisciplinary venue conventions that would require ML papers to theorize their governance implications. The primary study models an alternative approach: grounding feature engineering choices in Agency Theory principal-agent dynamics, rather than treating feature selection as a purely statistical optimization problem.
 
-**For design science research**: The DSR three-cycle model predicts that artifacts
-developed in isolation from their relevance environments will fail in deployment.
-The Scalability Illusion (AT2) and Ground Truth Paradox (AT4) are exactly the
-failures predicted by DSR: when design-cycle work proceeds without relevance-cycle
-grounding, the resulting artifacts perform well in lab conditions but inadequately
-in real governance environments.
+**For Design Science Research (DSR)**: The DSR three-cycle model (Hevner et al., 2004) [10] predicts that artifacts developed in isolation from their relevance environments will fail in deployment. The Scalability Illusion (AT2) and Ground Truth Paradox (AT4) are exactly the failures predicted by DSR: when design-cycle work proceeds without relevance-cycle grounding, the resulting artifacts perform well in lab conditions but inadequately in real governance environments. In this study, the **Ex-Ante Computational DSR Evaluation** protocol bridges the Relevance Cycle prior to field deployment by evaluating artifact utility across three complementary dimensions: (1) cross-paradigm algorithm agreement ($\kappa(\text{IF}, \text{DA}) = 0.482$), (2) Pareto frontier search space reduction (96.9% reduction at $c = 0.05$), and (3) qualitative alignment with judicial case records [28, 29, 30, 31].
 
-**For development informatics**: The concentration of 21 papers in high-capacity
-institutional contexts (banking, federal systems) and the near-absence of papers
-addressing decentralized, low-capacity governance confirms the development informatics
-critique that IS research systematically underserves the institutional conditions of
-the Global South. The village fund governance context — characterized by 74,000
-fragmented administrative units, limited data infrastructure, and enforcement gaps —
-represents exactly the institutional environment that development informatics demands
-IS researchers to address.
+**For development informatics**: The concentration of 21 papers in high-capacity institutional contexts (banking, federal systems) and the near-absence of papers addressing decentralized, low-capacity governance confirms the development informatics critique that IS research systematically underserves the institutional conditions of the Global South. The village fund governance context — characterized by 74,000 fragmented administrative units, limited data infrastructure, and enforcement gaps — represents exactly the institutional environment that development informatics demands IS researchers to address.
 
 ---
 
-## 5.4 Practical Implications
+## 5.4 Practical Implications and IS Success Model Operationalization
 
-The review findings carry direct implications for Indonesian government agencies:
+The empirical findings carry direct operational implications for Indonesian anti-corruption and oversight agencies (KPK, BPKP, Kemendesa, and Kabupaten APIP inspectorates), operationalising the **DeLone and McLean IS Success Model (2003)** [10] across three structural dimensions:
 
-**For KPK (Corruption Eradication Commission)**: The absence of a validated ML
-detection methodology for Dana Desa means that current fraud screening relies on
-manual audit sampling with inherently limited coverage. The primary study's contribution
-provides a prototype methodology that could be integrated into JAGA (KPK's anti-corruption
-monitoring platform) to prioritize village-level audits based on anomaly score rankings.
+### 5.4.1 Information Quality → Individual Impact (Auditor Decision Support)
+- **Search Space Reduction**: Filtering 99,692 activity records to 3,107 consensus anomalies yields a 96.9% reduction in document screening overhead for APIP auditors.
+- **Activity-Rate Normalized Tiering**: Refining village priority classification to an activity-rate threshold ($\text{Anomaly\_Ratio} \ge 0.10$) isolates **128 Tier-1 villages (9.4%)**, providing an operationally feasible annual audit scheduling list for kabupaten inspectorates with 5–15 auditors.
+- **Instance-Level XAI Checklists**: Transforming abstract mathematical reconstruction loss into feature contribution rankings (Table 5) provides field auditors with instance-level audit checklists (e.g., specifying physical output measurement for $82.5\%$ completion loss vs price benchmarking for $74.2\%$ unit cost loss).
 
-**For Kemendesa**: The feature engineering taxonomy constructed for this study identifies
-six operationally actionable fraud indicators derived from budget realization data already
-collected in SISKEUDES. Automated flag generation requires no new data collection —
-only algorithmic analysis of existing administrative records.
+### 5.4.2 System Quality → Audit Work Product Translation ("Last Mile" Protocol)
+- **Human-in-the-Loop Workflow**: The pipeline operates as a decision-support system, translating top-ranked consensus anomalies and XAI checklists directly into formal APIP audit assignment orders (*Surat Perintah Tugas Inspektorat*).
+- **Tranche-Specific Investigation Protocols**:
+  - *T1 (Mark-up)* and *T5 (Procurement Irregularity)* trigger physical volume verification and local market benchmark comparison.
+  - *T2 (Ghost Activity)* and *T4 (Stage Lock)* trigger bank statement reconciliation and physical completion auditing prior to final tranche disbursement.
 
-**For BPK/BPKP**: The logic model (F5) identifies the 'last mile' gap between ML
-anomaly output and audit work product. Future research should focus on designing
-the human-AI interaction interface that translates anomaly scores into investigation
-referrals compatible with BPK/BPKP evidentiary standards.
+### 5.4.3 Subthreshold Masking and Unclassified Anomalies Analysis
+- The **708 consensus-flagged records (22.8%) categorized as "Unclassified"** highlight a structural limitation of static rule-based typology assignment. These records represent compound fraud patterns — such as simultaneous moderate price inflation combined with volume padding — where individual feature values fall below single-rule thresholds despite joint multi-feature anomaly convergence across IF, LOF, and DA.
+- This finding motivates the **Phase 2 research trajectory**: transitioning from static policy mapping rules to semi-supervised graph neural networks (GNNs) capable of learning latent compound fraud topologies directly from transaction graph structures.
 
----
+### 5.4.4 Organizational Impact (Deterrence and Lag Mitigation)
+- Deploying continuous, automated screening via Siskeudes administrative data feeds mitigates the documented 2-to-5 year prosecution lag [28, 29, 30, 31], enabling intervention *within* disbursement cycles before state funds are permanently dissipated.
 
 ## 5.5 Limitations of the Review
 
