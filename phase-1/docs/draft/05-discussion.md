@@ -1,110 +1,47 @@
-# Section 5: Discussion
+# Chapter 5: Discussion
 
-> **Basis**: Synthesis of SLR F2–F7 findings — 45 papers, 4 analytical themes,
-> 5 structured gaps, DSR framework, narrative logic model
-
----
-
-## 5.1 Principal Findings
-
-This systematic literature review synthesized 45 empirical studies on ML-based financial
-anomaly detection and IS governance of public funds to establish the state of knowledge
-at the intersection of these two research traditions. Four analytical themes emerge from
-the cross-paper analysis.
-
-### AT1: The Operationalization Chasm
-
-The corpus divides structurally into two non-communicating research traditions: an ML
-detection cluster (23 papers) that has developed high-performing computational methods
-without application to village governance contexts, and an IS governance cluster
-(26 papers) that has documented corruption mechanisms in detail without computational
-operationalization. Only nine papers span both clusters, and none of these bridge papers
-test detection artifacts on Dana Desa or equivalent sub-national village fund data.
-
-The bibliometric cluster analysis (F4) confirms this structure: ML and governance
-keywords exhibit near-zero co-occurrence across clusters, despite both literatures
-claiming to address 'public fund corruption'. This is not a minor gap — it represents
-the complete absence of a research tradition that this study initiates.
-
-### AT2: The Scalability Illusion
-
-Performance claims in the ML detection literature are systematically inflated by
-evaluation conditions that do not generalize to decentralized governance contexts.
-The four papers assuming centralized databases (AC-CENTRAL) achieve AUC scores that
-cannot be replicated in settings where data is fragmented across 74,000 village
-governments. The twelve papers using synthetic training data create a circular validation
-problem: high performance on synthetic data does not evidence detection capability on
-real corrupt transactions, which by definition were designed to evade detection.
-
-### AT3: The Absence of IS Theory
-
-Sixty-two percent of included papers (28/45) apply no IS theory. This rate exceeds what
-would be expected for interdisciplinary research bridging computer science and information
-systems; it indicates that the ML detection strand treats fraud detection as a purely
-computational rather than socio-institutional phenomenon. The governance strand, while
-more theoretically grounded, applies IS theory to institutional analysis rather than to
-computational artifact design. No paper applies Agency Theory to motivate detection
-feature selection; no paper uses the IS Success Model to evaluate deployment effectiveness.
-
-### AT4: The Ground Truth Paradox
-
-The label scarcity problem identified in 17 papers is not merely a practical constraint —
-it is an epistemological paradox specific to governance contexts. In private sector fraud
-detection, historical labeled datasets exist (successful prosecutions, confirmed fraud
-cases). In village fund governance, corruption is often undetected or unprosecuted,
-meaning the absence of labels reflects the severity of the problem rather than the
-absence of fraudulent activity. Supervised methods claiming high F1 scores on labeled
-village datasets are detecting the corruption that was already discovered, not the
-corruption that remains hidden.
+> **Draft Status**: v2.1 — July 2026 (Revised IEEE continuous numbering & DSR primary study alignment)
+> **Target Venue**: ICCSCI (Procedia Computer Science, Elsevier)
+> **Word Count Target**: ~900 words
+> **Citation Format**: IEEE (continuous numbering per references.md)
 
 ---
 
-## 5.2 Research Gap Analysis
+## 5.1 Principal Empirical Findings
 
-**Table 3: Structured Gap Matrix**
+This study developed and evaluated an unsupervised Dual-Path machine learning artifact for detecting expenditure anomalies in Siskeudes administrative records across 99,692 activity entries (2023–2025) in Jambi Province. Three core empirical insights emerge from the evaluation:
 
-| Gap ID | Gap Statement (abbreviated) | Severity | Evidence Basis | Primary Study Response |
-|---|---|---|---|---|
-| G1 | No existing study applies ML anomaly detection to Dana Desa (village fund) financial trans... | **CRITICAL** | Literature void — confirmed by keyword search, clu... | Design and evaluate ML anomaly detection artifact using real... |
-| G2 | Ground truth unavailability for village fraud labels creates an epistemological paradox: s... | **CRITICAL** | LIM-NOLABEL (17 papers), DS-SYNTH (12 papers), cir... | Adopt unsupervised ensemble approach (no labels required). U... |
-| G3 | No validated feature engineering methodology exists for village fund fraud detection. The ... | **CRITICAL** | FE category thin (<5 papers on budget absorption);... | Construct 12-feature taxonomy for Dana Desa fraud detection ... |
-| G4 | IS theoretical grounding is absent from 62% of included papers. The ML detection literatur... | **PARTIAL** | IST-NONE: 28/45 (62%); 0 D&M IS Success Model appl... | Ground primary study in Agency Theory (principal-agent corru... |
-| G5 | Operational deployment of ML detection artifacts remains unaddressed: four papers explicit... | **METHODOLOGICAL** | GAP-EXPLAIN (4 papers) + LIM-INTERP (4 papers) not... | Explicitly scope primary study as audit-support tool (post-p... |
+### 5.1.1 Operationalizing the Operationalization Chasm
+Prior literature in public financial governance divides into non-communicating computational ML models on centralized data and qualitative governance studies lacking algorithmic operationalization. This study bridges this chasm by constructing a DSR artifact [10] that ingests decentralized activity-level Siskeudes absorption data from jaga.id [26], proving that administrative absorption signals contain quantifiable traces of expenditure distortion without requiring pre-existing fraud labels.
 
-**Table 4: DSR Framework — Empty Quadrant Analysis**
+### 5.1.2 Overcoming the Ground Truth Paradox via Synthetic Benchmarking
+The absence of labelled ground truth in public sector fraud detection creates an epistemological paradox: supervised methods trained on historical prosecution labels detect only previously discovered fraud, missing hidden diversions. By deploying an unsupervised Dual-Path Consensus framework (`path_local OR path_global`), this study isolates local density outliers (LOF) and global anomaly convergence (IF $\cap$ DA). The ex-ante synthetic fraud benchmark confirms superior anomaly recovery (**Precision = 0.884, Recall = 0.826, F1 = 0.854, AUC = 0.908**), outperforming single-algorithm baselines.
 
-| DSR Cycle | Context Level | N Papers | Research Status |
+### 5.1.3 Mitigating Geographical Baseline Skew via Kabupaten Centering
+Standard global anomaly detection models confuse remote geographical baseline costs with price markup. Implementing kabupaten-stratified z-score centering (`(Kode_Output, Kabupaten_Kota, Tahun)`) eliminates systematic false positives for isolated jurisdictions (e.g., Kerinci), preserving true anomaly sensitivity.
+
+---
+
+## 5.2 Research Contribution and DSR Evaluation Framework
+
+**Table 4. DSR Evaluation Matrix — Primary Study Findings**
+
+| DSR Evaluation Dimension | Operationalization in Primary Artifact | Empirical Target Metric | Observed Outcome |
 |---|---|---|---|
-| DESIGN | cross-national (developed) | 4 | N=4 |
-| DESIGN | cross-national (developing) | 0 | Empty |
-| DESIGN | national | 2 | N=2 |
-| DESIGN | sub-national | 0 | **EMPTY — Primary contribution** |
-| DESIGN | unspecified | 5 | N=5 |
-| DESIGN | village | 0 | **EMPTY — Primary contribution** |
-| RELEVANCE | cross-national (developed) | 0 | Empty |
-| RELEVANCE | cross-national (developing) | 0 | Empty |
-| RELEVANCE | national | 1 | N=1 |
-| RELEVANCE | sub-national | 0 | Empty |
-| RELEVANCE | unspecified | 2 | N=2 |
-| RELEVANCE | village | 12 | N=12 |
-| RIGOR | cross-national (developed) | 4 | N=4 |
-| RIGOR | cross-national (developing) | 5 | N=5 |
-| RIGOR | national | 5 | N=5 |
-| RIGOR | sub-national | 2 | N=2 |
-| RIGOR | unspecified | 1 | N=1 |
-| RIGOR | village | 2 | N=2 |
-
-The most consequential empty cell in Table 4 is the intersection of DESIGN cycle and village-level context. Hevner et al. [10] define the design cycle as the iterative construction and evaluation of IS artifacts within their intended use context. Eleven papers operate in the DESIGN cycle, but none targets the village/sub-national governance context. This structural absence motivates the primary study's DSR framing: its contribution is precisely the artifact produced by filling this empty cell.
+| **Relevance Cycle** | Search space reduction for APIP inspectorates | Activity screening overhead reduction | **96.9% reduction** (99,692 → 3,107 records) |
+| **Rigor Cycle** | Agency Theory operationalization in Siskeudes features | Multi-method convergence ($\kappa$) | **$\kappa(\text{IF}, \text{DA}) = 0.482$** (Moderate convergence) |
+| **Design Cycle** | Activity-rate normalized village priority tiering | Operationally feasible Tier-1 village count | **128 Tier-1 villages (9.4%)** |
+| **Ex-Ante Benchmark** | Synthetic fraud injection recovery | Precision, Recall, F1, AUC-ROC | **F1 = 0.854, AUC = 0.908** |
 
 ---
 
 ## 5.3 Theoretical Implications
 
-**For IS theory**: This review demonstrates that IS theory remains systematically disconnected from computational methods in the fraud detection domain. This is not a failure of individual researchers — it reflects the structural absence of interdisciplinary venue conventions that would require ML papers to theorize their governance implications. The primary study models an alternative approach: grounding feature engineering choices in Agency Theory principal-agent dynamics, rather than treating feature selection as a purely statistical optimization problem.
+**For IS Theory & Agency Theory**: Grounding feature engineering in Agency Theory [25] frames the village head as an agent exploiting information asymmetry relative to the principal (kabupaten district government and KPK). Unexplained unit cost deviations and completion falsifications represent proximate quantitative evidence of information asymmetry exploitation.
 
-**For Design Science Research (DSR)**: The DSR three-cycle model (Hevner et al., 2004) [10] predicts that artifacts developed in isolation from their relevance environments will fail in deployment. The Scalability Illusion (AT2) and Ground Truth Paradox (AT4) are exactly the failures predicted by DSR: when design-cycle work proceeds without relevance-cycle grounding, the resulting artifacts perform well in lab conditions but inadequately in real governance environments. In this study, the **Ex-Ante Computational DSR Evaluation** protocol bridges the Relevance Cycle prior to field deployment by evaluating artifact utility across three complementary dimensions: (1) cross-paradigm algorithm agreement ($\kappa(\text{IF}, \text{DA}) = 0.482$), (2) Pareto frontier search space reduction (96.9% reduction at $c = 0.05$), and (3) qualitative alignment with judicial case records [28, 29, 30, 31].
+**For Design Science Research (DSR)**: The DSR three-cycle model (Hevner et al., 2004) [10] predicts that artifacts developed in isolation from relevance environments will fail in deployment. In this study, the **Ex-Ante Computational DSR Evaluation** protocol evaluates artifact utility prior to field deployment across three complementary dimensions: (1) cross-paradigm algorithm agreement ($\kappa = 0.482$), (2) Pareto frontier search space reduction (96.9% reduction at $c = 0.05$), and (3) qualitative alignment with Jambi judicial case records [28, 29, 30, 31].
 
-**For development informatics**: The concentration of 21 papers in high-capacity institutional contexts (banking, federal systems) and the near-absence of papers addressing decentralized, low-capacity governance confirms the development informatics critique that IS research systematically underserves the institutional conditions of the Global South. The village fund governance context — characterized by 74,000 fragmented administrative units, limited data infrastructure, and enforcement gaps — represents exactly the institutional environment that development informatics demands IS researchers to address.
+**For Development Informatics**: The concentration of fraud detection literature on high-capacity institutional contexts (banking, federal systems) leaves decentralized, low-capacity governance underserved. Applying unsupervised ML to 74,000 fragmented administrative units addresses the core development informatics imperative.
 
 ---
 
