@@ -7,3 +7,11 @@ concept/.unchecked
 
 SLR/papers
 SLR/analysis
+
+# Graphify Knowledge Graph output & internal cache
+graphify-out/
+
+# Python cache & temporary files
+__pycache__/
+*.pyc
+.pytest_cache/
