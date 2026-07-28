@@ -1,0 +1,10 @@
+2026-07-27 10:38:40 [INFO] === Notebook 01 started  |  DATA_DIR=/content/drive/MyDrive/Colab_Notebooks/data_dandes/input/  OUTPUT_DIR=/content/drive/MyDrive/Colab_Notebooks/data_dandes/v3-run ===
+2026-07-27 10:38:40 [INFO] Log file: /content/drive/MyDrive/Colab_Notebooks/data_dandes/v3-run/preprocessing.log
+2026-07-27 10:38:43 [WARNING] Dropping 2974 Penyerapan rows with NaN Kode_Desa
+2026-07-27 10:38:43 [INFO] Raw data loaded in 3.6s  |  Penyerapan=(97782, 20)  Pagu=(4227, 3)
+2026-07-27 10:42:28 [INFO] Merge complete  |  shape=(97782, 21)  missing_pagu=0
+2026-07-27 10:43:02 [INFO] Feature engineering complete  |  10 features computed
+2026-07-27 10:44:53 [INFO] VIF screening done  |  dropped=['year', 'absorption_ratio', 'stage_variance', 'completion_vs_realization']  final_features=['cost_per_unit', 'avg_completion', 'swakelola_high_value', 'activity_category', 'cost_deviation_by_category']
+2026-07-27 10:45:16 [INFO] RobustScaler applied  |  dropped_nan_rows=1004  scaled_shape=(96778, 5)
+2026-07-27 10:45:35 [INFO] Export complete  |  features_engineered=(96778, 27)  df_merged_raw=(96778, 32)  final_features=['cost_per_unit', 'avg_completion', 'swakelola_high_value', 'activity_category', 'cost_deviation_by_category']
+2026-07-27 10:45:35 [INFO] === Notebook 01 finished ===

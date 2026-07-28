@@ -1,0 +1,1173 @@
+Kode_Desa,n_flagged_records,dominant_typology,top_rda_feature,persistence_score,years_flagged,Nama_Desa
+1572082006,3,T7_CrossCatDump,cost_deviation_by_category,1.0,3,Sungai Ning
+1501012001,8,T2_Ghost,cost_deviation_by_category,1.0,3,Selam Paung
+1501012003,10,T2_Ghost,cost_per_unit,1.0,3,Lempur Mudik
+1572082004,3,Unclassified,activity_category,1.0,3,Pelayang Raya
+1501012006,6,T2_Ghost,cost_deviation_by_category,1.0,3,Lempur Hilir
+1501012011,10,T2_Ghost,cost_deviation_by_category,1.0,3,Kebun Baru
+1572082003,6,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Talang Lindung
+1501012013,7,T2_Ghost,activity_category,1.0,3,Dusun Baru Lempur
+1501012016,5,T2_Ghost,cost_per_unit,1.0,3,Sungaihangat
+1501012018,4,T2_Ghost,activity_category,1.0,3,Manjunto Lempur
+1572082002,5,T2_Ghost,cost_per_unit,1.0,3,Koto Tinggi
+1572072006,3,T5_ProcurementIrregularity,activity_category,1.0,3,Srimenanti
+1501022003,5,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Pendung Talang Genting
+1572072005,4,T1_Markup,cost_deviation_by_category,1.0,3,Permai Indah
+1572032003,16,T2_Ghost,avg_completion,1.0,3,Maliki Air
+1572032005,5,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Teluk
+1572032007,4,T1_Markup,activity_category,1.0,3,Simpang Tiga Rawang
+1572032009,10,T5_ProcurementIrregularity,avg_completion,1.0,3,Dusun Diilir
+1572032010,12,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Paling Serumpun
+1572022004,8,T1_Markup,cost_deviation_by_category,1.0,3,Koto Lolo
+1572022005,7,T2_Ghost,avg_completion,1.0,3,Koto Tengah
+1572022010,8,T5_ProcurementIrregularity,activity_category,1.0,3,Sungai Liuk
+1572022011,8,T1_Markup,activity_category,1.0,3,Seberang
+1572022015,8,Unclassified,cost_deviation_by_category,1.0,3,Sumur Gedang
+1572032001,11,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Kampung Diilir
+1572032002,7,T2_Ghost,activity_category,1.0,3,Koto Beringin
+1509122007,7,T2_Ghost,cost_per_unit,1.0,3,Bangko Pintas
+1572012006,13,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Gedang
+1572012014,11,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Amar Sakti
+1572022001,6,T1_Markup,avg_completion,1.0,3,Koto Renah
+1572022002,5,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Koto Keras
+1572022003,9,Unclassified,cost_deviation_by_category,1.0,3,Koto Bento
+1509112005,7,Unclassified,cost_per_unit,1.0,3,Paseban
+1509112006,7,T5_ProcurementIrregularity,avg_completion,1.0,3,Pasir Mayang
+1509122002,5,T2_Ghost,swakelola_high_value,1.0,3,Pintas Tuo
+1509122003,6,T2_Ghost,activity_category,1.0,3,Embacang Gedang
+1509122004,10,T2_Ghost,avg_completion,1.0,3,Bangun Seranten
+1509122006,7,T2_Ghost,swakelola_high_value,1.0,3,Sungai Jernih
+1501082007,4,T2_Ghost,activity_category,1.0,3,Kt Tuo P. Tengah
+1501082008,7,T2_Ghost,cost_deviation_by_category,1.0,3,Kt. Dian P. Tengah
+1501082012,6,T2_Ghost,swakelola_high_value,1.0,3,Lempur Danau
+1501082023,5,T2_Ghost,cost_per_unit,1.0,3,Koto Baru
+1501072011,3,T2_Ghost,cost_deviation_by_category,1.0,3,Baru Pulau Sangkar
+1501072013,3,T5_ProcurementIrregularity,avg_completion,1.0,3,Batang Merangin
+1501072014,5,T2_Ghost,cost_deviation_by_category,1.0,2,Muara Hemat
+1501082002,7,T2_Ghost,avg_completion,1.0,3,Talang Lindung
+1501082003,8,T2_Ghost,cost_deviation_by_category,1.0,3,Keluru
+1501082006,4,T5_ProcurementIrregularity,avg_completion,1.0,3,Benik
+1501062040,6,T2_Ghost,cost_per_unit,1.0,3,Baru Sungai Betung Mudik
+1501062041,11,T2_Ghost,cost_deviation_by_category,1.0,3,Tanjunggenting Mudik
+1501062042,6,T2_Ghost,cost_deviation_by_category,1.0,3,Air Betung
+1501062043,4,T7_CrossCatDump,cost_deviation_by_category,1.0,3,Ujung Ladang
+1501072004,5,T2_Ghost,cost_deviation_by_category,1.0,3,Tarutung
+1501062010,3,T2_Ghost,swakelola_high_value,1.0,3,Sungaibetung Hilir
+1501062012,4,T2_Ghost,cost_per_unit,1.0,3,Tanjunggenting
+1501062018,9,T2_Ghost,cost_deviation_by_category,1.0,3,Siulak Deras Mudik
+1501062039,8,T2_Ghost,avg_completion,1.0,3,Sungai Batu Gantih Hilir
+1501112003,7,T2_Ghost,cost_per_unit,1.0,3,Kemantan Darat
+1501112004,6,T2_Ghost,cost_per_unit,1.0,3,Sungaiabu
+1501112006,6,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Tebat
+1501112007,7,T2_Ghost,avg_completion,1.0,3,Sungaimedang
+1501112008,7,T2_Ghost,cost_deviation_by_category,1.0,3,Air Hangat
+1501112009,5,T2_Ghost,cost_per_unit,1.0,3,Baru Sungai Tutung
+1501092042,6,T2_Ghost,avg_completion,1.0,3,Pasar Sungai Tanduk
+1501092043,4,T2_Ghost,cost_deviation_by_category,1.0,3,Mekar Sari
+1501092045,6,T2_Ghost,avg_completion,1.0,3,Mekar Jaya
+1501092049,4,T2_Ghost,cost_deviation_by_category,1.0,3,Bendung Air Timur
+1501092015,6,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Panjang
+1501092016,9,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Tengah
+1501092017,4,T5_ProcurementIrregularity,activity_category,1.0,3,Sungaibendung Air
+1501092038,3,T1_Markup,cost_per_unit,1.0,3,Koto Periang
+1501082026,6,T2_Ghost,cost_per_unit,1.0,3,Limok Manaih Pulau Tengah
+1501082027,5,T2_Ghost,avg_completion,1.0,3,Pasar Jujun
+1501092014,5,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Baru
+1509102008,6,T2_Ghost,cost_deviation_by_category,1.0,3,Teluk Melintang
+1509112001,10,T2_Ghost,cost_deviation_by_category,1.0,3,Teluk Kepayang Pulau Indah
+1509112002,8,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Balai Rajo
+1509092002,10,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Penapalan
+1509092003,8,T2_Ghost,cost_deviation_by_category,1.0,3,Mengupeh
+1509092005,3,T2_Ghost,activity_category,1.0,3,Lubuk Mandarsah
+1509102003,5,T2_Ghost,avg_completion,1.0,3,Bukit Pamuatan
+1509082004,8,T5_ProcurementIrregularity,activity_category,1.0,3,Karang Dadi
+1509082007,12,T2_Ghost,cost_per_unit,1.0,3,Sarimulya
+1509092001,4,T1_Markup,cost_deviation_by_category,1.0,3,Muara Kilis
+1509062016,4,Unclassified,activity_category,1.0,3,Muara Tabun
+1509072001,4,T5_ProcurementIrregularity,activity_category,1.0,3,Suka Damai
+1509072003,6,T2_Ghost,cost_deviation_by_category,1.0,3,Sumber Sari
+1509072004,11,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sido Rukun
+1509072006,10,T2_Ghost,cost_deviation_by_category,1.0,3,Suka Maju
+1509082001,11,T2_Ghost,avg_completion,1.0,3,Giriwinangun
+1501152011,5,T2_Ghost,cost_per_unit,1.0,3,Pauh Tinggi
+1501152012,12,T2_Ghost,swakelola_high_value,1.0,3,Sungaijernih
+1501152013,11,T2_Ghost,swakelola_high_value,1.0,3,Pelompek Pasar Baru
+1501162004,5,T2_Ghost,activity_category,1.0,3,Pasar Siulak Gedang
+1501162006,4,T2_Ghost,activity_category,1.0,3,Siulak Kecil Mudik
+1501152003,4,T2_Ghost,cost_deviation_by_category,1.0,3,Tangkil
+1501152006,5,T2_Ghost,avg_completion,1.0,3,Bengkolan Duo
+1501152007,8,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Lubuk Pauh
+1501152008,7,T2_Ghost,cost_per_unit,1.0,3,Telun Berasap
+1501152009,7,T2_Ghost,cost_deviation_by_category,1.0,3,Bumbun Duri
+1501152010,5,T2_Ghost,cost_per_unit,1.0,3,Pesisir Bukit
+1501112024,8,T2_Ghost,activity_category,1.0,3,Baru Sungaimedang
+1501112026,6,T2_Ghost,cost_deviation_by_category,1.0,2,Baru Air Hangat
+1501152002,5,T2_Ghost,avg_completion,1.0,3,Sungaisikai
+1501112012,11,Unclassified,cost_per_unit,1.0,3,Pungut Mudik
+1501112015,5,T2_Ghost,avg_completion,1.0,3,Sungaitutung
+1501112020,9,T2_Ghost,cost_per_unit,1.0,3,Kemantan Mudik
+1501112021,9,T2_Ghost,swakelola_high_value,1.0,3,Simpang Empat Sungai Tutung
+1509062002,7,T1_Markup,cost_deviation_by_category,1.0,3,Kuamang
+1509062004,11,T5_ProcurementIrregularity,activity_category,1.0,3,Sungai Abang
+1509062013,5,Unclassified,cost_deviation_by_category,1.0,3,Teluk Lancang
+1509062014,9,T2_Ghost,cost_per_unit,1.0,3,Dusun Baru
+1509062015,8,T2_Ghost,cost_per_unit,1.0,3,Tabun
+1509052004,7,T2_Ghost,activity_category,1.0,3,Tambun Arang
+1509052005,6,T2_Ghost,cost_per_unit,1.0,3,Punti Kalo
+1509052007,8,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Tuo Sumay
+1509052010,7,T1_Markup,avg_completion,1.0,3,Muara Sekalo
+1509042005,8,T2_Ghost,cost_deviation_by_category,1.0,3,Tegal Arum
+1509042007,9,T2_Ghost,cost_per_unit,1.0,3,Sapta Mulia
+1509042008,7,T5_ProcurementIrregularity,avg_completion,1.0,3,Pematang Sapat
+1509052001,8,T2_Ghost,cost_per_unit,1.0,3,Teluk Singkawang
+1509032011,10,T2_Ghost,cost_per_unit,1.0,3,Teluk Kuali
+1509032016,6,T5_ProcurementIrregularity,avg_completion,1.0,3,Pulau Jelmu
+1509032017,11,T2_Ghost,cost_deviation_by_category,1.0,3,Medan Seri Rambahan
+1509032019,5,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Teluk Pandan Rambahan
+1509042002,7,T2_Ghost,avg_completion,1.0,3,Perintis
+1509042003,10,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Rimbo Mulyo
+1501172008,6,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Payang
+1501172009,9,T2_Ghost,activity_category,1.0,3,Tebat Ijuk
+1501172011,4,T1_Markup,swakelola_high_value,1.0,3,Simpang Belui
+1501172013,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Ladeh
+1501172014,8,T2_Ghost,cost_per_unit,1.0,3,Lubuk Suli
+1501172015,5,T2_Ghost,cost_deviation_by_category,1.0,3,Kayu Aho Mangkak Koto Lanang
+1501172016,3,T2_Ghost,swakelola_high_value,1.0,3,Tambak Tinggi
+1501162040,5,T2_Ghost,cost_per_unit,1.0,3,Pasar Senen
+1501172002,4,T5_ProcurementIrregularity,avg_completion,1.0,3,Baru Kubang
+1501172003,3,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Panjang
+1501172004,10,T2_Ghost,cost_deviation_by_category,1.0,3,Kubang Gedang
+1501172005,5,T2_Ghost,cost_deviation_by_category,1.0,3,Semumu
+1501172006,8,T2_Ghost,cost_per_unit,1.0,3,Belui Tinggi
+1501162021,7,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Koto Lebuh Tinggi
+1501162025,5,T2_Ghost,cost_per_unit,1.0,3,Koto Tengah
+1501162033,7,T2_Ghost,cost_per_unit,1.0,3,Baru Sungaipegeh
+1501162038,5,T2_Ghost,activity_category,1.0,3,Pelak Gedang
+1501162010,7,T2_Ghost,cost_deviation_by_category,1.0,3,Sungaipegeh
+1501162016,6,T2_Ghost,cost_deviation_by_category,1.0,3,Air Terjun
+1501192008,11,T2_Ghost,activity_category,1.0,3,Patok Empat
+1501192009,13,T2_Ghost,cost_deviation_by_category,1.0,3,Sungaijambu
+1501192011,12,T2_Ghost,cost_per_unit,1.0,3,Giri Mulyo
+1501192012,7,T2_Ghost,cost_deviation_by_category,1.0,3,Gununglabu
+1501192013,11,T2_Ghost,cost_deviation_by_category,1.0,3,Bento
+1501192014,5,T2_Ghost,cost_per_unit,1.0,3,Kampung Baru
+1501192015,8,T2_Ghost,swakelola_high_value,1.0,3,Sungaiasam
+1501182014,5,T2_Ghost,activity_category,1.0,3,Koto Lua
+1501192001,5,T2_Ghost,cost_deviation_by_category,1.0,3,Batu Hampar
+1501192002,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungairenah
+1501192003,9,T2_Ghost,swakelola_high_value,1.0,3,Bedeng Delapan
+1501192004,5,T2_Ghost,cost_per_unit,1.0,3,Bedeng Dua
+1501192005,8,T2_Ghost,activity_category,1.0,3,Sako Duo
+1501182005,8,T2_Ghost,cost_per_unit,1.0,3,Tebing Tinggi
+1501182007,7,T2_Ghost,cost_deviation_by_category,1.0,3,Mukai Pintu
+1501182009,3,T1_Markup,activity_category,1.0,3,Pasir Jaya
+1501182010,4,T2_Ghost,activity_category,1.0,3,Sungaikuning
+1501182012,7,T2_Ghost,cost_deviation_by_category,1.0,3,Talang Tinggi
+1501182013,4,T2_Ghost,cost_deviation_by_category,1.0,2,Lubuk Tabun
+1501172017,4,Unclassified,avg_completion,1.0,3,Kubang Agung
+1501172019,9,T2_Ghost,cost_per_unit,1.0,3,Koto Simpai Kubang
+1501172020,5,T2_Ghost,cost_per_unit,1.0,3,Pahlawan Belui
+1501182001,5,T1_Markup,activity_category,1.0,3,Mukai Hilir
+1501182004,10,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Senimpik
+1509032002,3,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungai Rambai
+1509032003,7,T2_Ghost,cost_deviation_by_category,1.0,3,Pagar Puding
+1509032005,6,T2_Ghost,avg_completion,1.0,3,Teluk Kasai Rambahan
+1509032008,4,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Bungo Tanjung
+1509032010,7,T2_Ghost,avg_completion,1.0,3,Lubuk Benteng
+1509022002,6,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Sungai Aro
+1509022003,7,T2_Ghost,avg_completion,1.0,3,Teluk Rendah Pasar
+1509022015,7,T5_ProcurementIrregularity,avg_completion,1.0,3,Muara Ketalo
+1509022017,7,T2_Ghost,activity_category,1.0,3,Sungai Bengkal Barat
+1509012005,9,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Teluk Pandak
+1509012007,5,T2_Ghost,cost_per_unit,1.0,3,Semabu
+1509012010,9,T5_ProcurementIrregularity,activity_category,1.0,3,Sungai Keruh
+1509012012,6,T1_Markup,cost_deviation_by_category,1.0,3,Sungai Alai
+1508172007,12,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungai Puri
+1508172009,10,Unclassified,swakelola_high_value,1.0,3,Pematang Panjang
+1508172010,13,Unclassified,cost_deviation_by_category,1.0,3,Sungai Lilin
+1508172011,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungai Tembang
+1508172012,9,T2_Ghost,avg_completion,1.0,3,Rantau Makmur
+1509012004,8,T2_Ghost,cost_deviation_by_category,1.0,3,Mangun Jayo
+1501212012,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Air Bersih
+1502012004,5,T2_Ghost,cost_per_unit,1.0,3,Rantau Kermas
+1501212004,7,T2_Ghost,activity_category,1.0,3,Hamparan Pugu
+1501212005,4,T2_Ghost,activity_category,1.0,3,Pugu
+1501212006,6,T7_CrossCatDump,cost_deviation_by_category,1.0,3,Koto Mudik
+1501212010,8,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Cayo
+1501202009,5,T5_ProcurementIrregularity,avg_completion,1.0,3,Pengasi Lama
+1501202011,7,T2_Ghost,cost_deviation_by_category,1.0,3,Pulausangkar
+1501202012,5,T2_Ghost,cost_deviation_by_category,1.0,3,Bintang Marak
+1501202015,6,T2_Ghost,cost_deviation_by_category,1.0,3,Muaro Lulo
+1501212001,7,T2_Ghost,cost_per_unit,1.0,3,Koto Mebai
+1501212002,5,T2_Ghost,activity_category,1.0,3,Baru
+1501212003,8,T2_Ghost,cost_deviation_by_category,1.0,3,Air Panas
+1501192017,6,T2_Ghost,cost_deviation_by_category,1.0,3,Ensatu
+1501202001,10,T2_Ghost,cost_deviation_by_category,1.0,3,Pasar Kerman
+1501202002,10,T2_Ghost,cost_per_unit,1.0,3,Lolo Gedang
+1501202003,14,T2_Ghost,cost_deviation_by_category,1.0,3,Lolo Kecil
+1501202005,3,T5_ProcurementIrregularity,activity_category,1.0,3,Tanjung Syam
+1501202006,9,T2_Ghost,cost_deviation_by_category,1.0,3,Talang Kemuning
+1502042009,6,T2_Ghost,cost_deviation_by_category,1.0,3,Palipan
+1502042010,3,T2_Ghost,cost_deviation_by_category,1.0,3,Seringat
+1502032018,8,T2_Ghost,cost_per_unit,1.0,3,Rantau Panjang
+1502032024,7,T2_Ghost,cost_per_unit,1.0,3,Pasar Muara Siau
+1502032027,6,T2_Ghost,cost_per_unit,1.0,3,Sepantai Renah
+1502032028,8,T2_Ghost,cost_per_unit,1.0,3,Sungai Ulas
+1502032011,6,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Teluk Sikumbang
+1502032015,7,T2_Ghost,cost_deviation_by_category,1.0,3,Air Lago
+1502032016,4,T2_Ghost,activity_category,1.0,3,Badak Tekurung
+1502012011,6,T2_Ghost,cost_per_unit,1.0,3,Muara Madras
+1502012023,6,T2_Ghost,activity_category,1.0,3,Renah Pelaan
+1502012024,4,T2_Ghost,avg_completion,1.0,3,Koto Rawang
+1502022004,8,T2_Ghost,cost_deviation_by_category,1.0,3,Kungkai
+1502022008,5,T2_Ghost,activity_category,1.0,3,Mudo
+1502022012,7,T2_Ghost,cost_deviation_by_category,1.0,3,Langling
+1502022024,9,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungai Kapas
+1508162006,10,T2_Ghost,cost_deviation_by_category,1.0,3,Lubuk Tenam
+1508162007,4,T2_Ghost,cost_deviation_by_category,1.0,3,Kuamang
+1508172001,6,T7_CrossCatDump,cost_per_unit,1.0,3,Sungai Mancur
+1508172002,11,Unclassified,cost_per_unit,1.0,3,Tanah Periuk
+1508172003,15,T5_ProcurementIrregularity,activity_category,1.0,3,Lubuk Landai
+1508172004,9,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Rantau Embacang
+1508172005,9,T2_Ghost,activity_category,1.0,3,Tebing Tinggi
+1508172006,14,T2_Ghost,activity_category,1.0,3,Embacang Gedang
+1508152003,6,Unclassified,cost_deviation_by_category,1.0,3,Talang Selungko
+1508152004,14,Unclassified,cost_deviation_by_category,1.0,3,Pulau Kerakap
+1508152005,7,Unclassified,cost_deviation_by_category,1.0,3,Seberang Jaya
+1508162001,9,T5_ProcurementIrregularity,avg_completion,1.0,3,Tepian Danto
+1508162002,5,T2_Ghost,cost_deviation_by_category,1.0,3,Aur Gading
+1508162003,10,T2_Ghost,cost_per_unit,1.0,3,Pulau Batu
+1508162004,9,T5_ProcurementIrregularity,avg_completion,1.0,3,Sari Mulya
+1508142004,7,T7_CrossCatDump,cost_deviation_by_category,1.0,3,Karak Apung
+1508142005,11,Unclassified,cost_deviation_by_category,1.0,3,Timbolasi
+1508142006,6,T2_Ghost,cost_deviation_by_category,1.0,3,Senamat Ulu
+1508142008,5,T2_Ghost,activity_category,1.0,3,Lubuk Beringin
+1508142009,4,T5_ProcurementIrregularity,avg_completion,1.0,3,Sungai Telang
+1508152002,13,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Peninjau
+1508122003,8,T7_CrossCatDump,cost_per_unit,1.0,3,Talang Pantai
+1508122004,15,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Sungai Arang
+1508122005,11,T5_ProcurementIrregularity,avg_completion,1.0,3,Pulau Pekan
+1508132003,5,Unclassified,activity_category,1.0,3,Sungai Mengkuang
+1508142001,6,T2_Ghost,cost_deviation_by_category,1.0,3,Muara Buat
+1508142002,5,Unclassified,cost_per_unit,1.0,3,Buat
+1508142003,4,T2_Ghost,cost_deviation_by_category,1.0,3,Laman Panjang
+1502082006,5,T2_Ghost,cost_deviation_by_category,1.0,3,Rawa Jaya
+1502092003,4,T2_Ghost,cost_per_unit,1.0,3,Tuo
+1502092004,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Koto Rami
+1502072010,6,T2_Ghost,avg_completion,1.0,3,Kapuk
+1502072012,3,Unclassified,cost_deviation_by_category,1.0,3,Rantau Ngarau
+1502072014,12,T2_Ghost,cost_deviation_by_category,1.0,3,Muaro Seketuk
+1502082001,7,T2_Ghost,cost_deviation_by_category,1.0,3,Sungai Sahut
+1502082004,5,Unclassified,cost_deviation_by_category,1.0,3,Sinar Gading
+1502062007,10,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Rejo Sari
+1502062009,5,T5_ProcurementIrregularity,activity_category,1.0,3,Keroya
+1502062011,4,T2_Ghost,avg_completion,1.0,3,Karang Berahi
+1502062014,7,T2_Ghost,avg_completion,1.0,3,Tanah Abang
+1502062015,8,T2_Ghost,cost_deviation_by_category,1.0,3,Sialang
+1502062006,9,T2_Ghost,activity_category,1.0,3,Empang Benao
+1508102004,15,T5_ProcurementIrregularity,avg_completion,1.0,3,Simpang Bebeko
+1508102006,9,Unclassified,avg_completion,1.0,3,Tuo Sepunggur
+1508112002,5,T1_Markup,cost_deviation_by_category,1.0,3,Lubuk Benteng
+1508112005,11,T2_Ghost,cost_deviation_by_category,1.0,3,Air Gemuruh
+1508112006,26,T2_Ghost,cost_deviation_by_category,1.0,3,Purwo Bakti
+1508112007,10,T2_Ghost,avg_completion,1.0,3,Sarana Jaya
+1508112008,6,T2_Ghost,activity_category,1.0,3,Teluk Panjang
+1508092013,12,T2_Ghost,cost_deviation_by_category,1.0,3,Bangun Harjo
+1508092014,16,T2_Ghost,cost_per_unit,1.0,3,Kuning gading
+1508092015,5,T2_Ghost,cost_deviation_by_category,1.0,3,Kuamang Jaya
+1508092016,18,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Karya Harapan Mukti
+1508092017,17,T2_Ghost,activity_category,1.0,3,Padang Palangeh
+1508102002,8,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Babeko
+1508102003,9,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Sepunggur
+1508092006,14,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Lembah Kuamang
+1508092007,8,Unclassified,cost_deviation_by_category,1.0,3,Sumber Harapan
+1508092008,9,T2_Ghost,activity_category,1.0,3,Daya Murni
+1508092009,13,T2_Ghost,avg_completion,1.0,3,Sumber Mulya
+1508092010,12,Unclassified,avg_completion,1.0,3,Maju Jaya
+1508092011,14,T2_Ghost,activity_category,1.0,3,Tirta Mulya
+1508092012,10,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Lingga Kuamang
+1508082006,6,Unclassified,cost_per_unit,1.0,3,Tebing Tinggi
+1508082009,10,Unclassified,cost_per_unit,1.0,3,Pekan Jum'at
+1508092001,6,T2_Ghost,activity_category,1.0,3,Koto Jayo
+1508092002,8,T2_Ghost,swakelola_high_value,1.0,3,Danau
+1508092004,10,T2_Ghost,avg_completion,1.0,3,Lubuk
+1502122005,7,T2_Ghost,cost_deviation_by_category,1.0,3,Titian Teras
+1502122006,3,T2_Ghost,cost_per_unit,1.0,3,Kedarasan Panjang
+1502132001,5,T2_Ghost,cost_deviation_by_category,1.0,3,Tanjung Lamin
+1502132002,6,Unclassified,swakelola_high_value,1.0,3,Limbur Merangin
+1502112002,4,T2_Ghost,activity_category,1.0,3,Aur Berduri
+1502112003,5,T2_Ghost,activity_category,1.0,3,Telun
+1502112004,4,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Nalo Gedang
+1502112005,6,T1_Markup,cost_per_unit,1.0,3,Baru Nalo
+1502112006,6,T2_Ghost,cost_deviation_by_category,1.0,3,Mentawak
+1502112007,11,T2_Ghost,cost_deviation_by_category,1.0,3,Danau
+1502122003,5,T2_Ghost,cost_deviation_by_category,1.0,3,Pulau Baru
+1502122004,8,T2_Ghost,cost_deviation_by_category,1.0,3,Nibung
+1502102001,7,T2_Ghost,cost_deviation_by_category,1.0,3,Pulau Rengas
+1502102003,5,T2_Ghost,activity_category,1.0,3,Bedeng Rejo
+1502102004,4,T2_Ghost,avg_completion,1.0,3,Sungai Putih
+1502102005,13,T2_Ghost,cost_per_unit,1.0,3,Bukit Beringin
+1502102006,5,T2_Ghost,cost_deviation_by_category,1.0,3,Pulau Rengas Ulu
+1502112001,6,T2_Ghost,activity_category,1.0,3,Sungai Ulak
+1502092006,10,T2_Ghost,cost_deviation_by_category,1.0,3,Pasar Masurai
+1502092008,5,T2_Ghost,cost_per_unit,1.0,3,Tanjung Dalam
+1502092011,8,T2_Ghost,avg_completion,1.0,3,Talang Asal
+1502092014,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Talang Paruh
+1502172002,6,T2_Ghost,cost_per_unit,1.0,3,Bukit Perentak
+1502162002,9,T2_Ghost,activity_category,1.0,3,Talang Segegah
+1502162005,5,T2_Ghost,cost_deviation_by_category,1.0,3,Parit Ujung Tanjung
+1502162008,7,T2_Ghost,cost_per_unit,1.0,3,Air Batu
+1502162009,9,T2_Ghost,activity_category,1.0,3,Marus Jaya
+1502142006,3,T2_Ghost,avg_completion,1.0,3,Tunggul Bulin
+1502152001,6,T2_Ghost,cost_deviation_by_category,1.0,3,Sungai Limau
+1502152002,8,T2_Ghost,cost_deviation_by_category,1.0,3,Sungai Bulian
+1502162001,6,T2_Ghost,cost_deviation_by_category,1.0,3,Muaro Panco Barat
+1502132006,9,T2_Ghost,activity_category,1.0,3,Mampun Baru
+1502132008,5,T7_CrossCatDump,avg_completion,1.0,3,PulauTujuh
+1502142002,4,T2_Ghost,cost_deviation_by_category,1.0,3,Ulak Makam
+1502142003,5,T2_Ghost,cost_per_unit,1.0,3,Air Batu
+1508072011,5,T2_Ghost,avg_completion,1.0,3,Renah Sungai Ipuh
+1508082002,8,T7_CrossCatDump,avg_completion,1.0,3,Tanjung Agung
+1508072003,11,Unclassified,cost_deviation_by_category,1.0,3,Pauh Agung
+1508072004,8,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Tuo Limbur
+1508072005,6,T2_Ghost,avg_completion,1.0,3,Renah Sungai Besar
+1508072006,3,T2_Ghost,cost_deviation_by_category,1.0,3,Muaro Tebo Pandak
+1508072008,4,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Baru Lbk. Mengkuang
+1508072009,7,Unclassified,cost_deviation_by_category,1.0,3,Lbk. Tanah Terban
+1508062009,7,T2_Ghost,avg_completion,1.0,3,Batu Kerbau
+1508062010,9,T2_Ghost,activity_category,1.0,3,Gapura Suci
+1508062011,6,T2_Ghost,activity_category,1.0,3,Mulya Bakti
+1508062015,15,Unclassified,activity_category,1.0,3,Sekampil
+1508072001,11,T2_Ghost,activity_category,1.0,3,Tanjung Bungo
+1508072002,13,Unclassified,avg_completion,1.0,3,Tuo Lbk. Mengkuang
+1508062001,4,T2_Ghost,activity_category,1.0,3,Baru Pelepat
+1508062002,6,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Dwi Karya Bakti
+1508062003,7,T2_Ghost,cost_per_unit,1.0,3,Rantau Keloyang
+1508062005,7,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Rantel
+1508062006,11,T2_Ghost,cost_per_unit,1.0,3,Senamat
+1508062007,8,T2_Ghost,cost_deviation_by_category,1.0,3,Sungai Beringin
+1508062008,7,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungai Gurun
+1502222002,7,T2_Ghost,activity_category,1.0,3,Sido Lego
+1502222003,5,T5_ProcurementIrregularity,activity_category,1.0,3,Mensango
+1502222004,10,T2_Ghost,cost_per_unit,1.0,3,Koto Baru
+1502222005,8,T2_Ghost,avg_completion,1.0,3,Sido Harjo
+1502232002,5,T2_Ghost,avg_completion,1.0,3,Tanjung Putus
+1502202004,4,T5_ProcurementIrregularity,activity_category,1.0,3,Selango
+1502212001,6,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Tanjung Rejo
+1502212002,7,Unclassified,swakelola_high_value,1.0,3,Sumber Agung
+1502212003,5,T2_Ghost,swakelola_high_value,1.0,3,Suko Rejo
+1502212004,7,T5_ProcurementIrregularity,activity_category,1.0,3,Sido Rukun
+1502212006,7,T2_Ghost,avg_completion,1.0,3,Tegal Rejo
+1502222001,3,T2_Ghost,activity_category,1.0,3,Tambang Baru
+1502182013,3,T2_Ghost,activity_category,1.0,3,Tanjung Alam
+1502192001,10,T2_Ghost,swakelola_high_value,1.0,3,Meranti
+1502192002,9,T2_Ghost,cost_deviation_by_category,1.0,3,Bukit Bungkul
+1502192003,9,T2_Ghost,cost_deviation_by_category,1.0,3,Rasau
+1502202002,8,T2_Ghost,cost_deviation_by_category,1.0,3,Tanjung Benuang
+1502182004,3,T2_Ghost,activity_category,1.0,3,Talang Tembago
+1502182007,3,T2_Ghost,avg_completion,1.0,3,Rantau Suli
+1502182011,5,T2_Ghost,swakelola_high_value,1.0,3,Tanjung Benuang
+1502182012,4,T2_Ghost,activity_category,1.0,3,Jangkat
+1503022005,5,T2_Ghost,cost_deviation_by_category,1.0,3,Pulau Pandan
+1503022007,3,T2_Ghost,cost_deviation_by_category,1.0,3,Ranggo
+1503022008,4,T2_Ghost,avg_completion,1.0,3,Panca Karya
+1503022021,5,T2_Ghost,cost_deviation_by_category,1.0,3,Temalang
+1503012009,3,T2_Ghost,activity_category,1.0,3,Muaro Pemuat
+1503012015,5,T2_Ghost,cost_per_unit,1.0,3,Sungai Bemban
+1503012017,3,T2_Ghost,activity_category,1.0,3,Sungai Baung
+1503012020,8,T2_Ghost,avg_completion,1.0,3,Kasiro Hilir
+1502242003,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Beringin Sanggul
+1502242005,8,T2_Ghost,activity_category,1.0,3,Rantau Limau Kapas
+1502242006,6,T2_Ghost,cost_deviation_by_category,1.0,3,Baru Sungai Sakai
+1503012002,4,T2_Ghost,cost_deviation_by_category,1.0,3,Sungai Keradak
+1503012004,4,T2_Ghost,activity_category,1.0,3,Simpang Narso
+1502232006,4,Unclassified,cost_deviation_by_category,1.0,3,Telentam
+1502232009,3,T2_Ghost,activity_category,1.0,3,Pulau Lebar
+1502232011,7,T2_Ghost,cost_per_unit,1.0,3,Tanjung Beringin
+1502232012,7,T2_Ghost,cost_deviation_by_category,1.0,3,Baru Kibul
+1502232013,5,T2_Ghost,cost_per_unit,1.0,3,Ngaol Ilir
+1502242001,10,T2_Ghost,activity_category,1.0,3,Sekancing
+1502242002,8,T2_Ghost,cost_deviation_by_category,1.0,3,Sekancing Ilir
+1508052006,14,Unclassified,avg_completion,1.0,3,Pasar Lubuk Landai
+1508052007,12,Unclassified,activity_category,1.0,3,Sungai Gambir
+1508052009,15,T2_Ghost,cost_deviation_by_category,1.0,3,Candi
+1508052010,7,T5_ProcurementIrregularity,activity_category,1.0,3,Tanjung
+1508052012,11,T2_Ghost,swakelola_high_value,1.0,3,Tanah Bekali
+1508052017,14,T2_Ghost,swakelola_high_value,1.0,3,Pasar Rantau Embacang
+1508052019,8,Unclassified,activity_category,1.0,3,Tenam
+1508042005,5,Unclassified,avg_completion,1.0,3,Ujung Tanjung
+1508042013,11,T5_ProcurementIrregularity,avg_completion,1.0,3,Talang Pamesun
+1508042014,11,T5_ProcurementIrregularity,avg_completion,1.0,3,Baru Balai Panjang
+1508042015,13,T5_ProcurementIrregularity,activity_category,1.0,3,Sirih Sekapur Perkembangan
+1508052001,6,T2_Ghost,activity_category,1.0,3,Teluk Pandak
+1508052003,5,T5_ProcurementIrregularity,activity_category,1.0,3,Empelu
+1508022005,5,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Lubuk Kayu Aro
+1508042002,7,T2_Ghost,activity_category,1.0,3,Rantau Ikil
+1508042003,7,Unclassified,cost_deviation_by_category,1.0,3,Pulau Jelmu
+1508042004,4,Unclassified,activity_category,1.0,3,Sirih Sekapur
+1508012006,6,T2_Ghost,cost_deviation_by_category,1.0,3,Tebing Tinggi Uleh
+1508012008,12,Unclassified,cost_per_unit,1.0,3,Panjang
+1508012009,10,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Perenti Luweh
+1508012015,11,T2_Ghost,swakelola_high_value,1.0,3,Renah Jelmu
+1508012016,10,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Jayo
+1508022001,8,T5_ProcurementIrregularity,activity_category,1.0,3,Rantau Duku
+1503052016,6,T2_Ghost,cost_deviation_by_category,1.0,3,Pematang Kulim
+1503052017,6,T2_Ghost,cost_deviation_by_category,1.0,3,Batu Putih
+1503062001,4,T2_Ghost,avg_completion,1.0,3,Mandiangin
+1503052002,4,T5_ProcurementIrregularity,activity_category,1.0,3,Pelawan
+1503052005,5,T2_Ghost,cost_deviation_by_category,1.0,3,Lubuk Sepuh
+1503032024,5,T2_Ghost,swakelola_high_value,1.0,3,Baru
+1503032028,3,T2_Ghost,avg_completion,1.0,3,Bernai Dalam
+1503042002,5,T2_Ghost,cost_deviation_by_category,1.0,3,Karang Mendapo
+1503042006,5,T2_Ghost,activity_category,1.0,3,Semaran
+1503022022,4,T2_Ghost,avg_completion,1.0,3,Muara Limun
+1503032013,5,T2_Ghost,swakelola_high_value,1.0,3,Lidung
+1507112006,3,T2_Ghost,activity_category,1.0,3,Telaga Limo
+1508012001,3,Unclassified,activity_category,1.0,2,Pedukun
+1508012002,15,Unclassified,cost_deviation_by_category,1.0,3,Lubuk Niur
+1508012003,10,T2_Ghost,cost_deviation_by_category,1.0,3,Teluk Kecimbung
+1508012004,7,Unclassified,activity_category,1.0,3,Tanah Tumbuh
+1508012005,4,T2_Ghost,swakelola_high_value,1.0,3,Rambah
+1507102004,4,T5_ProcurementIrregularity,activity_category,1.0,3,Pandan Makmur
+1507102005,4,T2_Ghost,cost_per_unit,1.0,3,Pandan Lagan
+1507102006,6,T2_Ghost,cost_per_unit,1.0,3,Suka Maju
+1507102008,4,T2_Ghost,activity_category,1.0,3,Rantau Karya
+1507102009,8,T2_Ghost,activity_category,1.0,3,Pandan Sejahtera
+1507112003,5,T2_Ghost,activity_category,1.0,3,Rantau Makmur
+1507082006,6,T2_Ghost,avg_completion,1.0,3,Manunggal Makmur
+1507092002,6,T2_Ghost,cost_per_unit,1.0,3,Pematang Rahim
+1507092003,12,T2_Ghost,activity_category,1.0,3,Sungai Toman
+1507092006,7,T2_Ghost,activity_category,1.0,3,Sungai Beras
+1507062004,6,T2_Ghost,cost_deviation_by_category,1.0,3,Kota Kandis Dendang
+1507062005,9,T2_Ghost,cost_per_unit,1.0,3,Koto Kandis
+1507062007,11,T2_Ghost,cost_per_unit,1.0,3,Sido Mukti
+1507062008,5,T2_Ghost,avg_completion,1.0,3,Catur Rahayu
+1507082003,7,T2_Ghost,activity_category,1.0,3,Teluk Majelis
+1507082004,5,T2_Ghost,cost_per_unit,1.0,3,Kuala Lagan
+1503092003,7,T2_Ghost,activity_category,1.0,3,Sungaigedang
+1503082003,4,T2_Ghost,activity_category,1.0,3,Pulau Lintang
+1503082006,5,T2_Ghost,cost_per_unit,1.0,3,Teluk Kecimbung
+1503082008,3,T2_Ghost,avg_completion,1.0,3,Batu Penyabung
+1503072004,6,T2_Ghost,cost_per_unit,1.0,3,Semurung
+1503072006,6,T2_Ghost,avg_completion,1.0,3,Pematang Kabau
+1503072008,4,T2_Ghost,activity_category,1.0,3,Mentawak Baru
+1503062007,5,T2_Ghost,activity_category,1.0,3,Rangkiling
+1503062012,3,T2_Ghost,avg_completion,1.0,3,Simpang Kertopati
+1503062013,4,T2_Ghost,cost_per_unit,1.0,3,Bukitperanginan
+1503062028,6,T2_Ghost,activity_category,1.0,3,Talang Serdang
+1507042016,11,T2_Ghost,cost_deviation_by_category,1.0,3,Tri Mulyo
+1507052001,5,T2_Ghost,activity_category,1.0,3,Sungai Sayang
+1507052008,4,T2_Ghost,cost_deviation_by_category,1.0,3,Remau Baku Tuo
+1507062003,6,T2_Ghost,activity_category,1.0,3,Kuala Dendang
+1507032018,5,T2_Ghost,activity_category,1.0,3,Pangkal Duri Ilir
+1507042008,7,T2_Ghost,activity_category,1.0,3,Bangun Karya
+1507042009,5,T2_Ghost,activity_category,1.0,3,Rantau Jaya
+1507042011,5,T5_ProcurementIrregularity,avg_completion,1.0,3,Sungai Dusun
+1507022010,3,T2_Ghost,cost_deviation_by_category,1.0,3,Bunga Tanjung
+1507032007,6,T2_Ghost,cost_per_unit,1.0,3,Lagan Ilir
+1507032017,16,T2_Ghost,cost_per_unit,1.0,3,Merbau
+1507012017,13,T2_Ghost,cost_deviation_by_category,1.0,3,Kota Harapan
+1507012018,5,T2_Ghost,cost_per_unit,1.0,3,Kuala Simbur
+1507022003,3,T2_Ghost,activity_category,1.0,3,Simpang Jelita
+1507022007,3,T2_Ghost,activity_category,1.0,3,Pemusiran
+1504012014,10,T2_Ghost,avg_completion,1.0,3,Tapah Sari
+1504012015,7,T2_Ghost,cost_per_unit,1.0,3,Bukit Kemuning
+1504012016,7,T2_Ghost,cost_deviation_by_category,1.0,3,Simpang Rantau Gedang
+1504012017,11,T2_Ghost,cost_deviation_by_category,1.0,3,Tanjung Putra
+1504022003,10,T2_Ghost,activity_category,1.0,3,Jebak
+1504022004,7,T1_Markup,swakelola_high_value,1.0,3,Ampelu
+1504022006,6,T2_Ghost,cost_per_unit,1.0,3,Rantau Kapas Mudo
+1504012006,13,T2_Ghost,cost_per_unit,1.0,3,Mersam
+1504012007,8,T5_ProcurementIrregularity,avg_completion,1.0,3,Benteng Rendah
+1504012008,11,T2_Ghost,activity_category,1.0,3,Sungai Puar
+1504012009,10,T2_Ghost,cost_deviation_by_category,1.0,3,Rantau Gedang
+1504012010,7,T2_Ghost,swakelola_high_value,1.0,3,Pematang Gadung
+1504012011,10,T2_Ghost,activity_category,1.0,3,Teluk Melintang
+1504012012,8,Unclassified,cost_deviation_by_category,1.0,3,Bukit Harapan
+1503102006,6,T2_Ghost,cost_deviation_by_category,1.0,3,Pemuncak
+1504012002,12,T2_Ghost,cost_per_unit,1.0,3,Sengkati Kecil
+1504012004,11,Unclassified,cost_deviation_by_category,1.0,3,Sengkati Baru
+1504012005,14,T2_Ghost,avg_completion,1.0,3,Kembang Tanjung
+1503092008,5,T2_Ghost,activity_category,1.0,3,Siliwangi
+1503092011,6,T2_Ghost,avg_completion,1.0,3,Bukit Bumi Raya
+1503102005,3,T2_Ghost,cost_deviation_by_category,1.0,3,Lubuk Resam Hilir
+1506132009,3,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Sungsang
+1507012001,5,T2_Ghost,activity_category,1.0,3,Alang-Alang
+1507012002,8,T2_Ghost,cost_per_unit,1.0,3,Lambur
+1507012012,5,T2_Ghost,activity_category,1.0,3,Lambur II
+1507012014,4,T5_ProcurementIrregularity,activity_category,1.0,3,Kota Raja
+1507012016,6,T2_Ghost,avg_completion,1.0,3,Sungai Ular
+1506122008,7,T2_Ghost,swakelola_high_value,1.0,3,Sungaidungun
+1506132004,4,Unclassified,avg_completion,1.0,3,Sungairambai
+1506132008,4,T2_Ghost,avg_completion,1.0,3,Sungailandak
+1506112005,8,T2_Ghost,avg_completion,1.0,3,Bram Itam Raya
+1506112007,3,T5_ProcurementIrregularity,activity_category,1.0,3,Jati Emas
+1506122002,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungaidualap
+1506082005,4,T7_CrossCatDump,activity_category,1.0,3,Cinta Damai
+1506092002,6,T2_Ghost,cost_deviation_by_category,1.0,3,Dusun Mudo
+1506102002,3,T2_Ghost,activity_category,1.0,3,Tungkal IV Desa
+1504042002,7,T2_Ghost,cost_deviation_by_category,1.0,3,Olak Besar
+1504042005,7,T5_ProcurementIrregularity,activity_category,1.0,3,Paku Aji
+1504042009,11,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Koto Boyo
+1504042010,7,T2_Ghost,activity_category,1.0,3,Simpang Karmeo
+1504032015,6,T2_Ghost,activity_category,1.0,3,Sungai Baung
+1504032018,7,T2_Ghost,cost_per_unit,1.0,3,Tenam
+1504042001,11,T5_ProcurementIrregularity,activity_category,1.0,3,Jelutih
+1504032006,7,T2_Ghost,cost_deviation_by_category,1.0,3,Pasar Terusan
+1504032007,10,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Simpang Terusan
+1504032008,7,T2_Ghost,activity_category,1.0,3,Malapari
+1504032009,4,T2_Ghost,activity_category,1.0,3,Napal Sisik
+1504032011,9,T2_Ghost,avg_completion,1.0,3,Olak
+1504032012,9,T5_ProcurementIrregularity,avg_completion,1.0,3,Muaro Singoan
+1504032013,6,T2_Ghost,avg_completion,1.0,3,Aro
+1504032014,10,T2_Ghost,activity_category,1.0,3,Rantau Puri
+1504022007,6,T7_CrossCatDump,activity_category,1.0,3,Rantau Kapas Tuo
+1504022008,7,T5_ProcurementIrregularity,activity_category,1.0,3,Sungai Pulai
+1504022009,5,T2_Ghost,activity_category,1.0,3,Pulau
+1504022010,9,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Tanjung Marwo
+1504022013,10,T2_Ghost,cost_deviation_by_category,1.0,3,Pelayangan
+1504022015,7,Unclassified,cost_deviation_by_category,1.0,3,Pematang Lima Suku
+1504062002,11,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Peninjauan
+1504062003,7,T2_Ghost,cost_deviation_by_category,1.0,3,Teluk Leban
+1504062004,7,T2_Ghost,activity_category,1.0,3,Kampung Baru
+1504062005,7,T2_Ghost,cost_deviation_by_category,1.0,3,Rengas IX
+1504062006,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Kembang Seri
+1504062007,8,T2_Ghost,cost_per_unit,1.0,3,Buluh Kasab
+1504062009,5,T2_Ghost,avg_completion,1.0,3,Olak Kemang
+1504062010,10,T2_Ghost,cost_deviation_by_category,1.0,3,Padang Kelapo
+1504052012,5,T5_ProcurementIrregularity,activity_category,1.0,3,Teluk
+1504052015,5,T2_Ghost,activity_category,1.0,3,Simpang Kubu Kandang
+1504052016,6,T2_Ghost,activity_category,1.0,3,Awin
+1504052017,9,T2_Ghost,cost_deviation_by_category,1.0,3,Olak Rambahan
+1504052019,8,Unclassified,cost_deviation_by_category,1.0,3,Teluk Ketapang
+1504052020,8,T2_Ghost,cost_deviation_by_category,1.0,3,Kampung Pulau
+1504062001,11,T2_Ghost,activity_category,1.0,3,Batu Sawar
+1504052004,12,T2_Ghost,activity_category,1.0,3,Lubuk Ruso
+1504052005,5,T2_Ghost,avg_completion,1.0,3,Kuap
+1504052006,5,Unclassified,cost_per_unit,1.0,3,Senaning
+1504052007,4,T2_Ghost,activity_category,1.0,3,Kubu Kandang
+1504052008,9,T2_Ghost,avg_completion,1.0,3,Ture
+1504052009,7,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Pulau Betung
+1504052010,5,T2_Ghost,cost_deviation_by_category,1.0,3,Lopak Aur
+1504052011,5,T5_ProcurementIrregularity,avg_completion,1.0,3,Selat
+1504042011,10,T2_Ghost,cost_deviation_by_category,1.0,3,Karmeo
+1504042013,4,T2_Ghost,activity_category,1.0,3,Jangga Baru
+1504042015,10,T2_Ghost,cost_deviation_by_category,1.0,3,Bulian Baru
+1504042016,7,T2_Ghost,swakelola_high_value,1.0,3,Simpang Jelutih
+1504042017,10,T2_Ghost,activity_category,1.0,3,Simpang Aur Gading
+1504052001,9,T2_Ghost,activity_category,1.0,3,Tebing Tinggi
+1504052003,11,T5_ProcurementIrregularity,avg_completion,1.0,3,Serasah
+1506062008,7,T2_Ghost,cost_deviation_by_category,1.0,3,Sungaikeruh
+1506062009,4,T2_Ghost,cost_deviation_by_category,1.0,3,Dataran Kempas
+1506072008,4,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Sungaipenoban
+1506072010,4,T2_Ghost,activity_category,1.0,3,Lubuk Lawas
+1506082002,5,T2_Ghost,cost_deviation_by_category,1.0,3,Pulaupauh
+1506052020,3,T2_Ghost,avg_completion,1.0,3,Merlung
+1506062003,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Suka Damai
+1506062005,4,T5_ProcurementIrregularity,activity_category,1.0,3,Kelagian
+1506062007,5,T2_Ghost,activity_category,1.0,3,Talang Makmur
+1506042013,5,T2_Ghost,swakelola_high_value,1.0,3,Muntialo
+1506042014,4,T2_Ghost,activity_category,1.0,3,Telukkulbi
+1506042017,5,T2_Ghost,cost_per_unit,1.0,3,Mandala Jaya
+1506052008,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Tanjungpaku
+1506052014,5,T2_Ghost,avg_completion,1.0,3,Adi Purwa
+1506032020,4,T2_Ghost,activity_category,1.0,3,Pasar Senin
+1506042001,4,T5_ProcurementIrregularity,avg_completion,1.0,3,Pematang Lumut
+1506042009,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Serdang Jaya
+1506042010,7,T2_Ghost,cost_per_unit,1.0,3,Terjun Gajah
+1506042011,7,T2_Ghost,activity_category,1.0,3,Lubuk Terentang
+1505012005,17,T2_Ghost,activity_category,1.0,3,Muaro Pijoan
+1505012010,7,Unclassified,cost_deviation_by_category,1.0,3,Mendalo Laut
+1505012012,3,T2_Ghost,cost_deviation_by_category,1.0,3,Senaung
+1505012014,7,T2_Ghost,cost_deviation_by_category,1.0,3,Simpang Sungai Duren
+1504082002,14,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Tidar Kuranji
+1504082004,5,T5_ProcurementIrregularity,activity_category,1.0,3,Bukit Sari
+1504082005,7,T1_Markup,avg_completion,1.0,3,Karya Mukti
+1504082007,11,T2_Ghost,activity_category,1.0,3,Danau Embat
+1505012004,10,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Pematang Jering
+1504072003,7,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Ladang Peris
+1504072005,7,T1_Markup,cost_deviation_by_category,1.0,3,Penerokan
+1504072007,11,T2_Ghost,cost_deviation_by_category,1.0,3,Batin
+1504072008,6,T1_Markup,avg_completion,1.0,3,Mekar Jaya
+1504072009,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Sungkai
+1504072010,10,T2_Ghost,swakelola_high_value,1.0,3,Mekar Sari Nes
+1504082001,7,T2_Ghost,activity_category,1.0,3,Bulian Jaya
+1504062011,10,T1_Markup,activity_category,1.0,3,Sungai Lingkar
+1504062012,6,T5_ProcurementIrregularity,avg_completion,1.0,3,Sungai Ruan Ulu
+1504062013,11,T2_Ghost,cost_deviation_by_category,1.0,3,Sungai Ruan Ilir
+1504062015,7,T2_Ghost,activity_category,1.0,3,Rawa Mekar
+1504062016,9,Unclassified,cost_per_unit,1.0,3,Mekar Sari
+1504062017,9,T2_Ghost,cost_deviation_by_category,1.0,3,Kembang Seri Baru
+1504072001,7,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Bungku
+1504072002,9,T5_ProcurementIrregularity,cost_per_unit,1.0,3,Pompa Air
+1505032013,7,T2_Ghost,avg_completion,1.0,3,Rantau Panjang
+1505032014,4,T2_Ghost,cost_per_unit,1.0,3,Londerang
+1505032016,4,T2_Ghost,activity_category,1.0,3,Petanang
+1505022011,8,Unclassified,cost_deviation_by_category,1.0,3,Gerunggung
+1505022012,7,T2_Ghost,cost_deviation_by_category,1.0,3,Tunas Baru
+1505022013,7,T1_Markup,cost_deviation_by_category,1.0,3,Bukit Baling
+1505022014,14,T2_Ghost,avg_completion,1.0,3,Tanjung Lanjut
+1505022015,6,T5_ProcurementIrregularity,activity_category,1.0,3,Suko Awin Jaya
+1505022016,11,T2_Ghost,cost_deviation_by_category,1.0,3,Tunas Mudo
+1505032001,4,T2_Ghost,cost_deviation_by_category,1.0,3,Puding
+1505022003,10,T2_Ghost,cost_per_unit,1.0,3,Pulau Kayu Aro
+1505022004,8,T2_Ghost,swakelola_high_value,1.0,3,Pematang Pulai
+1505022006,7,T2_Ghost,cost_deviation_by_category,1.0,3,Kedotan
+1505022007,6,T2_Ghost,avg_completion,1.0,3,Keranggan
+1505022008,7,Unclassified,cost_deviation_by_category,1.0,3,Berembang
+1505012015,7,T2_Ghost,cost_deviation_by_category,1.0,3,Kedemangan
+1505012017,15,T2_Ghost,activity_category,1.0,3,Maro Sebo
+1505012020,4,Unclassified,activity_category,1.0,3,Simpang Limo
+1505012022,6,T2_Ghost,avg_completion,1.0,3,Pematang Gajah
+1505022001,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Suak Putat
+1506032006,5,T2_Ghost,activity_category,1.0,3,Parit Pudin
+1506032013,3,T2_Ghost,avg_completion,1.0,3,Parit Sidang
+1505112007,6,T2_Ghost,cost_deviation_by_category,1.0,3,Sekumbung
+1505112008,5,T2_Ghost,cost_deviation_by_category,1.0,3,Kemingking Luar
+1506012002,6,T2_Ghost,avg_completion,1.0,3,Tanjungtayas
+1506012017,4,T2_Ghost,activity_category,1.0,3,Brasau
+1505102006,8,T2_Ghost,cost_deviation_by_category,1.0,3,Tanjung Mulia
+1505102009,5,Unclassified,activity_category,1.0,3,Tanjung Sari
+1505112001,3,T5_ProcurementIrregularity,avg_completion,1.0,3,Kunangan
+1505092010,4,Unclassified,cost_deviation_by_category,1.0,3,Sungai Dayo
+1505102002,7,T2_Ghost,cost_deviation_by_category,1.0,3,Tri Jaya
+1505102003,6,T2_Ghost,avg_completion,1.0,3,Mekar Jaya
+1505102004,6,Unclassified,cost_deviation_by_category,1.0,3,Ujung Tanjung
+1505062005,8,T2_Ghost,cost_per_unit,1.0,3,Kasang Pudak
+1505062010,6,T2_Ghost,cost_deviation_by_category,1.0,3,Lopak Alai
+1505062012,5,T2_Ghost,cost_deviation_by_category,1.0,3,Ramin
+1505062014,5,Unclassified,cost_deviation_by_category,1.0,3,Pemunduran
+1505052012,4,T2_Ghost,cost_per_unit,1.0,3,Nyogan
+1505052015,5,T2_Ghost,cost_deviation_by_category,1.0,3,Suka Damai
+1505052018,7,T2_Ghost,cost_deviation_by_category,1.0,3,Tanjung Pauh Talang Pelita
+1505042018,4,T2_Ghost,activity_category,1.0,3,Danau Kedap
+1505042019,8,Unclassified,avg_completion,1.0,3,Mudung Darat
+1505032017,5,Unclassified,cost_deviation_by_category,1.0,3,Mekar Sari
+1505032019,5,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Maju Jaya
+1505042001,4,Unclassified,cost_per_unit,1.0,3,Setiris
+1505042005,5,T2_Ghost,cost_deviation_by_category,1.0,3,Baru
+1505042006,4,T2_Ghost,cost_deviation_by_category,1.0,3,Danau Lamo
+1505082012,6,Unclassified,cost_deviation_by_category,1.0,3,Trimulya Jaya
+1505082006,5,T2_Ghost,activity_category,1.0,3,Tangkit Baru
+1505082007,10,Unclassified,cost_deviation_by_category,1.0,3,Sungai Gelam
+1505082010,4,T2_Ghost,cost_deviation_by_category,1.0,3,Sumber Agung
+1505082011,8,T2_Ghost,activity_category,1.0,3,Mingkung Jaya
+1505072013,5,Unclassified,cost_deviation_by_category,1.0,3,Berkah
+1505072025,7,T5_ProcurementIrregularity,activity_category,1.0,3,Mekar Sari Makmur
+1505072034,6,T2_Ghost,avg_completion,1.0,3,Panca Bakti
+1505082001,6,T2_Ghost,activity_category,1.0,3,Kebon IX
+1505082002,5,T5_ProcurementIrregularity,activity_category,1.0,3,Talang Belido
+1505062017,9,T2_Ghost,cost_deviation_by_category,1.0,3,Sumber Jaya
+1505062024,5,Unclassified,cost_deviation_by_category,1.0,3,Kasang Kota Karang
+1572062006,11,T2_Ghost,cost_deviation_by_category,1.0,3,Karya Bakti
+1572062007,5,T2_Ghost,activity_category,1.0,3,Koto Lebu
+1572072001,6,T5_ProcurementIrregularity,activity_category,1.0,3,Koto Baru
+1572072002,3,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Koto Limau Manis
+1501022007,6,T2_Ghost,cost_deviation_by_category,1.0,3,Tanjungtanah
+1572052007,5,T5_ProcurementIrregularity,swakelola_high_value,1.0,3,Renah Kayu Embun
+1572052009,4,T2_Ghost,swakelola_high_value,1.0,3,Muara Jaya
+1572062001,9,T2_Ghost,activity_category,1.0,3,Sungai Jernih
+1572062002,7,T5_ProcurementIrregularity,avg_completion,1.0,3,Aur Duri
+1572062004,4,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Permanti
+1572042008,12,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Koto Tengah
+1572042010,5,T2_Ghost,activity_category,1.0,3,Koto Padang
+1572042011,8,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Tanjung Karang
+1572042012,12,Unclassified,avg_completion,1.0,3,Kt. Baru Tanah Kampung
+1572032013,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Cempaka
+1572042001,5,T2_Ghost,activity_category,1.0,3,Baru Debai
+1572042002,7,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Pendung Hiang
+1572042003,4,T2_Ghost,swakelola_high_value,1.0,3,Koto Pudung
+1572042004,6,T2_Ghost,swakelola_high_value,1.0,3,Koto Dumo
+1501052018,6,T2_Ghost,cost_per_unit,1.0,3,Pendung Mudik
+1501052029,8,T2_Ghost,cost_per_unit,1.0,3,Koto Majidin Mudik
+1501052035,10,T2_Ghost,activity_category,1.0,3,Muara Semerah Mudik
+1501052036,6,T7_CrossCatDump,avg_completion,1.0,3,Sawahan Koto Majidin
+1501052037,11,T2_Ghost,cost_per_unit,1.0,3,Sawahan Jaya
+1501052038,5,T2_Ghost,cost_deviation_by_category,1.0,3,Koto Majidin Di Air
+1501052039,7,T2_Ghost,cost_deviation_by_category,1.0,3,Pendung Tengah
+1501052002,7,T2_Ghost,cost_deviation_by_category,1.0,3,Baru Semurup
+1501052004,5,T2_Ghost,cost_per_unit,1.0,3,Koto Dua Lama
+1501052012,9,T2_Ghost,avg_completion,1.0,3,Koto Di  Air
+1501052014,11,T2_Ghost,cost_per_unit,1.0,3,Balai
+1501052016,7,T2_Ghost,activity_category,1.0,3,Pendung Hilir
+1501042013,10,T2_Ghost,avg_completion,1.0,3,Koto Baru Hiang
+1501042014,7,T2_Ghost,cost_per_unit,1.0,3,Betung Kuning
+1501042028,5,T2_Ghost,cost_deviation_by_category,1.0,3,Hiang Karya
+1501042029,9,T2_Ghost,activity_category,1.0,3,Hiang Lestari
+1501042031,6,T5_ProcurementIrregularity,cost_deviation_by_category,1.0,3,Hiang Sakti
+1501042033,7,T2_Ghost,cost_per_unit,1.0,3,Koto Sekilan Ambai
+1501022016,8,T2_Ghost,cost_per_unit,1.0,3,Pasar Sore Seleman
+1501042008,6,T2_Ghost,cost_deviation_by_category,1.0,3,Hiang Tinggi
+1501042010,6,T2_Ghost,activity_category,1.0,3,Tanjungmudo
+1501042011,3,Unclassified,cost_deviation_by_category,1.0,3,Pendung Tengah
+1501042012,3,T2_Ghost,cost_deviation_by_category,1.0,3,Pendung Hilir
+1501012005,3,T2_Ghost,cost_per_unit,0.6667,2,Masgo
+1501022008,6,T5_ProcurementIrregularity,activity_category,0.6667,2,Koto Tengah
+1501022014,3,T5_ProcurementIrregularity,avg_completion,0.6667,2,Talang Kemulun
+1501042009,3,T2_Ghost,cost_per_unit,0.6667,2,Ambai Atas
+1501042026,3,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Ambai Bawah
+1501042030,3,T2_Ghost,activity_category,0.6667,2,Angkasa Pura
+1501042034,4,T2_Ghost,cost_per_unit,0.6667,2,Penawar Tinggi
+1501052013,9,T2_Ghost,cost_deviation_by_category,0.6667,2,Pasar Semurup
+1501052015,6,T2_Ghost,activity_category,0.6667,2,Koto Majidin Hilir
+1501052024,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Muara Semerah
+1572042005,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Sembilan
+1572042006,10,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Koto Tuo
+1572042007,3,Unclassified,avg_completion,0.6667,2,Koto Panap
+1572042009,13,Unclassified,avg_completion,0.6667,2,Tanjung Bunga
+1572042013,9,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Mekar Jaya
+1572052001,4,T5_ProcurementIrregularity,activity_category,0.6667,2,Kumun Hilir
+1572052004,5,T5_ProcurementIrregularity,activity_category,0.6667,2,Sandaran Galeh
+1572052005,4,T1_Markup,cost_deviation_by_category,0.6667,2,Debai
+1572052006,7,Unclassified,avg_completion,0.6667,2,Pinggir Air
+1572052008,6,Unclassified,activity_category,0.6667,2,Ulu Air
+1572062005,9,T5_ProcurementIrregularity,activity_category,0.6667,2,Lawang Agung
+1572072003,5,T1_Markup,cost_deviation_by_category,0.6667,2,Kampung Tengah
+1501092011,7,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Sungaitanduk
+1501092012,7,T2_Ghost,cost_deviation_by_category,0.6667,2,Kersik Tuo
+1501092013,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Sangir
+1501092022,3,T2_Ghost,cost_per_unit,0.6667,2,Sungaisampun
+1501092024,5,Unclassified,cost_deviation_by_category,0.6667,2,Bedeng Baru
+1501092025,7,T2_Ghost,activity_category,0.6667,2,Batang Sangir
+1501092030,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungaidalam
+1501092039,4,T2_Ghost,activity_category,0.6667,2,Lindung Jaya
+1509102004,7,T5_ProcurementIrregularity,avg_completion,0.6667,2,Napal Putih
+1509102005,7,Unclassified,cost_deviation_by_category,0.6667,2,Sako Makmur
+1509102006,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Pagar Puding Lamo
+1509102007,9,T2_Ghost,cost_deviation_by_category,0.6667,2,Tanjung Aur Seberang
+1509112003,7,T2_Ghost,activity_category,0.6667,2,Cermin Alam
+1509112004,9,T2_Ghost,avg_completion,0.6667,2,Sungai Karang
+1501082028,2,T2_Ghost,avg_completion,0.6667,2,Pancuran Bangko
+1501092010,5,T2_Ghost,activity_category,0.6667,2,Koto Tuo
+1509082003,5,T2_Ghost,avg_completion,0.6667,2,Pulung Rejo
+1509082005,3,T2_Ghost,activity_category,0.6667,2,Giri Purno
+1509082006,7,T2_Ghost,cost_per_unit,0.6667,2,Sumber Agung
+1509082008,4,T2_Ghost,activity_category,0.6667,2,Sepakat Bersatu
+1509082009,3,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Rantau Kembang
+1509092004,7,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Rantau Api
+1509102001,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Pinang Belai
+1509102002,6,T2_Ghost,activity_category,0.6667,2,Sekutur Jaya
+1501152001,2,T2_Ghost,activity_category,0.6667,2,Sungairumpun
+1501152004,3,T2_Ghost,swakelola_high_value,0.6667,2,Pelompek
+1501152005,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Jernih Jaya
+1501162001,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Siulak Gedang
+1501162005,4,T2_Ghost,activity_category,0.6667,2,Siulak Panjang
+1501162009,8,T2_Ghost,cost_per_unit,0.6667,2,Lubuk Nagodang
+1509072002,11,T2_Ghost,swakelola_high_value,0.6667,2,Wanareja
+1509082002,2,T2_Ghost,activity_category,0.6667,2,Sidorejo
+1506032015,2,T1_Markup,activity_category,0.6667,2,Parit Bilal
+1505012016,4,Unclassified,cost_deviation_by_category,0.6667,2,Muhajirin
+1505012019,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Danau Sarang Elang
+1505012021,6,Unclassified,cost_per_unit,0.6667,2,Mendalo Indah
+1505022002,3,T2_Ghost,activity_category,0.6667,2,Rantau Majo
+1505022005,11,T2_Ghost,cost_deviation_by_category,0.6667,2,Tan Tan
+1505022009,4,Unclassified,cost_per_unit,0.6667,2,Sekernan
+1505032003,5,Unclassified,cost_deviation_by_category,0.6667,2,Betung
+1506012003,2,T1_Markup,cost_deviation_by_category,0.6667,2,Kuala Dasal
+1506012004,2,T5_ProcurementIrregularity,avg_completion,0.6667,2,Pematang Pauh
+1506012019,3,T2_Ghost,activity_category,0.6667,2,Gemuruh
+1506012020,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Pematang Tembesu
+1506022003,4,T2_Ghost,avg_completion,0.6667,2,Tungkal I
+1506022014,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Teluksialang
+1506032008,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Mekar Jati
+1506032012,3,T2_Ghost,activity_category,0.6667,2,Sungaipampang
+1505102001,7,T2_Ghost,activity_category,0.6667,2,Bukit Subur
+1505102005,3,T2_Ghost,activity_category,0.6667,2,Tanjung Baru
+1505102007,3,T5_ProcurementIrregularity,avg_completion,0.6667,2,Adipura Kencana
+1505102010,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Tanjung Lebar
+1505112002,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Talang Duku
+1505112003,4,Unclassified,cost_deviation_by_category,0.6667,2,Tebat Patah
+1505112006,3,Unclassified,swakelola_high_value,0.6667,2,Dusun Mudo
+1506012001,4,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Badang
+1505052019,2,T2_Ghost,avg_completion,0.6667,2,Muaro Sebapo
+1505062001,4,Unclassified,cost_deviation_by_category,0.6667,2,Pudak
+1505062004,4,T1_Markup,cost_deviation_by_category,0.6667,2,Kasang Lopak Alai
+1505062008,2,Unclassified,avg_completion,0.6667,2,Solok
+1505062009,6,T2_Ghost,avg_completion,0.6667,2,Sakean
+1505062013,4,Unclassified,activity_category,0.6667,2,Teluk Raya
+1505092005,2,T2_Ghost,activity_category,0.6667,2,Matra Manunggal
+1505092006,4,Unclassified,cost_deviation_by_category,0.6667,2,Bukit Mulya
+1506072002,3,T5_ProcurementIrregularity,activity_category,0.6667,2,Sri Agung
+1506072003,2,Unclassified,activity_category,0.6667,2,Suban
+1504042014,7,T2_Ghost,activity_category,0.6667,2,Terentang Baru
+1504052014,5,T2_Ghost,activity_category,0.6667,2,Kaos
+1504022011,5,T1_Markup,avg_completion,0.6667,2,Suka Ramai
+1504022012,2,Unclassified,activity_category,0.6667,2,Ampelu Mudo
+1504032016,5,T2_Ghost,avg_completion,0.6667,2,Bajubang Laut
+1504032017,8,T1_Markup,cost_deviation_by_category,0.6667,2,Singkawang
+1506042015,4,T1_Markup,swakelola_high_value,0.6667,2,Bunga Tanjung
+1506042016,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungaiterap
+1506052012,6,T5_ProcurementIrregularity,avg_completion,0.6667,2,Tanjungbenanak
+1506052018,3,T1_Markup,cost_per_unit,0.6667,2,Pinang Gading
+1506052021,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Tanjungmakmur
+1506062002,2,T2_Ghost,avg_completion,0.6667,2,Purwodadi
+1506062004,3,T2_Ghost,activity_category,0.6667,2,Adi Jaya
+1506062010,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Delima
+1505012002,2,T2_Ghost,avg_completion,0.6667,2,Sungai Bertam
+1505012006,5,T2_Ghost,avg_completion,0.6667,2,Sungai Duren
+1505012007,3,Unclassified,activity_category,0.6667,2,Mendalo Darat
+1505012008,6,T2_Ghost,cost_deviation_by_category,0.6667,2,Rengas Bandung
+1505012009,4,Unclassified,activity_category,0.6667,2,Sarang Burung
+1506032016,2,T2_Ghost,cost_deviation_by_category,0.6667,2,SuakSamin
+1506032018,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Karya Maju
+1506042012,3,T5_ProcurementIrregularity,activity_category,0.6667,2,Pematang Buluh
+1505032004,4,T2_Ghost,activity_category,0.6667,2,Pematang Raman
+1505032005,3,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Sungai Bungur
+1505032006,3,T2_Ghost,avg_completion,0.6667,2,Seponjen
+1505032007,5,T2_Ghost,cost_per_unit,0.6667,2,Sogo
+1505032009,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Sungai Aur
+1504072006,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Petajen
+1504082003,6,T2_Ghost,cost_deviation_by_category,0.6667,2,Kehidupan Baru
+1504082006,7,T2_Ghost,avg_completion,0.6667,2,Terusan
+1503092009,2,T1_Markup,avg_completion,0.6667,2,Simpang Nibung
+1503092012,4,T2_Ghost,avg_completion,0.6667,2,Argo Sari
+1503102001,3,T2_Ghost,activity_category,0.6667,2,Kampung Tujuh
+1503102002,3,T2_Ghost,swakelola_high_value,0.6667,2,Lubuk Resam
+1503102003,5,T2_Ghost,activity_category,0.6667,2,Telukrendah
+1503102008,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Tendah
+1503102009,3,T2_Ghost,activity_category,0.6667,2,Sungaikeramat
+1503102010,2,T2_Ghost,activity_category,0.6667,2,Sekamis
+1506122005,2,T5_ProcurementIrregularity,activity_category,0.6667,2,Dataran Pinang
+1506122006,6,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Tanjungpasir
+1506122010,2,T1_Markup,cost_deviation_by_category,0.6667,2,Suak Labu
+1506132003,3,T1_Markup,swakelola_high_value,0.6667,2,Telukketapang
+1506132005,4,T1_Markup,cost_deviation_by_category,0.6667,2,Margo Rukun
+1506132006,3,T2_Ghost,activity_category,0.6667,2,Kempas Jaya
+1507012004,4,T2_Ghost,activity_category,0.6667,2,Simbur Naik
+1507012011,5,T2_Ghost,cost_per_unit,0.6667,2,Lambur I
+1506092005,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Kemang Manis
+1506092007,2,T1_Markup,cost_deviation_by_category,0.6667,2,Lubuk Sebontan
+1506102007,3,T2_Ghost,activity_category,0.6667,2,Kuala Kahar
+1506112002,3,T2_Ghost,activity_category,0.6667,2,Bram Itam Kanan
+1506112004,2,T2_Ghost,avg_completion,0.6667,2,Pembengis
+1506112006,2,T2_Ghost,activity_category,0.6667,2,Pantaigading
+1506112009,3,T1_Markup,activity_category,0.6667,2,Mekar Tanjung
+1506122004,2,T2_Ghost,cost_per_unit,0.6667,2,Sungaigebar
+1504032019,7,T2_Ghost,cost_per_unit,0.6667,2,Sungai Buluh
+1504032020,8,T2_Ghost,cost_per_unit,0.6667,2,Kilangan
+1504032021,5,T2_Ghost,activity_category,0.6667,2,Pelayangan
+1504042004,5,T5_ProcurementIrregularity,activity_category,0.6667,2,Aur Gading
+1504042006,6,T2_Ghost,activity_category,0.6667,2,Hajran
+1504042007,5,T5_ProcurementIrregularity,avg_completion,0.6667,2,Mata Gual
+1504042008,6,T2_Ghost,cost_per_unit,0.6667,2,Jangga
+1506092004,2,T1_Markup,avg_completion,0.6667,2,Bukit Indah
+1503072001,3,T2_Ghost,activity_category,0.6667,2,Lubuk Jering
+1503072002,5,T2_Ghost,avg_completion,0.6667,2,Jernih
+1503072003,4,T2_Ghost,activity_category,0.6667,2,Desa Baru
+1503072005,6,T2_Ghost,activity_category,0.6667,2,Lubuk Kepayang
+1503072007,3,T1_Markup,cost_per_unit,0.6667,2,Bukit Suban
+1503072009,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Mentawak Ulu
+1503082001,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Rantau Gedang
+1503082002,4,T2_Ghost,avg_completion,0.6667,2,Penarun
+1507052004,2,T2_Ghost,activity_category,0.6667,2,Sunga Iitik
+1507052006,2,Unclassified,cost_deviation_by_category,0.6667,2,Sungai Benuh
+1507052007,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungai Cemara
+1507052009,4,T2_Ghost,cost_per_unit,0.6667,2,Labuhan Pering
+1503062006,2,T2_Ghost,activity_category,0.6667,2,Gurun Tuo
+1503062008,2,T2_Ghost,avg_completion,0.6667,2,Mandainangin Tuo
+1503062010,2,T2_Ghost,activity_category,0.6667,2,Muaro Ketalo
+1503062011,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Taman Dewa
+1507032001,5,T2_Ghost,activity_category,0.6667,2,Pangkal Duri
+1507032003,3,T2_Ghost,activity_category,0.6667,2,Mendahara Tengah
+1507032015,4,T1_Markup,cost_deviation_by_category,0.6667,2,Sungai Tawar
+1507032016,7,T2_Ghost,avg_completion,0.6667,2,Bakti Idaman
+1507042004,6,T2_Ghost,activity_category,0.6667,2,Rantau Rasau I
+1507042005,2,T2_Ghost,activity_category,0.6667,2,Rantau Rasau II
+1507042007,4,Unclassified,activity_category,0.6667,2,Harapan Makmur
+1507042014,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Marga Mulya
+1504012003,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Sengkati Gedang
+1504012013,4,Unclassified,cost_deviation_by_category,0.6667,2,Belanti Jaya
+1504022005,5,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Rambutan Masam
+1507022004,7,T2_Ghost,cost_deviation_by_category,0.6667,2,Simpang Datuk
+1507022005,3,T2_Ghost,avg_completion,0.6667,2,Teluk Kijing
+1507022006,3,T2_Ghost,activity_category,0.6667,2,Sungai Raya
+1507022008,2,T5_ProcurementIrregularity,avg_completion,0.6667,2,Sungai Tering
+1507022009,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungai Jeruk
+1503032006,2,T2_Ghost,cost_per_unit,0.6667,2,Sungai Abang
+1503032014,3,T2_Ghost,activity_category,0.6667,2,Ladang Panjang
+1503032027,4,T2_Ghost,activity_category,0.6667,2,Ujung Tanjung
+1503042001,2,T2_Ghost,cost_per_unit,0.6667,2,Pangidaran
+1503042004,4,T2_Ghost,cost_per_unit,0.6667,2,Batu Kucing
+1503042008,5,T2_Ghost,activity_category,0.6667,2,Pangkal Bulian
+1503042009,4,T2_Ghost,avg_completion,0.6667,2,Lubuk Napal
+1503042011,2,T2_Ghost,cost_per_unit,0.6667,2,Lamban Sigatal
+1507112002,7,T2_Ghost,cost_per_unit,0.6667,2,Rantau Rasau Desa
+1507112004,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungai Rambut
+1507112005,3,T2_Ghost,cost_per_unit,0.6667,2,Rawasari
+1503022023,6,T2_Ghost,activity_category,0.6667,2,Suka Damai
+1503032002,2,T2_Ghost,avg_completion,0.6667,2,Bernai
+1503032003,4,T2_Ghost,activity_category,0.6667,2,Sungai Baung
+1503032004,5,T2_Ghost,activity_category,0.6667,2,Panti
+1503032005,3,T2_Ghost,activity_category,0.6667,2,Tinting
+1503092007,4,T2_Ghost,cost_per_unit,0.6667,2,Pasar Singkut
+1507062009,9,T2_Ghost,activity_category,0.6667,2,Jati Mulyo
+1507082005,4,T5_ProcurementIrregularity,avg_completion,0.6667,2,Majelis Hidayah
+1507092004,8,T2_Ghost,activity_category,0.6667,2,Bukit Tempurung
+1507092007,3,T2_Ghost,activity_category,0.6667,2,Mencolok
+1507102001,3,T2_Ghost,avg_completion,0.6667,2,Lagan Ulu
+1507102002,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Lagan Tengah
+1507102007,2,T5_ProcurementIrregularity,activity_category,0.6667,2,Kota Baru
+1503082004,3,T2_Ghost,activity_category,0.6667,2,Tanjung
+1503082007,3,T2_Ghost,avg_completion,0.6667,2,Pulaumelako
+1503082009,4,T2_Ghost,activity_category,0.6667,2,Tanjunggagak
+1503082012,9,T2_Ghost,avg_completion,0.6667,2,Dusun Dalam
+1503082015,5,T2_Ghost,cost_per_unit,0.6667,2,Teluk Mancur
+1503092002,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Bukittigo
+1503092004,4,T2_Ghost,swakelola_high_value,0.6667,2,Payo Lebar
+1503092006,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Perdamaian
+1503012016,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Muara Cuban
+1503022009,4,T2_Ghost,swakelola_high_value,0.6667,2,Lubuk Bedorong
+1503022012,2,T2_Ghost,activity_category,0.6667,2,Berkun
+1503022016,4,T2_Ghost,activity_category,0.6667,2,Moenti
+1503022018,4,T2_Ghost,activity_category,0.6667,2,Demang
+1502182003,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Baru
+1502182005,2,T2_Ghost,avg_completion,0.6667,2,Beringin Tinggi
+1502182006,4,T2_Ghost,activity_category,0.6667,2,Pematang Pauh
+1508052015,3,Unclassified,cost_per_unit,0.6667,2,Telentam
+1502232014,3,Unclassified,activity_category,0.6667,2,Air Liki Baru
+1502242004,6,T2_Ghost,cost_deviation_by_category,0.6667,2,Baru Bukit Punjung
+1503012001,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Tambak Ratu
+1503012003,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Muaro Air Dua
+1503012007,3,T2_Ghost,activity_category,0.6667,2,Rantau Panjang
+1503012010,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Lubuk Bangkar
+1503012014,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Bukit Kalimau Ulu
+1508012007,7,T2_Ghost,activity_category,0.6667,2,Bukit Kemang
+1508022002,4,T1_Markup,cost_deviation_by_category,0.6667,2,Talang Sungai Bungo
+1508022003,10,T2_Ghost,activity_category,0.6667,2,Rantau Pandan
+1508022004,6,T2_Ghost,cost_deviation_by_category,0.6667,2,Leban
+1508022015,5,T5_ProcurementIrregularity,activity_category,0.6667,2,Lubuk Mayan
+1508042001,4,Unclassified,avg_completion,0.6667,2,Tanjung Belit
+1508042007,10,Unclassified,activity_category,0.6667,2,Jumbak
+1508042009,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Rantau Panjang
+1503042020,3,T2_Ghost,cost_per_unit,0.6667,2,Seko Besar
+1503052001,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Penegah
+1503052004,4,T2_Ghost,cost_per_unit,0.6667,2,Bukit
+1503052006,6,T2_Ghost,activity_category,0.6667,2,Rantanu Tenang
+1503052007,2,T2_Ghost,activity_category,0.6667,2,Muara Danau
+1503052019,3,T2_Ghost,activity_category,0.6667,2,Mekarsari
+1503052022,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Pelawan Jaya
+1503062003,5,T2_Ghost,swakelola_high_value,0.6667,2,Pemusiran
+1502142007,2,Unclassified,cost_deviation_by_category,0.6667,2,Mekar Limau Manis
+1502152003,5,T2_Ghost,avg_completion,0.6667,2,Sri Sembilan
+1502152004,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Bukit Subur
+1502162003,7,Unclassified,avg_completion,0.6667,2,Durian Batakuk
+1502162004,7,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Muara Bantan
+1502162006,3,T2_Ghost,swakelola_high_value,0.6667,2,Guguk
+1502162007,2,T1_Markup,avg_completion,0.6667,2,Markeh
+1502162010,6,Unclassified,cost_deviation_by_category,0.6667,2,Renah Medan
+1508082003,2,T5_ProcurementIrregularity,avg_completion,0.6667,2,Tebat
+1508082004,4,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Baru Pusat Jalo
+1508082005,6,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Bedaro
+1502132003,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Karang Anyar
+1502132005,2,T1_Markup,cost_per_unit,0.6667,2,Simpang L. Merangin
+1502132007,6,T2_Ghost,activity_category,0.6667,2,Papit
+1502142001,3,T2_Ghost,activity_category,0.6667,2,Rantau Limau Manis
+1502142005,3,T2_Ghost,swakelola_high_value,0.6667,2,Kota Raja
+1508062004,2,T2_Ghost,activity_category,0.6667,2,Balai Jaya
+1508062012,7,T2_Ghost,cost_per_unit,0.6667,2,Mulya Jaya
+1508062014,3,T2_Ghost,cost_per_unit,0.6667,2,Bukit Telago
+1508072007,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Rantau Tipu
+1508072010,6,T5_ProcurementIrregularity,activity_category,0.6667,2,Pemunyian
+1508072012,3,T2_Ghost,avg_completion,0.6667,2,Tebo Jaya
+1508072013,3,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Sekar Mengkuang
+1508072014,4,T2_Ghost,activity_category,0.6667,2,Limbur Baru
+1502182010,6,T2_Ghost,cost_deviation_by_category,0.6667,2,Koto Baru
+1502182015,5,T2_Ghost,activity_category,0.6667,2,Simpang Talang Tembago
+1502192004,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Lantak Seribu
+1502202001,11,T2_Ghost,avg_completion,0.6667,2,Tambang Emas
+1502202003,4,T5_ProcurementIrregularity,avg_completion,0.6667,2,Pulau Bayur
+1502232001,2,T2_Ghost,swakelola_high_value,0.6667,2,Muara Kibul
+1502232003,2,Unclassified,cost_deviation_by_category,0.6667,2,Pulau Tebakar
+1502232004,2,Unclassified,cost_deviation_by_category,0.6667,2,Batang Kibul
+1502052014,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Beluran Panjang
+1502052015,4,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Seling
+1502052035,2,T5_ProcurementIrregularity,avg_completion,0.6667,2,Lubuk Napal
+1502062004,3,T7_CrossCatDump,swakelola_high_value,0.6667,2,Jelatang
+1502062005,4,T2_Ghost,cost_per_unit,0.6667,2,Tanjung Gedang
+1502062013,6,T2_Ghost,swakelola_high_value,0.6667,2,Pematang Kancil
+1502062026,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungai Udang
+1502062027,7,T2_Ghost,avg_completion,0.6667,2,Pelakar Jaya
+1508082007,6,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Datar
+1508082008,4,T1_Markup,cost_deviation_by_category,0.6667,2,Suka Jaya
+1508092003,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Muara Kuamang
+1508092005,13,Unclassified,activity_category,0.6667,2,Purwosari
+1508102001,6,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Tanjung Menanti
+1508102005,2,Unclassified,cost_per_unit,0.6667,2,Suka Makmur
+1502052008,6,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Koto Rayo
+1502052011,2,T2_Ghost,avg_completion,0.6667,2,Tanjung  Ilir
+1502092012,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Muara Kelukup
+1502092013,2,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Muaro Lengayo
+1502092015,4,T2_Ghost,cost_per_unit,0.6667,2,Durian Mukut
+1502102002,4,T5_ProcurementIrregularity,avg_completion,0.6667,2,Biuku Tanjung
+1502122007,2,Unclassified,cost_deviation_by_category,0.6667,2,Rantau Alai
+1502122008,6,Unclassified,cost_deviation_by_category,0.6667,2,Tambang Besi
+1502122009,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Pelangki
+1502122010,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Pulau Layang
+1502162012,4,T5_ProcurementIrregularity,avg_completion,0.6667,2,Muaro Panco Timur
+1502172004,2,T2_Ghost,activity_category,0.6667,2,Tiga Alur
+1502172006,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungai Jering
+1502172007,2,T1_Markup,cost_deviation_by_category,0.6667,2,Kampung Limo
+1502172008,3,Unclassified,cost_deviation_by_category,0.6667,2,Tanjung Mudo
+1502182002,4,T2_Ghost,cost_per_unit,0.6667,2,Koto Teguh
+1502092007,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Rantau Jering
+1502092010,2,T2_Ghost,avg_completion,0.6667,2,Sungai Lalang
+1502042016,4,T2_Ghost,cost_per_unit,0.6667,2,Sungai Nilau
+1502042017,5,T2_Ghost,cost_per_unit,0.6667,2,Sungai Manau
+1502042026,2,T1_Markup,cost_deviation_by_category,0.6667,2,Gelanggang
+1502052007,2,T1_Markup,activity_category,0.6667,2,Kandang
+1501202007,3,T2_Ghost,avg_completion,0.6667,2,Pondok
+1501202008,3,T2_Ghost,cost_per_unit,0.6667,2,Muak
+1501202010,6,T2_Ghost,activity_category,0.6667,2,Pulaupandan
+1501212007,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Koto Tengah
+1502032010,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Peradu Temberas
+1502032013,4,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Tiaro
+1502032021,4,Unclassified,avg_completion,0.6667,2,Pulau Raman
+1502032029,3,Unclassified,activity_category,0.6667,2,Rantau Bayur
+1502042007,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungai Pinang
+1502042008,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Tiangko
+1502042011,3,Unclassified,cost_deviation_by_category,0.6667,2,Durian Lecah
+1502042015,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Bukit Batu
+1508132004,10,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Sungai Buluh
+1508142007,9,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Aur Cino
+1508152001,2,T2_Ghost,activity_category,0.6667,2,Pelayang
+1508162005,3,T5_ProcurementIrregularity,avg_completion,0.6667,2,Bukit Sari
+1502032004,7,T2_Ghost,swakelola_high_value,0.6667,2,Durian Rambun
+1502032007,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Lubuk Birah
+1502032008,6,T2_Ghost,activity_category,0.6667,2,Lubuk Beringin
+1502032009,2,T2_Ghost,cost_per_unit,0.6667,2,Rantau Macang
+1502072009,4,T5_ProcurementIrregularity,avg_completion,0.6667,2,Muara Jernih
+1502082002,3,T2_Ghost,avg_completion,0.6667,2,Bungo Antoi
+1502082003,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Muara Delang
+1502082005,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Bungo Tanjung
+1502082007,6,T2_Ghost,cost_deviation_by_category,0.6667,2,Gading Jaya
+1502082008,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Mekar Jaya
+1502092002,3,Unclassified,swakelola_high_value,0.6667,2,Tanjung Berugo
+1502092005,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Rancan
+1501182003,3,T5_ProcurementIrregularity,activity_category,0.6667,2,Mukai Mudik
+1501182006,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Mukai Tinggi
+1501182011,2,T2_Ghost,cost_per_unit,0.6667,2,Mukai Seberang
+1501192006,7,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungailintang
+1501192007,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Kebun Baru
+1501192010,2,T2_Ghost,activity_category,0.6667,2,Sungaikering
+1501162011,3,T2_Ghost,activity_category,0.6667,2,Sungailebuh
+1501162012,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Koto Kapeh
+1509022005,3,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Teluk Rendah Ilir
+1509022008,7,T2_Ghost,avg_completion,0.6667,2,Tuo Ilir
+1509022012,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Betung Bedarah Barat
+1509032006,3,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Rantau langkap
+1509032007,3,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Tanjung Aur
+1509032009,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Pulau Panjang
+1501172018,5,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Tebat Ijuk Dili
+1501182002,2,T2_Ghost,activity_category,0.6667,2,Mukai Tengah
+1502012009,2,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Lubuk Pungguk
+1508172008,4,Unclassified,swakelola_high_value,0.6667,2,Paku Aji
+1509012003,9,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Bedaro Rampak
+1509012006,3,Unclassified,cost_deviation_by_category,0.6667,2,Tengah Ulu
+1509012008,4,T2_Ghost,swakelola_high_value,0.6667,2,Kandang
+1509012009,5,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Pelayang
+1509012011,5,T5_ProcurementIrregularity,avg_completion,0.6667,2,Aburan Batang Tebo
+1509022004,5,T2_Ghost,cost_per_unit,0.6667,2,Teluk Rendah Ulu
+1501212008,9,T2_Ghost,activity_category,0.6667,2,Koto Datuk
+1501212009,5,T2_Ghost,cost_per_unit,0.6667,2,Koto Dua Baru
+1501212011,3,T2_Ghost,cost_per_unit,0.6667,2,Kecil
+1502012001,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Renah Kemumu
+1502012002,3,T2_Ghost,cost_per_unit,0.6667,2,Tanjung Kasri
+1502012003,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Lubuk Mentilin
+1502012005,3,T2_Ghost,cost_per_unit,0.6667,2,Renah Alai
+1502012008,3,T2_Ghost,cost_per_unit,0.6667,2,Pulau Tengah
+1501112011,4,T2_Ghost,activity_category,0.6667,2,Pungut Hilir
+1501112014,3,T2_Ghost,activity_category,0.6667,2,Kemantan Hilir
+1501112018,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Kemantan Agung
+1501112019,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungaideras
+1501112022,10,T2_Ghost,cost_deviation_by_category,0.6667,2,Baru Sungaideras
+1501112023,2,T2_Ghost,cost_per_unit,0.6667,2,Taman Jernih Sungaitutung
+1501112025,3,T2_Ghost,avg_completion,0.6667,2,Kemantan Raya
+1501112027,2,T2_Ghost,activity_category,0.6667,2,Air Panas Sungaiabu
+1509052003,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Teluk Langkap
+1509052006,4,T5_ProcurementIrregularity,activity_category,0.6667,2,Jati Belarik
+1509052008,4,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Teriti
+1509052009,4,T5_ProcurementIrregularity,avg_completion,0.6667,2,Suo-Suo
+1509052011,2,T2_Ghost,cost_per_unit,0.6667,2,Semambu
+1509052012,3,T1_Markup,cost_deviation_by_category,0.6667,2,Pemayungan
+1509062001,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Tanjung Pucuk Jambi
+1509062005,6,T2_Ghost,activity_category,0.6667,2,Aur Cino
+1501162039,5,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Demong Sakti
+1501172001,2,Unclassified,cost_per_unit,0.6667,2,Belui
+1501172010,4,T2_Ghost,avg_completion,0.6667,2,Sekungkung
+1509032012,6,T2_Ghost,cost_per_unit,0.6667,2,Malako Intan
+1509032018,2,T5_ProcurementIrregularity,avg_completion,0.6667,2,Ulak Banjir Rambahan
+1509042004,8,T2_Ghost,avg_completion,0.6667,2,Purwo Harjo
+1509042006,11,T2_Ghost,cost_deviation_by_category,0.6667,2,Tirta Kencana
+1509052002,4,T5_ProcurementIrregularity,cost_per_unit,0.6667,2,Lembak Bungur
+1501162013,7,T2_Ghost,activity_category,0.6667,2,Koto Beringin
+1501162014,5,Unclassified,swakelola_high_value,0.6667,2,Dusun Baru
+1501162015,3,T1_Markup,cost_deviation_by_category,0.6667,2,Dusun Dalam
+1501162019,3,T7_CrossCatDump,cost_deviation_by_category,0.6667,2,Koto Aro
+1501162024,2,T1_Markup,avg_completion,0.6667,2,Siulak Kecil Hilir
+1501162028,4,T2_Ghost,activity_category,0.6667,2,Telago Biru
+1501162035,4,T2_Ghost,cost_deviation_by_category,0.6667,2,Plak Naneh
+1501162036,3,T5_ProcurementIrregularity,activity_category,0.6667,2,Padang Jantung
+1572032008,5,T5_ProcurementIrregularity,activity_category,0.6667,2,Larik Kemahan
+1572032012,8,Unclassified,cost_per_unit,0.6667,2,Tanjung Muda
+1501022006,3,T2_Ghost,cost_per_unit,0.6667,2,Cupak
+1572082001,5,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Sumur Anyir
+1501022002,3,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Kota Baru Sanggaran Agung
+1501012019,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Kebun Lima
+1501012012,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Perikan Tengah
+1572072004,7,T1_Markup,cost_deviation_by_category,0.6667,2,Dujung Sakti
+1501082022,3,T2_Ghost,cost_deviation_by_category,0.6667,2,Pulautengah
+1501082025,2,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Jembatan Merah Pulau Tengah
+1509122001,3,T1_Markup,activity_category,0.6667,2,Tanah Garo
+1509122005,4,T2_Ghost,cost_per_unit,0.6667,2,Tambun Arang
+1509122008,5,Unclassified,cost_deviation_by_category,0.6667,2,Olak Kemang
+1572012004,9,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Pasar Baru
+1572022008,8,T5_ProcurementIrregularity,avg_completion,0.6667,2,Koto Duo
+1572032004,7,T2_Ghost,activity_category,0.6667,2,Tanjung
+1501062019,2,T2_Ghost,cost_per_unit,0.6667,2,Siulak Tenang
+1501072006,3,T2_Ghost,activity_category,0.6667,2,Lubuk Paku
+1501072007,6,T2_Ghost,avg_completion,0.6667,2,Tamiai
+1501072009,4,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Pasar Tamiai
+1501082001,2,T2_Ghost,swakelola_high_value,0.6667,2,Jujun
+1501082005,4,T1_Markup,cost_per_unit,0.6667,2,Tanjungbatu
+1501082013,5,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Dsn. Baru P. Tengah
+1501082019,3,Unclassified,cost_per_unit,0.6667,2,Koto Agung
+1501092047,2,T2_Ghost,activity_category,0.6667,2,Sangir Tengah
+1501112001,2,T2_Ghost,cost_deviation_by_category,0.6667,2,Kemantan Tinggi
+1501112002,4,T2_Ghost,avg_completion,0.6667,2,Kemantan Kebalai
+1501112005,4,T2_Ghost,activity_category,0.6667,2,Pondok Sungaiabu
+1501112010,4,T2_Ghost,activity_category,0.6667,2,Pungut Tengah
+1501062011,4,T2_Ghost,activity_category,0.6667,2,Sungaibatu Gantih
+1501062013,6,T2_Ghost,activity_category,0.6667,2,Simpang Tutup
+1501062017,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Sungaigelampeh
+1505042020,3,T2_Ghost,cost_per_unit,0.6667,2,Lubuk Raman
+1505052001,5,T2_Ghost,avg_completion,0.6667,2,Tanjung Pauh Km. 32
+1505052002,2,Unclassified,cost_deviation_by_category,0.6667,2,Pelempang
+1505052003,3,Unclassified,activity_category,0.6667,2,Sungai Landai
+1505052005,2,Unclassified,cost_deviation_by_category,0.6667,2,Nagasari
+1505052010,4,T2_Ghost,activity_category,0.6667,2,Baru
+1505052011,6,T2_Ghost,cost_deviation_by_category,0.6667,2,Tanjung Pauh Km. 39
+1505052017,5,T2_Ghost,swakelola_high_value,0.6667,2,Suka Maju
+1505092001,2,T1_Markup,cost_per_unit,0.6667,2,Talang Bukit
+1505092002,3,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Talang Datar
+1505092003,3,T1_Markup,avg_completion,0.6667,2,Sumber Mulya
+1505092004,3,T2_Ghost,activity_category,0.6667,2,Mulya Jaya
+1505042003,2,T5_ProcurementIrregularity,avg_completion,0.6667,2,Tanjung Katung
+1505042004,2,T2_Ghost,avg_completion,0.6667,2,Jambi Tulo
+1505042007,7,Unclassified,cost_per_unit,0.6667,2,Muaro Jambi
+1505042016,3,T2_Ghost,swakelola_high_value,0.6667,2,Niaso
+1505072033,3,Unclassified,activity_category,0.6667,2,Bakti Mulya
+1505082003,3,T5_ProcurementIrregularity,cost_deviation_by_category,0.6667,2,Talang Kerinci
+1505082005,6,T2_Ghost,activity_category,0.6667,2,Tangkit
+1505082008,3,Unclassified,cost_deviation_by_category,0.6667,2,Parit
+1505082009,3,T5_ProcurementIrregularity,swakelola_high_value,0.6667,2,Petaling Jaya
+1505082013,5,T2_Ghost,swakelola_high_value,0.6667,2,Mekar Jaya
+1505082014,3,T2_Ghost,cost_per_unit,0.6667,2,Sido Mukti
+1505082015,5,T2_Ghost,activity_category,0.6667,2,Gambut Jaya
+1505062015,3,Unclassified,cost_deviation_by_category,0.6667,2,Sipin Teluk Duren
+1505062016,4,T2_Ghost,avg_completion,0.6667,2,Arang Arang
+1505062018,2,Unclassified,cost_deviation_by_category,0.6667,2,Sungai Terap
+1505072004,4,T5_ProcurementIrregularity,avg_completion,0.6667,2,Suka Makmur
+1505072005,3,T1_Markup,cost_deviation_by_category,0.6667,2,Marga Mulya
+1505072007,4,T2_Ghost,cost_per_unit,0.6667,2,Marga Manunggal Jaya
+1505072018,5,T2_Ghost,cost_deviation_by_category,0.6667,2,Bukit Makmur
+1505072021,2,Unclassified,cost_deviation_by_category,0.6667,2,Bukit Mas
