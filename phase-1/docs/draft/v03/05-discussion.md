@@ -19,31 +19,13 @@ This study developed and evaluated Protocol 2, an unsupervised Dual-Path Machine
 
 ### 5.2 5-Whys Causal Chains for Typology Explosions
 
-To understand the structural mechanisms driving the primary typology shifts in Protocol 2, 5-Whys causal chain audits were conducted:
+To understand the structural mechanisms driving the primary typology shifts in Protocol 2, 5-Whys causal chain audits were conducted and synthesized into cohesive diagnostic narratives:
 
-#### 1. The 5-Whys Causal Chain of T2 Ghost Activity Explosion ($N=4,155$)
-- *Why 1*: Why did T2 flags jump from 774 in Protocol 1 to 4,155 records (58.1% of flags) in Protocol 2?  
-  $\to$ Because Protocol 2 captured thousands of activities where funds were drawn but physical completion remained near zero.
-- *Why 2*: Why were zero-progress activities missed in Protocol 1?  
-  $\to$ Because Protocol 1 relied on Isolation Forest majority voting, which evaluated global feature path lengths.
-- *Why 3*: Why did Isolation Forest fail to isolate zero-progress activities?  
-  $\to$ Because zero physical progress occurring across small output categories created local clusters that appeared globally normal to random tree splits.
-- *Why 4*: Why does LOF in Protocol 2 successfully detect these activities?  
-  $\to$ Because LOF evaluates local reachability density relative to adjacent peer villages that completed physical infrastructure, exposing zero-progress activities as extreme local density isolates.
-- *Why 5*: Why is capturing T2 critical for anti-corruption oversight?  
-  $\to$ Because ghost activities (*proyek fiktif*) represent the most severe physical fraud modus in Indonesian rural administration, accounting for Rp 181.22 Miliar in direct financial realization risk.
+#### 1. Causal Mechanics of T2 Ghost Activity Explosion ($N=4,155$)
+The dramatic surge in T2 Ghost Activity flags—jumping from 774 records (24.9%) in Protocol 1 to 4,155 records (58.1%) in Protocol 2—stems from a fundamental diagnostic capability shift. Protocol 2 successfully isolates thousands of expenditure activities where budget funds were fully drawn down across tranches while physical output completion remained near zero. In baseline Protocol 1, these zero-progress activities were systematically missed because majority voting relied heavily on Isolation Forest's global feature path lengths. Because zero physical progress occurring within small output categories creates localized clusters, these entries appeared globally normal to random decision tree splits. Protocol 2 overcomes this diagnostic blindness through Local Outlier Factor (LOF), which evaluates local reachability density ratios relative to adjacent peer villages that completed physical infrastructure under identical output codes. By exposing zero-progress activities as extreme local density isolates, Protocol 2 targets ghost projects (*proyek fiktif*)—the most severe physical fraud modus in Indonesian rural administration, accounting for Rp 181.22 billion in direct financial realization risk.
 
-#### 2. The 5-Whys Causal Chain of T5 Procurement Irregularity Surge ($N=2,343$)
-- *Why 1*: Why did T5 procurement flags surge from 26 to 2,343 records (32.8% of flags)?  
-  $\to$ Because Protocol 2 incorporated `swakelola_high_value` directly into the deep autoencoder training matrix.
-- *Why 2*: Why did Protocol 1 fail to detect uncompetitive high-value Swakelola procurement?  
-  $\to$ Because Protocol 1 applied strict linear rule combinations requiring simultaneous violation of multiple continuous cost thresholds.
-- *Why 3*: Why did linear rules fail?  
-  $\to$ Because procurement manipulation operates through non-linear interactions between categorical procurement mode (Swakelola) and continuous unit cost distributions.
-- *Why 4*: Why does the Deep Autoencoder capture these interactions?  
-  $\to$ Because the 8-layer bottleneck neural network learns complex non-linear feature correlations, yielding high reconstruction MSE when high-value projects bypass competitive bidding.
-- *Why 5*: Why is T5 detection essential for governance reform?  
-  $\to$ Because 98.8% of village activities use Swakelola; isolating uncompetitive high-value projects targets the precise structural vulnerability identified in Søreide's procurement theory [9].
+#### 2. Causal Mechanics of T5 Procurement Irregularity Surge ($N=2,343$)
+Similarly, the surge in T5 Procurement Irregularity flags—expanding from 26 records (0.8%) in Protocol 1 to 2,343 records (32.8%) in Protocol 2—reflects the neural autoencoder's capacity to capture non-linear feature interactions. Protocol 2 incorporates the `swakelola_high_value` indicator directly into the Reconstruction Dense Autoencoder (RDA) feature matrix. In contrast, Protocol 1 failed to isolate uncompetitive high-value Swakelola procurement because it enforced rigid linear rule combinations requiring simultaneous violations across multiple continuous cost metrics. In practice, procurement manipulation operates through subtle non-linear interactions between categorical procurement modes (Swakelola) and continuous unit cost distributions. The 8-layer bottleneck neural network in RDA learns these complex feature correlations during unsupervised training, producing elevated reconstruction Mean Squared Error (MSE) whenever high-value projects bypass competitive bidding. Capturing T5 irregularities is essential for governance reform because 98.8% of village activities in Jambi Province rely on Swakelola; isolating uncompetitive high-value projects directly targets the structural vulnerability identified in Søreide's procurement corruption theory [9].
 
 ### 5.3 Sub-Threshold Masking & Unclassified Anomaly Subspace ($N=1,227$)
 
