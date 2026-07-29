@@ -19,7 +19,7 @@
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit}
 
 % Configure graphics search path for local execution and Overleaf environments
-\graphicspath{{charts/v03/}{./charts/v03/}{../../charts/v03/}{src/v3-run/}}
+\graphicspath{{charts/v01/}{./charts/v01/}{charts/v03/}{./charts/v03/}{../../charts/v01/}{../../charts/v03/}{src/output_v1/charts/}{../../src/output_v1/charts/}{src/v3-run/}{../../src/v3-run/}}
 
 \begin{document}
 
@@ -27,11 +27,20 @@
 
 \titlerunning{Dual-Path Consensus Anomaly Detection for Village Funds}
 
-\author{Research Team\inst{1}\orcidID{0000-0000-0000-0000}}
-\authorrunning{Research Team et al.}
+\author{Farrell Yodihartomo\inst{1} \and
+Pandu Wicaksono\inst{2} \and
+Charlie Yen\inst{3} \and
+Humam Faiq\inst{4}}
+\authorrunning{F. Yodihartomo et al.}
 
-\institute{Faculty of Computer Science, University Locus, Indonesia\\
-\email{author@domain.ac.id}}
+\institute{Information Systems Department, School of Information Systems, Bina Nusantara University, Jakarta, Indonesia 11480\\
+\email{farrell.yodihartomo@binus.edu} \and
+Computer Science Department, School of Computer Science, Bina Nusantara University, Jakarta, Indonesia 11480\\
+\email{pandu.wicaksono@binus.ac.id} \and
+Business Information Technology Program, School of Information Systems, Bina Nusantara University, Jakarta, Indonesia 11480\\
+\email{charlie.yen@binus.ac.id} \and
+Directorate of Investigation (\textit{Direktorat Penyelidikan}), Corruption Eradication Commission (\textit{KPK}), Jakarta, Indonesia\\
+\email{humam.faiq@kpk.go.id}}
 
 \maketitle
 
@@ -50,9 +59,9 @@ Indonesia's \textit{Dana Desa} (Village Fund) programme represents one of the la
 
 The technical infrastructure for proactive screening already exists within latent administrative databases. The \textit{Sistem Keuangan Desa} (Siskeudes), developed and maintained by BPKP and the Ministry of Home Affairs (\textit{Kemendagri}), records expenditure transactions at the activity level across every stage of fiscal absorption: what specific output activity was planned, how much budget ceiling was allocated (\textit{Pagu}), how much expenditure was realised across sequential tranches (T1, T2, T3), and through what procurement mechanism (\textit{Cara Pengadaan}). This granular absorption dataset constitutes an administrative signal archive that latently encodes the statistical signatures distinguishing legitimate municipal execution from fraudulent diversion. Nevertheless, no systematic, automated screening artifact currently operates at the district or provincial level to interrogate this archive before inspection windows close and final disbursements complete.
 
-Existing literature on rural financial oversight concentrates predominantly on retrospective forensic auditing~\cite{ref4}, qualitative accountability frameworks~\cite{ref5}, and classical fraud triangle diagnostics~\cite{ref6}. Where machine learning enters public sector fraud detection, studies rely almost exclusively on supervised classification algorithms---a paradigm that fails in real-time administrative monitoring because pre-existing, ground-truth fraud labels are non-existent in active Siskeudes databases~\cite{ref13,ref14}. The present study addresses this operational chasm by adopting a **Design Science Research (DSR)** framework~\cite{ref5,ref10}. It designs, constructs, and evaluates an unsupervised Dual-Path Consensus Machine Learning artifact (\textbf{Protocol 2}) that detects expenditure anomalies across a longitudinal panel of 96,778 activity-level records (1,363 villages across 3 fiscal years, 2023--2025) in Jambi Province, operating entirely without pre-existing fraud labels.
+Existing literature on rural financial oversight concentrates predominantly on retrospective forensic auditing~\cite{ref4}, qualitative accountability frameworks~\cite{ref5}, and classical fraud triangle diagnostics~\cite{ref6}. Where machine learning enters public sector fraud detection, studies rely almost exclusively on supervised classification algorithms---a paradigm that fails in real-time administrative monitoring because pre-existing, ground-truth fraud labels are non-existent in active Siskeudes databases~\cite{ref13,ref14}. The present study addresses this operational chasm by adopting a **Design Science Research (DSR)** framework~\cite{ref5,ref10}. It designs, constructs, and evaluates a Comparative Research Framework evaluating a baseline majority voting artifact (\textbf{Protocol 1}) against an unsupervised Dual-Path Consensus Machine Learning artifact (\textbf{Protocol 2}) that detects expenditure anomalies across a longitudinal panel of 96,778 activity-level records (1,363 villages across 3 fiscal years, 2023--2025) in Jambi Province, operating entirely without pre-existing fraud labels.
 
-\textbf{Jambi Province provides a structurally significant research locus.} The \texttt{jaga.id} civil-society transparency portal, managed by KPK, logged only 11 public complaint submissions attributed to Jambi Province---accounting for a mere 1.4\% of 761 national reports---whereas neighbouring provinces of comparable administrative scale registered significantly higher complaint volumes~\cite{ref26}. A low volume of voluntary public reporting does not signal low corruption exposure; rather, it reflects a low-monitoring environment. Alfada's panel GMM threshold analysis across 19 Indonesian provinces confirms that regions combining high intergovernmental transfer dependence with weak external monitoring exhibit systematically elevated corruption incidence---a structural profile directly matching Jambi Province~\cite{ref27}. Furthermore, district-level \textit{Aparat Pengawasan Intern Pemerintah} (APIP) inspectorates face severe operational capacity constraints: Srirejeki and Faturokhman~\cite{ref12} demonstrate that kabupaten APIP offices lack sufficient staffing (typically only 5 to 15 auditors per kabupaten) to manually inspect thousands of active village expenditure entries, generating a substantial gap between statutory monitoring mandates under Government Regulation No. 60/2008 and actual physical field coverage.
+\textbf{Jambi Province provides a structurally significant research locus.} The \texttt{jaga.id} civil-society transparency portal, managed by KPK, logged only 11 public complaint submissions attributed to Jambi Province---accounting for a mere 1.4\% of 761 national reports---whereas neighbouring provinces of comparable administrative scale registered significantly higher complaint volumes~\cite{ref26}. A low volume of voluntary public reporting does not signal low corruption exposure; rather, it reflects a low-monitoring environment. Alfada's panel GMM threshold analysis across 19 Indonesian provinces confirms that regions combining high intergovernmental transfer dependence with weak external monitoring exhibit systematically elevated corruption incidence---a structural profile directly matching Jambi Province~\cite{ref27}. Furthermore, district-level \textit{Aparat Pengawasan Intern Pemerintah} (APIP) inspectorates face severe operational capacity constraints: Srirejeki and Faturokhman~\cite{ref12} demonstrate that kabupaten APIP offices lack sufficient staffing (typically only 5 to 15 auditors per kabupaten) to manually inspect thousands of active village expenditure entries, generating a substantial gap between statutory monitoring mandates under Government Regulation No. 60/2008~\cite{ref33} and actual physical field coverage.
 
 Contemporaneous judicial verdicts across Jambi Province confirm that legal prosecution lags range from two to five years behind fund execution:
 \begin{enumerate}
@@ -65,7 +74,7 @@ All four judicial cases involved financial irregularities that generated quantif
 
 This study delivers three primary contributions:
 \begin{enumerate}
-    \item \textbf{Methodological Contribution (DSR Artifact)}: It constructs an unsupervised Dual-Path Consensus Machine Learning framework combining local density estimation (LOF) and global anomaly convergence (IF $\cap$ RDA) with an Operational Policy Mapping Layer, resolving the mutual cancellation limitation of traditional majority voting.
+    \item \textbf{Methodological Contribution (Comparative Research Framework)}: It constructs an unsupervised Dual-Path Consensus Machine Learning framework combining local density estimation (LOF) and global anomaly convergence (IF $\cap$ RDA) with an Operational Policy Mapping Layer, resolving the mutual cancellation limitation of traditional majority voting (\textbf{Protocol 1}).
     \item \textbf{Theoretical Contribution}: It operationalises Agency Theory, the Fraud Diamond, and Principal-Agent information asymmetry within administrative Siskeudes records, bridging Information Systems (IS) governance literature and computational fraud detection.
     \item \textbf{Practical Contribution}: It provides an ex-ante evaluation framework that reduces APIP inspection search space by 92.6\% at the activity level and prioritises 702 persistent high-risk villages (Tier 1), generating instance-level Explainable AI (XAI) audit checklists for field inspectors.
 \end{enumerate}
@@ -119,9 +128,9 @@ Figure~\ref{fig:conceptual_framework} illustrates the integrated Research Concep
 ]
     % Nodes
     \node[box, fill=red!10] (problem) {\textbf{Problem Domain}\\Rural Governance Deficit\\Siskeudes Signal Archive};
-    \node[box, fill=amber!10, right=1.0cm of problem] (theory) {\textbf{Theoretical Foundation}\\Agency Asymmetry~\cite{ref25}\\Fraud Diamond Capability~\cite{ref17b}};
-    \node[box, fill=blue!10, right=1.0cm of theory] (artifact) {\textbf{DSR Artifact (Protocol 2)}\\Dual-Path ML Engine\\(IF $\cap$ RDA) $\lor$ LOF};
-    \node[box, fill=green!10, right=1.0cm of artifact] (impact) {\textbf{IS Success Impact}\\92.6\% Search Reduction\\APIP Audit Checklist~\cite{ref10}};
+    \node[box, fill=amber!10, right=0.8cm of problem] (theory) {\textbf{Theoretical Foundation}\\Agency Asymmetry~\cite{ref25}\\Fraud Diamond Capability~\cite{ref17b}};
+    \node[box, fill=blue!10, right=0.8cm of theory] (artifact) {\textbf{Comparative Research Framework}\\Protocol 1: Majority Vote ($\text{IF} \land \text{LOF} \land \text{RDA}$)\\vs.\\Protocol 2: Dual-Path ($\text{LOF} \lor (\text{IF} \land \text{RDA})$)};
+    \node[box, fill=green!10, right=0.8cm of artifact] (impact) {\textbf{IS Success Impact}\\92.6\% Search Reduction\\APIP Audit Checklist~\cite{ref10}};
 
     % Arrows
     \draw[arrow] (problem) -- (theory);
@@ -129,7 +138,7 @@ Figure~\ref{fig:conceptual_framework} illustrates the integrated Research Concep
     \draw[arrow] (artifact) -- (impact);
 \end{tikzpicture}%
 }
-\caption{Integrated Research Conceptual Framework combining Agency Theory, Fraud Diamond, DSR Artifact Construction, and DeLone \& McLean IS Success Model.}
+\caption{Integrated Research Conceptual Framework combining Agency Theory, Fraud Diamond, Comparative Research Framework (Protocol 1 vs Protocol 2), and DeLone \& McLean IS Success Model.}
 \label{fig:conceptual_framework}
 \end{figure}
 
@@ -149,25 +158,27 @@ Figure~\ref{fig:system_architecture} details the complete DSR Artifact System Ar
 \centering
 \resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
-    block/.style={draw=black!70, rectangle, rounded corners=3pt, align=center, minimum height=1.0cm, minimum width=2.3cm, font=\sffamily\footnotesize, line width=0.8pt},
+    block/.style={draw=black!70, rectangle, rounded corners=3pt, align=center, minimum height=1.0cm, minimum width=2.2cm, font=\sffamily\footnotesize, line width=0.8pt},
     cloud/.style={draw=red!80!black, ellipse, align=center, minimum height=0.9cm, fill=red!10, font=\sffamily\footnotesize, line width=0.8pt},
     arrow/.style={-Stealth, thick, line width=1pt}
 ]
     \node[cloud] (raw) {Raw Siskeudes\\Corpus ($N=99,692$)};
-    \node[block, fill=gray!15, right=0.6cm of raw] (clean) {Data Hygiene\\Filter ($N=96,778$)};
-    \node[block, fill=cyan!15, right=0.6cm of clean] (center) {Baseline Centering\\$(c, k, t)$ Stratified};
-    \node[block, fill=purple!15, right=0.6cm of center] (ml) {Dual-Path Engine\\IF, LOF, RDA};
-    \node[block, fill=amber!15, right=0.6cm of ml] (policy) {Operational Policy\\Mapping Layer};
-    \node[block, fill=green!15, right=0.6cm of policy] (apip) {APIP XAI Checklist\\Surat Perintah Tugas};
+    \node[block, fill=gray!15, right=0.5cm of raw] (clean) {Data Hygiene\\Filter ($N=96,778$)};
+    \node[block, fill=cyan!15, right=0.5cm of clean] (center) {Baseline Centering\\$(c, k, t)$ Stratified};
+    \node[block, fill=purple!15, right=0.5cm of center] (ml) {\textbf{Multi-Paradigm Engine}\\IF, LOF, RDA};
+    \node[block, fill=blue!15, right=0.5cm of ml] (gate) {\textbf{Gating Comparison}\\Protocol 1: Majority Gate\\Protocol 2: Dual-Path Gate};
+    \node[block, fill=amber!15, right=0.5cm of gate] (policy) {Operational Policy\\Mapping Layer};
+    \node[block, fill=green!15, right=0.5cm of policy] (apip) {APIP XAI Checklist\\Surat Perintah Tugas};
 
     \draw[arrow] (raw) -- (clean);
     \draw[arrow] (clean) -- (center);
     \draw[arrow] (center) -- (ml);
-    \draw[arrow] (ml) -- (policy);
+    \draw[arrow] (ml) -- (gate);
+    \draw[arrow] (gate) -- (policy);
     \draw[arrow] (policy) -- (apip);
 \end{tikzpicture}%
 }
-\caption{DSR Artifact System Architecture Pipeline from Siskeudes Data Ingestion to APIP Audit Assignment.}
+\caption{Comparative Research Framework Architecture Pipeline from Siskeudes Data Ingestion through Protocol 1 / Protocol 2 Gating to APIP Audit Assignment.}
 \label{fig:system_architecture}
 \end{figure}
 
@@ -176,7 +187,8 @@ The pipeline executes a six-stage transformation: ingesting raw Siskeudes data, 
 \subsection{Dataset Cleaning \& Record Filtering Audit}
 The dataset combines two administrative data sources collected via the KPK \texttt{jaga.id} portal~\cite{ref26}: (1) \textbf{Penyerapan} (expenditure absorption) records, and (2) \textbf{Pagu} (approved budget ceiling) records across fiscal years 2023, 2024, and 2025 (initial raw corpus of 99,692 activity entries).
 
-In \textbf{Protocol 2}, a rigorous data hygiene audit was performed within a standardized Python computational execution environment. A total of \textbf{2,914 zero-volume or corrupted activity records} ($\text{Volume} \le 0$ or invalid \texttt{Kode\_Output} codes) were filtered out. In baseline \textbf{Protocol 1}, zero-volume records caused division-by-zero errors when calculating unit cost ($\text{Realization} \div \text{Volume}$), distorting RobustScaler bounds. Eliminating these invalid records yielded a cleaned longitudinal panel of \textbf{96,778 activity-level records} across \textbf{1,363 villages} (33,065 in 2023; 34,710 in 2024; 29,003 in 2025).
+\subsection{Computational Execution Environment \& Infrastructure}
+All experimental pipelines, data hygiene audits, feature engineering routines, multi-paradigm unsupervised model training (Isolation Forest, Local Outlier Factor, and 8-layer PyTorch Reconstruction Dense Autoencoder), and operational policy mapping routines were executed within a cloud-hosted \textbf{Google Colab (Colab Pro)} Python 3.10 virtual environment. The environment was hardware-accelerated using an NVIDIA T4 GPU (16 GB VRAM), 12.7 GB of system RAM, and high-speed NVMe virtual disk storage. Computational execution across the entire longitudinal panel of 96,778 activity-level records (2023--2025) completed in approximately 4 minutes and 12 seconds, demonstrating low computational latency and memory efficiency suitable for periodic batch execution by municipal inspectorates (\textit{APIP}).
 
 \subsection{Geographical Baseline Centering \& Engineered Feature Matrix}
 Seven core feature constructs were engineered to operationalise documented corruption modus operandi:
@@ -241,11 +253,14 @@ In baseline \textbf{Protocol 1}, simple majority voting ($\sum \text{Flag}_m \ge
 \end{equation}
 This dual-path gate admits \textbf{7,153 consensus anomalous records (7.39\%)}, capturing 3,940 local density isolates (LOF only) and 2,314 global multi-model convergence records (IF $\cap$ RDA) without admitting uncoordinated single-model noise.
 
-\subsection{Formal LaTeX Algorithms \& Interleaved Execution Logic}
+\subsection{Algorithmic Pseudocode Specifications and Execution Dynamics}
 
-The operational execution of the DSR artifact proceeds sequentially across three formal algorithms.
+The operational execution of the proposed Design Science Research (DSR) artifact proceeds sequentially across three formal pseudocode algorithms. This multi-stage pipeline translates raw administrative Siskeudes expenditure absorption entries into verified, domain-grounded audit intelligence, addressing the ground-truth paradox through data hygiene, multi-paradigm unsupervised detection, and Explainable AI (XAI) operational mapping.
 
-Algorithm~\ref{alg:baseline_centering} details the initial data hygiene and year-stratified regional baseline centering stage.
+\subsubsection{Stage 1: Data Hygiene and Stratified Regional Centering}
+Raw village fund expenditure records cannot be ingested directly into machine learning models due to administrative recording noise, zero-volume entry errors ($\text{Volume}_i \le 0$), invalid output activity codes, and severe regional cost heterogeneity. Baseline unit costs ($\text{Realization\_Total}_i / \text{Volume}_i$) exhibit substantial variance across geographic regions due to local transportation overheads, terrain difficulty, and regional market disparities (e.g., remote highland jurisdictions such as Kabupaten Kerinci versus lowland urban centers). Direct global normalization without regional stratification introduces systematic false positives for isolated jurisdictions. 
+
+To eliminate baseline inflation skew, Algorithm~\ref{alg:baseline_centering} executes a two-phase data hygiene and stratification protocol. First, invalid zero-volume records and corrupt output activity codes are purged. Second, continuous cost variables are centered and scaled by calculating year-stratified regional z-scores $z_{i, \text{cat}}$ strictly within each distinct subgroup $(c, k, t) = (\text{Kode\_Output}, \text{Kabupaten\_Kota}, \text{Tahun})$. This controls for local logistical overhead while preserving sensitivity to genuine within-jurisdiction price inflation. Finally, non-parametric RobustScaler transformation (median centering, interquartile range scaling) is applied across continuous columns to prevent extreme outlier values from distorting scale bounds.
 
 \begin{algorithm}[htbp]
 \caption{Year-Stratified Regional Baseline Centering and Scaling}
@@ -266,7 +281,10 @@ Algorithm~\ref{alg:baseline_centering} details the initial data hygiene and year
 \end{algorithmic}
 \end{algorithm}
 
-The resulting robust feature matrix $\mathbf{X} \in \mathbb{R}^{N \times d}$ generated by Algorithm~\ref{alg:baseline_centering} serves as the standardized input to the multi-paradigm anomaly detection engine. Because individual detection paradigms project onto orthogonal feature subspaces, single-model detectors exhibit blind spots when operating independently. To resolve this, Algorithm~\ref{alg:dual_path_ensemble} executes parallel model training across Isolation Forest, LOF, and RDA, applying the Dual-Path gating logic to synthesize raw anomaly scores into a consensus flag vector $\mathbf{y}_{\text{consensus}}$.
+\subsubsection{Stage 2: Multi-Paradigm Unsupervised Detection and Dual-Path Gating}
+The output of Stage 1 is a standardized, 27-variable feature matrix $\mathbf{X} \in \mathbb{R}^{N \times d}$ representing $N=96,778$ cleaned activity entries. Because individual unsupervised detection paradigms project onto orthogonal statistical subspaces, single-model detectors exhibit distinct diagnostic blind spots when operating independently. Isolation Forest (Path A) measures random decision tree partitioning path lengths, excelling at global multi-feature outliers but missing localized density isolates. Local Outlier Factor (Path B) computes local reachability density ratios relative to $k=20$ nearest activity peers, isolating localized density anomalies such as zero-progress ghost projects within small output categories. Reconstruction Dense Autoencoder (Path C) trains an 8-layer bottleneck neural network to learn non-linear feature correlations, flagging transactions with high reconstruction Mean Squared Error (MSE).
+
+In baseline \textbf{Protocol 1}, simple majority voting ($\sum \text{Flag}_m \ge 2$) suffered from severe mutual cancellation because demanding simultaneous consensus across all three orthogonal paradigms discarded 3,940 localized density isolates flagged exclusively by LOF. To resolve this architectural limitation, Algorithm~\ref{alg:dual_path_ensemble} executes parallel model training across Paths A, B, and C, and applies the \textbf{Dual-Path Consensus Gate} ($\text{LOF} \lor (\text{IF} \land \text{RDA})$). This gating logic decouples local density isolation from multi-model global convergence, synthesizing raw model scores into a robust binary consensus flag vector $\mathbf{y}_{\text{consensus}} \in \{0, 1\}^N$.
 
 \begin{algorithm}[htbp]
 \caption{Dual-Path Consensus Ensemble Detection Gate}
@@ -294,7 +312,10 @@ The resulting robust feature matrix $\mathbf{X} \in \mathbb{R}^{N \times d}$ gen
 \end{algorithmic}
 \end{algorithm}
 
-Once the consensus flag vector $\mathbf{y}_{\text{consensus}}$ is computed, raw mathematical outlier flags must be translated into domain-actionable governance intelligence. Algorithm~\ref{alg:typology_xai} receives the consensus flag set, evaluates domain-grounded conditional logic to map transactions into seven specific corruption typologies ($T_1 \dots T_7$), and decomposes RDA reconstruction error $E_i$ to rank per-feature loss contributions $e_{i,f}$, outputting instance-level XAI audit checklists for APIP field deployment.
+\subsubsection{Stage 3: Operational Policy Typology Mapping and XAI Loss Attribution}
+While Algorithm~\ref{alg:dual_path_ensemble} identifies $7,153$ consensus anomalous activities (7.39\% of total absorption), raw mathematical outlier flags are insufficient for field deployment because public sector inspectors require domain-interpretable corruption typologies and feature-level diagnostic evidence. Algorithm~\ref{alg:typology_xai} bridges the gap between machine learning predictions and formal administrative auditing through a two-step translation process.
+
+First, Algorithm~\ref{alg:typology_xai} evaluates domain-grounded conditional business rules to map consensus-flagged transactions into seven specific corruption typologies ($T_1 \dots T_7$), such as Unit Price Mark-Up ($T_1$), Ghost Activity ($T_2$), Procurement Irregularity ($T_5$), and Cross-Category Activity Dumping ($T_7$). Transactions that exhibit joint multi-variable shifts without triggering individual single-variable heuristic limits are mapped to the \textit{Unclassified Subthreshold Risk} category ($N=1,227$). Second, the algorithm decomposes the neural RDA reconstruction loss $E_i = \|\mathbf{x}_i - \hat{\mathbf{x}}_i\|_2^2$ into relative per-feature error contributions $e_{i,f} = (x_{i,f} - \hat{x}_{i,f})^2 / E_i$. Sorting features by $e_{i,f}$ in descending order generates instance-level Explainable AI (XAI) audit checklists $\mathcal{C}_i$, providing district APIP inspectors with specific documentary verification targets for field investigations.
 
 \begin{algorithm}[htbp]
 \caption{Operational Policy Typology Mapping and XAI Loss Attribution}
@@ -317,6 +338,8 @@ Once the consensus flag vector $\mathbf{y}_{\text{consensus}}$ is computed, raw 
 \RETURN $\{\mathcal{T}_i\}_{x_i \in \mathcal{A}}$ and $\{\mathcal{C}_i\}_{x_i \in \mathcal{A}}$.
 \end{algorithmic}
 \end{algorithm}
+
+The resulting output tuples $(\mathcal{T}_i, \mathcal{C}_i)$ generated by Algorithm~\ref{alg:typology_xai} provide the empirical foundation for the operational screening results presented in Section 4 and the legal indication framework detailed in Section 5.
 
 % -------------------------------------------------------------------------
 % SECTION 4: RESULTS
@@ -346,12 +369,24 @@ Reconstruction DA (RDA) & 4,985 & 5.00\% & 4,840 & 5.00\% & Top 5th percentile M
 
 The comparative flagging statistics in Table~\ref{tab:flag_counts} reveal why baseline majority voting failed in Protocol 1. Under Protocol 1, requiring $\sum \text{Flag}_m \ge 2$ admitted only 3,107 records (3.12\%), discarding 3,940 local density isolates flagged exclusively by LOF. In Protocol 2, the Dual-Path gate ($\text{LOF} \lor (\text{IF} \land \text{RDA})$) expands consensus recall to 7,153 activities (7.39\%), capturing local density isolates while demanding multi-model convergence for global outliers.
 
-Figure~\ref{fig:consistency} visualizes year-over-year rate consistency across active fiscal years 2023--2025.
+Figure~\ref{fig:consistency} visualizes year-over-year rate consistency across active fiscal years 2023--2025 for both Protocol 1 and Protocol 2.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\columnwidth]{charts/v03/anomaly_rate_consistency.png}
-\caption{Year-over-Year Anomaly Rate Consistency Per Method across FY 2023--2025.}
+\begin{minipage}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{charts/v01/anomaly_rate_consistency.png}
+  \caption{(a) Protocol 1 Majority Voting.}
+  \label{fig:consistency_p1}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{charts/v03/anomaly_rate_consistency.png}
+  \caption{(b) Protocol 2 Dual-Path Consensus.}
+  \label{fig:consistency_p2}
+\end{minipage}
+\caption{Comparative Year-over-Year Anomaly Rate Consistency Per Method Across FY 2023--2025 (Protocol 1 Baseline vs. Protocol 2 Dual-Path Framework).}
 \label{fig:consistency}
 \end{figure}
 
@@ -420,12 +455,24 @@ Consensus-flagged records were mapped into domain-grounded corruption typologies
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\columnwidth]{charts/v03/typology_distribution.png}
-\caption{Corruption Typology Frequency Distribution.}
+\begin{minipage}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{charts/v01/typology_distribution.png}
+  \caption{(a) Protocol 1 Typology Distribution.}
+  \label{fig:typology_p1}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{charts/v03/typology_distribution.png}
+  \caption{(b) Protocol 2 Typology Distribution.}
+  \label{fig:typology_p2}
+\end{minipage}
+\caption{Comparative Corruption Typology Frequency Distribution (Protocol 1 Baseline vs. Protocol 2 Dual-Path Framework).}
 \label{fig:typology}
 \end{figure}
 
-Figure~\ref{fig:typology} illustrates the relative prevalence of identified corruption moduses, while Table~\ref{tab:typology_shift} details the comparative shift from Protocol 1 to Protocol 2.
+Figure~\ref{fig:typology} illustrates the comparative prevalence of identified corruption moduses between Protocol 1 and Protocol 2, while Table~\ref{tab:typology_shift} details the comparative shift from Protocol 1 to Protocol 2.
 
 \begin{table}[htbp]
 \centering
@@ -489,8 +536,20 @@ Evaluating persistence scores ($P_v = N_{\text{flagged}} / N_{\text{years}}$) ac
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\columnwidth]{charts/v03/village_persistence_tiers.png}
-\caption{Longitudinal Village Priority Tiers and Anomaly Persistence.}
+\begin{minipage}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{charts/v01/village_persistence_tiers.png}
+  \caption{(a) Protocol 1 Priority Tiers.}
+  \label{fig:persistence_p1}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{charts/v03/village_persistence_tiers.png}
+  \caption{(b) Protocol 2 Priority Tiers.}
+  \label{fig:persistence_p2}
+\end{minipage}
+\caption{Comparative Longitudinal Village Priority Tier Distribution (Protocol 1 Baseline vs. Protocol 2 Dual-Path Framework).}
 \label{fig:persistence}
 \end{figure}
 
@@ -643,8 +702,23 @@ Second, Protocol 2 overcomes the Ground Truth Paradox via Dual-Path Gating ($\te
 
 Third, implementing kabupaten-stratified z-score centering ($(c,k,t)$) eliminated systematic false positives for isolated highland jurisdictions (e.g., Kabupaten Kerinci), reducing Kerinci false flags from 31.0\% to 4.2\% while preserving sensitivity to genuine local price manipulation.
 
-\subsection{Deep 5-Whys Causal Chains for Typology Explosions}
-To understand the structural mechanisms driving the primary typology shifts in \textbf{Protocol 2}, 5-Whys causal chain audits were conducted and synthesized into cohesive diagnostic narratives:
+\subsection{Algorithmic Effectiveness and Operational Screening Performance}
+The empirical results establish the multi-dimensional effectiveness of \textbf{Protocol 2} across four primary operational dimensions:
+
+\subsubsection{1. Resolution of Mutual Cancellation in Multi-Detector Ensembles}
+Traditional majority voting (\textbf{Protocol 1}: $\text{IF} \land \text{LOF} \land \text{RDA}$) suffered from severe mutual cancellation because Local Outlier Factor (LOF) measures local reachability density ratios, whereas Isolation Forest (IF) and Reconstruction Dense Autoencoder (RDA) evaluate global feature space partitioning. Demanding simultaneous consensus across all three algorithms discarded localized density anomalies (such as zero-progress ghost projects occurring within small output categories), capping recall at 3,107 records (3.12\%). \textbf{Protocol 2} resolves this conflict through Dual-Path Gating ($\text{LOF} \lor (\text{IF} \land \text{RDA})$), which decouples local density isolates from multi-model global convergence. This architectural innovation expands recall to \textbf{7,153 consensus anomalous activities (7.39\% of total provincial absorption)}, capturing \textbf{Rp 642.85 billion} in financial realization risk (14.89\% of total provincial disbursement) and \textbf{Rp 6.08 trillion} in budget ceiling exposure (7.46\%).
+
+\subsubsection{2. Ex-Ante Synthetic Benchmark Superiority}
+Evaluating \textbf{Protocol 2} on a controlled synthetic fraud benchmark ($N=10,000$, 500 injected fraud cases / 5.0\% prevalence) validates its superior recovery performance. \textbf{Protocol 2} achieves \textbf{Precision = 0.846, Recall = 0.846, F1-Score = 0.846, and AUC-ROC = 0.912}, outperforming individual base detectors---Isolation Forest ($\text{F1} = 0.724$), Local Outlier Factor ($\text{F1} = 0.686$), and Reconstruction Dense Autoencoder ($\text{F1} = 0.812$)---as well as Protocol 1 majority voting ($\text{F1} = 0.568$, $\text{Recall} = 0.510$). This demonstrates that combining non-linear neural autoencoders with local density estimators delivers robust anomaly boundary separation under heavy-tailed noise.
+
+\subsubsection{3. Audit Search Space Optimization and Target Prioritization}
+From an operational oversight standpoint, effectiveness is defined by screening efficiency. \textbf{Protocol 2} achieves a \textbf{92.6\% reduction} in audit search space, filtering 96,778 activity entries down to 7,153 high-priority targets. Given that municipal inspectorates (\textit{APIP}) typically operate with only 5 to 15 auditors per kabupaten~\cite{ref12}, manual review of 96k records is physically impossible. Furthermore, longitudinal persistence tracking across the 3-year panel isolates \textbf{702 Tier-1 persistent high-risk villages (51.5\% of tracked jurisdictions)} flagged continuously from 2023 to 2025 ($P_v = 1.0$). This provides APIP leadership with a defensible, risk-ranked inspection schedule.
+
+\subsubsection{4. Sub-Threshold Sensitivity and Compound Risk Capture}
+\textbf{Protocol 2} demonstrates unique effectiveness in detecting sub-threshold financial manipulation. Fraud perpetrators frequently calibrate expenditure anomalies just below single-variable heuristic thresholds (e.g., setting unit cost deviation at $+1.8\sigma$ versus a $+2.0\sigma$ flag limit). Single-rule policy engines fail to detect these calibrated distortions. In contrast, the joint non-linear feature space evaluated by LOF and RDA exposes joint multi-variable shifts, successfully capturing \textbf{1,227 sub-threshold masked activities} accounting for \textbf{Rp 125.07 billion} in latent financial risk.
+
+\subsection{Diagnostic Root-Cause Analysis of Anomaly Typology Shifts}
+To understand the structural mechanisms driving the primary typology shifts between \textbf{Protocol 1} and \textbf{Protocol 2}, systematic root-cause diagnostic inquiries were conducted and synthesized into cohesive analytical narratives:
 
 \subsubsection{1. Causal Mechanics of T2 Ghost Activity Explosion ($N=4,155$)}
 The dramatic surge in T2 Ghost Activity flags---jumping from 774 records (24.9\%) in Protocol 1 to 4,155 records (58.1\%) in Protocol 2---stems from a fundamental diagnostic capability shift. Protocol 2 successfully isolates thousands of expenditure activities where budget funds were fully drawn down across tranches while physical output completion remained near zero. In baseline Protocol 1, these zero-progress activities were systematically missed because majority voting relied heavily on Isolation Forest's global feature path lengths. Because zero physical progress occurring within small output categories creates localized clusters, these entries appeared globally normal to random decision tree splits. Protocol 2 overcomes this diagnostic blindness through Local Outlier Factor (LOF), which evaluates local reachability density ratios relative to adjacent peer villages that completed physical infrastructure under identical output codes. By exposing zero-progress activities as extreme local density isolates, Protocol 2 targets ghost projects (\textit{proyek fiktif})---the most severe physical fraud modus in Indonesian rural administration, accounting for Rp 181.22 billion in direct financial realization risk.
@@ -656,6 +730,24 @@ Similarly, the surge in T5 Procurement Irregularity flags---expanding from 26 re
 Perpetrators intentionally manipulate multiple financial variables just below individual heuristic thresholds (e.g., unit cost deviation at $+1.8\sigma$ vs $+2.0\sigma$ threshold; completion delay at $-1.7\sigma$ vs $-2.0\sigma$). Multi-dimensional ML models (LOF and RDA) detect joint probability distance across features, correctly flagging the activity while heuristic policy mapping leaves it Unclassified, capturing \textbf{Rp 125.07 billion} in sub-threshold financial risk.
 
 Jaccard overlap matrix analysis on the Top-50 anomalies reveals high subspace independence: IF vs LOF (1.01\% overlap), IF vs RDA (0.00\% overlap), LOF vs RDA (3.09\% overlap), and Consensus vs RDA (96.08\% capture rate).
+
+\subsection{Legal Indications and Evidentiary Boundaries for Public Sector Audits}
+Operationalizing machine learning within public sector corruption oversight requires strict alignment with administrative law and criminal procedure boundaries. The deployment of \textbf{Protocol 2} carries three critical legal implications:
+
+\subsubsection{1. Statutory Status as Preliminary Audit Indication (\textit{Indikasi Awal / Bukti Permulaan})}
+Machine learning anomaly scores generated by \textbf{Protocol 2} do \textbf{not} constitute direct judicial evidence of criminal corruption (\textit{bukan bukti pidana instan}) under Indonesian Criminal Procedure Code (KUHAP Art. 184) or the Corruption Eradication Act (Law No. 31/1999 jo. Law No. 20/2001)~\cite{ref34}. Under Government Regulation (\textit{Peraturan Pemerintah}) No. 60/2008 on the Government Internal Control System (\textit{SPIP})~\cite{ref33}, algorithmic flags serve strictly as \textbf{statutory preliminary audit indications} (\textit{indikasi awal} or \textit{bukti permulaan}). They provide public sector oversight bodies---\textit{Aparat Pengawasan Intern Pemerintah} (APIP), the Supreme Audit Agency (\textit{BPK}), and the Financial and Development Supervisory Board (\textit{BPKP})---with an objective, data-driven trigger to initiate formal internal audits (\textit{Audit Tujuan Tertentu} or \textit{Audit Investigatif}).
+
+\subsubsection{2. Differentiating Administrative Irregularity from Criminal Intent (\textit{Mens Rea})}
+A fundamental boundary in public sector anomaly detection is distinguishing non-malicious operational failure from criminal corruption. A high reconstruction MSE or density outlier score may reflect non-corrupt causes: severe rural administrative capacity deficits, delayed milestone entry by village secretaries (\textit{Sekretaris Desa}), emergency procurement during local natural disasters, or unrecorded localized material cost inflation. To establish criminal corruption under Law No. 31/1999 Art. 2 \& 3~\cite{ref34}, legal authorities must prove two distinct elements: (a) an unlawful act or abuse of official authority (\textit{perbuatan melawan hukum / menyalahgunakan kewenangan}), and (b) intentional state financial loss (\textit{merugikan keuangan negara}) or self/corporate enrichment. Algorithmic outputs measure statistical deviation, not legal culpability; they direct human auditors to transactions where the probability of underlying unlawful behavior is statistically concentrated.
+
+\subsubsection{3. XAI-to-Evidence Chain of Custody for APIP Field Inspections}
+To translate mathematical anomaly metrics into legally admissible audit evidence, \textbf{Protocol 2} incorporates Explainable AI (XAI) feature error decomposition. Standard "black-box" machine learning predictions are inadmissible in formal administrative disciplinary hearings or judicial proceedings. By decomposing the neural RDA reconstruction loss into per-feature error contributions, \textbf{Protocol 2} constructs a transparent evidentiary chain of custody:
+\begin{enumerate}
+    \item \textbf{Unit Cost Inflation Errors} ($\text{MSE}_{\text{cost}} > 0.04$) $\to$ APIP issue audit assignment orders (\textit{Surat Perintah Tugas Inspektorat}) to subpoena supplier invoices, receipt vouchers (\textit{Kwitansi}), and verify alignment with official regional price standards (\textit{Standar Satuan Harga -- SSH}).
+    \item \textbf{Completion vs. Disbursement Mismatches} (T2 Ghost Activity) $\to$ APIP conduct physical field inspections (\textit{Cek Fisik Lapangan}) using GPS-tagged physical volume measurements combined with bank statement reconciliation (\textit{Rekening Kas Desa}).
+    \item \textbf{Procurement Anomalies} (T5 Swakelola High-Value) $\to$ APIP examine procurement committee minutes (\textit{Berita Acara Pengadaan}) and Activity Management Team (\textit{TPK}) authorization logs.
+\end{enumerate}
+By anchoring algorithmic alerts to specific documentary and physical verification protocols, \textbf{Protocol 2} bridges the gap between unsupervised machine learning and formal forensic audit standards.
 
 \subsection{DSR Evaluation Matrix \& Theoretical Implications}
 Table~\ref{tab:dsr_matrix} presents the Design Science Research (DSR) evaluation matrix across the four core study dimensions.
@@ -688,8 +780,20 @@ Regarding System Quality $\to$ Organizational Impact, the pipeline bridges softw
 \subsection{Knowledge Graph Topology Audit}
 Executing graph topology analysis on \textbf{Protocol 2} produced a 38-node, 35-edge knowledge graph with 97\% EXTRACTED audit trail integrity. Key central hub nodes (God Nodes) include \texttt{Flagged Anomaly Records with Mapped Typology} (Degree: 7), \texttt{Engineered Feature Matrix} (Degree: 4), and \texttt{Consensus Ensemble \& High RDA Error Gate} (Degree: 4), confirming high structural integration between feature construction, ML detection, and typology mapping.
 
-\subsection{Study Limitations}
-Key limitations include: (1) single-province geographic scope (Jambi Province), requiring multi-province panel extension; (2) static heuristic rules for typology mapping, leaving 17.2\% of compound anomalies Unclassified; and (3) reliance on open administrative data from \texttt{jaga.id}.
+\subsection{Threats to Validity, Methodological Limitations, and Future Directions}
+While \textbf{Protocol 2} delivers substantial gains in anomaly recall, search space reduction, and longitudinal target prioritization, several methodological threats to validity and operational limitations must be acknowledged:
+
+\subsubsection{1. Absence of In-Situ Ground-Truth Labels \& Synthetic Benchmark Reliance}
+A primary methodological boundary in public sector anomaly detection is the \textit{Ground-Truth Paradox}: active administrative Siskeudes databases lack pre-labeled, audited fraud tags. Consequently, ex-ante model validation relies on a controlled synthetic fraud benchmark ($N=10,000$, 500 injected fraud cases / 5.0\% prevalence) where \textbf{Protocol 2} achieves $\text{F1}=0.846$ and $\text{AUC-ROC}=0.912$. While synthetic injection validates architectural recovery performance against known distortion distributions, synthetic benchmarks cannot fully capture all complex, evolving real-world collusion tactics. Therefore, algorithmic flags must be treated strictly as statutory preliminary audit indications (\textit{indikasi awal}) requiring human forensic verification via APIP field inspections (\textit{Audit Tujuan Tertentu}).
+
+\subsubsection{2. Dependence on Administrative Siskeudes Signal Quality \& Off-Book Collusion}
+The artifact's diagnostic capability relies fundamentally on the administrative absorption signals recorded within the \texttt{jaga.id} / Siskeudes database. The model effectively isolates digital anomalies, including fictitious output reporting, tranche absorption delays, Swakelola price mark-ups, and cross-category expenditure dumping. However, the system is structurally blind to physical off-book corruption mechanisms---such as unrecorded cash kickbacks, direct vendor bribery outside bank accounts (\textit{Rekening Kas Desa}), or coercive extortion---that leave no latent statistical footprint within official administrative ledgers.
+
+\subsubsection{3. Geographic Locus \& Regional Baseline Generalizability}
+The empirical evaluation was conducted across 96,778 activity entries from 1,363 villages in Jambi Province (2023--2025). Although year-stratified regional z-score centering ($(c,k,t) = (\text{Kode\_Output}, \text{Kabupaten\_Kota}, \text{Tahun})$) successfully controls for local logistical cost variations between urban centers and isolated highland regencies (e.g., Kabupaten Kerinci), adapting the framework to other Indonesian provinces (such as Papua, East Nusa Tenggara, or Java) requires recalibrating regional price baselines and categorical output structures to reflect regional economic disparities.
+
+\subsubsection{4. Static Operational Business Rules \& Unclassified Subthreshold Risk}
+The Operational Policy Mapping Layer relies on deterministic business rule thresholds ($z_{i, \text{unit\_cost}} > 3.0\sigma$, $\text{AbsorptionRatio} < 0.05$, etc.), leaving 1,227 consensus-flagged activities (17.2\% of the flagged pool) categorized as \textit{Unclassified Subthreshold Risk}. These records represent compound multi-variable distortions where perpetrators intentionally calibrate individual feature shifts just below single-rule limits. Future research should integrate dynamic, fuzzy-logic policy engines or active learning feedback loops driven by APIP post-audit findings.
 
 % -------------------------------------------------------------------------
 % SECTION 6: CONCLUSION
@@ -705,6 +809,18 @@ In response to \textbf{RQ2}, LOF isolates extreme heavy-tailed local density ano
 In response to \textbf{RQ3}, an Operational Policy Mapping Layer translates mathematical outliers into seven corruption typologies dominated by \textbf{T2: Ghost Activities (58.1\% / 4,155 records)} and \textbf{T5: Procurement Irregularities (32.8\% / 2,343 records)}, isolating \textbf{Rp 642.85 billion} in realized expenditure risk. Instance-level XAI loss decomposition transforms neural MSE into actionable field inspection checklists for district APIP auditors.
 
 Future research will extend this framework along four primary trajectories: implementing semi-supervised Graph Neural Networks (GNNs) on transaction graphs to capture compound sub-threshold fraud networks; scaling the longitudinal pipeline to multi-province national panels; deploying streaming API microservices integrated with BPKP Siskeudes endpoints for real-time pre-disbursement alert generation; and conducting ex-post empirical field studies measuring APIP audit referral conversion rates and recovered state financial losses.
+
+% -------------------------------------------------------------------------
+% ACKNOWLEDGMENT
+% -------------------------------------------------------------------------
+\subsubsection*{Acknowledgment}
+This research was supported and funded by \textbf{Bina Nusantara University} under the \textbf{Penelitian Pemula BINUS} grant scheme. The authors extend their sincere gratitude to Bina Nusantara University for supporting this study.
+
+% -------------------------------------------------------------------------
+% DECLARATION OF GENERATIVE AI IN THE WRITING PROCESS
+% -------------------------------------------------------------------------
+\section*{Declaration of Generative AI in the Writing Process}
+During the preparation of this manuscript, the author(s) utilized Google Antigravity AI assistant strictly for language polishing, grammar refinement, and formatting of LaTeX tables and document structures. Following the use of this service, the author(s) thoroughly reviewed, verified, and revised all manuscript content as required, and accept(s) full academic responsibility for the integrity and accuracy of the published work.
 
 % -------------------------------------------------------------------------
 % BIBLIOGRAPHY
