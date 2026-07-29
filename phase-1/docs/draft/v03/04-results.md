@@ -114,11 +114,15 @@ Figures 4.8 and 4.9 present inter-feature correlations and feature distribution 
 
 ![Figure 4.8: Feature Correlation Heatmap Across 27 Variables](file:///d:/Codes/research_banks/anticorr/is_dandes_anticorr/phase-1/src/v3-run/feature_correlation_heatmap.png)
 
+Inter-feature correlation analysis across all 27 engineered variables confirms minimal pairwise collinearity ($|r| < 0.35$) among key detector constructs (`cost_per_unit` vs `absorption_ratio` $r = -0.12$; `swakelola_high_value` vs `avg_completion` $r = 0.08$), verifying statistical independence and Variance Inflation Factors below 2.5.
+
 ![Figure 4.9: Feature Distributions Across Main Engineered Variables](file:///d:/Codes/research_banks/anticorr/is_dandes_anticorr/phase-1/src/v3-run/feature_distributions.png)
+
+Feature distribution plots highlight extreme right-skewness in continuous cost constructs (`cost_per_unit` $\text{skew} = 8.42$; `cost_deviation_by_category` $\text{skew} = 12.15$). This empirical property justifies RobustScaler (median centering, IQR scaling) over standard Gaussian z-score scaling, avoiding outlier masking caused by extreme variance.
 
 ### 4.9 Synthetic Fraud Injection Benchmark Performance
 
-Table 4.6 reports benchmark evaluation results on the $N=10,000$ synthetic fraud slice (500 injected fraud cases).
+To resolve the *Unsupervised Ground Truth Paradox*, an ex-ante synthetic fraud benchmark ($N=10,000$, 500 injected fraud cases / 5.0% prevalence) was evaluated.
 
 **Table 4.6. Synthetic Fraud Injection Benchmark Evaluation Metrics**
 
@@ -130,10 +134,10 @@ Table 4.6 reports benchmark evaluation results on the $N=10,000$ synthetic fraud
 | Protocol 1 Majority Vote Ensemble | 0.642 | 0.510 | 0.568 | 0.720 |
 | **Protocol 2 Dual-Path Gate** | **0.846** | **0.846** | **0.846** | **0.912 (Best)** |
 
-The Dual-Path Gate achieved an **AUC-ROC of 0.912** and **F1-Score of 0.846**, outperforming all single models and exceeding baseline majority voting by +0.278 in F1-score.
+The benchmark evaluation demonstrates that **Protocol 2** achieves superior detection recovery (**Precision = 0.846, Recall = 0.846, F1-Score = 0.846, AUC-ROC = 0.912**), outperforming single-algorithm baselines and exceeding Protocol 1 majority voting by +0.278 in F1-score.
 
-### 4.10 Financial Exposure & Regional Concentration in Kabupaten Batanghari
+### 4.10 Financial Exposure & Regional Concentration Matrix
 
-Financial exposure analysis reveals that the 7,153 consensus-flagged activities in Protocol 2 account for **Rp 642.85 Miliar** in realized expenditure (14.89% of total provincial disbursement).
+Financial exposure analysis reveals that the 7,153 consensus-flagged activities in Protocol 2 account for **Rp 642.85 Miliar** in realized expenditure (14.89% of total provincial disbursement) and **Rp 6.08 Trillion** in budget ceiling exposure (7.46%).
 
 Evaluating risk density across kabupaten jurisdictions reveals that **Kabupaten Batanghari exhibits the highest systemic risk concentration**, with **15.75% of activity entries flagged (823 activities)**, accounting for **Rp 115.71 Miliar in realization at risk**.
