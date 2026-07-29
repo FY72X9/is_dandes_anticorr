@@ -1,6 +1,6 @@
 # Chapter 2: Related Work
 
-> **Draft Status**: v3.0 — July 2026 (Aligned with IEEE references [1]–[32])  
+> **Draft Status**: July 2026 (Aligned with IEEE references [1]–[32])  
 > **Target Venue**: ICCSCI (Procedia Computer Science, Elsevier)  
 > **Word Count Target**: ~850 words  
 > **Citation Format**: IEEE (continuous numbering per references.md)  

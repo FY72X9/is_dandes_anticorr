@@ -1,6 +1,6 @@
 # Chapter 3: Methodology
 
-> **Draft Status**: v3.0 — July 2026 (Full mathematical formalization & Dual-Path Consensus Gate)  
+> **Draft Status**: July 2026 (Full mathematical formalization & Dual-Path Consensus Gate)  
 > **Target Venue**: ICCSCI (Procedia Computer Science, Elsevier)  
 > **Word Count Target**: ~1,250 words  
 > **Citation Format**: IEEE (continuous numbering per references.md)  
@@ -28,7 +28,7 @@ flowchart TD
         RG2["Multi-Paradigm ML: Isolation Forest, LOF, Reconstruction Dense Autoencoder"]
     end
 
-    subgraph DesignCycle["Design Cycle (Artifact Iteration v3-run)"]
+    subgraph DesignCycle["Design Cycle (Artifact Iteration: Protocol 2)"]
         DC1["Dual-Path Consensus Ensemble Engine"]
         DC2["Operational Policy Typology Engine"]
         DC3["Activity-Rate Normalized Priority Tiering"]
@@ -43,7 +43,7 @@ flowchart TD
 
 The dataset combines two administrative data sources collected via the KPK `jaga.id` open transparency portal [26]: (1) **Penyerapan** (expenditure absorption) records documenting realised spending per activity per tranche, and (2) **Pagu** (approved budget ceiling) records. Merging via composite key `Kode_Desa` $\times$ `Tahun` across fiscal years 2023, 2024, and 2025 yielded an initial raw corpus of 99,692 activity entries.
 
-In `v3-run`, a rigorous data hygiene audit was performed in `01_data_preprocessing.ipynb`. A total of **2,914 zero-volume or corrupted activity records** ($\text{Volume} \le 0$ or invalid `Kode_Output` codes) were filtered out. In baseline `v1`, zero-volume records caused division-by-zero errors when calculating unit cost ($\text{Realization} \div \text{Volume}$), distorting RobustScaler bounds. Eliminating these invalid records yielded a cleaned longitudinal panel of **96,778 activity-level records** across **1,363 villages** (33,065 in 2023; 34,710 in 2024; 29,003 in 2025).
+In Protocol 2, a rigorous data hygiene audit was performed within a standardized Python computational execution environment. A total of **2,914 zero-volume or corrupted activity records** ($\text{Volume} \le 0$ or invalid `Kode_Output` codes) were filtered out. In baseline Protocol 1, zero-volume records caused division-by-zero errors when calculating unit cost ($\text{Realization} \div \text{Volume}$), distorting RobustScaler bounds. Eliminating these invalid records yielded a cleaned longitudinal panel of **96,778 activity-level records** across **1,363 villages** (33,065 in 2023; 34,710 in 2024; 29,003 in 2025).
 
 ### 3.3 Geographical Baseline Centering & Engineered Feature Matrix
 
@@ -82,7 +82,7 @@ $$\text{RDA-Flag}_i = \mathbf{1}\left(E_i \ge \text{Quantile}_{0.95}(E)\right) \
 
 ### 3.5 Dual-Path Consensus Ensemble Gate
 
-In baseline `v1`, simple majority voting ($\sum \text{Flag}_m \ge 2$) suffered from severe mutual cancellation because algorithms project onto orthogonal statistical subspaces. In `v3-run`, the **Dual-Path Consensus Ensemble Gate** explicitly decouples local density detection from multi-model global convergence:
+In baseline Protocol 1, simple majority voting ($\sum \text{Flag}_m \ge 2$) suffered from severe mutual cancellation because algorithms project onto orthogonal statistical subspaces. In Protocol 2, the **Dual-Path Consensus Ensemble Gate** explicitly decouples local density detection from multi-model global convergence:
 
 ```mermaid
 flowchart TD
@@ -96,7 +96,7 @@ flowchart TD
 
     GLOBAL --> ORGATE["OR GATE"]
     LOCAL --> ORGATE
-    ORGATE --> CONSENSUS["CONSENSUS FLAG (v3-run: N = 7,153 records / 7.39%)"]
+    ORGATE --> CONSENSUS["CONSENSUS FLAG (Protocol 2: N = 7,153 records / 7.39%)"]
 ```
 
 $$\text{Consensus-Flag}_i = \text{LOF-Flag}_i \lor \left(\text{IF-Flag}_i \land \text{RDA-Flag}_i\right)$$

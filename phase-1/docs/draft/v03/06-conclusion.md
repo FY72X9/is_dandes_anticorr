@@ -1,6 +1,6 @@
 # Chapter 6: Conclusion
 
-> **Draft Status**: v3.0 — July 2026 (Final synthesis & research directions)  
+> **Draft Status**: July 2026 (Final synthesis & research directions)  
 > **Target Venue**: ICCSCI (Procedia Computer Science, Elsevier)  
 > **Word Count Target**: ~500 words  
 > **Citation Format**: IEEE (continuous numbering per references.md)  
@@ -9,7 +9,7 @@
 
 ## 6. Conclusion
 
-This study developed and evaluated an unsupervised Dual-Path Machine Learning artifact (`v3-run`), framed within Design Science Research (DSR) [10], for detecting expenditure anomalies in village fund absorption records. Applied to 96,778 activity-level entries across 1,363 villages in Jambi Province (FY 2023–2025), empirical results resolve all three research questions:
+This study developed and evaluated an unsupervised Dual-Path Machine Learning artifact (Protocol 2), framed within Design Science Research (DSR) [10], for detecting expenditure anomalies in village fund absorption records. Applied to 96,778 activity-level entries across 1,363 villages in Jambi Province (FY 2023–2025), empirical results resolve all three research questions:
 
 1. **RQ1 — Feature Discriminating Power**: Seven engineered feature constructs incorporating kabupaten-stratified z-score baseline centering (`cost_deviation_by_category`) provide strong discriminating power. Autoencoder loss decomposition confirms that within-category unit cost deviation and unit price inflation represent the primary statistical drivers of financial distortion in Siskeudes records.
 2. **RQ2 — Algorithmic Performance & Ensemble Gating**: LOF isolates extreme heavy-tailed local density anomalies (Sarle BC = 0.957), while Isolation Forest (BC = 0.335) and Deep Autoencoder (BC = 0.703) partition global multi-feature outliers. The Dual-Path Consensus Framework ($\text{LOF} \lor (\text{IF} \land \text{RDA})$) resolves the mutual cancellation limitation of traditional majority voting, outperforming individual algorithms on an ex-ante 10,000-record synthetic benchmark with **Precision = 0.846, Recall = 0.846, F1-Score = 0.846, and AUC-ROC = 0.912**.

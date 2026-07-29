@@ -1,6 +1,6 @@
 # Chapter 7: References
 
-> **Draft Status**: v3.0 — July 2026 (Verified IEEE Continuous Format)  
+> **Draft Status**: July 2026 (Verified IEEE Continuous Format)  
 > **Format**: IEEE (continuous numbering)  
 > **Source**: Verified references from Scopus/ISI-indexed sources, official legislation, and empirical datasets.  
 

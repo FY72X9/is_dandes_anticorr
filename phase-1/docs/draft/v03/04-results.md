@@ -1,6 +1,6 @@
 # Chapter 4: Results
 
-> **Draft Status**: v3.0 — July 2026 (Full empirical pipeline results & graphics integration)  
+> **Draft Status**: July 2026 (Full empirical pipeline results & graphics integration)  
 > **Target Venue**: ICCSCI (Procedia Computer Science, Elsevier)  
 > **Word Count Target**: ~1,500 words  
 > **Citation Format**: IEEE (continuous numbering per references.md)  
@@ -11,11 +11,11 @@
 
 ### 4.1 Per-Method Anomaly Flag Counts & Year-over-Year Consistency
 
-Table 4.1 presents the empirical flag counts and flagging percentages across individual algorithms and ensemble gates for both `output_v1` and `v3-run`.
+Table 4.1 presents the empirical flag counts and flagging percentages across individual algorithms and ensemble gates for both Protocol 1 and Protocol 2.
 
-**Table 4.1. Per-Method Anomaly Flag Counts and Overall Rates (`output_v1` vs `v3-run`)**
+**Table 4.1. Per-Method Anomaly Flag Counts and Overall Rates (Protocol 1 vs Protocol 2)**
 
-| Algorithm / Ensemble Gate | `output_v1` Flagged | `output_v1` % | `v3-run` Flagged | `v3-run` % | Tuning / Architectural Change |
+| Algorithm / Ensemble Gate | Protocol 1 Flagged | Protocol 1 % | Protocol 2 Flagged | Protocol 2 % | Tuning / Architectural Change |
 |---|---|---|---|---|---|
 | **Isolation Forest (IF)** | 7,974 | 8.00% | 9,678 | 10.00% | Contamination tuned to 0.10 |
 | **Local Outlier Factor (LOF)** | 4,985 | 5.00% | 4,839 | 5.00% | Top 5th percentile threshold ($k=20$) |
@@ -56,7 +56,7 @@ Table 4.3 quantifies pairwise overlap and subspace relationships across algorith
 | IF $\cap$ LOF $\cap$ RDA (Triple) | 225 | 2.3% of total | — | Maximum Confidence Core |
 | **LOF-Only Isolates** | **3,940** | **81.4% of LOF** | — | **Captured via Local Path** |
 
-The empirical intersection matrix confirms that only 225 records (0.23% of total dataset) trigger all three algorithms simultaneously. Conversely, 3,940 records are flagged exclusively by LOF. In baseline `v1` (majority voting), these 3,940 local density isolates were discarded. The Dual-Path Gate ($\text{LOF} \lor (\text{IF} \land \text{RDA})$) preserves these critical density anomalies while requiring IF and RDA convergence for global outliers.
+The empirical intersection matrix confirms that only 225 records (0.23% of total dataset) trigger all three algorithms simultaneously. Conversely, 3,940 records are flagged exclusively by LOF. In baseline Protocol 1 (majority voting), these 3,940 local density isolates were discarded. The Dual-Path Gate ($\text{LOF} \lor (\text{IF} \land \text{RDA})$) preserves these critical density anomalies while requiring IF and RDA convergence for global outliers.
 
 ### 4.4 Corruption Typology Mapping & Shift Analysis
 
@@ -64,15 +64,15 @@ Figure 4.3 visualises the frequency distribution of mapped corruption typologies
 
 ![Figure 4.3: Corruption Typology Frequency Distribution](file:///d:/Codes/research_banks/anticorr/is_dandes_anticorr/phase-1/src/v3-run/typology_distribution.png)
 
-**Table 4.4. Comparative Typology Frequency Shift (`output_v1` vs `v3-run`)**
+**Table 4.4. Comparative Typology Frequency Shift (Protocol 1 vs Protocol 2)**
 
-| Typology Code | Typology Name | `v1` Count | `v1` % | `v3-run` Count | `v3` % | Relative Shift & Impact |
+| Typology Code | Typology Name | Protocol 1 Count | Protocol 1 % | Protocol 2 Count | Protocol 2 % | Relative Shift & Impact |
 |---|---|---|---|---|---|---|
 | **T2_Ghost** | Ghost Activity (*Kegiatan Fiktif*) | 774 | 24.9% | **4,155** | **58.1%** | **+436.8% — Primary Modus** |
 | **T5_ProcureIrr** | Procurement Irregularity (*Swakelola High Value*) | 26 | 0.8% | **2,343** | **32.8%** | **+8911.5% — Major Sensitivity Gain** |
 | **T7_CrossCatDump** | Cross-Category Activity Dumping | 1,568 | 50.5% | **1,284** | **18.0%** | −18.1% (Specific reclassification) |
 | **T1_Markup** | Unit Price Mark-Up (*Penggelembungan*) | 1,571 | 50.6% | **1,180** | **16.5%** | −24.9% (Refined price isolation) |
-| **T4_StageLock** | Disbursement Stage Lock | 0 | 0.0% | **28** | **0.4%** | Newly captured in v3 |
+| **T4_StageLock** | Disbursement Stage Lock | 0 | 0.0% | **28** | **0.4%** | Newly captured in Protocol 2 |
 | **Unclassified** | Sub-threshold Masking Anomaly | 708 | 22.8% | **1,227** | **17.2%** | Proportion reduced from 22.8% to 17.2% |
 
 ### 4.5 Instance-Level XAI Feature Diagnosis & RDA Error Drivers
@@ -81,7 +81,7 @@ Figure 4.4 decomposes RDA reconstruction error across features and presents a to
 
 ![Figure 4.4: Mean RDA Reconstruction Error per Feature and Top-50 Anomaly Heatmap](file:///d:/Codes/research_banks/anticorr/is_dandes_anticorr/phase-1/src/v3-run/rda_error_decomposition.png)
 
-In `v3-run`, the primary reconstruction error drivers shifted dramatically: **`cost_deviation_by_category`** (top driver in 2,065 records) and **`cost_per_unit`** (1,551 records) surpassed `avg_completion` (1,114 records). This shift confirms that the autoencoder adapted from detecting simple completion reporting delays to isolating actionable price manipulation and uncompetitive procurement.
+In Protocol 2, the primary reconstruction error drivers shifted dramatically: **`cost_deviation_by_category`** (top driver in 2,065 records) and **`cost_per_unit`** (1,551 records) surpassed `avg_completion` (1,114 records). This shift confirms that the autoencoder adapted from detecting simple completion reporting delays to isolating actionable price manipulation and uncompetitive procurement.
 
 ### 4.6 Longitudinal Village Persistence & Priority Tier Classification
 
@@ -91,7 +91,7 @@ Figure 4.5 presents village priority tiering based on multi-year anomaly persist
 
 **Table 4.5. Longitudinal Village Persistence & Priority Tier Distribution**
 
-| Priority Tier | Criteria / Persistence Score | `v1` Villages | `v1` % | `v3-run` Villages | `v3-run` % | Shift & Impact |
+| Priority Tier | Criteria / Persistence Score | Protocol 1 Villages | Protocol 1 % | Protocol 2 Villages | Protocol 2 % | Shift & Impact |
 |---|---|---|---|---|---|---|
 | **Tier 1 — High Priority** | Flagged in $\ge 2$ years ($P_v \ge 0.67$) | 642 | 47.1% | **1,172** | **86.0%** | **+530 Villages (+82.6%)** |
 | **Tier 2 — Moderate Priority** | Flagged in 1 year ($P_v = 0.33$) | 459 | 33.7% | **163** | **12.0%** | −296 Villages |
@@ -127,13 +127,13 @@ Table 4.6 reports benchmark evaluation results on the $N=10,000$ synthetic fraud
 | Isolation Forest (IF) | 0.724 | 0.724 | 0.724 | 0.782 |
 | Local Outlier Factor (LOF) | 0.686 | 0.686 | 0.686 | 0.745 |
 | Reconstruction DA (RDA) | 0.812 | 0.812 | 0.812 | 0.811 |
-| `v1` Majority Vote Ensemble | 0.642 | 0.510 | 0.568 | 0.720 |
-| **`v3-run` Dual-Path Gate** | **0.846** | **0.846** | **0.846** | **0.912 (Best)** |
+| Protocol 1 Majority Vote Ensemble | 0.642 | 0.510 | 0.568 | 0.720 |
+| **Protocol 2 Dual-Path Gate** | **0.846** | **0.846** | **0.846** | **0.912 (Best)** |
 
 The Dual-Path Gate achieved an **AUC-ROC of 0.912** and **F1-Score of 0.846**, outperforming all single models and exceeding baseline majority voting by +0.278 in F1-score.
 
 ### 4.10 Financial Exposure & Regional Concentration in Kabupaten Batanghari
 
-Financial exposure analysis reveals that the 7,153 consensus-flagged activities in `v3-run` account for **Rp 642.85 Miliar** in realized expenditure (14.89% of total provincial disbursement).
+Financial exposure analysis reveals that the 7,153 consensus-flagged activities in Protocol 2 account for **Rp 642.85 Miliar** in realized expenditure (14.89% of total provincial disbursement).
 
 Evaluating risk density across kabupaten jurisdictions reveals that **Kabupaten Batanghari exhibits the highest systemic risk concentration**, with **15.75% of activity entries flagged (823 activities)**, accounting for **Rp 115.71 Miliar in realization at risk**.
