@@ -1,0 +1,16 @@
+Manuscript Preparation
+
+Before submitting your manuscript to ICDEES 2026, please make sure that your manuscript has comply with the conference’s guidelines. Any manuscript submitted to the ICDEES 2026 must be adhering to these points:
+
+Prepare your manuscript using IMRaD format (Introduction, Method, Result, and Discussion). Each section should represent each part in IMRaD correctly.
+Write your manuscript using the conference template. Follow the guidelines given in the template correctly. The paper template can be acquired here
+Your manuscript should be written between 4 to 6 pages long.
+Author Conference Template here
+Declaration of Competing Interests here
+Please ensure that the topic in your manuscript is suitable with the conference theme and topics. Any submitted manuscript MUST contain any topics on computer science domain. The main knowledge must be in computer science. Any manuscript that talks about the usage of IT (IT as a tool) within any other domain of knowledge will be rejected. Please refers to the Conference Scope of Topics for further information.
+To ensure double blindness, DO NOT put any authors’ information on the manuscript. This includes names, email addresses, and any affiliations. Location of the research, if referring to the same affiliation with the authors, should be changed into “XXX” for review process. This change only applies for a specific location, for example “Bina Nusantara University”. Any city or any other general geographic marker are excluded for this rule.
+This conference forbids the usage of any generative AI tools for manuscript preparation/writing. Please ensure that your manuscript does not contains any material acquired from generative AI tools. This rule does not apply to manuscript that target generative AI as their main topics.
+Please ensure that the similarity rating for your manuscript does not exceed 15%, the AI similarity does not exceed 15% and if you used AI tools for your paper then you should give acknowledgment what AI tools you used and how to present the AI tools in preparation for your paper.
+Please ensure that your manuscript has adequate numbers of references. Please make sure that, at least, 60% of your references come from current years and valid resources (journal, conference proceedings, book, or any official data sources).
+Contents of the papers should have experiment results with adequate contribution that compare with previous research. Paper with Survey Literature Review (SLR) must be added with the experiment result.
+All of the paper that accepted and registered  in ICDEES 2026 must be presented  at the conference. Papers not presented, often called “no-shows,” are NOT published in IEEE Xplore . No refund of registration Fee for all  of registered papers.
