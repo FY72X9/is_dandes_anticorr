@@ -70,11 +70,11 @@ Contemporaneous judicial verdicts across Jambi Province confirm that legal prose
     \item \textit{Kasus Mantan Kades Kerinci}: Misappropriation of physical construction funds amounting to Rp 644 million~\cite{ref30}.
     \item \textit{Kasus Pangkal Duri (Tanjung Jabung Timur)}: State financial loss reaching Rp 415 million~\cite{ref31}.
 \end{enumerate}
-All four judicial cases involved financial irregularities that generated quantifiable signals in Siskeudes absorption records: fictitious construction outputs, zero-realisation procurement activities, and uncompetitive Swakelola budget execution---precisely the patterns targeted by the feature engineering and Dual-Path consensus architecture in this study.
+All four judicial cases involved financial irregularities that generated quantifiable signals in Siskeudes absorption records: fictitious construction outputs, zero-realisation procurement activities, and uncompetitive Swakelola budget execution; these reflect precisely the patterns targeted by feature engineering and the Dual-Path consensus architecture in this study.
 
 This study delivers three primary contributions:
 \begin{enumerate}
-    \item \textbf{Methodological Contribution (Comparative Research Framework)}: It constructs an unsupervised Dual-Path Consensus Machine Learning framework combining local density estimation (LOF) and global anomaly convergence (IF $\cap$ RDA) with an Operational Policy Mapping Layer, resolving the mutual cancellation limitation of traditional majority voting (\textbf{Protocol 1}).
+    \item \textbf{Methodological Contribution}: It constructs an unsupervised Dual-Path Consensus framework combining local density estimation (LOF) and global anomaly convergence ($\text{IF} \cap \text{RDA}$) with an Operational Policy Mapping Layer, resolving the mutual cancellation limitation of baseline majority voting (\textbf{Protocol 1}).
     \item \textbf{Theoretical Contribution}: It operationalises Agency Theory, the Fraud Diamond, and Principal-Agent information asymmetry within administrative Siskeudes records, bridging Information Systems (IS) governance literature and computational fraud detection.
     \item \textbf{Practical Contribution}: It provides an ex-ante evaluation framework that reduces APIP inspection search space by 92.6\% at the activity level and prioritises 702 persistent high-risk villages (Tier 1), generating instance-level Explainable AI (XAI) audit checklists for field inspectors.
 \end{enumerate}
@@ -103,7 +103,7 @@ Opportunity is structurally driven by procurement method selection. Dataset audi
 
 Principal-Agent Theory~\cite{ref25} frames the village head as an Agent possessing severe information asymmetry relative to the Principal (district APIP inspectorate, BPKP, KPK):
 \begin{equation}
-\text{InfoAsymmetry} = \mathcal{I}_{\text{Agent}}(\text{PhysicalRealization}, \text{TrueCost}) - \mathcal{I}_{\text{Principal}}(\text{SiskeudesReports})
+\text{InfoAsymmetry} = \mathcal{I}_{\text{Agent}}(\text{Realization}, \text{TrueCost}) - \mathcal{I}_{\text{Principal}}(\text{SiskeudesReport})
 \end{equation}
 Unexplained statistical deviations in unit costs, tranche disbursement progress ratios, and procurement categories constitute proximate empirical traces of moral hazard and information asymmetry exploitation~\cite{ref9,ref25}.
 
@@ -111,8 +111,8 @@ Unexplained statistical deviations in unit costs, tranche disbursement progress 
 The anomaly detection literature applied to public financial management has converged on three methodologically distinct paradigms:
 \begin{enumerate}
     \item \textbf{Global Sparsity Partitioning}: Isolation Forest (Liu et al.~\cite{ref18,ref19}) measures random partitioning path length in tree ensembles, performing optimally against globally extreme multi-feature outliers.
-    \item \textbf{Local Density Ratio Estimation}: Local Outlier Factor (LOF, Breunig et al.~\cite{ref24}) evaluates local reachability density ratios relative to $k$-nearest neighbors, isolating records that are locally sparse relative to their specific activity peer group (e.g., within a specific output code \texttt{Kode\_Output}).
-    \item \textbf{Neural Reconstruction Error}: Deep Autoencoders (Zhou \& Paffenroth~\cite{ref32}) learn compressed latent representations of normal financial behaviour. Records exhibiting anomalously high Mean Squared Error (MSE) at reconstruction signal non-linear feature interaction distortions.
+    \item \textbf{Local Density Estimation}: Local Outlier Factor (LOF)~\cite{ref24} evaluates local reachability density ratios relative to $k$-nearest neighbors, isolating records that are locally sparse relative to their specific activity peer group (e.g., within an output code \texttt{Kode\_Output}).
+    \item \textbf{Neural Reconstruction Error}: Deep Autoencoders (Zhou \& Paffenroth~\cite{ref32}) learn compressed latent representations of normal financial behaviour. High Mean Squared Error (MSE) at reconstruction signals non-linear feature interaction distortions.
 \end{enumerate}
 
 \subsection{Integrated Research Conceptual Framework}
@@ -193,9 +193,9 @@ All experimental pipelines, data hygiene audits, feature engineering routines, m
 \subsection{Geographical Baseline Centering \& Engineered Feature Matrix}
 Seven core feature constructs were engineered to operationalise documented corruption modus operandi:
 \begin{equation}
-z_{i,c,k,t} = \frac{x_{i,c,k,t} - \mu_{c,k,t}}{\sigma_{c,k,t} + \epsilon} \quad \text{within } (c, k, t) = (\text{Kode\_Output}, \text{Kabupaten\_Kota}, \text{Tahun})
+z_{i,c,k,t} = \frac{x_{i,c,k,t} - \mu_{c,k,t}}{\sigma_{c,k,t} + \epsilon}
 \end{equation}
-To prevent remote highland jurisdictions (e.g., Kabupaten Kerinci) from generating systematic false-positive flags due to elevated baseline transportation costs, \texttt{cost\_deviation\_by\_category} calculates year-stratified z-scores strictly within the combined grouping $(c, k, t)$. This controls for regional logistics overhead while preserving sensitivity to local price manipulation.
+calculated within each stratum $(c, k, t) = (\text{Kode\_Output}, \text{Kabupaten\_Kota}, \text{Tahun})$. To prevent remote highland jurisdictions (e.g., Kabupaten Kerinci) from generating systematic false-positive flags due to elevated baseline transportation costs, \texttt{cost\_deviation\_by\_category} calculates year-stratified z-scores strictly within the combined grouping $(c, k, t)$. This controls for regional logistics overhead while preserving sensitivity to local price manipulation.
 
 All continuous features were scaled using \textbf{RobustScaler} (median centring, IQR scaling), resisting distortion by extreme outlier records.
 
@@ -260,7 +260,7 @@ The operational execution of the proposed Design Science Research (DSR) artifact
 \subsubsection{Stage 1: Data Hygiene and Stratified Regional Centering}
 Raw village fund expenditure records cannot be ingested directly into machine learning models due to administrative recording noise, zero-volume entry errors ($\text{Volume}_i \le 0$), invalid output activity codes, and severe regional cost heterogeneity. Baseline unit costs ($\text{Realization\_Total}_i / \text{Volume}_i$) exhibit substantial variance across geographic regions due to local transportation overheads, terrain difficulty, and regional market disparities (e.g., remote highland jurisdictions such as Kabupaten Kerinci versus lowland urban centers). Direct global normalization without regional stratification introduces systematic false positives for isolated jurisdictions. 
 
-To eliminate baseline inflation skew, Algorithm~\ref{alg:baseline_centering} executes a two-phase data hygiene and stratification protocol. First, invalid zero-volume records and corrupt output activity codes are purged. Second, continuous cost variables are centered and scaled by calculating year-stratified regional z-scores $z_{i, \text{cat}}$ strictly within each distinct subgroup $(c, k, t) = (\text{Kode\_Output}, \text{Kabupaten\_Kota}, \text{Tahun})$. This controls for local logistical overhead while preserving sensitivity to genuine within-jurisdiction price inflation. Finally, non-parametric RobustScaler transformation (median centering, interquartile range scaling) is applied across continuous columns to prevent extreme outlier values from distorting scale bounds.
+To eliminate baseline inflation skew, Algorithm~\ref{alg:baseline_centering} executes a two-phase data hygiene and stratification protocol. First, invalid zero-volume records and corrupt output activity codes are purged. Second, continuous cost variables are centered and scaled by calculating year-stratified regional z-scores $z_{i, \text{cat}}$ strictly within each distinct subgroup $(c, k, t)$, where $c$, $k$, and $t$ represent output code, municipality, and fiscal year. This controls for local logistical overhead while preserving sensitivity to genuine within-jurisdiction price inflation. Finally, non-parametric RobustScaler transformation (median centering, interquartile range scaling) is applied across continuous columns to prevent extreme outlier values from distorting scale bounds.
 
 \begin{algorithm}[htbp]
 \caption{Year-Stratified Regional Baseline Centering and Scaling}
@@ -354,7 +354,7 @@ Table~\ref{tab:flag_counts} presents empirical flag counts and flagging percenta
 \caption{Per-Method Anomaly Flag Counts and Overall Rates (\textbf{Protocol 1} vs \textbf{Protocol 2})}
 \label{tab:flag_counts}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{lccccm{4.5cm}}
+\begin{tabular}{lcccc>{\raggedright\arraybackslash}p{4.5cm}}
 \toprule
 \textbf{Algorithm / Ensemble Gate} & \textbf{Protocol 1 Flagged} & \textbf{Protocol 1 \%} & \textbf{Protocol 2 Flagged} & \textbf{Protocol 2 \%} & \textbf{Tuning / Architectural Change} \\
 \midrule
@@ -472,7 +472,7 @@ Consensus-flagged records were mapped into domain-grounded corruption typologies
 \label{fig:typology}
 \end{figure}
 
-Figure~\ref{fig:typology} illustrates the comparative prevalence of identified corruption moduses between Protocol 1 and Protocol 2, while Table~\ref{tab:typology_shift} details the comparative shift from Protocol 1 to Protocol 2.
+Figure~\ref{fig:typology} illustrates the prevalence of identified corruption moduses between Protocol 1 and Protocol 2, while Table~\ref{tab:typology_shift} details the comparative shift from Protocol 1 to Protocol 2.
 
 \begin{table}[htbp]
 \centering
@@ -494,7 +494,7 @@ Figure~\ref{fig:typology} illustrates the comparative prevalence of identified c
 }
 \end{table}
 
-The typology shift analysis demonstrates that \textbf{Protocol 2} successfully elevates physical fraud detection sensitivity, causing \textbf{T2: Ghost Activities (58.1\% / 4,155 records)} and \textbf{T5: Procurement Irregularities (32.8\% / 2,343 records)} to emerge as the primary identified corruption moduses.
+The typology shift analysis demonstrates that \textbf{Protocol 2} successfully elevates physical fraud detection sensitivity, causing \textbf{T2: Ghost Activities} (58.1\%, 4,155 records) and \textbf{T5: Procurement Irregularities} (32.8\%, 2,343 records) to emerge as the primary identified corruption moduses.
 
 \subsection{Instance-Level XAI Feature Diagnosis \& RDA Error Drivers}
 
@@ -600,9 +600,9 @@ The spatial projections in Figure~\ref{fig:pca} and Figure~\ref{fig:tsne} provid
 
 First, the linear PCA projection (Figure~\ref{fig:pca}) shows that consensus anomalies expand along the positive PC1 gradient (PC1 accounts for 26.0\% of variance, PC2 for 12.7\%). Semantically, PC1 captures total financial absorption volume and unit cost deviation scale, indicating that extreme anomalies are driven by high-leverage expenditure inflation. PC2 captures tranche completion ratios versus Swakelola procurement mode.
 
-Second, the non-linear t-SNE projection (Figure~\ref{fig:tsne}, sampled at 15,000 records) demonstrates that anomalies do not scatter randomly as uniform background noise. Instead, consensus anomalies condense into dense peripheral micro-clusters surrounding specific activity-type neighborhoods. From an IS governance perspective, this peripheral micro-clustering indicates that financial anomalies in Siskeudes records are activity-type specific---clustering heavily around physical infrastructure Swakelola projects and BUMDes modal transfers---confirming localized collusion among village financial officers rather than random clerical data entry errors.
+Second, the non-linear t-SNE projection (Figure~\ref{fig:tsne}, sampled at 15,000 records) demonstrates that anomalies do not scatter randomly as uniform background noise. Instead, consensus anomalies condense into dense peripheral micro-clusters surrounding specific activity-type neighborhoods. From an IS governance perspective, this peripheral micro-clustering indicates that financial anomalies in Siskeudes records are activity-type specific; they cluster heavily around physical infrastructure Swakelola projects and BUMDes modal transfers, confirming localized collusion among village financial officers rather than random clerical data entry errors.
 
-\subsection{Feature Matrix Explorations & Governance Indications}
+\subsection{Feature Matrix Explorations \& Governance Indications}
 
 Exploratory feature distribution analyses were packed horizontally to evaluate inter-variable relationships and distribution skewness.
 
@@ -737,8 +737,8 @@ Operationalizing machine learning within public sector corruption oversight requ
 \subsubsection{1. Statutory Status as Early Audit Indication and Investigative Support (\textit{Indikasi Awal dan Dukungan Penyelidikan})} Machine learning anomaly scores generated by \textbf{Protocol 2} do \textbf{not} constitute direct statutory evidence (\textit{alat bukti yang sah}) under Article 184 of the Indonesian Criminal Procedure Code (KUHAP / Law No. 8/1981)~\cite{ref35} or the Corruption Eradication Act (Law No. 31/1999 jo. Law No. 20/2001)~\cite{ref34}. Under Indonesian criminal procedure jurisprudence (KUHAP Art. 1 point 5 jo. Constitutional Court Decision No. 21/PUU-XII/2014), statutory preliminary evidence (\textit{bukti permulaan yang cukup}) must be independently established by law enforcement inquirers (\textit{penyelidik}) during the preliminary inquiry stage (\textit{penyelidikan}) to elevate a case to a full criminal investigation (\textit{penyidikan}). Algorithmic outputs cannot substitute for \textit{bukti permulaan yang cukup}, nor do they qualify as statutory presumption evidence (\textit{alat bukti petunjuk}, KUHAP Art. 188). Instead, AI analytical findings function strictly as \textbf{operational investigative leads} (\textit{indikasi awal / petunjuk operasional}) supporting the \textit{pro-justitia} inquiry process. To establish legal standing and substantiate formal preliminary evidence, algorithmic findings mandate corroboration and methodological justification by certified Expert Witnesses (\textit{Keterangan Ahli}, KUHAP Art. 184(1)b jo. Art. 186) alongside formal forensic audit documentation.
 Beyond criminal enforcement (\textit{penindakan}), the primary statutory value of \textbf{Protocol 2} lies in corruption prevention (\textit{pencegahan tindak pidana korupsi}) under Government Regulation (\textit{Peraturan Pemerintah}) No. 60/2008 on the Government Internal Control System (\textit{SPIP})~\cite{ref33}. Algorithmic anomaly detection provides public sector oversight bodies---\textit{Aparat Pengawasan Intern Pemerintah} (APIP), the Supreme Audit Agency (\textit{BPK}), and the Financial and Development Supervisory Board (\textit{BPKP})---with an objective, data-driven mechanism to uncover early fraud patterns and close systemic governance loopholes before authorized actors across Regional Government Apparatus (\textit{Organisasi Perangkat Daerah} -- OPD) and Village Government Apparatus (\textit{Perangkat Desa}) can exploit institutional vulnerabilities.
 
-\subsubsection{2. Differentiating Administrative Irregularity from Criminal Intent (\textit{Mens Rea})}
-A fundamental boundary in public sector anomaly detection is distinguishing non-malicious operational failure from criminal corruption. A high reconstruction MSE or density outlier score may reflect non-corrupt causes: severe rural administrative capacity deficits, delayed milestone entry by village secretaries (\textit{Sekretaris Desa}), emergency procurement during local natural disasters, or unrecorded localized material cost inflation. To establish criminal corruption under Law No. 31/1999 Art. 2 \& 3~\cite{ref34}, legal authorities must prove two distinct elements: (a) an unlawful act or abuse of official authority (\textit{perbuatan melawan hukum / menyalahgunakan kewenangan}), and (b) intentional state financial loss (\textit{merugikan keuangan negara}) or self/corporate enrichment. Algorithmic outputs measure statistical deviation, not legal culpability; they direct human auditors to transactions where the probability of underlying unlawful behavior is statistically concentrated.
+\subsubsection{2. Differentiating Administrative Irregularity from Unlawful Acts (\textit{Perbuatan Melawan Hukum})}
+A critical boundary in public sector anomaly detection is distinguishing benign administrative irregularity from statutory corruption offenses. Elevated anomaly scores (such as high neural reconstruction error or density isolation) may reflect non-corrupt operational friction: rural administrative capacity deficits, delayed batch transaction entry by village secretaries (\textit{Sekretaris Desa}), emergency procurement during localized natural disasters, or unrecorded regional material cost inflation. To substantiate criminal corruption under the Anti-Corruption Act (Law No.\ 31/1999 jo.\ Law No.\ 20/2001 Art.\ 2 \& 3)~\cite{ref34}, oversight authorities must prove specific statutory elements: (a) an unlawful act (\textit{perbuatan melawan hukum}) or an abuse of official authority, opportunity, or facilities (\textit{menyalahgunakan kewenangan, kesempatan, atau sarana}), and (b) a direct causal link to state financial losses (\textit{merugikan keuangan negara}) or self/corporate enrichment. Machine learning outputs measure statistical deviation within expenditure absorption data rather than legal culpability. Proving subjective criminal intent (\textit{mens rea}) requires investigative substantiation during the inquiry stage (\textit{penyelidikan}) through extrinsic documentary evidence, communication trails, meeting minutes, and financial transaction records. Consequently, \textbf{Protocol 2} functions as an objective screening mechanism that directs human forensic auditors (APIP) toward transactions where the probability of underlying statutory violations and authority abuse is statistically concentrated.
 
 \subsubsection{3. XAI-to-Evidence Chain of Custody for APIP Field Inspections}
 To translate mathematical anomaly metrics into legally admissible audit evidence, \textbf{Protocol 2} incorporates Explainable AI (XAI) feature error decomposition. Standard "black-box" machine learning predictions are inadmissible in formal administrative disciplinary hearings or judicial proceedings. By decomposing the neural RDA reconstruction loss into per-feature error contributions, \textbf{Protocol 2} constructs a transparent evidentiary chain of custody:
@@ -757,7 +757,7 @@ Table~\ref{tab:dsr_matrix} presents the Design Science Research (DSR) evaluation
 \caption{Design Science Research (DSR) Evaluation Matrix for \textbf{Protocol 2} Artifact}
 \label{tab:dsr_matrix}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{lllm{4cm}}
+\begin{tabular}{lll>{\raggedright\arraybackslash}p{4cm}}
 \toprule
 \textbf{DSR Dimension} & \textbf{Operationalization in Protocol 2} & \textbf{Empirical Target Metric} & \textbf{Observed Outcome} \\
 \midrule
