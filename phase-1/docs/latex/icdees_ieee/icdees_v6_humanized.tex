@@ -128,7 +128,7 @@ charlie.yen@binus.ac.id
 % ABSTRACT (< 200 words, strict IELTS Band 8, zero repetition, clear boundary)
 % -------------------------------------------------------------------------
 \begin{abstract}
-Indonesia transfers approximately Rp 71 trillion annually to 75,259 villages through the Village Fund (\textit{Dana Desa}). Existing oversight remains largely reactive, often reaching judicial courts two to five years after disbursement. Supervised machine learning cannot triage raw expenditure records because administrative ledgers lack verified fraud labels. Grounded in Design Science Research, Agency Theory, and the Fraud Diamond, this study develops and evaluates an unsupervised Dual-Path Consensus framework (Protocol 2) integrating Isolation Forest, Local Outlier Factor, and an 8-layer Reconstruction Dense Autoencoder with an Operational Policy Mapping Layer across 96,778 transaction records (1,363 villages, FY 2023--2025) in Jambi Province. By decoupling localized density outliers from global multi-model convergence, Protocol 2 resolves the mutual cancellation inherent in standard majority voting, identifying 7,153 expenditure anomalies (7.39\%) and isolating Rp 642.85 billion in financial realization risk without asserting premature legal guilt. On an ex-ante synthetic fraud benchmark ($N=10,000$, 5.0\% simulated fraud), Protocol 2 achieves Precision = 0.846, Recall = 0.846, F1 = 0.846, and AUC-ROC = 0.912, outperforming majority voting (F1 = 0.568). Operationalized through the DeLone and McLean IS Success Model, the artifact reduces inspectorate audit search space by 92.6\% while converting neural reconstruction losses into actionable field inspection checklists.
+In the 2024 fiscal year, the Indonesian government allocated a budget of around Rp 71 trillion annually in 75,259 villages by utilizing the Village Fund (\textit{Dana Desa}). Monitoring process remains mainly reactive in character that is often brought up to the judicial courts 2–5 years after the disbursed. Unsupervised machine learning is unable to give precedence to expenditure data because the administrative ledgers lack any labels of the fraud. This paper adopts Design Science Research, Agency Theory, and the Fraud Diamond to develop and evaluate an unsupervised Dual-Path Consensus protocol (Protocol 2), based on Isolation Forest, Local Outlier Factor, and eight-layer Reconstruction Dense Autoencoder model, with Operational Policy Mapping Layer on 96,778 transactions (1,363 villages, Financial Year 2023-2025) of Jambi. Through dual-path consensus, Protocol 2 reduces mutual cancellation effect in the conventional majority voting protocol due to separation of the localized density outliers and global multi-model convergence and detects 7,153 expenditure anomalies (7.39\%) with the financial realization risk of Rp 642.85 billion while not labeling any entity as fraud prematurely. In the ex-ante synthetic fraud benchmark (N=10,000; 5.0\% fraud), Protocol 2 achieves Precision = 0.846, Recall = 0.846, F1 = 0.846, and AUC-ROC = 0.912, whereas majority voting achieves F1 = 0.568. According to DeLone and McLean IS success model, the artifact reduces the audit search area by 92.6\% and turns the neural reconstruction loss into the inspection checklists.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -142,11 +142,11 @@ Unsupervised Anomaly Detection, Dual-Path Consensus, Design Science Research, Re
 
 The Indonesian government distributes roughly Rp 71 trillion annually to 75,259 rural settlements under Law No. 6/2014 concerning villages~\cite{ref1}. However, the volume and velocity of these fiscal transfers have outpaced the monitoring capacity of local supervisory agencies. Indonesia Corruption Watch (ICW) documented 591 court convictions regarding village fund corruption as of 2024, representing state financial losses of Rp 598.13 billion~\cite{ref2}. From 2015 to 2022, the Anti-Corruption Learning Center of the Corruption Eradication Commission (ACLC KPK) recorded 851 corruption cases involving 973 village apparatus members across Rp 468.9 trillion in allocated public capital~\cite{ref3}. National anti-corruption agencies have instituted preventive mechanisms, including KPK Trisula~\cite{ref36}, Desa Antikorupsi~\cite{ref37}, Siswaskeudes~\cite{ref38}, Stranas PK 2025--2026~\cite{ref39}, MCP~\cite{ref40}, and the jaga.id portal~\cite{ref26}. Nevertheless, these platforms operate primarily at aggregate municipal tiers or rely on passive citizen whistleblowing, lacking automated capability to analyze transaction-level financial records submitted via Siskeudes (Village Financial System) prior to fund clearance.
 
-\textbf{Related Work and Research Gap (2022--2026):} Public financial oversight literature has progressed along two tracks. Qualitative governance studies examine administrative compliance~\cite{ref4,ref5} and fraud typologies~\cite{ref6,ref11}. Hidajat~\cite{ref6} categorized village fund corruption into embezzlement, fictitious reporting, and uncompetitive procurement, while Medan et al.~\cite{ref15} studied customary governance interventions. However, these works provide post-hoc analyses rather than automated screening. In financial machine learning, recent surveys by Ali et al.~\cite{ref_ali2022} and Gao et al.~\cite{ref_gao2024} document a heavy reliance on supervised classifiers trained on labeled corporate datasets. In decentralized public administration, this paradigm fails because real-world transaction ledgers contain zero verified ground-truth fraud labels prior to judicial trials~\cite{ref16,ref23}. Consequently, scholars have turned to unsupervised anomaly detection. Albuquerque Filho et al.~\cite{ref_albuquerque2022} and Almazroi and Ayub~\cite{ref_almazroi2023} highlighted deep autoencoder reconstruction architectures for capturing transaction anomalies, while Fährmann et al.~\cite{ref_fahrmann2024} and Han et al.~\cite{ref_han2022adbench} established that ensemble methods frequently dominate individual detectors. Despite these advances, three critical gaps persist: (1) \textit{Subspace Mutual Cancellation}: Standard majority voting or score averaging suppresses localized density outliers (e.g., zero-completion activities in peer clusters) because they appear normal to global tree splits; (2) \textit{Absence of Operational Policy Mapping}: Raw outlier scores lack semantic mapping to statutory procurement rules, leaving auditors without actionable investigation protocols~\cite{ref_almaqtari2024,ref_vukovic2025}; and (3) \textit{Geographical Cost Distortions}: Uncentered spending metrics penalize remote jurisdictions with high logistical costs, creating false positives.
+\textbf{Related Work and Research Gap (2022--2026):} Prior work in the field of public financial oversight can be broadly classified into two streams. Qualitative studies of governance cover administrative compliance~\cite{ref4,ref5} and types of fraud~\cite{ref6,ref11}. Hidajat~\cite{ref6} , for example, classified village fund corruption as theft, fake reporting, and uncompetitive procurement. Further, Medan and colleagues ~\cite{ref15} analyzed approaches to fraud detection based on customary governance. However, their research provides post-hoc analysis of fraud types and not an automatic screening tool. Concerning the field of financial machine learning, in a recent survey by Ali et al.~\cite{ref_ali2022} and Gao et al.~\cite{ref_gao2024}, the dependence on supervised classifiers that rely on labels from corporately owned data was shown. This approach does not fit the context of decentralized public administration, in which actual transactions usually do not have verified labels of fraud until the judicial process takes place. Therefore, current research moved towards unsupervised anomaly detection. Reconstruction-based approaches to anomalies with the use of autoencoders were presented by Albuquerque Filho et al.~\cite{ref_albuquerque2022} and Almazroi and Ayub~\cite{ref_almazroi2023}, and the effectiveness of ensembles of anomaly detectors was confirmed by Fährmann et al.~\cite{ref_fahrmann2024} and Han et al. ~\cite{ref_han2022adbench} However, there are three essential gaps left in the current research. First, \textit{Subspace Mutual Cancellation}: majority voting or score averaging will decrease the effect of local density outliers (such as zero completion transactions among peers). Indeed, such transactions will look fine when global tree splits will take place. Second,  \textit{Absence of Operational Policy Mapping}: the outliers' score is not correlated with the statutory procurement policy, thus, no investigation policies are suggested ~\cite{ref_almaqtari2024,ref_vukovic2025}. Third,  \textit{Geographical Cost Distortions}: the spending metric is not centered.
 
-\textbf{Distinction of Conceptual Terms:} To maintain academic and legal precision, this study delineates four core concepts: (1) \textit{Statistical Anomalies} are mathematical data points deviating significantly from baseline distributions; (2) \textit{Administrative Irregularities} denote procedural non-compliance such as delayed milestone recording or disaster emergency reallocations; (3) \textit{Financial Risk Exposure} represents the total monetary volume (in IDR) associated with flagged anomalous transactions that warrants immediate supervisory audit triage; and (4) \textit{Confirmed Fraud / Corruption} denotes legally proven crimes requiring formal judicial verification of unlawful acts (\textit{Perbuatan Melawan Hukum}), criminal intent (\textit{mens rea}), and verified state financial losses (\textit{Kerugian Negara}) under Law No. 31/1999~\cite{ref34}. Because the real-world Siskeudes panel contains no ground-truth fraud labels, our algorithmic flags serve as \textit{investigative prioritization leads} (\textit{indikasi awal}) rather than definitive legal findings. Reported performance metrics (F1 and AUC-ROC) derive strictly from an ex-ante synthetic benchmark with controlled fraud injections, serving as proof-of-concept validation rather than field accuracy claims.
+\textbf{Classification of Terms in the Study:} In order to define terms properly for both academic and legal use, this research presents four key terms: (1) \textit{Statistical Anomalies} – data points mathematically out of baseline distribution range; (2) \textit{Administrative Irregularities} are the breach of procedure including delayed milestones and redefinition of disasters' emergency status; (3)  \textit{Financial Risk Exposure} – total monetary amount (IDR) of anomalies which need immediate supervisory audit inspection; and (4) \textit{Confirmed Fraud / Corruption} is the crime which is proven by law and requires verification of the unlawful act (\textit{Perbuatan Melawan Hukum}), \textit{mens rea}, and state financial losses (\textit{Kerugian Negara}) by Law No. 31/1999 ~\cite{ref34}. Since there is no Siskeudes panel with ground-truth labels of fraud cases, the algorithmic flagging in this study works as a lead for investigation (\textit{indikasi awal}) but not the final verdict. Performance metrics reported (F1 and AUC-ROC) are solely derived from an ex-ante benchmarking with fraud injection experiment.
 
-\textbf{Contributions and Research Questions:} Applying Design Science Research (DSR)~\cite{ref10}, we design, implement, and benchmark an unsupervised Dual-Path Consensus framework (Protocol 2) across 96,778 transaction records (1,363 villages, FY 2023--2025) in Jambi Province. In Jambi, only 11 citizen grievances appear on the KPK jaga.id portal out of 761 nationwide complaints (1.4\%)~\cite{ref26}, despite severe court convictions: Muara Hemat (Kerinci, Rp 644 million loss, 5-year delay)~\cite{ref28,ref30}, Jambi Tulo (Muaro Jambi, Rp 300 million fictitious projects)~\cite{ref29}, and Pangkal Duri (Tanjung Jabung Timur, Rp 415 million loss)~\cite{ref31}. This study provides three key contributions: (1) \textit{Methodological}: A Dual-Path Consensus mechanism decoupling local density isolation from multi-model global convergence ($\text{IF} \cap \text{RDA}$); (2) \textit{Theoretical}: An integrated framework harmonizing Agency Theory, the Fraud Diamond, and the DeLone \& McLean IS Success Model; and (3) \textit{Practical}: An operationalized artifact reducing district inspectorate (APIP) search space by 92.6\%, isolating 702 persistent Tier-1 villages, and transforming autoencoder losses into Explainable AI (XAI) audit checklists. We address three Research Questions: \textbf{RQ1}: Which engineered Siskeudes features exhibit the highest discriminatory power in signaling expenditure anomalies? \textbf{RQ2}: How does Dual-Path Consensus perform relative to baseline detectors and majority voting on synthetic benchmarks and field data? \textbf{RQ3}: How do flagged anomalies map to operational corruption typologies, and how can neural losses guide APIP field inspections?
+\textbf{Contributions and Research Questions:} This research applies the Design Science Research (DSR)~\cite{ref10} approach to design, implement, and benchmark an unsupervised Dual-Path Consensus framework (Protocol 2) based on 96,778 transaction data (1,363 villages, FY 2023-2025) from Jambi Province. In particular, for Jambi Province, only 11 citizen reports related to corruption on the KPK jaga.id website have been identified from 761 reports  (1.4\%)~\cite{ref26} in Indonesia with significant court cases such as Muara Hemat (Kerinci, Rp 644 million loss, 5-year delay)~\cite{ref28,ref30}, Jambi Tulo (Muaro Jambi, Rp 300 million for fake projects)~\cite{ref29}, and Pangkal Duri (Tanjung Jabung Timur, Rp 415 million loss)~\cite{ref31}. Contributions made by this study consist of three main aspects: (1) \textit{Methodology}—the development of a novel Dual-Path Consensus mechanism that decouples local density isolation from global multi-model convergence ($\text{IF} \cap \text{RDA}$); (2) \textit{Theory}—the construction of a combined theory model including Agency Theory, Fraud Diamond, and DeLone \& McLean IS Success Model; and (3) \textit{Practice}—an artifact that narrows down the district inspectorate (APIP) search space by 92.6\%, identifies 702 persistent Tier-1 villages, and translates autoencoder losses into Explainable AI (XAI) audit checklists. This research answers three main Research Questions: \textbf{RQ1}: What are the most discriminative engineered Siskeudes features? \textbf{RQ2}: How does Dual-Path Consensus detector perform compared to the baseline detectors and majority voting? \textbf{RQ3}: What is the relationship between the detected anomalies and the corruption types, and how do neural losses help APIP field investigations?
 
 % -------------------------------------------------------------------------
 % SECTION II: METHODOLOGY & ARTIFACT ARCHITECTURE
@@ -155,14 +155,16 @@ The Indonesian government distributes roughly Rp 71 trillion annually to 75,259 
 
 \subsection{Theoretical Grounding and Conceptual Model}
 
-The artifact architecture is grounded in Agency Theory, the Fraud Diamond, and the DeLone \& McLean IS Success Model. Under principal-agent dynamics, the Village Head (\textit{Kepala Desa}) acts as the agent possessing private information inaccessible to the principal (APIP inspectorates, BPKP, KPK):
+The design of the artifact architecture is informed by Agency Theory, Fraud Diamond Theory, and DeLone \& McLean Information Systems Success Model. In the context of the principal-agent setting, the Village Head (Kepala Desa) can be seen as an agent possessing private information which cannot be known by the principal (APIP inspectorates, BPKP, KPK):
+
 \begin{equation}
 \begin{aligned}
 \mathrm{InfoAsymmetry} = {} & \mathcal{I}_{\mathrm{Agent}}(\mathrm{Realization}, \mathrm{TrueCost}) \\
 & - \mathcal{I}_{\mathrm{Principal}}(\mathrm{SiskeudesReport})
 \end{aligned}
 \end{equation}
-District inspectorates operate with severe resource constraints, employing only 5 to 15 auditors per regency to inspect up to 250 villages~\cite{ref12}, creating an extensive verification gap. Under the Fraud Diamond model~\cite{ref17b}, \textbf{Pressure} arises from statutory disbursement schedules demanding rapid budget absorption. \textbf{Opportunity} is structurally entrenched: 98.8\% of Jambi village fund operations use self-managed procurement (\textit{Swakelola}) without competitive bidding~\cite{ref9}. \textbf{Rationalization} stems from low perceived audit probabilities, while \textbf{Capability} resides with the Village Head and Financial Officer (\textit{Kaur Keuangan}), who control digital credentials and bank authorization signatures. Fig.~\ref{fig:conceptual_framework} depicts the conceptual model.
+
+There is a significant resource constraint problem with district inspectorates since only between 5 to 15 auditors work in a single regency to audit up to 250 villages \cite{ref12}. Under the Fraud Diamond Theory \cite{ref17b}, \textbf{Pressure} comes from statutory payment deadlines which imply fast budget execution. The \textbf{Opportunity} exists by the structural design where as much as 98.8\% of the operations of village fund in Jambi use self-managed procurement (Swakelola) without bidding \cite{ref9}. \textbf{Rationalization} is the result of low audit probability perception whereas the \textbf{Capability} is owned by Village Head and Financial Officer (Kaur Keuangan). Figure \ref{fig:conceptual_framework} shows the conceptual model.
 
 \begin{figure}[htbp]
 \centering
@@ -181,17 +183,18 @@ District inspectorates operate with severe resource constraints, employing only 
     \draw[arrow] (artifact) -- (impact);
 \end{tikzpicture}%
 }
+
 \caption{Integrated conceptual framework linking Agency Theory, Fraud Diamond, DSR comparative artifacts, and DeLone \& McLean IS Success impact.}
 \label{fig:conceptual_framework}
 \end{figure}
 
-\subsection{Data Hygiene and Regional Baseline Centering}
+\subsection{Data Cleaning and Regional Baseline Z-score Calculation}
 
-The raw panel (99,692 transactions) was extracted from the KPK jaga.id repository~\cite{ref26}, spanning expenditure realization (\textit{Penyerapan}) and budget ceilings (\textit{Pagu}) for FY 2023--2025 across Jambi Province. Data cleaning eliminated invalid account codes, administrative duplicates, and zero-volume entries, yielding $N = 96,778$ verified records across 1,363 villages. To prevent logistical cost premiums in mountainous terrains (e.g., Kerinci highlands) from producing spurious anomalies relative to lowlands (e.g., Muaro Jambi), we calculate regionally stratified annual baseline z-scores across stratum $(c, k, t) = (\text{Kode\_Output}, \text{Kabupaten}, \text{Tahun})$:
+The original data set, which consists of 99,692 observations, was downloaded from the KPK jaga.id repository~\cite{ref26} where all expenditure realization (\textit{Penyerapan}) and budget ceilings (\textit{Pagu}) of FY 2023--2025 have been registered for the Jambi Province. Data cleaning removed invalid account codes, administrative duplicates, and zeros, resulting in $N = 96,778$ observations in 1,363 villages. In order to avoid inflated transportation costs, associated with mountainous areas (such as Kerinci district) compared to the lowlands (such as Muaro Jambi district) causing an artificial anomaly, we computed annual regional baseline z-scores as follows:
 \begin{equation}
 z_{i,c,k,t} = \frac{x_{i,c,k,t} - \mu_{c,k,t}}{\sigma_{c,k,t} + \epsilon}
 \end{equation}
-Continuous variables were scaled using RobustScaler (median and interquartile range) to mitigate outlier influence. The final feature matrix comprises 27 engineered dimensions, summarized in Table~\ref{tab:feature_matrix}.
+Continuous features were scaled using RobustScaler (median and IQR) to avoid outliers. The resulting feature matrix is composed of 27 engineered features, shown in Table~\ref{tab:feature_matrix}.
 
 \begin{table}[htbp]
 \centering
@@ -220,7 +223,7 @@ Continuous variables were scaled using RobustScaler (median and interquartile ra
 
 The analytical pipeline deploys three orthogonal unsupervised engines:
 
-\textbf{1. Isolation Forest (Global Sparsity Engine):} Partitioning features with $T = 200$ trees and sub-sample size $\psi = 256$, anomaly score is $s(x, n) = 2^{-\mathbb{E}(h(x))/c(n)}$~\cite{ref18}. Setting contamination $c = 0.10$, instances meeting the 90th percentile are flagged:
+\textbf{1. Isolation Forest (Global Sparsity Engine):} Features splitting occurs with T = 200 trees and $\psi = 256$ subsample size. The anomaly score is given by $s(x, n) = 2^{-\mathbb{E}(h(x))/c(n)}$~\cite{ref18}. Setting contamination $c = 0.10$, instances meeting the 90th percentile are flagged:
 \begin{equation}
 y_{i, \mathrm{IF}} = \mathbf{1}\left(s(x_i, n) \ge \mathrm{Quantile}_{0.90}(s)\right)
 \end{equation}
@@ -229,12 +232,12 @@ y_{i, \mathrm{IF}} = \mathbf{1}\left(s(x_i, n) \ge \mathrm{Quantile}_{0.90}(s)\r
 \begin{equation}
 \mathrm{LOF}_k(p) = \frac{1}{|N_k(p)|} \sum_{o \in N_k(p)} \frac{\mathrm{lrd}_k(o)}{\mathrm{lrd}_k(p)}
 \end{equation}
-We specify $k = 20$ nearest neighbors, reflecting the average administrative cluster size of peer villages within a sub-district (\textit{kecamatan}). Instances exceeding the 95th percentile are flagged:
+With the choice of $k = 20$, which reflects the number of typical groups in a sub-district (\textit{kecamatan}), points exceeding the 95th quantile are considered as anomalies:
 \begin{equation}
 y_{i, \mathrm{LOF}} = \mathbf{1}\left(\mathrm{LOF}_k(x_i) \ge \mathrm{Quantile}_{0.95}(\mathrm{LOF})\right)
 \end{equation}
 
-\textbf{3. Reconstruction Dense Autoencoder (RDA \& Neural Loss):} RDA employs an 8-layer symmetric bottleneck neural network: \texttt{[27 $\to$ 64 $\to$ 32 $\to$ 16 $\to$ 8 $\to$ 16 $\to$ 32 $\to$ 64 $\to$ 27]} with latent bottleneck $h = 8$ (compression ratio $\approx 3.4:1$)~\cite{ref32}. Trained with Adam (learning rate $10^{-3}$, $L_2$ decay $\lambda = 10^{-3}$, 50 epochs, batch size 128) under MSE loss, total error $E_i$ and per-feature error fraction $e_{i,f}$ are:
+\textbf{3. Reconstruction Dense Autoencoder (RDA \& Neural Loss):} The RDA employs an eight-layer symmetric dense autoencoder neural network with the configuration: \texttt{[27 $\to$ 64 $\to$ 32 $\to$ 16 $\to$ 8 $\to$ 16 $\to$ 32 $\to$ 64 $\to$ 27]} and hence latent feature space $h$ of dimension 8 (compression ratio of 3.4:1)~\cite{ref32}. The training algorithm applies the Adam method with parameters (learning rate $10^{-3}$, $L_2$ regularization $\lambda = 10^{-3}$, 50 epochs, batch size 128) and the Mean Squared Error (MSE) loss function. The overall reconstruction error for sample $i$ is $E_i$, and the error fraction per feature is $e_{i,f}$ (the definition will be continued).
 \begin{equation}
 E_i = \sum_{f=1}^{d} (x_{i,f} - \hat{x}_{i,f})^2, \quad e_{i,f} = \frac{(x_{i,f} - \hat{x}_{i,f})^2}{E_i}
 \end{equation}
@@ -242,15 +245,16 @@ E_i = \sum_{f=1}^{d} (x_{i,f} - \hat{x}_{i,f})^2, \quad e_{i,f} = \frac{(x_{i,f}
 y_{i, \mathrm{RDA}} = \mathbf{1}\left(E_i \ge \mathrm{Quantile}_{0.95}(E)\right)
 \end{equation}
 
-\subsection{Novelty of the Dual-Path Consensus Ensemble Gate}
+\subsection{Uniqueness of the Dual-Path Consensus Ensemble Gate}
 
-In standard unsupervised ensemble learning, systems rely on symmetric majority voting ($\sum \mathbf{1}_m \ge 2$) or linear score averaging. In heterogeneous public ledgers, these mechanisms fail: (1) \textit{Majority Voting Failure}: Statistical subspaces are orthogonal ($\kappa(\text{IF}, \text{LOF}) = 0.041$; $\kappa(\text{LOF}, \text{RDA}) = 0.083$). Isolated density outliers (e.g., zero-completion activities in peer clusters) appear globally normal to tree splits, causing majority voting to cancel out 3,940 high-risk local density anomalies; (2) \textit{Score Averaging Failure}: Combining disparate score scales blurs acute local density spikes (LOF Sarle BC = 0.957) into continuous spectra.
+In traditional unsupervised ensemble learning approaches, majority voting $\left(\sum \mathbf{1}_{m} \geq 2\right)$ or score averaging is used. In heterogeneous public ledger environments, however, the above techniques cannot be applied because: (1) \textit{Majority Voting Failure} arises due to the orthogonality of statistical subspaces ($\kappa(\text{IF}, \text{LOF}) = 0.041$; $\kappa(\text{LOF}, \text{RDA}) = 0.083$). Density outliers that are isolated (e.g., zero-completion activities amongst peer cluster groups) will show up globally as normal with regards to tree splits, thereby leading to the failure of majority voting in the sense that it eliminates 3,940 high-risk local density outliers; (2) \textit{Score Averaging Failure}: The combination of heterogeneous score scales leads to the obscuring of local density spikes (LOF Sarle BC $=0.957$).
 
-To resolve this limitation, we formulate the \textbf{Dual-Path Consensus Ensemble Gate} (Protocol 2) by structurally decoupling localized density detection from global multi-model convergence:
+To remedy the situation, we propose the \textbf{Dual-Path Consensus Ensemble Gate} (Protocol 2).
 \begin{equation}
 y_{i, \mathrm{consensus}} = y_{i, \mathrm{LOF}} \lor \left(y_{i, \mathrm{IF}} \land y_{i, \mathrm{RDA}}\right)
 \end{equation}
-\textbf{Path 1 (Local Density Channel)} preserves high-confidence density isolates identified by LOF ($BC=0.957$) without requiring confirmation from global models. \textbf{Path 2 (Global Convergence Channel)} enforces joint intersection between Isolation Forest (global sparsity) and Reconstruction Autoencoder (non-linear multivariate distortion), filtering out single-model global noise.
+
+\textbf{Path 1 (Local Density Channel)} preserves high-confidence density isolates flagged by LOF ($BC=0.957$) based on a boundary score of 0.957, without requiring validation through global models. \textbf{Path 2 (Global Convergence Channel)} requires joint intersection of Isolation Forest (global sparsity) and Reconstruction Autoencoder (nonlinear multivariate distortion), ensuring noise removal caused by individual global model influences.
 
 \begin{algorithm}[htbp]
 \caption{Dual-Path Anomaly Detection and XAI Policy Pipeline}
@@ -270,9 +274,9 @@ y_{i, \mathrm{consensus}} = y_{i, \mathrm{LOF}} \lor \left(y_{i, \mathrm{IF}} \l
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Synthetic Fraud Benchmark Generation & Reproducibility}
+\subsection{Synthetic Fraud Benchmark Generation \& Reproducibility}
 
-Because the real-world Siskeudes panel lacks verified ground-truth fraud labels, we evaluate detection efficacy via an ex-ante synthetic fraud injection benchmark ($N = 10,000$). Baseline features were generated from empirical parametric distributions fitted to genuine Siskeudes normal expenditure: $\texttt{cost\_per\_unit} \sim \text{Lognormal}(2.0, 0.5)$, $\texttt{absorption\_ratio} \sim \text{Beta}(5, 1)$, $\texttt{avg\_completion} \sim \text{Uniform}(0.70, 1.00)$, $\texttt{swakelola\_high\_val} \sim \text{Binomial}(1, 0.25)$, and $\texttt{cost\_dev\_by\_cat} \sim \mathcal{N}(0.0, 1.0)$. We injected 500 synthetic fraud instances (5.0\% prevalence) across three empirical fraud moduses:
+As the real Siskeudes panel does not have validated fraud ground truth, the performance of the models is tested against an ex-ante synthetic fraud benchmark generation ($N = 10,000$). The baseline features are obtained from empirical parametric distributions calibrated with real Siskeudes expenditure. $\texttt{cost\_per\_unit} \sim \text{Lognormal}(2.0, 0.5)$, $\texttt{absorption\_ratio} \sim \text{Beta}(5, 1)$, $\texttt{avg\_completion} \sim \text{Uniform}(0.70, 1.00)$, $\texttt{swakelola\_high\_val} \sim \text{Binomial}(1, 0.25)$, and $\texttt{cost\_dev\_by\_cat} \sim \mathcal{N}(0.0, 1.0)$. We injected 500 synthetic fraud instances (5.0\% prevalence) across three empirical fraud moduses:
 \begin{enumerate}
     \item \textit{Modus 1: Mark-Up ($n=200$)}: $\texttt{cost\_per\_unit} \times 5.0$, $\texttt{cost\_dev} + 4.5\sigma$.
     \item \textit{Modus 2: Ghost Activities ($n=150$)}: $\texttt{absorption} \le 0.02$, $\texttt{completion} \le 0.05$.
@@ -283,11 +287,12 @@ Threshold quantiles ($q_{\text{IF}}=0.90, q_{\text{LOF}}=q_{\text{RDA}}=0.95$) a
 % -------------------------------------------------------------------------
 % SECTION III: RESULTS & EMPIRICAL ANALYSIS
 % -------------------------------------------------------------------------
+
 \section{Results and Empirical Analysis}
 
 \subsection{Anomaly Flag Counts and Temporal Consistency}
 
-Fig.~\ref{fig:consistency} illustrates temporal flagging stability. LOF maintains stable flagging rates across budget cycles (4.7\% in 2023 $\to$ 4.6\% in 2024 $\to$ 5.8\% in 2025). Protocol 2 demonstrates consistent annual flagging (7.5\% in 2023, 6.9\% in 2024, 7.7\% in 2025), confirming that stratified centering shields detectors from fiscal volume shocks.
+Figure \ref{fig:consistency} displays the temporal stability of flagging. The LOF approach has shown stability in the flagging process in different budget periods with 4.7\% in 2023, 4.6\% in 2024, and 5.8\% in 2025. The temporal stability for protocol 2 is seen through its consistent flagging percentage annually as 7.5\% in 2023, 6.9\% in 2024, and 7.7\% in 2025.
 
 \begin{figure}[htbp]
 \centering
@@ -296,9 +301,9 @@ Fig.~\ref{fig:consistency} illustrates temporal flagging stability. LOF maintain
 \label{fig:consistency}
 \end{figure}
 
-\subsection{Subspace Orthogonality and Score Distributions}
+\subsection{Orthogonality of Subspace and Score Distributions}
 
-Fig.~\ref{fig:distributions} and Table~\ref{tab:bimodality_overlap} evaluate score distributions annotated with Sarle Bimodality Coefficients (BC) and pairwise Cohen's $\kappa$.
+Figures \ref{fig:distributions} and \ref{tab:bimodality_overlap} display score distributions with annotations for Sarle Bimodality Coefficient (BC) and pair-wise Cohen's $\kappa$.
 
 \begin{figure}[htbp]
 \centering
@@ -332,11 +337,13 @@ Triple ($\text{IF} \cap \text{LOF} \cap \text{RDA}$) & --- & Maximum Confidence 
 }
 \end{table}
 
-LOF achieves a high Sarle BC of 0.957, separating dense peer clusters from extreme local outliers (scores reaching $5.40 \times 10^9$). The negligible Cohen's $\kappa$ values ($\kappa = 0.041$ for IF-LOF; $\kappa = 0.083$ for LOF-RDA) confirm that LOF operates in an orthogonal subspace. In Protocol 1, majority voting discarded all 3,940 LOF-only isolates, which Protocol 2 successfully recovers.
+Local Outlier Factor (LOF) is capable of achieving a high Sarle BC of 0.957 by effectively distinguishing dense groups of peers from outliers having extremely high scores (up to $5.40 \times 10^9$). The insignificant Cohen's $\kappa$ coefficients (of 0.041 for IF-LOF and of 0.083 for LOF-RDA) mean that LOF operates in an orthogonal subspace. All 3,940 isolates generated by LOF were successfully removed using Protocol 1.
 
-\subsection{Ablation Study on Benchmark and Real Panel}
 
-Table~\ref{tab:ablation_study} provides a comprehensive ablation study evaluated across both the synthetic fraud benchmark ($N = 10,000$) and the real-world Jambi panel ($N = 96,778$).
+
+\subsection{Ablation on Synthetic Benchmark and Real Panel}
+
+Table~\ref{tab:ablation_study} shows an extensive ablation study done on both the synthetic fraud benchmark ($N = 10{,}000$) and the real-world Jambi panel ($N = 96{,}778$).
 
 \begin{table}[htbp]
 \centering
@@ -365,11 +372,14 @@ Table~\ref{tab:ablation_study} provides a comprehensive ablation study evaluated
 }
 \end{table}
 
-The ablation results establish that: (1) Individual detectors capture distinct anomaly sub-types; (2) Strict intersections ($\text{IF} \land \text{LOF}$, $\text{LOF} \land \text{RDA}$) suffer catastrophic recall drops (Recall $\le 0.460$); (3) Global convergence ($\text{IF} \land \text{RDA}$) achieves high precision (0.854) but misses localized density anomalies (Recall = 0.640); (4) Protocol 1 (majority voting) exhibits severe mutual cancellation, yielding F1 = 0.568 and missing 49.0\% of synthetic frauds; and (5) \textbf{Protocol 2 (Dual-Path Consensus)} attains the optimal trade-off: \textbf{Precision = 0.846, Recall = 0.846, F1 = 0.846, and AUC-ROC = 0.912}, while isolating Rp 642.85 billion in realization risk on the real-world dataset.
 
-\subsection{Corruption Typology Mapping and Shift Dynamics}
+Based on ablation studies, we can see that: (1) each detector recognizes different anomaly types; (2) strict intersection ($\text{IF} \land \text{LOF}$, $\text{LOF} \land \text{RDA}$) leads to dramatic recall drops (Recall $\leq 0.460$); (3) global convergence ($\text{IF} \land \text{RDA}$) brings high precision (0.854) but does not find local density-based anomalies (Recall = 0.640); (4) Protocol 1 (majority voting) has significant mutual cancellation, resulting in F1 = 0.568 and the lack of 49.0\% of synthetic frauds; and (5) \textbf{Protocol 2 (Dual-Path Consensus)} has reached optimal settings: \textbf{Precision = 0.846, Recall = 0.846, F1 = 0.846, and AUC-ROC = 0.912}. It additionally identifies Rp 642.85 billion worth of realization risks in the real-world setting.
 
-Consensus flags were mapped into operational corruption typologies via Algorithm~\ref{alg:end_to_end}. Fig.~\ref{fig:typology} and Table~\ref{tab:typology_shift} depict the distribution shift from Protocol 1 to Protocol 2. Protocol 2 identifies two dominant irregularity profiles: \textbf{$T_2$ Ghost Activities (58.1\% / 4,155 records)} and \textbf{$T_5$ Procurement Irregularities (32.8\% / 2,343 records)}.
+
+\subsection{Corruption Typologies Mapping and Dynamics of Change}
+
+The consensus labels were projected onto corruption typologies using Algorithm~\ref{alg:end_to_end}. As shown in Figures~\ref{fig:typology} and \ref{fig:typology_shift}, the shift in distribution is illustrated between Protocol 1 and Protocol 2. The irregularity patterns that Protocol 2 reveals include: \textbf{$T_2$ Ghost Activities (58.1\% / 4,155 records)} and \textbf{$T_5$ Procurement Irregularities (32.8\% / 2,343 records)}.
+
 
 \begin{figure}[htbp]
 \centering
@@ -400,9 +410,9 @@ Consensus flags were mapped into operational corruption typologies via Algorithm
 }
 \end{table}
 
-\subsection{XAI Reconstruction Error Drivers and Spatial Clustering}
+\subsection{Reconstruction Error Drivers in XAI and Spatial Clustering}
 
-Fig.~\ref{fig:rda_error} illustrates RDA feature reconstruction error attributions. The primary drivers are \texttt{cost\_dev\_by\_cat} (primary loss in 2,065 records, 42.7\%) and \texttt{cost\_per\_unit} (1,551 records, 32.0\%). Fig.~\ref{fig:projections} presents linear PCA and non-linear t-SNE dimensionality projections. Principal Component 1 captures 26.0\% of variance. In t-SNE space, anomalies aggregate into distinct peripheral micro-clusters surrounding high-value Swakelola infrastructure projects and BUMDes capital injections rather than dispersing as random noise.
+Figure~\ref{fig:rda_error} demonstrates the drivers behind feature reconstruction error by RDA analysis. They are \texttt{cost\_dev\_by\_cat} (42.7\%, primary cause of error in 2,065 records) and \texttt{cost\_per\_unit} (32.0\%, 1,551 records). Figure~\ref{fig:projections} contains linear PCA and non-linear t-SNE visualizations. Principal Component 1 explains 26.0\% of variance. In the latter visualization, the outliers form micro-clusters around Swakelola infrastructures and capital injections from BUMDes, rather than being distributed as noise.
 
 \begin{figure}[htbp]
 \centering
@@ -420,7 +430,7 @@ Fig.~\ref{fig:rda_error} illustrates RDA feature reconstruction error attributio
 
 \subsection{Longitudinal Village Persistence and Regency Risk Exposure}
 
-Village persistence scores ($P_v = N_{\text{flagged\_years}} / N_{\text{total\_years}}$) categorize jurisdictions into supervisory tiers (Fig.~\ref{fig:persistence} and Table~\ref{tab:case_studies}). Under Protocol 2, \textbf{702 villages (51.5\%)} exhibit 3-year persistent anomalies ($P_v = 1.0$), including Desa Maliki Air (16 anomalies, $T_2$ Ghost), Desa Gedang (13 anomalies, $T_5$ Procurement), and Desa Paling Serumpun (12 anomalies).
+The longitudinal persistence of villages is measured by $P_v = N_{\text{flagged\_years}} / N_{\text{total\_years}}$. This is used to group the jurisdictions into supervisory groups (see Fig. 1 and Table 1). As per Protocol 2, there are 702 villages (51.5\%) that exhibit three-year persistent anomalies where $P_v = 1.0$. Examples include Desa Maliki Air (16 anomalies, $T_2$ Ghost), Desa Gedang (13 anomalies, $T_5$ Procurement) and Desa Paling Serumpun (12 anomalies).
 
 \begin{figure}[htbp]
 \centering
@@ -453,24 +463,24 @@ Desa Ngaol & 2024 & Ambulance Desa & RDA MSE = 0.0482 & $T_1$ Mark-Up / $T_5$ Pr
 }
 \end{table}
 
-Kabupaten Batanghari exhibits the highest systemic risk density (15.75\% flag rate, Rp 115.71 billion exposed), establishing an empirical target for municipal audit prioritization.
+Kabupaten Batanghari exhibits the largest risk exposure as it has 15.75\% of flags and its risk exposure stands at Rp 115.71 billion.
 
 % -------------------------------------------------------------------------
 % SECTION IV: DISCUSSION & GOVERNANCE IMPLICATIONS
 % -------------------------------------------------------------------------
 \section{Discussion and Governance Implications}
 
-\subsection{Algorithmic Efficacy and Cancellation Resolution}
+\subsection{Effectiveness of Algorithms and Cancellation Resolution}
 
-Empirical findings confirm that Protocol 2 overcomes the structural weaknesses of majority voting: (1) \textbf{Subspace Decoupling}: Protocol 2 enables LOF to operate as an independent density channel while demanding joint convergence for global models ($\text{IF} \cap \text{RDA}$), recovering 3,940 localized isolates without introducing single-model noise and expanding recall to 7,153 records (Rp 642.85 billion in realization risk); (2) \textbf{Controlled Synthetic Recovery}: Controlled simulations confirm high precision (0.846) and recall (0.846) against injected frauds ($\text{AUC} = 0.912$); (3) \textbf{Search Space Reduction}: Filtering 96,778 transactions down to 7,153 targets compresses inspectorate search space by 92.6\%, making field audits feasible for small teams of 5 to 15 auditors~\cite{ref12}; and (4) \textbf{Sub-Threshold Risk Capture}: Multidimensional LOF and RDA capture joint multi-feature probability shifts, identifying 1,227 sub-threshold masked records (Rp 125.07 billion in latent exposure).
+The empirical results confirm that Protocol 2 resolves the inherent weaknesses of the majority voting mechanism as follows: (1) \textbf{Subspace Decoupling}—Protocol 2 allows LOF to operate as an independent density channel while achieving joint convergence on global models ($\text{IF} \cap \text{RDA}$) and thus restores 3,940 isolated records without single-model noise, increasing the number of recall records to 7,153 ( Rp 642.85 billion in realization risk); (2) \textbf{Controlled Synthetic Recovery}—High precision (0.846) and recall (0.846) in the presence of injected fraud have been proven in the controlled experiments ( $\text{AUC} = 0.912$); (3) \textbf{Search Space Reduction}—Reducing 96,778 transactions to 7,153 target transactions leads to 92.6\% inspectorate search space reduction, allowing the field audit to be feasible for small teams of 5 to 15 auditors~\cite{ref12}; and (4) \textbf{Sub-Threshold Risk Capture}—Multidimensional LOF and RDA reveal the joint multi-feature probability change and thus detect 1,227 sub-threshold records ( Rp 125.07 billion in latent exposure).
 
-\subsection{Causal Mechanisms Driving Typology Shifts}
+\subsection{Mechanisms That Drive Typology Changes}
 
-The 436.8\% surge in \textbf{$T_2$ Ghost Activities} (4,155 records) occurs because LOF evaluates reachability density against direct peer villages. Projects with zero completion appear normal under global tree splits but stand out as extreme outliers relative to peer villages that completed physical works. Similarly, the 90-fold increase in \textbf{$T_5$ Procurement Irregularities} (2,343 records) stems from the autoencoder modeling non-linear interactions between Swakelola status and inflated unit costs.
+The 436.8\% jump in the number of \textbf{$T_2$ Ghost Activities} (4,155 records) is due to the fact that LOF evaluates reachability density with respect to peer villages. Projects where there were no projects show normal behavior during the global tree split analysis, whereas they become clear outliers when contrasted with peer villages who conducted the physical works. Similarly, the nearly 90x increase in \textbf{$T_5$ Procurement Irregularities} (2,343 records) happens due to the fact that autoencoder learns the non-linear relationship between Swakelola and high unit cost.
 
-\subsection{Evidentiary Limits and Public Audit Legal Boundaries}
+\subsection{Evidentiary Standards and Limitations on Public Audit Law}
 
-Deploying machine learning in public audits is governed by strict evidentiary standards: (1) \textbf{Initial Investigative Lead (\textit{Indikasi Awal})}: Under Article 184 of the Criminal Procedure Code (KUHAP) and Constitutional Court Decision No. 21/PUU-XII/2014~\cite{ref34}, algorithmic flags do not constitute statutory evidence. They serve as preliminary intelligence to guide formal investigative audits; (2) \textbf{Irregularities vs Criminal Conduct (\textit{PMH})}: Elevated anomaly scores often reflect administrative delays rather than corruption. Under Law No. 31/1999~\cite{ref34}, prosecutors must establish criminal intent (\textit{mens rea}), unlawful acts (\textit{Perbuatan Melawan Hukum}), and verified state losses; and (3) \textbf{XAI-to-Audit Chain of Custody}: Decomposing RDA reconstruction errors directly informs audit inspection orders (e.g., unit cost deviations trigger Standard Price Ceiling verifications; completion gaps prompt on-site physical measurements).
+The use of machine learning in public audit is limited by formal standards of evidentiary process. Namely: (1) \textbf{First Investigative Clue (\textit{Indikasi Awal})}: As per Article 184 of the Criminal Procedure Code (KUHAP) and Constitutional Court decision No. 21/PUU-XII/2014~\cite{ref34}, algorithms’ results cannot be considered formal evidence; they serve as initial clues for further formal audit investigation. (2) \textbf{Irregularities vs Criminal Behavior (\textit{PMH})}: High anomalies scores often indicate problems caused by bureaucratic inefficiency rather than criminal actions. As per Law No. 31/1999~\cite{ref34}, the prosecutor needs to prove criminal intention (\textit{mens rea}), (\textit{Perbuatan Melawan Hukum}) and state losses. (3)  \textbf{XAI-to-Audit Chain of Custody}: Decomposition of reconstruction errors for responsible data analysis (RDA) determines audit inspection requests—e.g., unit cost anomaly leads to auditing Standard Price Ceiling, completion anomaly results in on-site measuring.
 
 \subsection{DSR Evaluation Matrix and Operationalizing IS Success}
 
@@ -496,24 +506,26 @@ Table~\ref{tab:dsr_matrix} summarizes the Design Science Research (DSR) evaluati
 }
 \end{table}
 
-The artifact operationalizes the DeLone \& McLean IS Success Model~\cite{ref10}. High Information Quality drives Individual Impact by reducing auditor workload by 92.6\% and isolating 702 persistent Tier-1 villages ($P_v = 1.0$). Concurrently, System Quality enhances Organizational Impact by enabling pre-disbursement screening, transitioning village fund governance toward automated deterrence.
 
-\subsection{Limitations and Future Research Trajectories}
+This artifact follows the DeLone and McLean IS Success Model~\cite{ref10}. Higher Information Quality increases Individual Impact by decreasing auditor burden by 92.6\%, and identifying 702 persistent Tier-1 villages ($P_v = 1.0$). On the other hand, System Quality increases Organizational Impact by ensuring pre-disbursement verification and developing village fund management towards automatic deterrence.
 
-Four boundary conditions warrant acknowledgment: (1) Siskeudes ledgers lack verified ground-truth fraud labels, necessitating reliance on synthetic benchmarks and domain heuristics; (2) The system cannot detect unrecorded off-book cash kickbacks; (3) Regional baseline models must be re-calibrated outside Jambi Province; and (4) Deterministic policy thresholds leave 1,227 complex anomalies unclassified, motivating future fuzzy-logic integration.
+\subsection{Limitations and Future Research Directions}
+
+Four boundary conditions deserve consideration: (1) There are no ground truth fraud labels in Siskeudes ledgers, thus necessitating the use of synthetic benchmarking and industry-specific heuristics; (2) the system is not able to identify unrecorded off-books cash kickbacks; (3) regional baseline models must be re-calibrated if used outside Jambi Province; and (4) hard-coded policy thresholds have left 1,227 difficult cases unclassified, implying that future fuzzy-logic analysis needs to be introduced.
+
 
 % -------------------------------------------------------------------------
 % SECTION V: CONCLUSION
 % -------------------------------------------------------------------------
 \section{Conclusion}
 
-This paper presented an unsupervised Dual-Path Consensus machine learning artifact (Protocol 2) to detect expenditure anomalies across 96,778 transactions in Jambi Province. Regarding \textbf{RQ1}, regionally centered and category-stratified cost deviations (\texttt{cost\_dev\_by\_cat} and \texttt{cost\_per\_unit}) exhibit the highest discriminatory power, driving 74.7\% of deep autoencoder reconstruction error. Regarding \textbf{RQ2}, LOF captures localized density isolates ($BC = 0.957$), whereas IF and RDA capture global structural anomalies. Dual-Path Consensus ($\text{LOF} \lor (\text{IF} \land \text{RDA})$) resolves mutual cancellation, achieving \textbf{F1 = 0.846 and AUC-ROC = 0.912} on an ex-ante synthetic fraud benchmark and outperforming majority voting (F1 = 0.568). Regarding \textbf{RQ3}, the Operational Policy Mapping Layer translates mathematical outliers into actionable typologies, identifying 4,155 Ghost Activities ($T_2$, 58.1\%) and 2,343 Procurement Irregularities ($T_5$, 32.8\%), isolating Rp 642.85 billion in realization risk and reducing APIP audit search space by 92.6\%. Future research will extend this framework toward graph neural networks (GNNs) on vendor networks and streaming API integrations for real-time alerts.
+This paper presents the development of an unsupervised Dual-Path Consensus machine learning model (Protocol 2) aimed at detecting expenditure anomalies from 96,778 transactions in Jambi Province. On the subject of Research Question 1  (\textbf{RQ1}), region-based and category stratified cost variations (\texttt{cost\_dev\_by\_cat} and \texttt{cost\_per\_unit}) have the strongest discriminatory strength, explaining 74.7\% of the reconstruction error generated by the deep autoencoder. On the subject of Research Question 2  (\textbf{RQ2}), LOF is capable of detecting localized density isolates ($BC = 0.957$) while IF and RDA detect global structural anomalies. The Dual-Path Consensus method ($\text{LOF} \lor (\text{IF} \land \text{RDA})$) helps in overcoming the problem of mutual cancellation resulting in \textbf{F1 = 0.846 and AUC-ROC = 0.912} when compared to the majority voting approach on an ex-ante synthetic fraud benchmark (F1 = 0.568). On the subject of Research Question 3 (\textbf{RQ3}), the mapping layer operational policy translates mathematical anomalies into actionable typologies; there are 4,155 Ghost Activities ($T_2$, 58.1\%) and 2,343 Procurement Irregularities ($T_5$, 32.8\%), totaling Rp 642.85 billion in realization risk with 92.6\% reduction in APIP audit search space.
 
 % -------------------------------------------------------------------------
 % ACKNOWLEDGMENT (ANONYMIZED FOR DOUBLE-BLIND REVIEW)
 % -------------------------------------------------------------------------
 \section*{Acknowledgment}
-This study was supported by the competitive research fund scheme (Penelitian Pemula). Specific funding information and institutional affiliations are blinded in accordance with the double-blind peer review policy of ICDEES 2026.
+This study was supported by the competitive research fund scheme (Penelitian Pemula Binus). Specific funding information and institutional affiliations are blinded in accordance with the double-blind peer review policy of ICDEES 2026.
 
 % -------------------------------------------------------------------------
 % DECLARATION OF GENERATIVE AI USAGE
