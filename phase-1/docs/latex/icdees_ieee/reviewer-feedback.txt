@@ -1,0 +1,77 @@
+What do you think about the paper 1
+Originality & Novelty: Rates how new the ideas, methods, or results are.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Suitability: Suitability of the title to the contents
+Excellent (4)
+
+Significance & Impact: Measures the importance of the findings to the international research community.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Formulation based on relevant and current previous research: Assesses if the authors properly cited and contextualized relevant, up-to-date work.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Methodology: Judges the soundness, appropriateness, and execution of the research design.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Evaluation & Results: Evaluates if the data, experiments, or case studies fully support the paper's claims.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Organization & Structure: Checks if the paper follows a logical flow (Introduction, Method, Results, Discussion).
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Clarity & Readability: Rates the quality of the English prose, grammar, and overall flow.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Scientific and Visual Quality:: Scientific soundness and assesses the clarity and usefulness of the tables, graphs, diagrams, and captions.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Conference Relevance & Ethics: Verifies the topic fits the conference scope and adheres to ethical research guidelines.
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Comments to Authors: Specific Comments by the Referee for the Author(s)
+The manuscript addresses an important and relevant problem and presents a promising Dual-Path Consensus framework for unsupervised anomaly detection in village fund expenditure data. The combination of LOF, Isolation Forest, and Reconstruction Dense Autoencoder, together with the operational policy mapping and XAI components, provides a meaningful contribution. However, several aspects should be strengthened before publication. First, the authors should clarify the novelty of the proposed Dual-Path Consensus mechanism in relation to existing ensemble and consensus-based anomaly detection approaches. Second, the literature review should include more recent studies, particularly from 2022–2026, to better establish the current research gap. Third, the methodology should provide greater detail regarding the synthetic fraud benchmark, fraud-injection procedure, threshold selection, hyperparameter justification, and reproducibility. An ablation study would also be useful to demonstrate the individual contribution of LOF, IF, RDA, and the proposed consensus mechanism. Fourth, the authors should clearly distinguish detected anomalies, financial risks, irregularities, and confirmed fraud/corruption, particularly because the real-world dataset does not contain verified ground-truth fraud labels. The reported F1 and AUC values from the synthetic benchmark should therefore be presented as benchmark results rather than direct evidence of real-world fraud detection accuracy. Finally, several figures and tables could be improved through clearer captions, axis labels, legends, units, and more consistent terminology. A thorough English proofreading is also recommended to address grammatical issues, sentence structure, and repetition in the abstract. Overall, the manuscript has good scientific potential, but these issues should be addressed to strengthen its methodological rigor, clarity, reproducibility, and contribution to the international research community.
+
+Reviewer Recommendation: Comments on plagiarism, falsification, fabrication, or omission of significant materials.
+No clear evidence of plagiarism, fabrication, or falsification was identified in the manuscript. The references are appropriately provided, and the use of Generative AI in the writing process has been declared. The authors are encouraged to provide greater transparency regarding the data sources, synthetic benchmark construction, fraud-injection procedure, and validation process to further strengthen research integrity and reproducibility.
+
+What do you think about the paper 2
+Originality & Novelty: Rates how new the ideas, methods, or results are.
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Suitability: Suitability of the title to the contents
+Excellent (4)
+
+Significance & Impact: Measures the importance of the findings to the international research community.
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Formulation based on relevant and current previous research: Assesses if the authors properly cited and contextualized relevant, up-to-date work.
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Methodology: Judges the soundness, appropriateness, and execution of the research design.
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Evaluation & Results: Evaluates if the data, experiments, or case studies fully support the paper's claims.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Organization & Structure: Checks if the paper follows a logical flow (Introduction, Method, Results, Discussion).
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Clarity & Readability: Rates the quality of the English prose, grammar, and overall flow.
+Good: Strong work; minor flaws that can be easily fixed. (4)
+
+Scientific and Visual Quality:: Scientific soundness and assesses the clarity and usefulness of the tables, graphs, diagrams, and captions.
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Conference Relevance & Ethics: Verifies the topic fits the conference scope and adheres to ethical research guidelines.
+Excellent: Outstanding; exceeds international conference standards. (5)
+
+Comments to Authors: Specific Comments by the Referee for the Author(s)
+The paper demonstrates high originality by proposing an unsupervised Dual-Path Consensus strategy (Protocol 2) to overcome the lack of ground-truth labels for fraud in Indonesian Village Fund (Dana Desa) transactions. It innovatively combines Isolation Forest (IF), Local Outlier Factor (LOF), and an 8-layer Reconstruction Dense Autoencoder (RDA) with an Operational Policy Mapping Layer, avoiding the mutual cancellation issues found in traditional majority-voting ensembles. The research design is methodologically sound, utilizing the Design Science Research (DSR) framework. The data hygiene steps are rigorous, employing regional baseline centering (z-scores) and RobustScaler to account for geographical price variations. The comparative approach—testing Protocol 1 (majority voting) against Protocol 2 (Dual-Path Consensus)—effectively proves the necessity of decoupling local density isolates (LOF) from global convergence (IF and RDA). The study aligns perfectly with information systems and digital governance conference themes. Ethically, the authors responsibly discuss the limits of algorithmic predictions in a legal context, noting that anomaly scores are initial indicators, not statutory evidence for criminal prosecution under Indonesian law.
+
+Reviewer Recommendation: Comments on plagiarism, falsification, fabrication, or omission of significant materials.
+There are no indications of plagiarism. The authors adequately cite 32 references, which range from national Indonesian laws and regulations to foundational machine learning and governance literature, to properly contextualize their work. Furthermore, they include a transparent declaration regarding their use of generative AI, stating it was used solely for language improvement and LaTeX formatting, and that they critically validated the final manuscript.
+
+The authors are transparent about their data sources and testing methods. They clearly state that their real-world dataset was gathered from the KPK jaga.id portal and detail their data hygiene process, which involved cleaning 99,692 raw records down to 96,778 valid observations. To test their model's recovery metrics, they explicitly disclose the creation and use of a synthetic historical fraud benchmark (N=10,000 with 5.0% fraud). Openly declaring the use of synthetic data to overcome the lack of ground-truth labels represents sound, transparent methodology rather than data fabrication.
+
+The authors actively avoid omitting crucial limitations or contextual flaws. They dedicate a specific section to "Limitations in Validity. the authors responsibly contextualize the real-world application of their tool by explicitly acknowledging its legal limitations; they clarify that anomaly scores are only initial indicators and do not constitute statutory evidence for criminal prosecution under Indonesian law.
