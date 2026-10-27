@@ -1,0 +1,202 @@
+Total pages: 12
+=== SLIDE 1 ===
+Unsupervised Dual-Path Consensus Machine Learning and 
+Operational Policy Framework for Village Fund Expenditure 
+Anomaly Detection
+AUTHORS
+Farrell Yodihartomo • Humam Faiq • Pandu Wicaksono • Charlie Yen
+Bina Nusantara University & Corruption Eradication Commission (KPK), Jakarta, Indonesia
+
+========================================
+
+=== SLIDE 2 ===
+01 / PROBLEM BACKGROUND
+Rural Oversight Deficit
+Fiscal Scale
+Rp 71 T
+Distributed across 75,259 villages 
+annually.
+State Losses
+Rp 598.13 B
+591 court convictions recorded Rp 
+598.13 billion lost.
+Reactive Oversight
+2–5 Years
+Cases adjudicated 2–5 years after 
+budget disbursement.
+Auditor Shortage
+5–15 Auditors
+Only 5–15 auditors oversee 250 regency villages.
+Swakelola Dominance
+98.8%
+98.8% of Jambi activities bypass competitive bidding.
+
+========================================
+
+=== SLIDE 3 ===
+02 / LITERATURE GAPS (2022–2026)
+Three Core Research Gaps
+GAP 01 GAP 02 GAP 03
+Subspace Cancellation
+Majority voting erases local density isolates.
+Missing Policy Mapping
+Outlier scores lack statutory audit rules.
+Geographic Cost Distortion
+Mountain logistics inflate baseline unit costs.
+GAP 03
+
+========================================
+
+=== SLIDE 4 ===
+STAGE 01
+Siskeudes Hygiene
+96,778 clean records across 1,363 
+villages.
+STAGE 02
+Regional Centering
+27 engineered features using regency 
+z-scores.
+STAGE 03
+Tri-Engine Inference
+Parallel execution across three 
+orthogonal engines.
+STAGE 04
+Audit Checklist Mapping
+Feature error decomposition into field 
+checklists.
+03 / DESIGN SCIENCE RESEARCH (DSR)
+Anomaly Detection Pipeline
+
+========================================
+
+=== SLIDE 5 ===
+04 / ALGORITHM & FEATURE DESIGN (RQ1)
+Tri-Engine Mathematical Formulation
+STAGE 01
+Regional Baseline Z-Score 
+Centering
+ENGINE 01 Isolation Forest (IF)
+200 trees isolate global sparsity at 90th quantile.
+ENGINE 02 Local Outlier Factor (LOF)
+20-neighbor local density ratio at 95th quantile.
+ENGINE 03 Reconstruction Autoencoder (RDA)
+8-layer neural compression (3.4:1) at 95th quantile.
+
+========================================
+
+=== SLIDE 6 ===
+05 / ENSEMBLE INNOVATION (RQ2)
+Dual-Path Consensus Gate
+Protocol 1: Majority Voting (≥ 2 Engines) Protocol 2: Dual-Path Consensus
+Subspace Orthogonality: IF-LOF Cohen's Kappa reaches 
+only 0.041.
+Mutual Cancellation: Eliminates 3,940 high-risk local 
+density isolates.
+Detection Failure: Misses 49.0% of injected synthetic 
+fraud cases.
+Gating Formula: LOF OR (IF INTERSECT RDA).
+Local Channel (LOF): Preserves heavy-tailed density 
+isolates (BC = 0.957).
+Global Channel (IF ∩ RDA): Suppresses single-model 
+noise via dual convergence.
+
+========================================
+
+=== SLIDE 7 ===
+06 / EXPERIMENTAL EVALUATION (RQ2)
+Detection Model Ablation Study
+Model Configuration Precision Recall F1 Score AUC-ROC Jambi Flags Realization Risk
+LOF Alone (Density) 0.686 0.686 0.686 0.745 4,839 (5.0%) Rp 396.40 Billion
+IF Alone (Sparsity) 0.724 0.724 0.724 0.782 9,678 (10.0%) Rp 451.18 Billion
+RDA Alone (Neural Loss) 0.812 0.812 0.812 0.811 4,840 (5.0%) Rp 428.60 Billion
+Global Intersection (IF ∩
+RDA) 0.854 0.640 0.732 0.815 2,314 (2.4%) Rp 246.45 Billion
+Protocol 1 (Majority ≥ 2) 0.720 0.510 0.568 0.642 3,107 (3.1%) Rp 278.40 Billion
+Protocol 2 (Dual-Path) 0.846 0.846 0.846 0.912 7,153 (7.4%) Rp 642.85 Billion
+
+========================================
+
+=== SLIDE 8 ===
+07 / OPERATIONAL POLICY MAPPING (RQ3)
+Corruption Typology Shift
+
+========================================
+
+=== SLIDE 9 ===
+08 / XAI ERROR DRIVERS & PERSISTENCE
+Error Drivers & Village Tiering
+Primary Indicator
+42.7%
+Category Cost Deviation
+Primary error driver across 2,065 
+records.
+Secondary Indicator
+32.0%
+Activity Unit Cost
+Secondary error driver across 1,551 
+records.
+Persistence Flag
+702
+3-Year Persistent Villages
+51.5% of villages flagged every year.
+Regional Density
+15.8%
+Batanghari Regency
+Highest risk density at Rp 115.71 
+billion.
+
+========================================
+
+=== SLIDE 10 ===
+09 / INFORMATION SYSTEMS SUCCESS IMPACT
+Inspectorate Audit Efficiency
+92.6%
+Audit search space reduction for district inspectorates (APIP)
+Filters 96,778 Siskeudes ledger entries down to 7,153 high-risk targets paired with automated field 
+inspection checklists.
+
+========================================
+
+=== SLIDE 11 ===
+10 / LEGAL GOVERNANCE & LIMITATIONS
+Evidentiary Law & Boundaries
+Initial Investigative 
+Lead
+Algorithmic flags guide 
+preliminary inquiry.
+Administrative 
+Irregularities
+High scores require mens 
+rea verification.
+Audit Chain of Custody
+Feature errors direct 
+physical site audits.
+Off-Book Cash Limits
+Unrecorded cash kickbacks 
+remain undetectable.
+
+========================================
+
+=== SLIDE 12 ===
+MODEL PERFORMANCE
+0.846 F1
+AUC = 0.912
+Dual-Path Consensus
+Achieves high predictive reliability and robustness in 
+detecting financial anomalies.
+RISK ISOLATION
+Rp 642.85B
+Realization Exposure
+Financial Risk Mitigation
+Isolates substantial realization risk across budget lines 
+for targeted intervention.
+AUDIT EFFICIENCY
+92.6%
+Search Space Reduction
+APIP Inspectorate Impact
+Drastically reduces manual audit workload, directing 
+resources to high-risk targets.
+THANK YOU • Q&A SESSION
+Conclusion & Key Findings
+
+========================================
